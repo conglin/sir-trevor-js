@@ -1,0 +1,14 @@
+{
+  "name": "sir-trevor-js-example",
+  "version": "0.0.1",
+  "description": "",
+  "local": [],
+  "scripts": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "conglin/sir-trevor-js": "*",
+    "components/jquery": "*"
+  }
+}
