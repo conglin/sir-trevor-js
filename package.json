@@ -1,7 +1,7 @@
 {
   "name": "sir-trevor",
   "version": "0.5.0-beta3",
-  "main": "build/sir-trevor.js",
+  "main": "sir-trevor.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:madebymany/sir-trevor-js.git"

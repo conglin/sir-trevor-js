@@ -9560,7 +9560,7 @@ require.register("madebymany~eventable@v1.0.5", function (exports, module) {
 
 });
 
-require.register("sir-trevor-js", function (exports, module) {
+require.register("conglin~sir-trevor-js@masterlin", function (exports, module) {
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("components~jquery@2.1.4"));
@@ -9570,7 +9570,7 @@ require.register("sir-trevor-js", function (exports, module) {
 		exports["SirTrevor"] = factory(require("components~jquery@2.1.4"));
 	else
 		root["SirTrevor"] = factory(root["jQuery"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_33__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_56__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -9629,50 +9629,50 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _ = __webpack_require__(2);
 
 	// ES6 shims
-	__webpack_require__(31).shim();
-	__webpack_require__(32);
-	__webpack_require__(3); // shims ES7 Array.prototype.includes
+	__webpack_require__(50).shim();
+	__webpack_require__(53);
+	__webpack_require__(54); // shims ES7 Array.prototype.includes
 
-	__webpack_require__(4); // extends jQuery itself
+	__webpack_require__(55); // extends jQuery itself
 
-	var utils = __webpack_require__(5);
+	var utils = __webpack_require__(57);
 
 	var SirTrevor = {
 
-	  config: __webpack_require__(6),
+	  config: __webpack_require__(58),
 
 	  log: utils.log,
-	  Locales: __webpack_require__(7),
+	  Locales: __webpack_require__(59),
 
-	  Events: __webpack_require__(8),
-	  EventBus: __webpack_require__(9),
+	  Events: __webpack_require__(60),
+	  EventBus: __webpack_require__(62),
 
-	  EditorStore: __webpack_require__(10),
-	  Submittable: __webpack_require__(11),
-	  FileUploader: __webpack_require__(12),
+	  EditorStore: __webpack_require__(63),
+	  Submittable: __webpack_require__(64),
+	  FileUploader: __webpack_require__(65),
 
-	  BlockMixins: __webpack_require__(29),
-	  BlockPositioner: __webpack_require__(13),
-	  BlockReorder: __webpack_require__(14),
-	  BlockDeletion: __webpack_require__(15),
-	  BlockValidations: __webpack_require__(16),
-	  BlockStore: __webpack_require__(17),
-	  BlockManager: __webpack_require__(18),
+	  BlockMixins: __webpack_require__(66),
+	  BlockPositioner: __webpack_require__(73),
+	  BlockReorder: __webpack_require__(76),
+	  BlockDeletion: __webpack_require__(77),
+	  BlockValidations: __webpack_require__(78),
+	  BlockStore: __webpack_require__(79),
+	  BlockManager: __webpack_require__(80),
 
-	  SimpleBlock: __webpack_require__(19),
-	  Block: __webpack_require__(20),
+	  SimpleBlock: __webpack_require__(84),
+	  Block: __webpack_require__(83),
 
-	  Blocks: __webpack_require__(30),
+	  Blocks: __webpack_require__(81),
 
-	  BlockControl: __webpack_require__(21),
-	  BlockControls: __webpack_require__(22),
-	  FloatingBlockControls: __webpack_require__(23),
+	  BlockControl: __webpack_require__(179),
+	  BlockControls: __webpack_require__(180),
+	  FloatingBlockControls: __webpack_require__(181),
 
-	  FormatBar: __webpack_require__(24),
-	  Editor: __webpack_require__(25),
+	  FormatBar: __webpack_require__(182),
+	  Editor: __webpack_require__(183),
 
-	  toMarkdown: __webpack_require__(26),
-	  toHTML: __webpack_require__(27),
+	  toMarkdown: __webpack_require__(186),
+	  toHTML: __webpack_require__(171),
 
 	  setDefaults: function(options) {
 	    Object.assign(SirTrevor.config.defaults, options || {});
@@ -9703,7 +9703,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	};
 
-	Object.assign(SirTrevor, __webpack_require__(28));
+	Object.assign(SirTrevor, __webpack_require__(184));
 
 
 	module.exports = SirTrevor;
@@ -9715,19 +9715,2470 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	exports.isEmpty = __webpack_require__(52);
-	exports.isFunction = __webpack_require__(53);
-	exports.isObject = __webpack_require__(54);
-	exports.isString = __webpack_require__(55);
-	exports.isUndefined = __webpack_require__(56);
-	exports.result = __webpack_require__(57);
-	exports.template = __webpack_require__(58);
-	exports.uniqueId = __webpack_require__(59);
+	exports.isEmpty = __webpack_require__(4);
+	exports.isFunction = __webpack_require__(23);
+	exports.isObject = __webpack_require__(12);
+	exports.isString = __webpack_require__(31);
+	exports.isUndefined = __webpack_require__(3);
+	exports.result = __webpack_require__(32);
+	exports.template = __webpack_require__(33);
+	exports.uniqueId = __webpack_require__(49);
 
 
 /***/ },
 /* 3 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * Checks if `value` is `undefined`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is `undefined`, else `false`.
+	 * @example
+	 *
+	 * _.isUndefined(void 0);
+	 * // => true
+	 */
+	function isUndefined(value) {
+	  return typeof value == 'undefined';
+	}
+
+	module.exports = isUndefined;
+
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var forOwn = __webpack_require__(5),
+	    isFunction = __webpack_require__(23);
+
+	/** `Object#toString` result shortcuts */
+	var argsClass = '[object Arguments]',
+	    arrayClass = '[object Array]',
+	    objectClass = '[object Object]',
+	    stringClass = '[object String]';
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/**
+	 * Checks if `value` is empty. Arrays, strings, or `arguments` objects with a
+	 * length of `0` and objects with no own enumerable properties are considered
+	 * "empty".
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {Array|Object|string} value The value to inspect.
+	 * @returns {boolean} Returns `true` if the `value` is empty, else `false`.
+	 * @example
+	 *
+	 * _.isEmpty([1, 2, 3]);
+	 * // => false
+	 *
+	 * _.isEmpty({});
+	 * // => true
+	 *
+	 * _.isEmpty('');
+	 * // => true
+	 */
+	function isEmpty(value) {
+	  var result = true;
+	  if (!value) {
+	    return result;
+	  }
+	  var className = toString.call(value),
+	      length = value.length;
+
+	  if ((className == arrayClass || className == stringClass || className == argsClass ) ||
+	      (className == objectClass && typeof length == 'number' && isFunction(value.splice))) {
+	    return !length;
+	  }
+	  forOwn(value, function() {
+	    return (result = false);
+	  });
+	  return result;
+	}
+
+	module.exports = isEmpty;
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var baseCreateCallback = __webpack_require__(6),
+	    keys = __webpack_require__(27),
+	    objectTypes = __webpack_require__(30);
+
+	/**
+	 * Iterates over own enumerable properties of an object, executing the callback
+	 * for each property. The callback is bound to `thisArg` and invoked with three
+	 * arguments; (value, key, object). Callbacks may exit iteration early by
+	 * explicitly returning `false`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @type Function
+	 * @category Objects
+	 * @param {Object} object The object to iterate over.
+	 * @param {Function} [callback=identity] The function called per iteration.
+	 * @param {*} [thisArg] The `this` binding of `callback`.
+	 * @returns {Object} Returns `object`.
+	 * @example
+	 *
+	 * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(num, key) {
+	 *   console.log(key);
+	 * });
+	 * // => logs '0', '1', and 'length' (property order is not guaranteed across environments)
+	 */
+	var forOwn = function(collection, callback, thisArg) {
+	  var index, iterable = collection, result = iterable;
+	  if (!iterable) return result;
+	  if (!objectTypes[typeof iterable]) return result;
+	  callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
+	    var ownIndex = -1,
+	        ownProps = objectTypes[typeof iterable] && keys(iterable),
+	        length = ownProps ? ownProps.length : 0;
+
+	    while (++ownIndex < length) {
+	      index = ownProps[ownIndex];
+	      if (callback(iterable[index], index, collection) === false) return result;
+	    }
+	  return result
+	};
+
+	module.exports = forOwn;
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var bind = __webpack_require__(7),
+	    identity = __webpack_require__(24),
+	    setBindData = __webpack_require__(15),
+	    support = __webpack_require__(25);
+
+	/** Used to detected named functions */
+	var reFuncName = /^\s*function[ \n\r\t]+\w/;
+
+	/** Used to detect functions containing a `this` reference */
+	var reThis = /\bthis\b/;
+
+	/** Native method shortcuts */
+	var fnToString = Function.prototype.toString;
+
+	/**
+	 * The base implementation of `_.createCallback` without support for creating
+	 * "_.pluck" or "_.where" style callbacks.
+	 *
+	 * @private
+	 * @param {*} [func=identity] The value to convert to a callback.
+	 * @param {*} [thisArg] The `this` binding of the created callback.
+	 * @param {number} [argCount] The number of arguments the callback accepts.
+	 * @returns {Function} Returns a callback function.
+	 */
+	function baseCreateCallback(func, thisArg, argCount) {
+	  if (typeof func != 'function') {
+	    return identity;
+	  }
+	  // exit early for no `thisArg` or already bound by `Function#bind`
+	  if (typeof thisArg == 'undefined' || !('prototype' in func)) {
+	    return func;
+	  }
+	  var bindData = func.__bindData__;
+	  if (typeof bindData == 'undefined') {
+	    if (support.funcNames) {
+	      bindData = !func.name;
+	    }
+	    bindData = bindData || !support.funcDecomp;
+	    if (!bindData) {
+	      var source = fnToString.call(func);
+	      if (!support.funcNames) {
+	        bindData = !reFuncName.test(source);
+	      }
+	      if (!bindData) {
+	        // checks if `func` references the `this` keyword and stores the result
+	        bindData = reThis.test(source);
+	        setBindData(func, bindData);
+	      }
+	    }
+	  }
+	  // exit early if there are no `this` references or `func` is bound
+	  if (bindData === false || (bindData !== true && bindData[1] & 1)) {
+	    return func;
+	  }
+	  switch (argCount) {
+	    case 1: return function(value) {
+	      return func.call(thisArg, value);
+	    };
+	    case 2: return function(a, b) {
+	      return func.call(thisArg, a, b);
+	    };
+	    case 3: return function(value, index, collection) {
+	      return func.call(thisArg, value, index, collection);
+	    };
+	    case 4: return function(accumulator, value, index, collection) {
+	      return func.call(thisArg, accumulator, value, index, collection);
+	    };
+	  }
+	  return bind(func, thisArg);
+	}
+
+	module.exports = baseCreateCallback;
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var createWrapper = __webpack_require__(8),
+	    slice = __webpack_require__(18);
+
+	/**
+	 * Creates a function that, when called, invokes `func` with the `this`
+	 * binding of `thisArg` and prepends any additional `bind` arguments to those
+	 * provided to the bound function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Functions
+	 * @param {Function} func The function to bind.
+	 * @param {*} [thisArg] The `this` binding of `func`.
+	 * @param {...*} [arg] Arguments to be partially applied.
+	 * @returns {Function} Returns the new bound function.
+	 * @example
+	 *
+	 * var func = function(greeting) {
+	 *   return greeting + ' ' + this.name;
+	 * };
+	 *
+	 * func = _.bind(func, { 'name': 'fred' }, 'hi');
+	 * func();
+	 * // => 'hi fred'
+	 */
+	function bind(func, thisArg) {
+	  return arguments.length > 2
+	    ? createWrapper(func, 17, slice(arguments, 2), null, thisArg)
+	    : createWrapper(func, 1, null, null, thisArg);
+	}
+
+	module.exports = bind;
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var baseBind = __webpack_require__(9),
+	    baseCreateWrapper = __webpack_require__(19),
+	    isFunction = __webpack_require__(23),
+	    slice = __webpack_require__(18);
+
+	/**
+	 * Used for `Array` method references.
+	 *
+	 * Normally `Array.prototype` would suffice, however, using an array literal
+	 * avoids issues in Narwhal.
+	 */
+	var arrayRef = [];
+
+	/** Native method shortcuts */
+	var push = arrayRef.push,
+	    unshift = arrayRef.unshift;
+
+	/**
+	 * Creates a function that, when called, either curries or invokes `func`
+	 * with an optional `this` binding and partially applied arguments.
+	 *
+	 * @private
+	 * @param {Function|string} func The function or method name to reference.
+	 * @param {number} bitmask The bitmask of method flags to compose.
+	 *  The bitmask may be composed of the following flags:
+	 *  1 - `_.bind`
+	 *  2 - `_.bindKey`
+	 *  4 - `_.curry`
+	 *  8 - `_.curry` (bound)
+	 *  16 - `_.partial`
+	 *  32 - `_.partialRight`
+	 * @param {Array} [partialArgs] An array of arguments to prepend to those
+	 *  provided to the new function.
+	 * @param {Array} [partialRightArgs] An array of arguments to append to those
+	 *  provided to the new function.
+	 * @param {*} [thisArg] The `this` binding of `func`.
+	 * @param {number} [arity] The arity of `func`.
+	 * @returns {Function} Returns the new function.
+	 */
+	function createWrapper(func, bitmask, partialArgs, partialRightArgs, thisArg, arity) {
+	  var isBind = bitmask & 1,
+	      isBindKey = bitmask & 2,
+	      isCurry = bitmask & 4,
+	      isCurryBound = bitmask & 8,
+	      isPartial = bitmask & 16,
+	      isPartialRight = bitmask & 32;
+
+	  if (!isBindKey && !isFunction(func)) {
+	    throw new TypeError;
+	  }
+	  if (isPartial && !partialArgs.length) {
+	    bitmask &= ~16;
+	    isPartial = partialArgs = false;
+	  }
+	  if (isPartialRight && !partialRightArgs.length) {
+	    bitmask &= ~32;
+	    isPartialRight = partialRightArgs = false;
+	  }
+	  var bindData = func && func.__bindData__;
+	  if (bindData && bindData !== true) {
+	    // clone `bindData`
+	    bindData = slice(bindData);
+	    if (bindData[2]) {
+	      bindData[2] = slice(bindData[2]);
+	    }
+	    if (bindData[3]) {
+	      bindData[3] = slice(bindData[3]);
+	    }
+	    // set `thisBinding` is not previously bound
+	    if (isBind && !(bindData[1] & 1)) {
+	      bindData[4] = thisArg;
+	    }
+	    // set if previously bound but not currently (subsequent curried functions)
+	    if (!isBind && bindData[1] & 1) {
+	      bitmask |= 8;
+	    }
+	    // set curried arity if not yet set
+	    if (isCurry && !(bindData[1] & 4)) {
+	      bindData[5] = arity;
+	    }
+	    // append partial left arguments
+	    if (isPartial) {
+	      push.apply(bindData[2] || (bindData[2] = []), partialArgs);
+	    }
+	    // append partial right arguments
+	    if (isPartialRight) {
+	      unshift.apply(bindData[3] || (bindData[3] = []), partialRightArgs);
+	    }
+	    // merge flags
+	    bindData[1] |= bitmask;
+	    return createWrapper.apply(null, bindData);
+	  }
+	  // fast path for `_.bind`
+	  var creater = (bitmask == 1 || bitmask === 17) ? baseBind : baseCreateWrapper;
+	  return creater([func, bitmask, partialArgs, partialRightArgs, thisArg, arity]);
+	}
+
+	module.exports = createWrapper;
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var baseCreate = __webpack_require__(10),
+	    isObject = __webpack_require__(12),
+	    setBindData = __webpack_require__(15),
+	    slice = __webpack_require__(18);
+
+	/**
+	 * Used for `Array` method references.
+	 *
+	 * Normally `Array.prototype` would suffice, however, using an array literal
+	 * avoids issues in Narwhal.
+	 */
+	var arrayRef = [];
+
+	/** Native method shortcuts */
+	var push = arrayRef.push;
+
+	/**
+	 * The base implementation of `_.bind` that creates the bound function and
+	 * sets its meta data.
+	 *
+	 * @private
+	 * @param {Array} bindData The bind data array.
+	 * @returns {Function} Returns the new bound function.
+	 */
+	function baseBind(bindData) {
+	  var func = bindData[0],
+	      partialArgs = bindData[2],
+	      thisArg = bindData[4];
+
+	  function bound() {
+	    // `Function#bind` spec
+	    // http://es5.github.io/#x15.3.4.5
+	    if (partialArgs) {
+	      // avoid `arguments` object deoptimizations by using `slice` instead
+	      // of `Array.prototype.slice.call` and not assigning `arguments` to a
+	      // variable as a ternary expression
+	      var args = slice(partialArgs);
+	      push.apply(args, arguments);
+	    }
+	    // mimic the constructor's `return` behavior
+	    // http://es5.github.io/#x13.2.2
+	    if (this instanceof bound) {
+	      // ensure `new bound` is an instance of `func`
+	      var thisBinding = baseCreate(func.prototype),
+	          result = func.apply(thisBinding, args || arguments);
+	      return isObject(result) ? result : thisBinding;
+	    }
+	    return func.apply(thisArg, args || arguments);
+	  }
+	  setBindData(bound, bindData);
+	  return bound;
+	}
+
+	module.exports = baseBind;
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(11),
+	    isObject = __webpack_require__(12),
+	    noop = __webpack_require__(14);
+
+	/* Native method shortcuts for methods with the same name as other `lodash` methods */
+	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+
+	/**
+	 * The base implementation of `_.create` without support for assigning
+	 * properties to the created object.
+	 *
+	 * @private
+	 * @param {Object} prototype The object to inherit from.
+	 * @returns {Object} Returns the new object.
+	 */
+	function baseCreate(prototype, properties) {
+	  return isObject(prototype) ? nativeCreate(prototype) : {};
+	}
+	// fallback for browsers without `Object.create`
+	if (!nativeCreate) {
+	  baseCreate = (function() {
+	    function Object() {}
+	    return function(prototype) {
+	      if (isObject(prototype)) {
+	        Object.prototype = prototype;
+	        var result = new Object;
+	        Object.prototype = null;
+	      }
+	      return result || global.Object();
+	    };
+	  }());
+	}
+
+	module.exports = baseCreate;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var objectTypes = __webpack_require__(13);
+
+	/**
+	 * Checks if `value` is the language type of Object.
+	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(1);
+	 * // => false
+	 */
+	function isObject(value) {
+	  // check if the value is the ECMAScript language type of Object
+	  // http://es5.github.io/#x8
+	  // and avoid a V8 bug
+	  // http://code.google.com/p/v8/issues/detail?id=2291
+	  return !!(value && objectTypes[typeof value]);
+	}
+
+	module.exports = isObject;
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to determine if values are of the language type Object */
+	var objectTypes = {
+	  'boolean': false,
+	  'function': true,
+	  'object': true,
+	  'number': false,
+	  'string': false,
+	  'undefined': false
+	};
+
+	module.exports = objectTypes;
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * A no-operation function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @example
+	 *
+	 * var object = { 'name': 'fred' };
+	 * _.noop(object) === undefined;
+	 * // => true
+	 */
+	function noop() {
+	  // no operation performed
+	}
+
+	module.exports = noop;
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(16),
+	    noop = __webpack_require__(17);
+
+	/** Used as the property descriptor for `__bindData__` */
+	var descriptor = {
+	  'configurable': false,
+	  'enumerable': false,
+	  'value': null,
+	  'writable': false
+	};
+
+	/** Used to set meta data on functions */
+	var defineProperty = (function() {
+	  // IE 8 only accepts DOM elements
+	  try {
+	    var o = {},
+	        func = isNative(func = Object.defineProperty) && func,
+	        result = func(o, o, o) && func;
+	  } catch(e) { }
+	  return result;
+	}());
+
+	/**
+	 * Sets `this` binding data on a given function.
+	 *
+	 * @private
+	 * @param {Function} func The function to set data on.
+	 * @param {Array} value The data array to set.
+	 */
+	var setBindData = !defineProperty ? noop : function(func, value) {
+	  descriptor.value = value;
+	  defineProperty(func, '__bindData__', descriptor);
+	};
+
+	module.exports = setBindData;
+
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * A no-operation function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @example
+	 *
+	 * var object = { 'name': 'fred' };
+	 * _.noop(object) === undefined;
+	 * // => true
+	 */
+	function noop() {
+	  // no operation performed
+	}
+
+	module.exports = noop;
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * Slices the `collection` from the `start` index up to, but not including,
+	 * the `end` index.
+	 *
+	 * Note: This function is used instead of `Array#slice` to support node lists
+	 * in IE < 9 and to ensure dense arrays are returned.
+	 *
+	 * @private
+	 * @param {Array|Object|string} collection The collection to slice.
+	 * @param {number} start The start index.
+	 * @param {number} end The end index.
+	 * @returns {Array} Returns the new array.
+	 */
+	function slice(array, start, end) {
+	  start || (start = 0);
+	  if (typeof end == 'undefined') {
+	    end = array ? array.length : 0;
+	  }
+	  var index = -1,
+	      length = end - start || 0,
+	      result = Array(length < 0 ? 0 : length);
+
+	  while (++index < length) {
+	    result[index] = array[start + index];
+	  }
+	  return result;
+	}
+
+	module.exports = slice;
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var baseCreate = __webpack_require__(20),
+	    isObject = __webpack_require__(12),
+	    setBindData = __webpack_require__(15),
+	    slice = __webpack_require__(18);
+
+	/**
+	 * Used for `Array` method references.
+	 *
+	 * Normally `Array.prototype` would suffice, however, using an array literal
+	 * avoids issues in Narwhal.
+	 */
+	var arrayRef = [];
+
+	/** Native method shortcuts */
+	var push = arrayRef.push;
+
+	/**
+	 * The base implementation of `createWrapper` that creates the wrapper and
+	 * sets its meta data.
+	 *
+	 * @private
+	 * @param {Array} bindData The bind data array.
+	 * @returns {Function} Returns the new function.
+	 */
+	function baseCreateWrapper(bindData) {
+	  var func = bindData[0],
+	      bitmask = bindData[1],
+	      partialArgs = bindData[2],
+	      partialRightArgs = bindData[3],
+	      thisArg = bindData[4],
+	      arity = bindData[5];
+
+	  var isBind = bitmask & 1,
+	      isBindKey = bitmask & 2,
+	      isCurry = bitmask & 4,
+	      isCurryBound = bitmask & 8,
+	      key = func;
+
+	  function bound() {
+	    var thisBinding = isBind ? thisArg : this;
+	    if (partialArgs) {
+	      var args = slice(partialArgs);
+	      push.apply(args, arguments);
+	    }
+	    if (partialRightArgs || isCurry) {
+	      args || (args = slice(arguments));
+	      if (partialRightArgs) {
+	        push.apply(args, partialRightArgs);
+	      }
+	      if (isCurry && args.length < arity) {
+	        bitmask |= 16 & ~32;
+	        return baseCreateWrapper([func, (isCurryBound ? bitmask : bitmask & ~3), args, null, thisArg, arity]);
+	      }
+	    }
+	    args || (args = arguments);
+	    if (isBindKey) {
+	      func = thisBinding[key];
+	    }
+	    if (this instanceof bound) {
+	      thisBinding = baseCreate(func.prototype);
+	      var result = func.apply(thisBinding, args);
+	      return isObject(result) ? result : thisBinding;
+	    }
+	    return func.apply(thisBinding, args);
+	  }
+	  setBindData(bound, bindData);
+	  return bound;
+	}
+
+	module.exports = baseCreateWrapper;
+
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(21),
+	    isObject = __webpack_require__(12),
+	    noop = __webpack_require__(22);
+
+	/* Native method shortcuts for methods with the same name as other `lodash` methods */
+	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+
+	/**
+	 * The base implementation of `_.create` without support for assigning
+	 * properties to the created object.
+	 *
+	 * @private
+	 * @param {Object} prototype The object to inherit from.
+	 * @returns {Object} Returns the new object.
+	 */
+	function baseCreate(prototype, properties) {
+	  return isObject(prototype) ? nativeCreate(prototype) : {};
+	}
+	// fallback for browsers without `Object.create`
+	if (!nativeCreate) {
+	  baseCreate = (function() {
+	    function Object() {}
+	    return function(prototype) {
+	      if (isObject(prototype)) {
+	        Object.prototype = prototype;
+	        var result = new Object;
+	        Object.prototype = null;
+	      }
+	      return result || global.Object();
+	    };
+	  }());
+	}
+
+	module.exports = baseCreate;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * A no-operation function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @example
+	 *
+	 * var object = { 'name': 'fred' };
+	 * _.noop(object) === undefined;
+	 * // => true
+	 */
+	function noop() {
+	  // no operation performed
+	}
+
+	module.exports = noop;
+
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * Checks if `value` is a function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a function, else `false`.
+	 * @example
+	 *
+	 * _.isFunction(_);
+	 * // => true
+	 */
+	function isFunction(value) {
+	  return typeof value == 'function';
+	}
+
+	module.exports = isFunction;
+
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * This method returns the first argument provided to it.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @param {*} value Any value.
+	 * @returns {*} Returns `value`.
+	 * @example
+	 *
+	 * var object = { 'name': 'fred' };
+	 * _.identity(object) === object;
+	 * // => true
+	 */
+	function identity(value) {
+	  return value;
+	}
+
+	module.exports = identity;
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(26);
+
+	/** Used to detect functions containing a `this` reference */
+	var reThis = /\bthis\b/;
+
+	/**
+	 * An object used to flag environments features.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @type Object
+	 */
+	var support = {};
+
+	/**
+	 * Detect if functions can be decompiled by `Function#toString`
+	 * (all but PS3 and older Opera mobile browsers & avoided in Windows 8 apps).
+	 *
+	 * @memberOf _.support
+	 * @type boolean
+	 */
+	support.funcDecomp = !isNative(global.WinRTError) && reThis.test(function() { return this; });
+
+	/**
+	 * Detect if `Function#name` is supported (all but IE).
+	 *
+	 * @memberOf _.support
+	 * @type boolean
+	 */
+	support.funcNames = typeof Function.name == 'string';
+
+	module.exports = support;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(28),
+	    isObject = __webpack_require__(12),
+	    shimKeys = __webpack_require__(29);
+
+	/* Native method shortcuts for methods with the same name as other `lodash` methods */
+	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
+
+	/**
+	 * Creates an array composed of the own enumerable property names of an object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {Object} object The object to inspect.
+	 * @returns {Array} Returns an array of property names.
+	 * @example
+	 *
+	 * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
+	 * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
+	 */
+	var keys = !nativeKeys ? shimKeys : function(object) {
+	  if (!isObject(object)) {
+	    return [];
+	  }
+	  return nativeKeys(object);
+	};
+
+	module.exports = keys;
+
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var objectTypes = __webpack_require__(30);
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Native method shortcuts */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * A fallback implementation of `Object.keys` which produces an array of the
+	 * given object's own enumerable property names.
+	 *
+	 * @private
+	 * @type Function
+	 * @param {Object} object The object to inspect.
+	 * @returns {Array} Returns an array of property names.
+	 */
+	var shimKeys = function(object) {
+	  var index, iterable = object, result = [];
+	  if (!iterable) return result;
+	  if (!(objectTypes[typeof object])) return result;
+	    for (index in iterable) {
+	      if (hasOwnProperty.call(iterable, index)) {
+	        result.push(index);
+	      }
+	    }
+	  return result
+	};
+
+	module.exports = shimKeys;
+
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to determine if values are of the language type Object */
+	var objectTypes = {
+	  'boolean': false,
+	  'function': true,
+	  'object': true,
+	  'number': false,
+	  'string': false,
+	  'undefined': false
+	};
+
+	module.exports = objectTypes;
+
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** `Object#toString` result shortcuts */
+	var stringClass = '[object String]';
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/**
+	 * Checks if `value` is a string.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a string, else `false`.
+	 * @example
+	 *
+	 * _.isString('fred');
+	 * // => true
+	 */
+	function isString(value) {
+	  return typeof value == 'string' ||
+	    value && typeof value == 'object' && toString.call(value) == stringClass || false;
+	}
+
+	module.exports = isString;
+
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isFunction = __webpack_require__(23);
+
+	/**
+	 * Resolves the value of property `key` on `object`. If `key` is a function
+	 * it will be invoked with the `this` binding of `object` and its result returned,
+	 * else the property value is returned. If `object` is falsey then `undefined`
+	 * is returned.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @param {Object} object The object to inspect.
+	 * @param {string} key The name of the property to resolve.
+	 * @returns {*} Returns the resolved value.
+	 * @example
+	 *
+	 * var object = {
+	 *   'cheese': 'crumpets',
+	 *   'stuff': function() {
+	 *     return 'nonsense';
+	 *   }
+	 * };
+	 *
+	 * _.result(object, 'cheese');
+	 * // => 'crumpets'
+	 *
+	 * _.result(object, 'stuff');
+	 * // => 'nonsense'
+	 */
+	function result(object, key) {
+	  if (object) {
+	    var value = object[key];
+	    return isFunction(value) ? object[key]() : value;
+	  }
+	}
+
+	module.exports = result;
+
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var defaults = __webpack_require__(34),
+	    escape = __webpack_require__(40),
+	    escapeStringChar = __webpack_require__(45),
+	    keys = __webpack_require__(35),
+	    reInterpolate = __webpack_require__(46),
+	    templateSettings = __webpack_require__(47),
+	    values = __webpack_require__(48);
+
+	/** Used to match empty string literals in compiled template source */
+	var reEmptyStringLeading = /\b__p \+= '';/g,
+	    reEmptyStringMiddle = /\b(__p \+=) '' \+/g,
+	    reEmptyStringTrailing = /(__e\(.*?\)|\b__t\)) \+\n'';/g;
+
+	/**
+	 * Used to match ES6 template delimiters
+	 * http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
+	 */
+	var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
+
+	/** Used to ensure capturing order of template delimiters */
+	var reNoMatch = /($^)/;
+
+	/** Used to match unescaped characters in compiled string literals */
+	var reUnescapedString = /['\n\r\t\u2028\u2029\\]/g;
+
+	/**
+	 * A micro-templating method that handles arbitrary delimiters, preserves
+	 * whitespace, and correctly escapes quotes within interpolated code.
+	 *
+	 * Note: In the development build, `_.template` utilizes sourceURLs for easier
+	 * debugging. See http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
+	 *
+	 * For more information on precompiling templates see:
+	 * http://lodash.com/custom-builds
+	 *
+	 * For more information on Chrome extension sandboxes see:
+	 * http://developer.chrome.com/stable/extensions/sandboxingEval.html
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @param {string} text The template text.
+	 * @param {Object} data The data object used to populate the text.
+	 * @param {Object} [options] The options object.
+	 * @param {RegExp} [options.escape] The "escape" delimiter.
+	 * @param {RegExp} [options.evaluate] The "evaluate" delimiter.
+	 * @param {Object} [options.imports] An object to import into the template as local variables.
+	 * @param {RegExp} [options.interpolate] The "interpolate" delimiter.
+	 * @param {string} [sourceURL] The sourceURL of the template's compiled source.
+	 * @param {string} [variable] The data object variable name.
+	 * @returns {Function|string} Returns a compiled function when no `data` object
+	 *  is given, else it returns the interpolated text.
+	 * @example
+	 *
+	 * // using the "interpolate" delimiter to create a compiled template
+	 * var compiled = _.template('hello <%= name %>');
+	 * compiled({ 'name': 'fred' });
+	 * // => 'hello fred'
+	 *
+	 * // using the "escape" delimiter to escape HTML in data property values
+	 * _.template('<b><%- value %></b>', { 'value': '<script>' });
+	 * // => '<b>&lt;script&gt;</b>'
+	 *
+	 * // using the "evaluate" delimiter to generate HTML
+	 * var list = '<% _.forEach(people, function(name) { %><li><%- name %></li><% }); %>';
+	 * _.template(list, { 'people': ['fred', 'barney'] });
+	 * // => '<li>fred</li><li>barney</li>'
+	 *
+	 * // using the ES6 delimiter as an alternative to the default "interpolate" delimiter
+	 * _.template('hello ${ name }', { 'name': 'pebbles' });
+	 * // => 'hello pebbles'
+	 *
+	 * // using the internal `print` function in "evaluate" delimiters
+	 * _.template('<% print("hello " + name); %>!', { 'name': 'barney' });
+	 * // => 'hello barney!'
+	 *
+	 * // using a custom template delimiters
+	 * _.templateSettings = {
+	 *   'interpolate': /{{([\s\S]+?)}}/g
+	 * };
+	 *
+	 * _.template('hello {{ name }}!', { 'name': 'mustache' });
+	 * // => 'hello mustache!'
+	 *
+	 * // using the `imports` option to import jQuery
+	 * var list = '<% jq.each(people, function(name) { %><li><%- name %></li><% }); %>';
+	 * _.template(list, { 'people': ['fred', 'barney'] }, { 'imports': { 'jq': jQuery } });
+	 * // => '<li>fred</li><li>barney</li>'
+	 *
+	 * // using the `sourceURL` option to specify a custom sourceURL for the template
+	 * var compiled = _.template('hello <%= name %>', null, { 'sourceURL': '/basic/greeting.jst' });
+	 * compiled(data);
+	 * // => find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector
+	 *
+	 * // using the `variable` option to ensure a with-statement isn't used in the compiled template
+	 * var compiled = _.template('hi <%= data.name %>!', null, { 'variable': 'data' });
+	 * compiled.source;
+	 * // => function(data) {
+	 *   var __t, __p = '', __e = _.escape;
+	 *   __p += 'hi ' + ((__t = ( data.name )) == null ? '' : __t) + '!';
+	 *   return __p;
+	 * }
+	 *
+	 * // using the `source` property to inline compiled templates for meaningful
+	 * // line numbers in error messages and a stack trace
+	 * fs.writeFileSync(path.join(cwd, 'jst.js'), '\
+	 *   var JST = {\
+	 *     "main": ' + _.template(mainText).source + '\
+	 *   };\
+	 * ');
+	 */
+	function template(text, data, options) {
+	  // based on John Resig's `tmpl` implementation
+	  // http://ejohn.org/blog/javascript-micro-templating/
+	  // and Laura Doktorova's doT.js
+	  // https://github.com/olado/doT
+	  var settings = templateSettings.imports._.templateSettings || templateSettings;
+	  text = String(text || '');
+
+	  // avoid missing dependencies when `iteratorTemplate` is not defined
+	  options = defaults({}, options, settings);
+
+	  var imports = defaults({}, options.imports, settings.imports),
+	      importsKeys = keys(imports),
+	      importsValues = values(imports);
+
+	  var isEvaluating,
+	      index = 0,
+	      interpolate = options.interpolate || reNoMatch,
+	      source = "__p += '";
+
+	  // compile the regexp to match each delimiter
+	  var reDelimiters = RegExp(
+	    (options.escape || reNoMatch).source + '|' +
+	    interpolate.source + '|' +
+	    (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|' +
+	    (options.evaluate || reNoMatch).source + '|$'
+	  , 'g');
+
+	  text.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
+	    interpolateValue || (interpolateValue = esTemplateValue);
+
+	    // escape characters that cannot be included in string literals
+	    source += text.slice(index, offset).replace(reUnescapedString, escapeStringChar);
+
+	    // replace delimiters with snippets
+	    if (escapeValue) {
+	      source += "' +\n__e(" + escapeValue + ") +\n'";
+	    }
+	    if (evaluateValue) {
+	      isEvaluating = true;
+	      source += "';\n" + evaluateValue + ";\n__p += '";
+	    }
+	    if (interpolateValue) {
+	      source += "' +\n((__t = (" + interpolateValue + ")) == null ? '' : __t) +\n'";
+	    }
+	    index = offset + match.length;
+
+	    // the JS engine embedded in Adobe products requires returning the `match`
+	    // string in order to produce the correct `offset` value
+	    return match;
+	  });
+
+	  source += "';\n";
+
+	  // if `variable` is not specified, wrap a with-statement around the generated
+	  // code to add the data object to the top of the scope chain
+	  var variable = options.variable,
+	      hasVariable = variable;
+
+	  if (!hasVariable) {
+	    variable = 'obj';
+	    source = 'with (' + variable + ') {\n' + source + '\n}\n';
+	  }
+	  // cleanup code by stripping empty strings
+	  source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
+	    .replace(reEmptyStringMiddle, '$1')
+	    .replace(reEmptyStringTrailing, '$1;');
+
+	  // frame code as the function body
+	  source = 'function(' + variable + ') {\n' +
+	    (hasVariable ? '' : variable + ' || (' + variable + ' = {});\n') +
+	    "var __t, __p = '', __e = _.escape" +
+	    (isEvaluating
+	      ? ', __j = Array.prototype.join;\n' +
+	        "function print() { __p += __j.call(arguments, '') }\n"
+	      : ';\n'
+	    ) +
+	    source +
+	    'return __p\n}';
+
+	  try {
+	    var result = Function(importsKeys, 'return ' + source ).apply(undefined, importsValues);
+	  } catch(e) {
+	    e.source = source;
+	    throw e;
+	  }
+	  if (data) {
+	    return result(data);
+	  }
+	  // provide the compiled function's source by its `toString` method, in
+	  // supported environments, or the `source` property as a convenience for
+	  // inlining compiled templates during the build process
+	  result.source = source;
+	  return result;
+	}
+
+	module.exports = template;
+
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var keys = __webpack_require__(35),
+	    objectTypes = __webpack_require__(39);
+
+	/**
+	 * Assigns own enumerable properties of source object(s) to the destination
+	 * object for all destination properties that resolve to `undefined`. Once a
+	 * property is set, additional defaults of the same property will be ignored.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @type Function
+	 * @category Objects
+	 * @param {Object} object The destination object.
+	 * @param {...Object} [source] The source objects.
+	 * @param- {Object} [guard] Allows working with `_.reduce` without using its
+	 *  `key` and `object` arguments as sources.
+	 * @returns {Object} Returns the destination object.
+	 * @example
+	 *
+	 * var object = { 'name': 'barney' };
+	 * _.defaults(object, { 'name': 'fred', 'employer': 'slate' });
+	 * // => { 'name': 'barney', 'employer': 'slate' }
+	 */
+	var defaults = function(object, source, guard) {
+	  var index, iterable = object, result = iterable;
+	  if (!iterable) return result;
+	  var args = arguments,
+	      argsIndex = 0,
+	      argsLength = typeof guard == 'number' ? 2 : args.length;
+	  while (++argsIndex < argsLength) {
+	    iterable = args[argsIndex];
+	    if (iterable && objectTypes[typeof iterable]) {
+	    var ownIndex = -1,
+	        ownProps = objectTypes[typeof iterable] && keys(iterable),
+	        length = ownProps ? ownProps.length : 0;
+
+	    while (++ownIndex < length) {
+	      index = ownProps[ownIndex];
+	      if (typeof result[index] == 'undefined') result[index] = iterable[index];
+	    }
+	    }
+	  }
+	  return result
+	};
+
+	module.exports = defaults;
+
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var isNative = __webpack_require__(36),
+	    isObject = __webpack_require__(12),
+	    shimKeys = __webpack_require__(37);
+
+	/* Native method shortcuts for methods with the same name as other `lodash` methods */
+	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
+
+	/**
+	 * Creates an array composed of the own enumerable property names of an object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {Object} object The object to inspect.
+	 * @returns {Array} Returns an array of property names.
+	 * @example
+	 *
+	 * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
+	 * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
+	 */
+	var keys = !nativeKeys ? shimKeys : function(object) {
+	  if (!isObject(object)) {
+	    return [];
+	  }
+	  return nativeKeys(object);
+	};
+
+	module.exports = keys;
+
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the internal [[Class]] of values */
+	var toString = objectProto.toString;
+
+	/** Used to detect if a method is native */
+	var reNative = RegExp('^' +
+	  String(toString)
+	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	);
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	 */
+	function isNative(value) {
+	  return typeof value == 'function' && reNative.test(value);
+	}
+
+	module.exports = isNative;
+
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var objectTypes = __webpack_require__(38);
+
+	/** Used for native method references */
+	var objectProto = Object.prototype;
+
+	/** Native method shortcuts */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * A fallback implementation of `Object.keys` which produces an array of the
+	 * given object's own enumerable property names.
+	 *
+	 * @private
+	 * @type Function
+	 * @param {Object} object The object to inspect.
+	 * @returns {Array} Returns an array of property names.
+	 */
+	var shimKeys = function(object) {
+	  var index, iterable = object, result = [];
+	  if (!iterable) return result;
+	  if (!(objectTypes[typeof object])) return result;
+	    for (index in iterable) {
+	      if (hasOwnProperty.call(iterable, index)) {
+	        result.push(index);
+	      }
+	    }
+	  return result
+	};
+
+	module.exports = shimKeys;
+
+
+/***/ },
+/* 38 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to determine if values are of the language type Object */
+	var objectTypes = {
+	  'boolean': false,
+	  'function': true,
+	  'object': true,
+	  'number': false,
+	  'string': false,
+	  'undefined': false
+	};
+
+	module.exports = objectTypes;
+
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to determine if values are of the language type Object */
+	var objectTypes = {
+	  'boolean': false,
+	  'function': true,
+	  'object': true,
+	  'number': false,
+	  'string': false,
+	  'undefined': false
+	};
+
+	module.exports = objectTypes;
+
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var escapeHtmlChar = __webpack_require__(41),
+	    keys = __webpack_require__(35),
+	    reUnescapedHtml = __webpack_require__(43);
+
+	/**
+	 * Converts the characters `&`, `<`, `>`, `"`, and `'` in `string` to their
+	 * corresponding HTML entities.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @param {string} string The string to escape.
+	 * @returns {string} Returns the escaped string.
+	 * @example
+	 *
+	 * _.escape('Fred, Wilma, & Pebbles');
+	 * // => 'Fred, Wilma, &amp; Pebbles'
+	 */
+	function escape(string) {
+	  return string == null ? '' : String(string).replace(reUnescapedHtml, escapeHtmlChar);
+	}
+
+	module.exports = escape;
+
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var htmlEscapes = __webpack_require__(42);
+
+	/**
+	 * Used by `escape` to convert characters to HTML entities.
+	 *
+	 * @private
+	 * @param {string} match The matched character to escape.
+	 * @returns {string} Returns the escaped character.
+	 */
+	function escapeHtmlChar(match) {
+	  return htmlEscapes[match];
+	}
+
+	module.exports = escapeHtmlChar;
+
+
+/***/ },
+/* 42 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * Used to convert characters to HTML entities:
+	 *
+	 * Though the `>` character is escaped for symmetry, characters like `>` and `/`
+	 * don't require escaping in HTML and have no special meaning unless they're part
+	 * of a tag or an unquoted attribute value.
+	 * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
+	 */
+	var htmlEscapes = {
+	  '&': '&amp;',
+	  '<': '&lt;',
+	  '>': '&gt;',
+	  '"': '&quot;',
+	  "'": '&#39;'
+	};
+
+	module.exports = htmlEscapes;
+
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var htmlEscapes = __webpack_require__(44),
+	    keys = __webpack_require__(35);
+
+	/** Used to match HTML entities and HTML characters */
+	var reUnescapedHtml = RegExp('[' + keys(htmlEscapes).join('') + ']', 'g');
+
+	module.exports = reUnescapedHtml;
+
+
+/***/ },
+/* 44 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/**
+	 * Used to convert characters to HTML entities:
+	 *
+	 * Though the `>` character is escaped for symmetry, characters like `>` and `/`
+	 * don't require escaping in HTML and have no special meaning unless they're part
+	 * of a tag or an unquoted attribute value.
+	 * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
+	 */
+	var htmlEscapes = {
+	  '&': '&amp;',
+	  '<': '&lt;',
+	  '>': '&gt;',
+	  '"': '&quot;',
+	  "'": '&#39;'
+	};
+
+	module.exports = htmlEscapes;
+
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to escape characters for inclusion in compiled string literals */
+	var stringEscapes = {
+	  '\\': '\\',
+	  "'": "'",
+	  '\n': 'n',
+	  '\r': 'r',
+	  '\t': 't',
+	  '\u2028': 'u2028',
+	  '\u2029': 'u2029'
+	};
+
+	/**
+	 * Used by `template` to escape characters for inclusion in compiled
+	 * string literals.
+	 *
+	 * @private
+	 * @param {string} match The matched character to escape.
+	 * @returns {string} Returns the escaped character.
+	 */
+	function escapeStringChar(match) {
+	  return '\\' + stringEscapes[match];
+	}
+
+	module.exports = escapeStringChar;
+
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to match "interpolate" template delimiters */
+	var reInterpolate = /<%=([\s\S]+?)%>/g;
+
+	module.exports = reInterpolate;
+
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var escape = __webpack_require__(40),
+	    reInterpolate = __webpack_require__(46);
+
+	/**
+	 * By default, the template delimiters used by Lo-Dash are similar to those in
+	 * embedded Ruby (ERB). Change the following template settings to use alternative
+	 * delimiters.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @type Object
+	 */
+	var templateSettings = {
+
+	  /**
+	   * Used to detect `data` property values to be HTML-escaped.
+	   *
+	   * @memberOf _.templateSettings
+	   * @type RegExp
+	   */
+	  'escape': /<%-([\s\S]+?)%>/g,
+
+	  /**
+	   * Used to detect code to be evaluated.
+	   *
+	   * @memberOf _.templateSettings
+	   * @type RegExp
+	   */
+	  'evaluate': /<%([\s\S]+?)%>/g,
+
+	  /**
+	   * Used to detect `data` property values to inject.
+	   *
+	   * @memberOf _.templateSettings
+	   * @type RegExp
+	   */
+	  'interpolate': reInterpolate,
+
+	  /**
+	   * Used to reference the data object in the template text.
+	   *
+	   * @memberOf _.templateSettings
+	   * @type string
+	   */
+	  'variable': '',
+
+	  /**
+	   * Used to import variables into the compiled template.
+	   *
+	   * @memberOf _.templateSettings
+	   * @type Object
+	   */
+	  'imports': {
+
+	    /**
+	     * A reference to the `lodash` function.
+	     *
+	     * @memberOf _.templateSettings.imports
+	     * @type Function
+	     */
+	    '_': { 'escape': escape }
+	  }
+	};
+
+	module.exports = templateSettings;
+
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	var keys = __webpack_require__(35);
+
+	/**
+	 * Creates an array composed of the own enumerable property values of `object`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Objects
+	 * @param {Object} object The object to inspect.
+	 * @returns {Array} Returns an array of property values.
+	 * @example
+	 *
+	 * _.values({ 'one': 1, 'two': 2, 'three': 3 });
+	 * // => [1, 2, 3] (property order is not guaranteed across environments)
+	 */
+	function values(object) {
+	  var index = -1,
+	      props = keys(object),
+	      length = props.length,
+	      result = Array(length);
+
+	  while (++index < length) {
+	    result[index] = object[props[index]];
+	  }
+	  return result;
+	}
+
+	module.exports = values;
+
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
+	/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+
+	/** Used to generate unique IDs */
+	var idCounter = 0;
+
+	/**
+	 * Generates a unique ID. If `prefix` is provided the ID will be appended to it.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Utilities
+	 * @param {string} [prefix] The value to prefix the ID with.
+	 * @returns {string} Returns the unique ID.
+	 * @example
+	 *
+	 * _.uniqueId('contact_');
+	 * // => 'contact_104'
+	 *
+	 * _.uniqueId();
+	 * // => '105'
+	 */
+	function uniqueId(prefix) {
+	  var id = ++idCounter;
+	  return String(prefix == null ? '' : prefix) + id;
+	}
+
+	module.exports = uniqueId;
+
+
+/***/ },
+/* 50 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// modified from https://github.com/es-shims/es6-shim
+	var keys = __webpack_require__(51);
+	var canBeObject = function (obj) {
+		return typeof obj !== 'undefined' && obj !== null;
+	};
+
+	var assignShim = function assign(target, source1) {
+		if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
+		var objTarget = Object(target);
+		var s, source, i, props;
+		for (s = 1; s < arguments.length; ++s) {
+			source = Object(arguments[s]);
+			props = keys(source);
+			for (i = 0; i < props.length; ++i) {
+				objTarget[props[i]] = source[props[i]];
+			}
+		}
+		return objTarget;
+	};
+
+	assignShim.shim = function shimObjectAssign() {
+		if (!Object.assign) {
+			Object.assign = assignShim;
+		}
+		return Object.assign || assignShim;
+	};
+
+	module.exports = assignShim;
+
+
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// modified from https://github.com/es-shims/es5-shim
+	var has = Object.prototype.hasOwnProperty;
+	var toStr = Object.prototype.toString;
+	var slice = Array.prototype.slice;
+	var isArgs = __webpack_require__(52);
+	var hasDontEnumBug = !({ 'toString': null }).propertyIsEnumerable('toString');
+	var hasProtoEnumBug = function () {}.propertyIsEnumerable('prototype');
+	var dontEnums = [
+		'toString',
+		'toLocaleString',
+		'valueOf',
+		'hasOwnProperty',
+		'isPrototypeOf',
+		'propertyIsEnumerable',
+		'constructor'
+	];
+
+	var keysShim = function keys(object) {
+		var isObject = object !== null && typeof object === 'object';
+		var isFunction = toStr.call(object) === '[object Function]';
+		var isArguments = isArgs(object);
+		var isString = isObject && toStr.call(object) === '[object String]';
+		var theKeys = [];
+
+		if (!isObject && !isFunction && !isArguments) {
+			throw new TypeError('Object.keys called on a non-object');
+		}
+
+		var skipProto = hasProtoEnumBug && isFunction;
+		if (isString && object.length > 0 && !has.call(object, 0)) {
+			for (var i = 0; i < object.length; ++i) {
+				theKeys.push(String(i));
+			}
+		}
+
+		if (isArguments && object.length > 0) {
+			for (var j = 0; j < object.length; ++j) {
+				theKeys.push(String(j));
+			}
+		} else {
+			for (var name in object) {
+				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+					theKeys.push(String(name));
+				}
+			}
+		}
+
+		if (hasDontEnumBug) {
+			var ctor = object.constructor;
+			var skipConstructor = ctor && ctor.prototype === object;
+
+			for (var k = 0; k < dontEnums.length; ++k) {
+				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
+					theKeys.push(dontEnums[k]);
+				}
+			}
+		}
+		return theKeys;
+	};
+
+	keysShim.shim = function shimObjectKeys() {
+		if (!Object.keys) {
+			Object.keys = keysShim;
+		} else {
+			var keysWorksWithArguments = (function () {
+				// Safari 5.0 bug
+				return (Object.keys(arguments) || '').length === 2;
+			}(1, 2));
+			if (!keysWorksWithArguments) {
+				var originalKeys = Object.keys;
+				Object.keys = function keys(object) {
+					if (isArgs(object)) {
+						return originalKeys(slice.call(object));
+					} else {
+						return originalKeys(object);
+					}
+				};
+			}
+		}
+		return Object.keys || keysShim;
+	};
+
+	module.exports = keysShim;
+
+
+/***/ },
+/* 52 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var toStr = Object.prototype.toString;
+
+	module.exports = function isArguments(value) {
+		var str = toStr.call(value);
+		var isArgs = str === '[object Arguments]';
+		if (!isArgs) {
+			isArgs = str !== '[object Array]' &&
+				value !== null &&
+				typeof value === 'object' &&
+				typeof value.length === 'number' &&
+				value.length >= 0 &&
+				toStr.call(value.callee) === '[object Function]';
+		}
+		return isArgs;
+	};
+
+
+/***/ },
+/* 53 */
+/***/ function(module, exports) {
+
+	// Array.prototype.find - MIT License (c) 2013 Paul Miller <http://paulmillr.com>
+	// For all details and docs: https://github.com/paulmillr/array.prototype.find
+	// Fixes and tests supplied by Duncan Hall <http://duncanhall.net> 
+	(function(globals){
+	  if (Array.prototype.find) return;
+
+	  var find = function(predicate) {
+	    var list = Object(this);
+	    var length = list.length < 0 ? 0 : list.length >>> 0; // ES.ToUint32;
+	    if (length === 0) return undefined;
+	    if (typeof predicate !== 'function' || Object.prototype.toString.call(predicate) !== '[object Function]') {
+	      throw new TypeError('Array#find: predicate must be a function');
+	    }
+	    var thisArg = arguments[1];
+	    for (var i = 0, value; i < length; i++) {
+	      value = list[i];
+	      if (predicate.call(thisArg, value, i, list)) return value;
+	    }
+	    return undefined;
+	  };
+
+	  if (Object.defineProperty) {
+	    try {
+	      Object.defineProperty(Array.prototype, 'find', {
+	        value: find, configurable: true, enumerable: false, writable: true
+	      });
+	    } catch(e) {}
+	  }
+
+	  if (!Array.prototype.find) {
+	    Array.prototype.find = find;
+	  }
+	})(this);
+
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
 
 	"use strict";
 
@@ -9767,7 +12218,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 4 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -9779,7 +12230,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Tweaked so we use the parent class of dropzone
 	 */
 
-	var $ = __webpack_require__(33);
+	var $ = __webpack_require__(56);
 
 	function dragEnter(e) {
 	  e.preventDefault();
@@ -9827,14 +12278,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 5 */
+/* 56 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_56__;
+
+/***/ },
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var $ = __webpack_require__(33);
+	var $ = __webpack_require__(56);
 	var _ = __webpack_require__(2);
-	var config = __webpack_require__(6);
+	var config = __webpack_require__(58);
 
 	var urlRegex = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
 
@@ -9922,8 +12379,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/* 58 */
+/***/ function(module, exports) {
 
 	"use strict";
 
@@ -10022,14 +12479,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
 
 	var Locales = {
 	  en: {
@@ -10128,25 +12585,238 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 8 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	module.exports = __webpack_require__(60);
+	module.exports = __webpack_require__(61);
 
 
 /***/ },
-/* 9 */
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
+	  if (true) {
+	    // AMD. Register as a module.
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	      return (root.Eventable = factory());
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof exports !== 'undefined') {
+	    // Node. Does not work with strict CommonJS, but only CommonJS-like
+	    // enviroments that support module.exports, like Node.
+	    module.exports = factory();
+	  } else {
+	    // Browser globals
+	    root.Eventable = factory();
+	  }
+	}(this, function() {
+
+	  // Copy and pasted straight out of Backbone 1.0.0
+	  // We'll try and keep this updated to the latest
+
+	  var array = [];
+	  var slice = array.slice;
+
+	  function once(func) {
+	    var memo, times = 2;
+
+	    return function() {
+	      if (--times > 0) {
+	        memo = func.apply(this, arguments);
+	      } else {
+	        func = null;
+	      }
+	      return memo;
+	    };
+	  }
+
+	  // Backbone.Events
+	  // ---------------
+
+	  // A module that can be mixed in to *any object* in order to provide it with
+	  // custom events. You may bind with `on` or remove with `off` callback
+	  // functions to an event; `trigger`-ing an event fires all callbacks in
+	  // succession.
+	  //
+	  //     var object = {};
+	  //     extend(object, Backbone.Events);
+	  //     object.on('expand', function(){ alert('expanded'); });
+	  //     object.trigger('expand');
+	  //
+	  var Eventable = {
+
+	    // Bind an event to a `callback` function. Passing `"all"` will bind
+	    // the callback to all events fired.
+	    on: function(name, callback, context) {
+	      if (!eventsApi(this, 'on', name, [callback, context]) || !callback) return this;
+	      this._events || (this._events = {});
+	      var events = this._events[name] || (this._events[name] = []);
+	      events.push({callback: callback, context: context, ctx: context || this});
+	      return this;
+	    },
+
+	    // Bind an event to only be triggered a single time. After the first time
+	    // the callback is invoked, it will be removed.
+	    once: function(name, callback, context) {
+	      if (!eventsApi(this, 'once', name, [callback, context]) || !callback) return this;
+	      var self = this;
+	      var func = once(function() {
+	        self.off(name, func);
+	        callback.apply(this, arguments);
+	      });
+	      func._callback = callback;
+	      return this.on(name, func, context);
+	    },
+
+	    // Remove one or many callbacks. If `context` is null, removes all
+	    // callbacks with that function. If `callback` is null, removes all
+	    // callbacks for the event. If `name` is null, removes all bound
+	    // callbacks for all events.
+	    off: function(name, callback, context) {
+	      var retain, ev, events, names, i, l, j, k;
+	      if (!this._events || !eventsApi(this, 'off', name, [callback, context])) return this;
+	      if (!name && !callback && !context) {
+	        this._events = {};
+	        return this;
+	      }
+
+	      names = name ? [name] : Object.keys(this._events);
+	      for (i = 0, l = names.length; i < l; i++) {
+	        name = names[i];
+	        if (events = this._events[name]) {
+	          this._events[name] = retain = [];
+	          if (callback || context) {
+	            for (j = 0, k = events.length; j < k; j++) {
+	              ev = events[j];
+	              if ((callback && callback !== ev.callback && callback !== ev.callback._callback) ||
+	                  (context && context !== ev.context)) {
+	                retain.push(ev);
+	              }
+	            }
+	          }
+	          if (!retain.length) delete this._events[name];
+	        }
+	      }
+
+	      return this;
+	    },
+
+	    // Trigger one or many events, firing all bound callbacks. Callbacks are
+	    // passed the same arguments as `trigger` is, apart from the event name
+	    // (unless you're listening on `"all"`, which will cause your callback to
+	    // receive the true name of the event as the first argument).
+	    trigger: function(name) {
+	      if (!this._events) return this;
+	      var args = slice.call(arguments, 1);
+	      if (!eventsApi(this, 'trigger', name, args)) return this;
+	      var events = this._events[name];
+	      var allEvents = this._events.all;
+	      if (events) triggerEvents(events, args);
+	      if (allEvents) triggerEvents(allEvents, arguments);
+	      return this;
+	    },
+
+	    // Tell this object to stop listening to either specific events ... or
+	    // to every object it's currently listening to.
+	    stopListening: function(obj, name, callback) {
+	      var listeners = this._listeners;
+	      if (!listeners) return this;
+	      var deleteListener = !name && !callback;
+	      if (typeof name === 'object') callback = this;
+	      if (obj) (listeners = {})[obj._listenerId] = obj;
+	      for (var id in listeners) {
+	        listeners[id].off(name, callback, this);
+	        if (deleteListener) delete this._listeners[id];
+	      }
+	      return this;
+	    }
+
+	  };
+
+	  // Regular expression used to split event strings.
+	  var eventSplitter = /\s+/;
+
+	  // Implement fancy features of the Events API such as multiple event
+	  // names `"change blur"` and jQuery-style event maps `{change: action}`
+	  // in terms of the existing API.
+	  var eventsApi = function(obj, action, name, rest) {
+	    if (!name) return true;
+
+	    // Handle event maps.
+	    if (typeof name === 'object') {
+	      for (var key in name) {
+	        obj[action].apply(obj, [key, name[key]].concat(rest));
+	      }
+	      return false;
+	    }
+
+	    // Handle space separated event names.
+	    if (eventSplitter.test(name)) {
+	      var names = name.split(eventSplitter);
+	      for (var i = 0, l = names.length; i < l; i++) {
+	        obj[action].apply(obj, [names[i]].concat(rest));
+	      }
+	      return false;
+	    }
+
+	    return true;
+	  };
+
+	  // A difficult-to-believe, but optimized internal dispatch function for
+	  // triggering events. Tries to keep the usual cases speedy (most internal
+	  // Backbone events have 3 arguments).
+	  var triggerEvents = function(events, args) {
+	    var ev, i = -1, l = events.length, a1 = args[0], a2 = args[1], a3 = args[2];
+	    switch (args.length) {
+	      case 0: while (++i < l) (ev = events[i]).callback.call(ev.ctx); return;
+	      case 1: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1); return;
+	      case 2: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2); return;
+	      case 3: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2, a3); return;
+	      default: while (++i < l) (ev = events[i]).callback.apply(ev.ctx, args);
+	    }
+	  };
+
+	  var listenMethods = {listenTo: 'on', listenToOnce: 'once'};
+
+	  // Inversion-of-control versions of `on` and `once`. Tell *this* object to
+	  // listen to an event in another object ... keeping track of what it's
+	  // listening to.
+	  function addListenMethod(method, implementation) {
+	    Eventable[method] = function(obj, name, callback) {
+	      var listeners = this._listeners || (this._listeners = {});
+	      var id = obj._listenerId || (obj._listenerId = (new Date()).getTime());
+	      listeners[id] = obj;
+	      if (typeof name === 'object') callback = this;
+	      obj[implementation](name, callback, this);
+	      return this;
+	    };
+	  }
+
+	  addListenMethod('listenTo', 'on');
+	  addListenMethod('listenToOnce', 'once');
+
+	  // Aliases for backwards compatibility.
+	  Eventable.bind   = Eventable.on;
+	  Eventable.unbind = Eventable.off;
+
+	  return Eventable;
+
+	}));
+
+
+/***/ },
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	module.exports = Object.assign({}, __webpack_require__(8));
+	module.exports = Object.assign({}, __webpack_require__(60));
 
 
 /***/ },
-/* 10 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10158,7 +12828,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
+	var utils = __webpack_require__(57);
 
 
 	var EditorStore = function(data, mediator) {
@@ -10221,7 +12891,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 11 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10235,10 +12905,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * This will be triggered *by anything* so it needs to subscribe to events.
 	 */
 
-	var $ = __webpack_require__(33);
-	var utils = __webpack_require__(5);
+	var $ = __webpack_require__(56);
+	var utils = __webpack_require__(57);
 
-	var EventBus = __webpack_require__(9);
+	var EventBus = __webpack_require__(62);
 
 	var Submittable = function($form) {
 	  this.$form = $form;
@@ -10334,7 +13004,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 12 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10345,11 +13015,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	*/
 
 	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
+	var $ = __webpack_require__(56);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
 
-	var EventBus = __webpack_require__(9);
+	var EventBus = __webpack_require__(62);
 
 	module.exports = function(block, file, success, error) {
 
@@ -10405,7 +13075,284 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 13 */
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	module.exports = {
+	  Ajaxable: __webpack_require__(68),
+	  Controllable: __webpack_require__(69),
+	  Droppable: __webpack_require__(70),
+	  Fetchable: __webpack_require__(67),
+	  Pastable: __webpack_require__(71),
+	  Uploadable: __webpack_require__(72),
+	};
+
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+
+	module.exports = {
+
+	  mixinName: "Fetchable",
+
+	  initializeFetchable: function(){
+	    this.withMixin(__webpack_require__(68));
+	  },
+
+	  fetch: function(options, success, failure){
+	    var uid = _.uniqueId(this.blockID + "_fetch"),
+	        xhr = $.ajax(options);
+
+	    this.resetMessages();
+	    this.addQueuedItem(uid, xhr);
+
+	    if(!_.isUndefined(success)) {
+	      xhr.done(success.bind(this));
+	    }
+
+	    if(!_.isUndefined(failure)) {
+	      xhr.fail(failure.bind(this));
+	    }
+
+	    xhr.always(this.removeQueuedItem.bind(this, uid));
+
+	    return xhr;
+	  }
+
+	};
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var utils = __webpack_require__(57);
+
+	module.exports = {
+
+	  mixinName: "Ajaxable",
+
+	  ajaxable: true,
+
+	  initializeAjaxable: function(){
+	    this._queued = [];
+	  },
+
+	  addQueuedItem: function(name, deferred) {
+	    utils.log("Adding queued item for " + this.blockID + " called " + name);
+
+	    this._queued.push({ name: name, deferred: deferred });
+	  },
+
+	  removeQueuedItem: function(name) {
+	    utils.log("Removing queued item for " + this.blockID + " called " + name);
+
+	    this._queued = this._queued.filter(function(queued) {
+	      return queued.name !== name;
+	    });
+	  },
+
+	  hasItemsInQueue: function() {
+	    return this._queued.length > 0;
+	  },
+
+	  resolveAllInQueue: function() {
+	    this._queued.forEach(function(item){
+	      utils.log("Aborting queued request: " + item.name);
+	      item.deferred.abort();
+	    }, this);
+	  }
+
+	};
+
+
+/***/ },
+/* 69 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var $ = __webpack_require__(56);
+
+	var utils = __webpack_require__(57);
+
+	module.exports = {
+
+	  mixinName: "Controllable",
+
+	  initializeControllable: function() {
+	    utils.log("Adding controllable to block " + this.blockID);
+	    this.$control_ui = $('<div>', {'class': 'st-block__control-ui'});
+	    Object.keys(this.controls).forEach(
+	      function(cmd) {
+	        // Bind configured handler to current block context
+	        this.addUiControl(cmd, this.controls[cmd].bind(this));
+	      },
+	      this
+	    );
+	    this.$inner.append(this.$control_ui);
+	  },
+
+	  getControlTemplate: function(cmd) {
+	    return $("<a>",
+	      { 'data-icon': cmd,
+	        'class': 'st-icon st-block-control-ui-btn st-block-control-ui-btn--' + cmd
+	      });
+	  },
+
+	  addUiControl: function(cmd, handler) {
+	    this.$control_ui.append(this.getControlTemplate(cmd));
+	    this.$control_ui.on('click', '.st-block-control-ui-btn--' + cmd, handler);
+	  }
+	};
+
+
+/***/ },
+/* 70 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	/* Adds drop functionaltiy to this block */
+
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
+
+	var EventBus = __webpack_require__(62);
+
+	module.exports = {
+
+	  mixinName: "Droppable",
+	  valid_drop_file_types: ['File', 'Files', 'text/plain', 'text/uri-list'],
+	  requireInputs: true,
+
+	  initializeDroppable: function() {
+	    utils.log("Adding droppable to block " + this.blockID);
+
+	    this.drop_options = Object.assign({}, config.defaults.Block.drop_options, this.drop_options);
+
+	    var drop_html = $(_.template(this.drop_options.html,
+	                                 { block: this, _: _ }));
+
+	    this.$editor.hide();
+	    this.$inputs.append(drop_html);
+	    this.$dropzone = drop_html;
+
+	    // Bind our drop event
+	    this.$dropzone.dropArea()
+	                  .bind('drop', this._handleDrop.bind(this));
+
+	    this.$inner.addClass('st-block__inner--droppable');
+	  },
+
+	  _handleDrop: function(e) {
+	    e.preventDefault();
+
+	    e = e.originalEvent;
+
+	    var el = $(e.target),
+	        types = e.dataTransfer.types;
+
+	    el.removeClass('st-dropzone--dragover');
+
+	    /*
+	      Check the type we just received,
+	      delegate it away to our blockTypes to process
+	    */
+
+	    if (types &&
+	        types.some(function(type) {
+	                     return this.valid_drop_file_types.includes(type);
+	                   }, this)) {
+	      this.onDrop(e.dataTransfer);
+	    }
+
+	    EventBus.trigger('block:content:dropped', this.blockID);
+	  }
+
+	};
+
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
+
+	module.exports = {
+
+	  mixinName: "Pastable",
+	  requireInputs: true,
+
+	  initializePastable: function() {
+	    utils.log("Adding pastable to block " + this.blockID);
+
+	    this.paste_options = Object.assign(
+	      {}, config.defaults.Block.paste_options, this.paste_options);
+	    this.$inputs.append(_.template(this.paste_options.html, this));
+
+	    this.$('.st-paste-block')
+	      .bind('click', function(){ $(this).select(); })
+	      .bind('paste', this._handleContentPaste)
+	      .bind('submit', this._handleContentPaste);
+	  }
+
+	};
+
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _ = __webpack_require__(2);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
+
+	var fileUploader = __webpack_require__(65);
+
+	module.exports = {
+
+	  mixinName: "Uploadable",
+
+	  uploadsCount: 0,
+	  requireInputs: true,
+
+	  initializeUploadable: function() {
+	    utils.log("Adding uploadable to block " + this.blockID);
+	    this.withMixin(__webpack_require__(68));
+
+	    this.upload_options = Object.assign({}, config.defaults.Block.upload_options, this.upload_options);
+	    this.$inputs.append(_.template(this.upload_options.html, this));
+	  },
+
+	  uploader: function(file, success, failure){
+	    return fileUploader(this, file, success, failure);
+	  }
+
+	};
+
+
+/***/ },
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10427,7 +13374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.initialize();
 	};
 
-	Object.assign(BlockPositioner.prototype, __webpack_require__(34), __webpack_require__(35), {
+	Object.assign(BlockPositioner.prototype, __webpack_require__(74), __webpack_require__(75), {
 
 	  total_blocks: 0,
 
@@ -10489,15 +13436,89 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 14 */
+/* 74 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	/* Generic function binding utility, used by lots of our classes */
+
+	module.exports = {
+	  bound: [],
+	  _bindFunctions: function(){
+	    this.bound.forEach(function(f) {
+	      this[f] = this[f].bind(this);
+	    }, this);
+	  }
+	};
+
+
+
+/***/ },
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
+	var $ = __webpack_require__(56);
 
-	var EventBus = __webpack_require__(9);
+	module.exports = {
+	  tagName: 'div',
+	  className: 'sir-trevor__view',
+	  attributes: {},
+
+	  $: function(selector) {
+	    return this.$el.find(selector);
+	  },
+
+	  render: function() {
+	    return this;
+	  },
+
+	  destroy: function() {
+	    if (!_.isUndefined(this.stopListening)) { this.stopListening(); }
+	    this.$el.remove();
+	  },
+
+	  _ensureElement: function() {
+	    if (!this.el) {
+	      var attrs = Object.assign({}, _.result(this, 'attributes')),
+	      html;
+	      if (this.id) { attrs.id = this.id; }
+	      if (this.className) { attrs['class'] = this.className; }
+
+	      if (attrs.html) {
+	        html = attrs.html;
+	        delete attrs.html;
+	      }
+	      var $el = $('<' + this.tagName + '>').attr(attrs);
+	      if (html) { $el.html(html); }
+	      this._setElement($el);
+	    } else {
+	      this._setElement(this.el);
+	    }
+	  },
+
+	  _setElement: function(element) {
+	    this.$el = $(element);
+	    this.el = this.$el[0];
+	    return this;
+	  }
+	};
+
+
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+
+	var EventBus = __webpack_require__(62);
 
 	var BlockReorder = function(block_element, mediator) {
 	  this.$block = block_element;
@@ -10510,7 +13531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.initialize();
 	};
 
-	Object.assign(BlockReorder.prototype, __webpack_require__(34), __webpack_require__(35), {
+	Object.assign(BlockReorder.prototype, __webpack_require__(74), __webpack_require__(75), {
 
 	  bound: ['onMouseDown', 'onDragStart', 'onDragEnd', 'onDrop'],
 
@@ -10585,7 +13606,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 15 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10595,7 +13616,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this._bindFunctions();
 	};
 
-	Object.assign(BlockDeletion.prototype, __webpack_require__(34), __webpack_require__(35), {
+	Object.assign(BlockDeletion.prototype, __webpack_require__(74), __webpack_require__(75), {
 
 	  tagName: 'a',
 	  className: 'st-block-ui-btn st-block-ui-btn--delete st-icon',
@@ -10611,14 +13632,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 16 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var utils = __webpack_require__(5);
+	var $ = __webpack_require__(56);
+	var utils = __webpack_require__(57);
 
 	var bestNameFromField = function(field) {
 	  var msg = field.attr("data-st-name") || field.attr("name");
@@ -10694,15 +13715,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 17 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
+	var utils = __webpack_require__(57);
 
-	var EventBus = __webpack_require__(9);
+	var EventBus = __webpack_require__(62);
 
 	module.exports = {
 
@@ -10784,17 +13805,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 18 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
-	var config = __webpack_require__(6);
+	var utils = __webpack_require__(57);
+	var config = __webpack_require__(58);
 
-	var EventBus = __webpack_require__(9);
-	var Blocks = __webpack_require__(30);
+	var EventBus = __webpack_require__(62);
+	var Blocks = __webpack_require__(81);
 
 	var BLOCK_OPTION_KEYS = ['convertToMarkdown', 'convertFromMarkdown',
 	  'formatBar'];
@@ -10819,7 +13840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  this.initialize();
 	};
 
-	Object.assign(BlockManager.prototype, __webpack_require__(34), __webpack_require__(36), __webpack_require__(8), {
+	Object.assign(BlockManager.prototype, __webpack_require__(74), __webpack_require__(178), __webpack_require__(60), {
 
 	  eventNamespace: 'block',
 
@@ -10999,173 +14020,79 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 19 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
-	var $ = __webpack_require__(33);
-
-	var BlockReorder = __webpack_require__(14);
-
-	var SimpleBlock = function(data, instance_id, mediator, options) {
-	  this.createStore(data);
-	  this.blockID = _.uniqueId('st-block-');
-	  this.instanceID = instance_id;
-	  this.mediator = mediator;
-	  this.options = options || {};
-
-	  this._ensureElement();
-	  this._bindFunctions();
-
-	  this.initialize.apply(this, arguments);
+	module.exports = {
+	  Text: __webpack_require__(82),
+	  Quote: __webpack_require__(172),
+	  Image: __webpack_require__(173),
+	  Heading: __webpack_require__(174),
+	  List: __webpack_require__(175),
+	  Tweet: __webpack_require__(176),
+	  Video: __webpack_require__(177),
 	};
-
-	Object.assign(SimpleBlock.prototype, __webpack_require__(34), __webpack_require__(8), __webpack_require__(35), __webpack_require__(17), {
-
-	  focus : function() {},
-
-	  valid : function() { return true; },
-
-	  className: 'st-block',
-
-	  block_template: _.template(
-	    "<div class='st-block__inner'><%= editor_html %></div>"
-	  ),
-
-	  attributes: function() {
-	    return {
-	      'id': this.blockID,
-	      'data-type': this.type,
-	      'data-instance': this.instanceID
-	    };
-	  },
-
-	  title: function() {
-	    return utils.titleize(this.type.replace(/[\W_]/g, ' '));
-	  },
-
-	  blockCSSClass: function() {
-	    this.blockCSSClass = utils.toSlug(this.type);
-	    return this.blockCSSClass;
-	  },
-
-	  type: '',
-
-	  class: function() {
-	    return utils.classify(this.type);
-	  },
-
-	  editorHTML: '',
-
-	  initialize: function() {},
-
-	  onBlockRender: function(){},
-	  beforeBlockRender: function(){},
-
-	  _setBlockInner : function() {
-	    var editor_html = _.result(this, 'editorHTML');
-
-	    this.$el.append(
-	      this.block_template({ editor_html: editor_html })
-	    );
-
-	    this.$inner = this.$el.find('.st-block__inner');
-	    this.$inner.bind('click mouseover', function(e){ e.stopPropagation(); });
-	  },
-
-	  render: function() {
-	    this.beforeBlockRender();
-
-	    this._setBlockInner();
-	    this._blockPrepare();
-
-	    return this;
-	  },
-
-	  _blockPrepare : function() {
-	    this._initUI();
-	    this._initMessages();
-
-	    this.checkAndLoadData();
-
-	    this.$el.addClass('st-item-ready');
-	    this.on("onRender", this.onBlockRender);
-	    this.save();
-	  },
-
-	  _withUIComponent: function(component, className, callback) {
-	    this.$ui.append(component.render().$el);
-	    if (className && callback) {
-	      this.$ui.on('click', className, callback);
-	    }
-	  },
-
-	  _initUI : function() {
-	    var ui_element = $("<div>", { 'class': 'st-block__ui' });
-	    this.$inner.append(ui_element);
-	    this.$ui = ui_element;
-	    this._initUIComponents();
-	  },
-
-	  _initMessages: function() {
-	    var msgs_element = $("<div>", { 'class': 'st-block__messages' });
-	    this.$inner.prepend(msgs_element);
-	    this.$messages = msgs_element;
-	  },
-
-	  addMessage: function(msg, additionalClass) {
-	    var $msg = $("<span>", { html: msg, class: "st-msg " + additionalClass });
-	    this.$messages.append($msg)
-	    .addClass('st-block__messages--is-visible');
-	    return $msg;
-	  },
-
-	  resetMessages: function() {
-	    this.$messages.html('')
-	    .removeClass('st-block__messages--is-visible');
-	  },
-
-	  _initUIComponents: function() {
-	    this._withUIComponent(new BlockReorder(this.$el));
-	  }
-
-	});
-
-	SimpleBlock.fn = SimpleBlock.prototype;
-
-	// Allow our Block to be extended.
-	SimpleBlock.extend = __webpack_require__(37);
-
-	module.exports = SimpleBlock;
 
 
 /***/ },
-/* 20 */
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	/*
+	  Text Block
+	*/
+
+	var Block = __webpack_require__(83);
+	var stToHTML = __webpack_require__(171);
+
+	module.exports = Block.extend({
+
+	  type: "text",
+
+	  title: function() { return i18n.t('blocks:text:title'); },
+
+	  editorHTML: '<div class="st-required st-text-block" contenteditable="true"></div>',
+
+	  icon_name: 'text',
+
+	  loadData: function(data){
+	    if (this.options.convertFromMarkdown && !data.isHtml) {
+	      this.setTextBlockHTML(stToHTML(data.text, this.type));
+	    } else {
+	      this.setTextBlockHTML(data.text);
+	    }
+	  },
+	});
+
+
+/***/ },
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
+	var $ = __webpack_require__(56);
 
-	var Scribe = __webpack_require__(61);
-	var scribePluginFormatterPlainTextConvertNewLinesToHTML = __webpack_require__(62);
-	var scribePluginLinkPromptCommand = __webpack_require__(63);
+	var Scribe = __webpack_require__(86);
+	var scribePluginFormatterPlainTextConvertNewLinesToHTML = __webpack_require__(168);
+	var scribePluginLinkPromptCommand = __webpack_require__(169);
 
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-	var BlockMixins = __webpack_require__(29);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
+	var BlockMixins = __webpack_require__(66);
 
-	var SimpleBlock = __webpack_require__(19);
-	var BlockReorder = __webpack_require__(14);
-	var BlockDeletion = __webpack_require__(15);
-	var BlockPositioner = __webpack_require__(13);
-	var EventBus = __webpack_require__(9);
+	var SimpleBlock = __webpack_require__(84);
+	var BlockReorder = __webpack_require__(76);
+	var BlockDeletion = __webpack_require__(77);
+	var BlockPositioner = __webpack_require__(73);
+	var EventBus = __webpack_require__(62);
 
-	var Spinner = __webpack_require__(64);
+	var Spinner = __webpack_require__(170);
 
 	var Block = function(data, instance_id, mediator, options) {
 	  SimpleBlock.apply(this, arguments);
@@ -11184,7 +14111,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  "</div>"
 	].join("\n");
 
-	Object.assign(Block.prototype, SimpleBlock.fn, __webpack_require__(16), {
+	Object.assign(Block.prototype, SimpleBlock.fn, __webpack_require__(78), {
 
 	  bound: [
 	    "_handleContentPaste", "_onFocus", "_onBlur", "onDrop", "onDeleteClick",
@@ -11557,1121 +14484,158 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	});
 
-	Block.extend = __webpack_require__(37); // Allow our Block to be extended.
+	Block.extend = __webpack_require__(85); // Allow our Block to be extended.
 
 	module.exports = Block;
 
 
 /***/ },
-/* 21 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var _ = __webpack_require__(2);
-	var Blocks = __webpack_require__(30);
+	var utils = __webpack_require__(57);
+	var $ = __webpack_require__(56);
 
-	var BlockControl = function(type) {
-	  this.type = type;
-	  this.block_type = Blocks[this.type].prototype;
-	  this.can_be_rendered = this.block_type.toolbarEnabled;
+	var BlockReorder = __webpack_require__(76);
 
-	  this._ensureElement();
-	};
-
-	Object.assign(BlockControl.prototype, __webpack_require__(34), __webpack_require__(35), __webpack_require__(8), {
-
-	  tagName: 'a',
-	  className: "st-block-control",
-
-	  attributes: function() {
-	    return {
-	      'data-type': this.block_type.type
-	    };
-	  },
-
-	  render: function() {
-	    this.$el.html('<span class="st-icon">'+ _.result(this.block_type, 'icon_name') +'</span>' + _.result(this.block_type, 'title'));
-	    return this;
-	  }
-	});
-
-	module.exports = BlockControl;
-
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	 * SirTrevor Block Controls
-	 * --
-	 * Gives an interface for adding new Sir Trevor blocks.
-	 */
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	var Blocks = __webpack_require__(30);
-	var BlockControl = __webpack_require__(21);
-	var EventBus = __webpack_require__(9);
-
-	var BlockControls = function(available_types, mediator) {
-	  this.available_types = available_types || [];
+	var SimpleBlock = function(data, instance_id, mediator, options) {
+	  this.createStore(data);
+	  this.blockID = _.uniqueId('st-block-');
+	  this.instanceID = instance_id;
 	  this.mediator = mediator;
+	  this.options = options || {};
 
 	  this._ensureElement();
 	  this._bindFunctions();
-	  this._bindMediatedEvents();
-
-	  this.initialize();
-	};
-
-	Object.assign(BlockControls.prototype, __webpack_require__(34), __webpack_require__(36), __webpack_require__(35), __webpack_require__(8), {
-
-	  bound: ['handleControlButtonClick'],
-	  block_controls: null,
-
-	  className: "st-block-controls",
-	  eventNamespace: 'block-controls',
-
-	  mediatedEvents: {
-	    'render': 'renderInContainer',
-	    'show': 'show',
-	    'hide': 'hide'
-	  },
-
-	  initialize: function() {
-	    for(var block_type in this.available_types) {
-	      if (Blocks.hasOwnProperty(block_type)) {
-	        var block_control = new BlockControl(block_type);
-	        if (block_control.can_be_rendered) {
-	          this.$el.append(block_control.render().$el);
-	        }
-	      }
-	    }
-
-	    this.$el.delegate('.st-block-control', 'click', this.handleControlButtonClick);
-	    this.mediator.on('block-controls:show', this.renderInContainer);
-	  },
-
-	  show: function() {
-	    this.$el.addClass('st-block-controls--active');
-
-	    EventBus.trigger('block:controls:shown');
-	  },
-
-	  hide: function() {
-	    this.removeCurrentContainer();
-	    this.$el.removeClass('st-block-controls--active');
-
-	    EventBus.trigger('block:controls:hidden');
-	  },
-
-	  handleControlButtonClick: function(e) {
-	    e.stopPropagation();
-
-	    this.mediator.trigger('block:create', $(e.currentTarget).attr('data-type'));
-	  },
-
-	  renderInContainer: function(container) {
-	    this.removeCurrentContainer();
-
-	    container.append(this.$el.detach());
-	    container.addClass('with-st-controls');
-
-	    this.currentContainer = container;
-	    this.show();
-	  },
-
-	  removeCurrentContainer: function() {
-	    if (!_.isUndefined(this.currentContainer)) {
-	      this.currentContainer.removeClass("with-st-controls");
-	      this.currentContainer = undefined;
-	    }
-	  }
-	});
-
-	module.exports = BlockControls;
-
-
-/***/ },
-/* 23 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	   SirTrevor Floating Block Controls
-	   --
-	   Draws the 'plus' between blocks
-	   */
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	var EventBus = __webpack_require__(9);
-
-	var FloatingBlockControls = function(wrapper, instance_id, mediator) {
-	  this.$wrapper = wrapper;
-	  this.instance_id = instance_id;
-	  this.mediator = mediator;
-
-	  this._ensureElement();
-	  this._bindFunctions();
-
-	  this.initialize();
-	};
-
-	Object.assign(FloatingBlockControls.prototype, __webpack_require__(34), __webpack_require__(35), __webpack_require__(8), {
-
-	  className: "st-block-controls__top",
-
-	  attributes: function() {
-	    return {
-	      'data-icon': 'add'
-	    };
-	  },
-
-	  bound: ['handleBlockMouseOut', 'handleBlockMouseOver', 'handleBlockClick', 'onDrop'],
-
-	  initialize: function() {
-	    this.$el.on('click', this.handleBlockClick)
-	    .dropArea()
-	    .bind('drop', this.onDrop);
-
-	    this.$wrapper.on('mouseover', '.st-block', this.handleBlockMouseOver)
-	    .on('mouseout', '.st-block', this.handleBlockMouseOut)
-	    .on('click', '.st-block--with-plus', this.handleBlockClick);
-	  },
-
-	  onDrop: function(ev) {
-	    ev.preventDefault();
-
-	    var dropped_on = this.$el,
-	    item_id = ev.originalEvent.dataTransfer.getData("text/plain"),
-	    block = $('#' + item_id);
-
-	    if (!_.isUndefined(item_id) &&
-	        !_.isEmpty(block) &&
-	          dropped_on.attr('id') !== item_id &&
-	            this.instance_id === block.attr('data-instance')
-	       ) {
-	         dropped_on.after(block);
-	       }
-
-	       EventBus.trigger("block:reorder:dropped", item_id);
-	  },
-
-	  handleBlockMouseOver: function(e) {
-	    var block = $(e.currentTarget);
-
-	    if (!block.hasClass('st-block--with-plus')) {
-	      block.addClass('st-block--with-plus');
-	    }
-	  },
-
-	  handleBlockMouseOut: function(e) {
-	    var block = $(e.currentTarget);
-
-	    if (block.hasClass('st-block--with-plus')) {
-	      block.removeClass('st-block--with-plus');
-	    }
-	  },
-
-	  handleBlockClick: function(e) {
-	    e.stopPropagation();
-	    this.mediator.trigger('block-controls:render', $(e.currentTarget));
-	  }
-
-	});
-
-	module.exports = FloatingBlockControls;
-
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/**
-	 * Format Bar
-	 * --
-	 * Displayed on focus on a text area.
-	 * Renders with all available options for the editor instance
-	 */
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	var FormatBar = function(options, mediator, editor) {
-	  this.editor = editor;
-	  this.options = Object.assign({}, config.defaults.formatBar, options || {});
-	  this.commands = this.options.commands;
-	  this.mediator = mediator;
-
-	  this._ensureElement();
-	  this._bindFunctions();
-	  this._bindMediatedEvents();
 
 	  this.initialize.apply(this, arguments);
 	};
 
-	Object.assign(FormatBar.prototype, __webpack_require__(34), __webpack_require__(36), __webpack_require__(8), __webpack_require__(35), {
+	Object.assign(SimpleBlock.prototype, __webpack_require__(74), __webpack_require__(60), __webpack_require__(75), __webpack_require__(79), {
 
-	  className: 'st-format-bar',
+	  focus : function() {},
 
-	  bound: ["onFormatButtonClick", "renderBySelection", "hide"],
+	  valid : function() { return true; },
 
-	  eventNamespace: 'formatter',
+	  className: 'st-block',
 
-	  mediatedEvents: {
-	    'position': 'renderBySelection',
-	    'show': 'show',
-	    'hide': 'hide'
+	  block_template: _.template(
+	    "<div class='st-block__inner'><%= editor_html %></div>"
+	  ),
+
+	  attributes: function() {
+	    return {
+	      'id': this.blockID,
+	      'data-type': this.type,
+	      'data-instance': this.instanceID
+	    };
 	  },
 
-	  initialize: function() {
-	    this.$btns = [];
-
-	    this.commands.forEach(function(format) {
-	      var btn = $("<button>", {
-	        'class': 'st-format-btn st-format-btn--' + format.name + ' ' +
-	          (format.iconName ? 'st-icon' : ''),
-	        'text': format.text,
-	        'data-cmd': format.cmd
-	      });
-
-	      this.$btns.push(btn);
-	      btn.appendTo(this.$el);
-	    }, this);
-
-	    this.$b = $(document);
+	  title: function() {
+	    return utils.titleize(this.type.replace(/[\W_]/g, ' '));
 	  },
 
-	  hide: function() {
-	    this.$el.removeClass('st-format-bar--is-ready');
-	    this.$el.remove();
+	  blockCSSClass: function() {
+	    this.blockCSSClass = utils.toSlug(this.type);
+	    return this.blockCSSClass;
 	  },
 
-	  show: function() {
-	    this.editor.$outer.append(this.$el);
-	    this.$el.addClass('st-format-bar--is-ready');
-	    this.$el.bind('click', '.st-format-btn', this.onFormatButtonClick);
+	  type: '',
+
+	  class: function() {
+	    return utils.classify(this.type);
 	  },
 
-	  remove: function(){ this.$el.remove(); },
+	  editorHTML: '',
 
-	  renderBySelection: function() {
-	    this.highlightSelectedButtons();
-	    this.show();
-	    this.calculatePosition();
-	  },
+	  initialize: function() {},
 
-	  calculatePosition: function() {
-	    var selection = window.getSelection(),
-	        range = selection.getRangeAt(0),
-	        boundary = range.getBoundingClientRect(),
-	        coords = {},
-	        outer = this.editor.$outer.get(0),
-	        outerBoundary = outer.getBoundingClientRect();
+	  onBlockRender: function(){},
+	  beforeBlockRender: function(){},
 
-	    coords.top = (boundary.top - outerBoundary.top) + 'px';
-	    coords.left = (((boundary.left + boundary.right) / 2) -
-	      (this.el.offsetWidth / 2) - outerBoundary.left) + 'px';
+	  _setBlockInner : function() {
+	    var editor_html = _.result(this, 'editorHTML');
 
-	    this.$el.css(coords);
-	  },
+	    this.$el.append(
+	      this.block_template({ editor_html: editor_html })
+	    );
 
-	  highlightSelectedButtons: function() {
-	    var block = utils.getBlockBySelection();
-	    this.$btns.forEach(function(btn) {
-	      var cmd = $(btn).data('cmd');
-	      btn.toggleClass("st-format-btn--is-active",
-	                      block.queryTextBlockCommandState(cmd));
-	    }, this);
-	  },
-
-	  onFormatButtonClick: function(ev){
-	    ev.stopPropagation();
-
-	    var block = utils.getBlockBySelection();
-	    if (_.isUndefined(block)) {
-	      throw "Associated block not found";
-	    }
-
-	    var btn = $(ev.target),
-	        cmd = btn.data('cmd');
-
-	    if (_.isUndefined(cmd)) {
-	      return false;
-	    }
-
-	    block.execTextBlockCommand(cmd);
-
-	    this.highlightSelectedButtons();
-
-	    return false;
-	  }
-
-	});
-
-	module.exports = FormatBar;
-
-
-/***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	 * Sir Trevor Editor
-	 * --
-	 * Represents one Sir Trevor editor instance (with multiple blocks)
-	 * Each block references this instance.
-	 * BlockTypes are global however.
-	 */
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	var Events = __webpack_require__(8);
-	var EventBus = __webpack_require__(9);
-	var FormEvents = __webpack_require__(28);
-	var BlockControls = __webpack_require__(22);
-	var BlockManager = __webpack_require__(18);
-	var FloatingBlockControls = __webpack_require__(23);
-	var FormatBar = __webpack_require__(24);
-	var EditorStore = __webpack_require__(10);
-	var ErrorHandler = __webpack_require__(38);
-
-	var Editor = function(options) {
-	  this.initialize(options);
-	};
-
-	Object.assign(Editor.prototype, __webpack_require__(34), __webpack_require__(8), {
-
-	  bound: ['onFormSubmit', 'hideAllTheThings', 'changeBlockPosition',
-	    'removeBlockDragOver', 'renderBlock', 'resetBlockControls',
-	    'blockLimitReached'],
-
-	  events: {
-	    'block:reorder:dragend': 'removeBlockDragOver',
-	    'block:reorder:dropped': 'removeBlockDragOver',
-	    'block:content:dropped': 'removeBlockDragOver'
-	  },
-
-	  initialize: function(options) {
-	    utils.log("Init SirTrevor.Editor");
-
-	    this.options = Object.assign({}, config.defaults, options || {});
-	    this.ID = _.uniqueId('st-editor-');
-
-	    if (!this._ensureAndSetElements()) { return false; }
-
-	    if(!_.isUndefined(this.options.onEditorRender) &&
-	       _.isFunction(this.options.onEditorRender)) {
-	      this.onEditorRender = this.options.onEditorRender;
-	    }
-
-	    // Mediated events for *this* Editor instance
-	    this.mediator = Object.assign({}, Events);
-
-	    this._bindFunctions();
-
-	    config.instances.push(this);
-
-	    this.build();
-
-	    FormEvents.bindFormSubmit(this.$form);
-	  },
-
-	  /*
-	   * Build the Editor instance.
-	   * Check to see if we've been passed JSON already, and if not try and
-	   * create a default block.
-	   * If we have JSON then we need to build all of our blocks from this.
-	   */
-	  build: function() {
-	    this.$el.hide();
-
-	    this.errorHandler = new ErrorHandler(this.$outer, this.mediator, this.options.errorsContainer);
-	    this.store = new EditorStore(this.$el.val(), this.mediator);
-	    this.block_manager = new BlockManager(this.options, this.ID, this.mediator);
-	    this.block_controls = new BlockControls(this.block_manager.blockTypes, this.mediator);
-	    this.fl_block_controls = new FloatingBlockControls(this.$wrapper, this.ID, this.mediator);
-	    this.formatBar = new FormatBar(this.options.formatBar, this.mediator, this);
-
-	    this.mediator.on('block:changePosition', this.changeBlockPosition);
-	    this.mediator.on('block-controls:reset', this.resetBlockControls);
-	    this.mediator.on('block:limitReached', this.blockLimitReached);
-	    this.mediator.on('block:render', this.renderBlock);
-
-	    this.dataStore = "Please use store.retrieve();";
-
-	    this._setEvents();
-
-	    this.$wrapper.prepend(this.fl_block_controls.render().$el);
-	    this.$outer.append(this.block_controls.render().$el);
-
-	    $(window).bind('click', this.hideAllTheThings);
-
-	    this.createBlocks();
-	    this.$wrapper.addClass('st-ready');
-
-	    if(!_.isUndefined(this.onEditorRender)) {
-	      this.onEditorRender();
-	    }
-	  },
-
-	  createBlocks: function() {
-	    var store = this.store.retrieve();
-
-	    if (store.data.length > 0) {
-	      store.data.forEach(function(block) {
-	        this.mediator.trigger('block:create', block.type, block.data);
-	      }, this);
-	    } else if (this.options.defaultType !== false) {
-	      this.mediator.trigger('block:create', this.options.defaultType, {});
-	    }
-	  },
-
-	  destroy: function() {
-	    // Destroy the rendered sub views
-	    this.formatBar.destroy();
-	    this.fl_block_controls.destroy();
-	    this.block_controls.destroy();
-
-	    // Destroy all blocks
-	    this.block_manager.blocks.forEach(function(block) {
-	      this.mediator.trigger('block:remove', block.blockID);
-	    }, this);
-
-	    // Stop listening to events
-	    this.mediator.stopListening();
-	    this.stopListening();
-
-	    // Remove instance
-	    config.instances = config.instances.filter(function(instance) {
-	      return instance.ID !== this.ID;
-	    }, this);
-
-	    // Clear the store
-	    this.store.reset();
-	    this.$outer.replaceWith(this.$el.detach());
-	  },
-
-	  reinitialize: function(options) {
-	    this.destroy();
-	    this.initialize(options || this.options);
-	  },
-
-	  resetBlockControls: function() {
-	    this.block_controls.renderInContainer(this.$wrapper);
-	    this.block_controls.hide();
-	  },
-
-	  blockLimitReached: function(toggle) {
-	    this.$wrapper.toggleClass('st--block-limit-reached', toggle);
-	  },
-
-	  _setEvents: function() {
-	    Object.keys(this.events).forEach(function(type) {
-	      EventBus.on(type, this[this.events[type]], this);
-	    }, this);
-	  },
-
-	  hideAllTheThings: function(e) {
-	    this.block_controls.hide();
-	    this.formatBar.hide();
-	  },
-
-	  store: function(method, options){
-	    utils.log("The store method has been removed, please call store[methodName]");
-	    return this.store[method].call(this, options || {});
-	  },
-
-	  renderBlock: function(block) {
-	    this._renderInPosition(block.render().$el);
-	    this.hideAllTheThings();
-
-	    block.trigger("onRender");
-	  },
-
-	  removeBlockDragOver: function() {
-	    this.$outer.find('.st-drag-over').removeClass('st-drag-over');
-	  },
-
-	  changeBlockPosition: function($block, selectedPosition) {
-	    selectedPosition = selectedPosition - 1;
-
-	    var blockPosition = this.getBlockPosition($block),
-	    $blockBy = this.$wrapper.find('.st-block').eq(selectedPosition);
-
-	    var where = (blockPosition > selectedPosition) ? "Before" : "After";
-
-	    if($blockBy && $blockBy.attr('id') !== $block.attr('id')) {
-	      this.hideAllTheThings();
-	      $block["insert" + where]($blockBy);
-	    }
-	  },
-
-	  _renderInPosition: function(block) {
-	    if (this.block_controls.currentContainer) {
-	      this.block_controls.currentContainer.after(block);
-	    } else {
-	      this.$wrapper.append(block);
-	    }
-	  },
-
-	  validateAndSaveBlock: function(block, shouldValidate) {
-	    if ((!config.skipValidation || shouldValidate) && !block.valid()) {
-	      this.mediator.trigger('errors:add', { text: _.result(block, 'validationFailMsg') });
-	      utils.log("Block " + block.blockID + " failed validation");
-	      return;
-	    }
-
-	    var blockData = block.getData();
-	    utils.log("Adding data for block " + block.blockID + " to block store:",
-	              blockData);
-	    this.store.addData(blockData);
-	  },
-
-	  /*
-	   * Handle a form submission of this Editor instance.
-	   * Validate all of our blocks, and serialise all data onto the JSON objects
-	   */
-	  onFormSubmit: function(shouldValidate) {
-	    // if undefined or null or anything other than false - treat as true
-	    shouldValidate = (shouldValidate === false) ? false : true;
-
-	    utils.log("Handling form submission for Editor " + this.ID);
-
-	    this.mediator.trigger('errors:reset');
-	    this.store.reset();
-
-	    this.validateBlocks(shouldValidate);
-	    this.block_manager.validateBlockTypesExist(shouldValidate);
-
-	    this.mediator.trigger('errors:render');
-	    this.$el.val(this.store.toString());
-
-	    return this.errorHandler.errors.length;
-	  },
-
-	  validateBlocks: function(shouldValidate) {
-	    var self = this;
-	    this.$wrapper.find('.st-block').each(function(idx, block) {
-	      var _block = self.block_manager.findBlockById($(block).attr('id'));
-	      if (!_.isUndefined(_block)) {
-	        self.validateAndSaveBlock(_block, shouldValidate);
-	      }
-	    });
-	  },
-
-	  findBlockById: function(block_id) {
-	    return this.block_manager.findBlockById(block_id);
-	  },
-
-	  getBlocksByType: function(block_type) {
-	    return this.block_manager.getBlocksByType(block_type);
-	  },
-
-	  getBlocksByIDs: function(block_ids) {
-	    return this.block_manager.getBlocksByIDs(block_ids);
-	  },
-
-	  getBlockPosition: function($block) {
-	    return this.$wrapper.find('.st-block').index($block);
-	  },
-
-	  _ensureAndSetElements: function() {
-	    if(_.isUndefined(this.options.el) || _.isEmpty(this.options.el)) {
-	      utils.log("You must provide an el");
-	      return false;
-	    }
-
-	    this.$el = this.options.el;
-	    this.el = this.options.el[0];
-	    this.$form = this.$el.parents('form');
-
-	    var $outer = $("<div>").attr({ 'id': this.ID, 'class': 'st-outer', 'dropzone': 'copy link move' });
-	    var $wrapper = $("<div>").attr({ 'class': 'st-blocks' });
-
-	    // Wrap our element in lots of containers *eww*
-	    this.$el.wrap($outer).wrap($wrapper);
-
-	    this.$outer = this.$form.find('#' + this.ID);
-	    this.$wrapper = this.$outer.find('.st-blocks');
-
-	    return true;
-	  }
-
-	});
-
-	module.exports = Editor;
-
-
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
-
-	module.exports = function(content, type) {
-
-	  // Deferring requiring these to sidestep a circular dependency:
-	  // Block -> this -> Blocks -> Block
-	  var Blocks = __webpack_require__(30);
-
-	  type = utils.classify(type);
-
-	  var markdown = content;
-
-	  //Normalise whitespace
-	  markdown = markdown.replace(/&nbsp;/g," ");
-
-	  // First of all, strip any additional formatting
-	  // MSWord, I'm looking at you, punk.
-	  markdown = markdown.replace(/( class=(")?Mso[a-zA-Z]+(")?)/g, '')
-	                     .replace(/<!--(.*?)-->/g, '')
-	                     .replace(/\/\*(.*?)\*\//g, '')
-	                     .replace(/<(\/)*(meta|link|span|\\?xml:|st1:|o:|font)(.*?)>/gi, '');
-
-	  var badTags = ['style', 'script', 'applet', 'embed', 'noframes', 'noscript'],
-	      tagStripper, i;
-
-	  for (i = 0; i< badTags.length; i++) {
-	    tagStripper = new RegExp('<'+badTags[i]+'.*?'+badTags[i]+'(.*?)>', 'gi');
-	    markdown = markdown.replace(tagStripper, '');
-	  }
-
-	  // Escape anything in here that *could* be considered as MD
-	  // Markdown chars we care about: * [] _ () -
-	  markdown = markdown.replace(/\*/g, "\\*")
-	                    .replace(/\[/g, "\\[")
-	                    .replace(/\]/g, "\\]")
-	                    .replace(/\_/g, "\\_")
-	                    .replace(/\(/g, "\\(")
-	                    .replace(/\)/g, "\\)")
-	                    .replace(/\-/g, "\\-");
-
-	  var inlineTags = ["em", "i", "strong", "b"];
-
-	  for (i = 0; i< inlineTags.length; i++) {
-	    tagStripper = new RegExp('<'+inlineTags[i]+'><br></'+inlineTags[i]+'>', 'gi');
-	    markdown = markdown.replace(tagStripper, '<br>');
-	  }
-
-	  function replaceBolds(match, p1, p2){
-	    if(_.isUndefined(p2)) { p2 = ''; }
-	    return "**" + p1.replace(/<(.)?br(.)?>/g, '') + "**" + p2;
-	  }
-
-	  function replaceItalics(match, p1, p2){
-	    if(_.isUndefined(p2)) { p2 = ''; }
-	    return "_" + p1.replace(/<(.)?br(.)?>/g, '') + "_" + p2;
-	  }
-
-	  markdown = markdown.replace(/<(\w+)(?:\s+\w+="[^"]+(?:"\$[^"]+"[^"]+)?")*>\s*<\/\1>/gim, '') //Empty elements
-	                      .replace(/\n/mg,"")
-	                      .replace(/<a.*?href=[""'](.*?)[""'].*?>(.*?)<\/a>/gim, function(match, p1, p2){
-	                        return "[" + p2.trim().replace(/<(.)?br(.)?>/g, '') + "]("+ p1 +")";
-	                      }) // Hyperlinks
-	                      .replace(/<strong>(?:\s*)(.*?)(\s)*?<\/strong>/gim, replaceBolds)
-	                      .replace(/<b>(?:\s*)(.*?)(\s*)?<\/b>/gim, replaceBolds)
-	                      .replace(/<em>(?:\s*)(.*?)(\s*)?<\/em>/gim, replaceItalics)
-	                      .replace(/<i>(?:\s*)(.*?)(\s*)?<\/i>/gim, replaceItalics);
-
-
-	  // Do our generic stripping out
-	  markdown = markdown.replace(/([^<>]+)(<div>)/g,"$1\n$2")                                 // Divitis style line breaks (handle the first line)
-	                 .replace(/<div><div>/g,'\n<div>')                                         // ^ (double opening divs with one close from Chrome)
-	                 .replace(/(?:<div>)([^<>]+)(?:<div>)/g,"$1\n")                            // ^ (handle nested divs that start with content)
-	                 .replace(/(?:<div>)(?:<br>)?([^<>]+)(?:<br>)?(?:<\/div>)/g,"$1\n")        // ^ (handle content inside divs)
-	                 .replace(/<\/p>/g,"\n\n")                                               // P tags as line breaks
-	                 .replace(/<(.)?br(.)?>/g,"\n")                                            // Convert normal line breaks
-	                 .replace(/&lt;/g,"<").replace(/&gt;/g,">");                                 // Encoding
-
-	  // Use custom block toMarkdown functions (if any exist)
-	  var block;
-	  if (Blocks.hasOwnProperty(type)) {
-	    block = Blocks[type];
-	    // Do we have a toMarkdown function?
-	    if (!_.isUndefined(block.prototype.toMarkdown) && _.isFunction(block.prototype.toMarkdown)) {
-	      markdown = block.prototype.toMarkdown(markdown);
-	    }
-	  }
-
-	  // Strip remaining HTML
-	  markdown = markdown.replace(/<\/?[^>]+(>|$)/g, "");
-
-	  return markdown;
-	};
-
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
-
-	module.exports = function(markdown, type) {
-
-	  // Deferring requiring these to sidestep a circular dependency:
-	  // Block -> this -> Blocks -> Block
-	  var Blocks = __webpack_require__(30);
-
-	  // MD -> HTML
-	  type = utils.classify(type);
-
-	  var html = markdown,
-	      shouldWrap = type === "Text";
-
-	  if(_.isUndefined(shouldWrap)) { shouldWrap = false; }
-
-	  if (shouldWrap) {
-	    html = "<p>" + html;
-	  }
-
-	  html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gm,function(match, p1, p2){
-	    return "<a href='"+p2+"'>"+p1.replace(/\n/g, '')+"</a>";
-	  });
-
-	  // This may seem crazy, but because JS doesn't have a look behind,
-	  // we reverse the string to regex out the italic items (and bold)
-	  // and look for something that doesn't start (or end in the reversed strings case)
-	  // with a slash.
-	  html = utils.reverse(
-	           utils.reverse(html)
-	           .replace(/_(?!\\)((_\\|[^_])*)_(?=$|[^\\])/gm, function(match, p1) {
-	              return ">i/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">i<";
-	           })
-	           .replace(/\*\*(?!\\)((\*\*\\|[^\*\*])*)\*\*(?=$|[^\\])/gm, function(match, p1){
-	              return ">b/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">b<";
-	           })
-	          );
-
-	  html =  html.replace(/^\> (.+)$/mg,"$1");
-
-	  // Use custom block toHTML functions (if any exist)
-	  var block;
-	  if (Blocks.hasOwnProperty(type)) {
-	    block = Blocks[type];
-	    // Do we have a toHTML function?
-	    if (!_.isUndefined(block.prototype.toHTML) && _.isFunction(block.prototype.toHTML)) {
-	      html = block.prototype.toHTML(html);
-	    }
-	  }
-
-	  if (shouldWrap) {
-	    html = html.replace(/\n\s*\n/gm, "</p><p>");
-	    html = html.replace(/\n/gm, "<br>");
-	  }
-
-	  html = html.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")
-	             .replace(/\n/g, "<br>")
-	             .replace(/\*\*/, "")
-	             .replace(/__/, "");  // Cleanup any markdown characters left
-
-	  // Replace escaped
-	  html = html.replace(/\\\*/g, "*")
-	             .replace(/\\\[/g, "[")
-	             .replace(/\\\]/g, "]")
-	             .replace(/\\\_/g, "_")
-	             .replace(/\\\(/g, "(")
-	             .replace(/\\\)/g, ")")
-	             .replace(/\\\-/g, "-");
-
-	  if (shouldWrap) {
-	    html += "</p>";
-	  }
-
-	  return html;
-	};
-
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	var EventBus = __webpack_require__(9);
-	var Submittable = __webpack_require__(11);
-
-	var formBound = false; // Flag to tell us once we've bound our submit event
-
-	var FormEvents = {
-	  bindFormSubmit: function(form) {
-	    if (!formBound) {
-	      // XXX: should we have a formBound and submittable per-editor?
-	      // telling JSHint to ignore as it'll complain we shouldn't be creating
-	      // a new object, but otherwise `this` won't be set in the Submittable
-	      // initialiser. Bit weird.
-	      new Submittable(form); // jshint ignore:line
-	      form.bind('submit', this.onFormSubmit);
-	      formBound = true;
-	    }
-	  },
-
-	  onBeforeSubmit: function(shouldValidate) {
-	    // Loop through all of our instances and do our form submits on them
-	    var errors = 0;
-	    config.instances.forEach(function(inst, i) {
-	      errors += inst.onFormSubmit(shouldValidate);
-	    });
-	    utils.log("Total errors: " + errors);
-
-	    return errors;
-	  },
-
-	  onFormSubmit: function(ev) {
-	    var errors = FormEvents.onBeforeSubmit();
-
-	    if(errors > 0) {
-	      EventBus.trigger("onError");
-	      ev.preventDefault();
-	    }
-	  },
-	};
-
-	module.exports = FormEvents;
-
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = {
-	  Ajaxable: __webpack_require__(39),
-	  Controllable: __webpack_require__(40),
-	  Droppable: __webpack_require__(41),
-	  Fetchable: __webpack_require__(42),
-	  Pastable: __webpack_require__(43),
-	  Uploadable: __webpack_require__(44),
-	};
-
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = {
-	  Text: __webpack_require__(45),
-	  Quote: __webpack_require__(46),
-	  Image: __webpack_require__(47),
-	  Heading: __webpack_require__(48),
-	  List: __webpack_require__(49),
-	  Tweet: __webpack_require__(50),
-	  Video: __webpack_require__(51),
-	};
-
-
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	// modified from https://github.com/es-shims/es6-shim
-	var keys = __webpack_require__(65);
-	var canBeObject = function (obj) {
-		return typeof obj !== 'undefined' && obj !== null;
-	};
-
-	var assignShim = function assign(target, source1) {
-		if (!canBeObject(target)) { throw new TypeError('target must be an object'); }
-		var objTarget = Object(target);
-		var s, source, i, props;
-		for (s = 1; s < arguments.length; ++s) {
-			source = Object(arguments[s]);
-			props = keys(source);
-			for (i = 0; i < props.length; ++i) {
-				objTarget[props[i]] = source[props[i]];
-			}
-		}
-		return objTarget;
-	};
-
-	assignShim.shim = function shimObjectAssign() {
-		if (!Object.assign) {
-			Object.assign = assignShim;
-		}
-		return Object.assign || assignShim;
-	};
-
-	module.exports = assignShim;
-
-
-
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Array.prototype.find - MIT License (c) 2013 Paul Miller <http://paulmillr.com>
-	// For all details and docs: https://github.com/paulmillr/array.prototype.find
-	// Fixes and tests supplied by Duncan Hall <http://duncanhall.net> 
-	(function(globals){
-	  if (Array.prototype.find) return;
-
-	  var find = function(predicate) {
-	    var list = Object(this);
-	    var length = list.length < 0 ? 0 : list.length >>> 0; // ES.ToUint32;
-	    if (length === 0) return undefined;
-	    if (typeof predicate !== 'function' || Object.prototype.toString.call(predicate) !== '[object Function]') {
-	      throw new TypeError('Array#find: predicate must be a function');
-	    }
-	    var thisArg = arguments[1];
-	    for (var i = 0, value; i < length; i++) {
-	      value = list[i];
-	      if (predicate.call(thisArg, value, i, list)) return value;
-	    }
-	    return undefined;
-	  };
-
-	  if (Object.defineProperty) {
-	    try {
-	      Object.defineProperty(Array.prototype, 'find', {
-	        value: find, configurable: true, enumerable: false, writable: true
-	      });
-	    } catch(e) {}
-	  }
-
-	  if (!Array.prototype.find) {
-	    Array.prototype.find = find;
-	  }
-	})(this);
-
-
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_33__;
-
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/* Generic function binding utility, used by lots of our classes */
-
-	module.exports = {
-	  bound: [],
-	  _bindFunctions: function(){
-	    this.bound.forEach(function(f) {
-	      this[f] = this[f].bind(this);
-	    }, this);
-	  }
-	};
-
-
-
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	module.exports = {
-	  tagName: 'div',
-	  className: 'sir-trevor__view',
-	  attributes: {},
-
-	  $: function(selector) {
-	    return this.$el.find(selector);
+	    this.$inner = this.$el.find('.st-block__inner');
+	    this.$inner.bind('click mouseover', function(e){ e.stopPropagation(); });
 	  },
 
 	  render: function() {
+	    this.beforeBlockRender();
+
+	    this._setBlockInner();
+	    this._blockPrepare();
+
 	    return this;
 	  },
 
-	  destroy: function() {
-	    if (!_.isUndefined(this.stopListening)) { this.stopListening(); }
-	    this.$el.remove();
+	  _blockPrepare : function() {
+	    this._initUI();
+	    this._initMessages();
+
+	    this.checkAndLoadData();
+
+	    this.$el.addClass('st-item-ready');
+	    this.on("onRender", this.onBlockRender);
+	    this.save();
 	  },
 
-	  _ensureElement: function() {
-	    if (!this.el) {
-	      var attrs = Object.assign({}, _.result(this, 'attributes')),
-	      html;
-	      if (this.id) { attrs.id = this.id; }
-	      if (this.className) { attrs['class'] = this.className; }
-
-	      if (attrs.html) {
-	        html = attrs.html;
-	        delete attrs.html;
-	      }
-	      var $el = $('<' + this.tagName + '>').attr(attrs);
-	      if (html) { $el.html(html); }
-	      this._setElement($el);
-	    } else {
-	      this._setElement(this.el);
+	  _withUIComponent: function(component, className, callback) {
+	    this.$ui.append(component.render().$el);
+	    if (className && callback) {
+	      this.$ui.on('click', className, callback);
 	    }
 	  },
 
-	  _setElement: function(element) {
-	    this.$el = $(element);
-	    this.el = this.$el[0];
-	    return this;
-	  }
-	};
+	  _initUI : function() {
+	    var ui_element = $("<div>", { 'class': 'st-block__ui' });
+	    this.$inner.append(ui_element);
+	    this.$ui = ui_element;
+	    this._initUIComponents();
+	  },
 
+	  _initMessages: function() {
+	    var msgs_element = $("<div>", { 'class': 'st-block__messages' });
+	    this.$inner.prepend(msgs_element);
+	    this.$messages = msgs_element;
+	  },
+
+	  addMessage: function(msg, additionalClass) {
+	    var $msg = $("<span>", { html: msg, class: "st-msg " + additionalClass });
+	    this.$messages.append($msg)
+	    .addClass('st-block__messages--is-visible');
+	    return $msg;
+	  },
+
+	  resetMessages: function() {
+	    this.$messages.html('')
+	    .removeClass('st-block__messages--is-visible');
+	  },
+
+	  _initUIComponents: function() {
+	    this._withUIComponent(new BlockReorder(this.$el));
+	  }
+
+	});
+
+	SimpleBlock.fn = SimpleBlock.prototype;
+
+	// Allow our Block to be extended.
+	SimpleBlock.extend = __webpack_require__(85);
+
+	module.exports = SimpleBlock;
 
 
 /***/ },
-/* 36 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	module.exports = {
-	  mediatedEvents: {},
-	  eventNamespace: null,
-	  _bindMediatedEvents: function() {
-	    Object.keys(this.mediatedEvents).forEach(function(eventName){
-	      var cb = this.mediatedEvents[eventName];
-	      eventName = this.eventNamespace ?
-	        this.eventNamespace + ':' + eventName :
-	        eventName;
-	      this.mediator.on(eventName, this[cb].bind(this));
-	    }, this);
-	  }
-	};
-
-
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/* 85 */
+/***/ function(module, exports) {
 
 	"use strict";
 
@@ -12720,1547 +14684,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	var ErrorHandler = function($wrapper, mediator, container) {
-	  this.$wrapper = $wrapper;
-	  this.mediator = mediator;
-	  this.$el = container;
-
-	  if (_.isUndefined(this.$el)) {
-	    this._ensureElement();
-	    this.$wrapper.prepend(this.$el);
-	  }
-
-	  this.$el.hide();
-	  this._bindFunctions();
-	  this._bindMediatedEvents();
-
-	  this.initialize();
-	};
-
-	Object.assign(ErrorHandler.prototype, __webpack_require__(34), __webpack_require__(36), __webpack_require__(35), {
-
-	  errors: [],
-	  className: "st-errors",
-	  eventNamespace: 'errors',
-
-	  mediatedEvents: {
-	    'reset': 'reset',
-	    'add': 'addMessage',
-	    'render': 'render'
-	  },
-
-	  initialize: function() {
-	    var $list = $("<ul>");
-	    this.$el.append("<p>" + i18n.t("errors:title") + "</p>")
-	    .append($list);
-	    this.$list = $list;
-	  },
-
-	  render: function() {
-	    if (this.errors.length === 0) { return false; }
-	    this.errors.forEach(this.createErrorItem, this);
-	    this.$el.show();
-	  },
-
-	  createErrorItem: function(error) {
-	    var $error = $("<li>", { class: "st-errors__msg", html: error.text });
-	    this.$list.append($error);
-	  },
-
-	  addMessage: function(error) {
-	    this.errors.push(error);
-	  },
-
-	  reset: function() {
-	    if (this.errors.length === 0) { return false; }
-	    this.errors = [];
-	    this.$list.html('');
-	    this.$el.hide();
-	  }
-
-	});
-
-	module.exports = ErrorHandler;
-
-
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var utils = __webpack_require__(5);
-
-	module.exports = {
-
-	  mixinName: "Ajaxable",
-
-	  ajaxable: true,
-
-	  initializeAjaxable: function(){
-	    this._queued = [];
-	  },
-
-	  addQueuedItem: function(name, deferred) {
-	    utils.log("Adding queued item for " + this.blockID + " called " + name);
-
-	    this._queued.push({ name: name, deferred: deferred });
-	  },
-
-	  removeQueuedItem: function(name) {
-	    utils.log("Removing queued item for " + this.blockID + " called " + name);
-
-	    this._queued = this._queued.filter(function(queued) {
-	      return queued.name !== name;
-	    });
-	  },
-
-	  hasItemsInQueue: function() {
-	    return this._queued.length > 0;
-	  },
-
-	  resolveAllInQueue: function() {
-	    this._queued.forEach(function(item){
-	      utils.log("Aborting queued request: " + item.name);
-	      item.deferred.abort();
-	    }, this);
-	  }
-
-	};
-
-
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var $ = __webpack_require__(33);
-
-	var utils = __webpack_require__(5);
-
-	module.exports = {
-
-	  mixinName: "Controllable",
-
-	  initializeControllable: function() {
-	    utils.log("Adding controllable to block " + this.blockID);
-	    this.$control_ui = $('<div>', {'class': 'st-block__control-ui'});
-	    Object.keys(this.controls).forEach(
-	      function(cmd) {
-	        // Bind configured handler to current block context
-	        this.addUiControl(cmd, this.controls[cmd].bind(this));
-	      },
-	      this
-	    );
-	    this.$inner.append(this.$control_ui);
-	  },
-
-	  getControlTemplate: function(cmd) {
-	    return $("<a>",
-	      { 'data-icon': cmd,
-	        'class': 'st-icon st-block-control-ui-btn st-block-control-ui-btn--' + cmd
-	      });
-	  },
-
-	  addUiControl: function(cmd, handler) {
-	    this.$control_ui.append(this.getControlTemplate(cmd));
-	    this.$control_ui.on('click', '.st-block-control-ui-btn--' + cmd, handler);
-	  }
-	};
-
-
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/* Adds drop functionaltiy to this block */
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	var EventBus = __webpack_require__(9);
-
-	module.exports = {
-
-	  mixinName: "Droppable",
-	  valid_drop_file_types: ['File', 'Files', 'text/plain', 'text/uri-list'],
-	  requireInputs: true,
-
-	  initializeDroppable: function() {
-	    utils.log("Adding droppable to block " + this.blockID);
-
-	    this.drop_options = Object.assign({}, config.defaults.Block.drop_options, this.drop_options);
-
-	    var drop_html = $(_.template(this.drop_options.html,
-	                                 { block: this, _: _ }));
-
-	    this.$editor.hide();
-	    this.$inputs.append(drop_html);
-	    this.$dropzone = drop_html;
-
-	    // Bind our drop event
-	    this.$dropzone.dropArea()
-	                  .bind('drop', this._handleDrop.bind(this));
-
-	    this.$inner.addClass('st-block__inner--droppable');
-	  },
-
-	  _handleDrop: function(e) {
-	    e.preventDefault();
-
-	    e = e.originalEvent;
-
-	    var el = $(e.target),
-	        types = e.dataTransfer.types;
-
-	    el.removeClass('st-dropzone--dragover');
-
-	    /*
-	      Check the type we just received,
-	      delegate it away to our blockTypes to process
-	    */
-
-	    if (types &&
-	        types.some(function(type) {
-	                     return this.valid_drop_file_types.includes(type);
-	                   }, this)) {
-	      this.onDrop(e.dataTransfer);
-	    }
-
-	    EventBus.trigger('block:content:dropped', this.blockID);
-	  }
-
-	};
-
-
-/***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-
-	module.exports = {
-
-	  mixinName: "Fetchable",
-
-	  initializeFetchable: function(){
-	    this.withMixin(__webpack_require__(39));
-	  },
-
-	  fetch: function(options, success, failure){
-	    var uid = _.uniqueId(this.blockID + "_fetch"),
-	        xhr = $.ajax(options);
-
-	    this.resetMessages();
-	    this.addQueuedItem(uid, xhr);
-
-	    if(!_.isUndefined(success)) {
-	      xhr.done(success.bind(this));
-	    }
-
-	    if(!_.isUndefined(failure)) {
-	      xhr.fail(failure.bind(this));
-	    }
-
-	    xhr.always(this.removeQueuedItem.bind(this, uid));
-
-	    return xhr;
-	  }
-
-	};
-
-
-/***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	module.exports = {
-
-	  mixinName: "Pastable",
-	  requireInputs: true,
-
-	  initializePastable: function() {
-	    utils.log("Adding pastable to block " + this.blockID);
-
-	    this.paste_options = Object.assign(
-	      {}, config.defaults.Block.paste_options, this.paste_options);
-	    this.$inputs.append(_.template(this.paste_options.html, this));
-
-	    this.$('.st-paste-block')
-	      .bind('click', function(){ $(this).select(); })
-	      .bind('paste', this._handleContentPaste)
-	      .bind('submit', this._handleContentPaste);
-	  }
-
-	};
-
-
-/***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var config = __webpack_require__(6);
-	var utils = __webpack_require__(5);
-
-	var fileUploader = __webpack_require__(12);
-
-	module.exports = {
-
-	  mixinName: "Uploadable",
-
-	  uploadsCount: 0,
-	  requireInputs: true,
-
-	  initializeUploadable: function() {
-	    utils.log("Adding uploadable to block " + this.blockID);
-	    this.withMixin(__webpack_require__(39));
-
-	    this.upload_options = Object.assign({}, config.defaults.Block.upload_options, this.upload_options);
-	    this.$inputs.append(_.template(this.upload_options.html, this));
-	  },
-
-	  uploader: function(file, success, failure){
-	    return fileUploader(this, file, success, failure);
-	  }
-
-	};
-
-
-/***/ },
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	  Text Block
-	*/
-
-	var Block = __webpack_require__(20);
-	var stToHTML = __webpack_require__(27);
-
-	module.exports = Block.extend({
-
-	  type: "text",
-
-	  title: function() { return i18n.t('blocks:text:title'); },
-
-	  editorHTML: '<div class="st-required st-text-block" contenteditable="true"></div>',
-
-	  icon_name: 'text',
-
-	  loadData: function(data){
-	    if (this.options.convertFromMarkdown && !data.isHtml) {
-	      this.setTextBlockHTML(stToHTML(data.text, this.type));
-	    } else {
-	      this.setTextBlockHTML(data.text);
-	    }
-	  },
-	});
-
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	  Block Quote
-	*/
-
-	var _ = __webpack_require__(2);
-
-	var Block = __webpack_require__(20);
-	var stToHTML = __webpack_require__(27);
-
-	var template = _.template([
-	  '<blockquote class="st-required st-text-block" contenteditable="true"></blockquote>',
-	  '<label class="st-input-label"> <%= i18n.t("blocks:quote:credit_field") %></label>',
-	  '<input maxlength="140" name="cite" placeholder="<%= i18n.t("blocks:quote:credit_field") %>"',
-	  ' class="st-input-string st-required js-cite-input" type="text" />'
-	].join("\n"));
-
-	module.exports = Block.extend({
-
-	  type: "quote",
-
-	  title: function() { return i18n.t('blocks:quote:title'); },
-
-	  icon_name: 'quote',
-
-	  editorHTML: function() {
-	    return template(this);
-	  },
-
-	  loadData: function(data){
-	    if (this.options.convertFromMarkdown && !data.isHtml) {
-	      this.setTextBlockHTML(stToHTML(data.text, this.type));
-	    } else {
-	      this.setTextBlockHTML(data.text);
-	    }
-
-	    this.$('.js-cite-input').val(data.cite);
-	  }
-	});
-
-
-/***/ },
-/* 47 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var $ = __webpack_require__(33);
-	var Block = __webpack_require__(20);
-
-	module.exports = Block.extend({
-
-	  type: "image",
-	  title: function() { return i18n.t('blocks:image:title'); },
-
-	  droppable: true,
-	  uploadable: true,
-
-	  icon_name: 'image',
-
-	  loadData: function(data){
-	    // Create our image tag
-	    this.$editor.html($('<img>', { src: data.file.url }));
-	  },
-
-	  onBlockRender: function(){
-	    /* Setup the upload button */
-	    this.$inputs.find('button').bind('click', function(ev){ ev.preventDefault(); });
-	    this.$inputs.find('input').on('change', (function(ev) {
-	      this.onDrop(ev.currentTarget);
-	    }).bind(this));
-	  },
-
-	  onDrop: function(transferData){
-	    var file = transferData.files[0],
-	        urlAPI = (typeof URL !== "undefined") ? URL : (typeof webkitURL !== "undefined") ? webkitURL : null;
-
-	    // Handle one upload at a time
-	    if (/image/.test(file.type)) {
-	      this.loading();
-	      // Show this image on here
-	      this.$inputs.hide();
-	      this.$editor.html($('<img>', { src: urlAPI.createObjectURL(file) })).show();
-
-	      this.uploader(
-	        file,
-	        function(data) {
-	          this.setData(data);
-	          this.ready();
-	        },
-	        function(error) {
-	          this.addMessage(i18n.t('blocks:image:upload_error'));
-	          this.ready();
-	        }
-	      );
-	    }
-	  }
-	});
-
-
-/***/ },
-/* 48 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	/*
-	  Heading Block
-	*/
-
-	var Block = __webpack_require__(20);
-	var stToHTML = __webpack_require__(27);
-
-	module.exports = Block.extend({
-
-	  type: 'Heading',
-
-	  title: function(){ return i18n.t('blocks:heading:title'); },
-
-	  editorHTML: '<div class="st-required st-text-block st-text-block--heading" contenteditable="true"></div>',
-
-	  scribeOptions: { allowBlockElements: false },
-
-	  icon_name: 'heading',
-
-	  loadData: function(data){
-	    if (this.options.convertFromMarkdown && !data.isHtml) {
-	      this.setTextBlockHTML(stToHTML(data.text, this.type));
-	    } else {
-	      this.setTextBlockHTML(data.text);
-	    }
-	  }
-	});
-
-
-/***/ },
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-
-	var Block = __webpack_require__(20);
-	var stToHTML = __webpack_require__(27);
-
-	var template = '<div class="st-text-block st-required" contenteditable="true"><ul><li></li></ul></div>';
-
-	module.exports = Block.extend({
-
-	  type: 'list',
-
-	  title: function() { return i18n.t('blocks:list:title'); },
-
-	  icon_name: 'list',
-
-	  editorHTML: function() {
-	    return _.template(template, this);
-	  },
-
-	  loadData: function(data){
-	    if (this.options.convertFromMarkdown && !data.isHtml) {
-	      this.setTextBlockHTML("<ul>" + stToHTML(data.text, this.type) + "</ul>");
-	    } else {
-	      this.setTextBlockHTML(data.text);
-	    }
-	  },
-
-	  onBlockRender: function() {
-	    this.checkForList = this.checkForList.bind(this);
-	    this.getTextBlock().on('click keyup', this.checkForList);
-	    this.focus();
-	  },
-
-	  checkForList: function() {
-	    if (this.$('ul').length === 0) {
-	      document.execCommand("insertUnorderedList", false, false);
-	    }
-	  },
-
-	  toHTML: function(html) {
-	    html = html.replace(/^ - (.+)$/mg,"<li>$1</li>")
-	               .replace(/\n/mg, "");
-
-	    return html;
-	  },
-
-	  onContentPasted: function(event, target) {
-	    this.$('ul').html(
-	      this.pastedMarkdownToHTML(target[0].innerHTML));
-	    this.getTextBlock().caretToEnd();
-	  },
-
-	  isEmpty: function() {
-	    return _.isEmpty(this.getBlockData().text);
-	  }
-
-	});
-
-
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var $ = __webpack_require__(33);
-	var utils = __webpack_require__(5);
-
-	var Block = __webpack_require__(20);
-
-	var tweet_template = _.template([
-	  "<blockquote class='twitter-tweet' align='center'>",
-	  "<p><%= text %></p>",
-	  "&mdash; <%= user.name %> (@<%= user.screen_name %>)",
-	  "<a href='<%= status_url %>' data-datetime='<%= created_at %>'><%= created_at %></a>",
-	  "</blockquote>",
-	  '<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
-	].join("\n"));
-
-	module.exports = Block.extend({
-
-	  type: "tweet",
-	  droppable: true,
-	  pastable: true,
-	  fetchable: true,
-
-	  drop_options: {
-	    re_render_on_reorder: true
-	  },
-
-	  title: function(){ return i18n.t('blocks:tweet:title'); },
-
-	  fetchUrl: function(tweetID) {
-	    return "/tweets/?tweet_id=" + tweetID;
-	  },
-
-	  icon_name: 'twitter',
-
-	  loadData: function(data) {
-	    if (_.isUndefined(data.status_url)) { data.status_url = ''; }
-	    this.$inner.find('iframe').remove();
-	    this.$inner.prepend(tweet_template(data));
-	  },
-
-	  onContentPasted: function(event){
-	    // Content pasted. Delegate to the drop parse method
-	    var input = $(event.target),
-	    val = input.val();
-
-	    // Pass this to the same handler as onDrop
-	    this.handleTwitterDropPaste(val);
-	  },
-
-	  handleTwitterDropPaste: function(url){
-	    if (!this.validTweetUrl(url)) {
-	      utils.log("Invalid Tweet URL");
-	      return;
-	    }
-
-	    // Twitter status
-	    var tweetID = url.match(/[^\/]+$/);
-	    if (!_.isEmpty(tweetID)) {
-	      this.loading();
-	      tweetID = tweetID[0];
-
-	      var ajaxOptions = {
-	        url: this.fetchUrl(tweetID),
-	        dataType: "json"
-	      };
-
-	      this.fetch(ajaxOptions, this.onTweetSuccess, this.onTweetFail);
-	    }
-	  },
-
-	  validTweetUrl: function(url) {
-	    return (utils.isURI(url) &&
-	            url.indexOf("twitter") !== -1 &&
-	            url.indexOf("status") !== -1);
-	  },
-
-	  onTweetSuccess: function(data) {
-	    // Parse the twitter object into something a bit slimmer..
-	    var obj = {
-	      user: {
-	        profile_image_url: data.user.profile_image_url,
-	        profile_image_url_https: data.user.profile_image_url_https,
-	        screen_name: data.user.screen_name,
-	        name: data.user.name
-	      },
-	      id: data.id_str,
-	      text: data.text,
-	      created_at: data.created_at,
-	      entities: data.entities,
-	      status_url: "https://twitter.com/" + data.user.screen_name + "/status/" + data.id_str
-	    };
-
-	    this.setAndLoadData(obj);
-	    this.ready();
-	  },
-
-	  onTweetFail: function() {
-	    this.addMessage(i18n.t("blocks:tweet:fetch_error"));
-	    this.ready();
-	  },
-
-	  onDrop: function(transferData){
-	    var url = transferData.getData('text/plain');
-	    this.handleTwitterDropPaste(url);
-	  }
-	});
-
-
-/***/ },
-/* 51 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _ = __webpack_require__(2);
-	var utils = __webpack_require__(5);
-	var Block = __webpack_require__(20);
-
-	module.exports = Block.extend({
-
-	  // more providers at https://gist.github.com/jeffling/a9629ae28e076785a14f
-	  providers: {
-	    vimeo: {
-	      regex: /(?:http[s]?:\/\/)?(?:www.)?vimeo.com\/(.+)/,
-	      html: "<iframe src=\"<%= protocol %>//player.vimeo.com/video/<%= remote_id %>?title=0&byline=0\" width=\"580\" height=\"320\" frameborder=\"0\"></iframe>"
-	    },
-	    youtube: {
-	      regex: /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
-	      html: "<iframe src=\"<%= protocol %>//www.youtube.com/embed/<%= remote_id %>\" width=\"580\" height=\"320\" frameborder=\"0\" allowfullscreen></iframe>"
-	    }
-	  },
-
-	  type: 'video',
-	  title: function() { return i18n.t('blocks:video:title'); },
-
-	  droppable: true,
-	  pastable: true,
-
-	  icon_name: 'video',
-
-	  loadData: function(data){
-	    if (!this.providers.hasOwnProperty(data.source)) { return; }
-
-	    var source = this.providers[data.source];
-
-	    var protocol = window.location.protocol === "file:" ? 
-	      "http:" : window.location.protocol;
-
-	    var aspectRatioClass = source.square ?
-	      'with-square-media' : 'with-sixteen-by-nine-media';
-
-	    this.$editor
-	      .addClass('st-block__editor--' + aspectRatioClass)
-	      .html(_.template(source.html, {
-	        protocol: protocol,
-	        remote_id: data.remote_id,
-	        width: this.$editor.width() // for videos like vine
-	      }));
-	  },
-
-	  onContentPasted: function(event){
-	    this.handleDropPaste(event.target.value);
-	  },
-
-	  matchVideoProvider: function(provider, index, url) {
-	    var match = provider.regex.exec(url);
-	    if(match == null || _.isUndefined(match[1])) { return {}; }
-
-	    return {
-	      source: index,
-	      remote_id: match[1]
-	    };
-	  },
-
-	  handleDropPaste: function(url){
-	    if (!utils.isURI(url)) { return; }
-
-	    for(var key in this.providers) { 
-	      if (!this.providers.hasOwnProperty(key)) { continue; }
-	      this.setAndLoadData(
-	        this.matchVideoProvider(this.providers[key], key, url)
-	      );
-	    }
-	  },
-
-	  onDrop: function(transferData){
-	    var url = transferData.getData('text/plain');
-	    this.handleDropPaste(url);
-	  }
-	});
-
-
-
-/***/ },
-/* 52 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var forOwn = __webpack_require__(82),
-	    isFunction = __webpack_require__(53);
-
-	/** `Object#toString` result shortcuts */
-	var argsClass = '[object Arguments]',
-	    arrayClass = '[object Array]',
-	    objectClass = '[object Object]',
-	    stringClass = '[object String]';
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is empty. Arrays, strings, or `arguments` objects with a
-	 * length of `0` and objects with no own enumerable properties are considered
-	 * "empty".
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {Array|Object|string} value The value to inspect.
-	 * @returns {boolean} Returns `true` if the `value` is empty, else `false`.
-	 * @example
-	 *
-	 * _.isEmpty([1, 2, 3]);
-	 * // => false
-	 *
-	 * _.isEmpty({});
-	 * // => true
-	 *
-	 * _.isEmpty('');
-	 * // => true
-	 */
-	function isEmpty(value) {
-	  var result = true;
-	  if (!value) {
-	    return result;
-	  }
-	  var className = toString.call(value),
-	      length = value.length;
-
-	  if ((className == arrayClass || className == stringClass || className == argsClass ) ||
-	      (className == objectClass && typeof length == 'number' && isFunction(value.splice))) {
-	    return !length;
-	  }
-	  forOwn(value, function() {
-	    return (result = false);
-	  });
-	  return result;
-	}
-
-	module.exports = isEmpty;
-
-
-/***/ },
-/* 53 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * Checks if `value` is a function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a function, else `false`.
-	 * @example
-	 *
-	 * _.isFunction(_);
-	 * // => true
-	 */
-	function isFunction(value) {
-	  return typeof value == 'function';
-	}
-
-	module.exports = isFunction;
-
-
-/***/ },
-/* 54 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var objectTypes = __webpack_require__(83);
-
-	/**
-	 * Checks if `value` is the language type of Object.
-	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is an object, else `false`.
-	 * @example
-	 *
-	 * _.isObject({});
-	 * // => true
-	 *
-	 * _.isObject([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObject(1);
-	 * // => false
-	 */
-	function isObject(value) {
-	  // check if the value is the ECMAScript language type of Object
-	  // http://es5.github.io/#x8
-	  // and avoid a V8 bug
-	  // http://code.google.com/p/v8/issues/detail?id=2291
-	  return !!(value && objectTypes[typeof value]);
-	}
-
-	module.exports = isObject;
-
-
-/***/ },
-/* 55 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** `Object#toString` result shortcuts */
-	var stringClass = '[object String]';
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
-
-	/**
-	 * Checks if `value` is a string.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a string, else `false`.
-	 * @example
-	 *
-	 * _.isString('fred');
-	 * // => true
-	 */
-	function isString(value) {
-	  return typeof value == 'string' ||
-	    value && typeof value == 'object' && toString.call(value) == stringClass || false;
-	}
-
-	module.exports = isString;
-
-
-/***/ },
-/* 56 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * Checks if `value` is `undefined`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is `undefined`, else `false`.
-	 * @example
-	 *
-	 * _.isUndefined(void 0);
-	 * // => true
-	 */
-	function isUndefined(value) {
-	  return typeof value == 'undefined';
-	}
-
-	module.exports = isUndefined;
-
-
-/***/ },
-/* 57 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isFunction = __webpack_require__(53);
-
-	/**
-	 * Resolves the value of property `key` on `object`. If `key` is a function
-	 * it will be invoked with the `this` binding of `object` and its result returned,
-	 * else the property value is returned. If `object` is falsey then `undefined`
-	 * is returned.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @param {Object} object The object to inspect.
-	 * @param {string} key The name of the property to resolve.
-	 * @returns {*} Returns the resolved value.
-	 * @example
-	 *
-	 * var object = {
-	 *   'cheese': 'crumpets',
-	 *   'stuff': function() {
-	 *     return 'nonsense';
-	 *   }
-	 * };
-	 *
-	 * _.result(object, 'cheese');
-	 * // => 'crumpets'
-	 *
-	 * _.result(object, 'stuff');
-	 * // => 'nonsense'
-	 */
-	function result(object, key) {
-	  if (object) {
-	    var value = object[key];
-	    return isFunction(value) ? object[key]() : value;
-	  }
-	}
-
-	module.exports = result;
-
-
-/***/ },
-/* 58 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var defaults = __webpack_require__(84),
-	    escape = __webpack_require__(85),
-	    escapeStringChar = __webpack_require__(86),
-	    keys = __webpack_require__(87),
-	    reInterpolate = __webpack_require__(88),
-	    templateSettings = __webpack_require__(89),
-	    values = __webpack_require__(90);
-
-	/** Used to match empty string literals in compiled template source */
-	var reEmptyStringLeading = /\b__p \+= '';/g,
-	    reEmptyStringMiddle = /\b(__p \+=) '' \+/g,
-	    reEmptyStringTrailing = /(__e\(.*?\)|\b__t\)) \+\n'';/g;
-
-	/**
-	 * Used to match ES6 template delimiters
-	 * http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-string-literals
-	 */
-	var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
-
-	/** Used to ensure capturing order of template delimiters */
-	var reNoMatch = /($^)/;
-
-	/** Used to match unescaped characters in compiled string literals */
-	var reUnescapedString = /['\n\r\t\u2028\u2029\\]/g;
-
-	/**
-	 * A micro-templating method that handles arbitrary delimiters, preserves
-	 * whitespace, and correctly escapes quotes within interpolated code.
-	 *
-	 * Note: In the development build, `_.template` utilizes sourceURLs for easier
-	 * debugging. See http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl
-	 *
-	 * For more information on precompiling templates see:
-	 * http://lodash.com/custom-builds
-	 *
-	 * For more information on Chrome extension sandboxes see:
-	 * http://developer.chrome.com/stable/extensions/sandboxingEval.html
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @param {string} text The template text.
-	 * @param {Object} data The data object used to populate the text.
-	 * @param {Object} [options] The options object.
-	 * @param {RegExp} [options.escape] The "escape" delimiter.
-	 * @param {RegExp} [options.evaluate] The "evaluate" delimiter.
-	 * @param {Object} [options.imports] An object to import into the template as local variables.
-	 * @param {RegExp} [options.interpolate] The "interpolate" delimiter.
-	 * @param {string} [sourceURL] The sourceURL of the template's compiled source.
-	 * @param {string} [variable] The data object variable name.
-	 * @returns {Function|string} Returns a compiled function when no `data` object
-	 *  is given, else it returns the interpolated text.
-	 * @example
-	 *
-	 * // using the "interpolate" delimiter to create a compiled template
-	 * var compiled = _.template('hello <%= name %>');
-	 * compiled({ 'name': 'fred' });
-	 * // => 'hello fred'
-	 *
-	 * // using the "escape" delimiter to escape HTML in data property values
-	 * _.template('<b><%- value %></b>', { 'value': '<script>' });
-	 * // => '<b>&lt;script&gt;</b>'
-	 *
-	 * // using the "evaluate" delimiter to generate HTML
-	 * var list = '<% _.forEach(people, function(name) { %><li><%- name %></li><% }); %>';
-	 * _.template(list, { 'people': ['fred', 'barney'] });
-	 * // => '<li>fred</li><li>barney</li>'
-	 *
-	 * // using the ES6 delimiter as an alternative to the default "interpolate" delimiter
-	 * _.template('hello ${ name }', { 'name': 'pebbles' });
-	 * // => 'hello pebbles'
-	 *
-	 * // using the internal `print` function in "evaluate" delimiters
-	 * _.template('<% print("hello " + name); %>!', { 'name': 'barney' });
-	 * // => 'hello barney!'
-	 *
-	 * // using a custom template delimiters
-	 * _.templateSettings = {
-	 *   'interpolate': /{{([\s\S]+?)}}/g
-	 * };
-	 *
-	 * _.template('hello {{ name }}!', { 'name': 'mustache' });
-	 * // => 'hello mustache!'
-	 *
-	 * // using the `imports` option to import jQuery
-	 * var list = '<% jq.each(people, function(name) { %><li><%- name %></li><% }); %>';
-	 * _.template(list, { 'people': ['fred', 'barney'] }, { 'imports': { 'jq': jQuery } });
-	 * // => '<li>fred</li><li>barney</li>'
-	 *
-	 * // using the `sourceURL` option to specify a custom sourceURL for the template
-	 * var compiled = _.template('hello <%= name %>', null, { 'sourceURL': '/basic/greeting.jst' });
-	 * compiled(data);
-	 * // => find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector
-	 *
-	 * // using the `variable` option to ensure a with-statement isn't used in the compiled template
-	 * var compiled = _.template('hi <%= data.name %>!', null, { 'variable': 'data' });
-	 * compiled.source;
-	 * // => function(data) {
-	 *   var __t, __p = '', __e = _.escape;
-	 *   __p += 'hi ' + ((__t = ( data.name )) == null ? '' : __t) + '!';
-	 *   return __p;
-	 * }
-	 *
-	 * // using the `source` property to inline compiled templates for meaningful
-	 * // line numbers in error messages and a stack trace
-	 * fs.writeFileSync(path.join(cwd, 'jst.js'), '\
-	 *   var JST = {\
-	 *     "main": ' + _.template(mainText).source + '\
-	 *   };\
-	 * ');
-	 */
-	function template(text, data, options) {
-	  // based on John Resig's `tmpl` implementation
-	  // http://ejohn.org/blog/javascript-micro-templating/
-	  // and Laura Doktorova's doT.js
-	  // https://github.com/olado/doT
-	  var settings = templateSettings.imports._.templateSettings || templateSettings;
-	  text = String(text || '');
-
-	  // avoid missing dependencies when `iteratorTemplate` is not defined
-	  options = defaults({}, options, settings);
-
-	  var imports = defaults({}, options.imports, settings.imports),
-	      importsKeys = keys(imports),
-	      importsValues = values(imports);
-
-	  var isEvaluating,
-	      index = 0,
-	      interpolate = options.interpolate || reNoMatch,
-	      source = "__p += '";
-
-	  // compile the regexp to match each delimiter
-	  var reDelimiters = RegExp(
-	    (options.escape || reNoMatch).source + '|' +
-	    interpolate.source + '|' +
-	    (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|' +
-	    (options.evaluate || reNoMatch).source + '|$'
-	  , 'g');
-
-	  text.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
-	    interpolateValue || (interpolateValue = esTemplateValue);
-
-	    // escape characters that cannot be included in string literals
-	    source += text.slice(index, offset).replace(reUnescapedString, escapeStringChar);
-
-	    // replace delimiters with snippets
-	    if (escapeValue) {
-	      source += "' +\n__e(" + escapeValue + ") +\n'";
-	    }
-	    if (evaluateValue) {
-	      isEvaluating = true;
-	      source += "';\n" + evaluateValue + ";\n__p += '";
-	    }
-	    if (interpolateValue) {
-	      source += "' +\n((__t = (" + interpolateValue + ")) == null ? '' : __t) +\n'";
-	    }
-	    index = offset + match.length;
-
-	    // the JS engine embedded in Adobe products requires returning the `match`
-	    // string in order to produce the correct `offset` value
-	    return match;
-	  });
-
-	  source += "';\n";
-
-	  // if `variable` is not specified, wrap a with-statement around the generated
-	  // code to add the data object to the top of the scope chain
-	  var variable = options.variable,
-	      hasVariable = variable;
-
-	  if (!hasVariable) {
-	    variable = 'obj';
-	    source = 'with (' + variable + ') {\n' + source + '\n}\n';
-	  }
-	  // cleanup code by stripping empty strings
-	  source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
-	    .replace(reEmptyStringMiddle, '$1')
-	    .replace(reEmptyStringTrailing, '$1;');
-
-	  // frame code as the function body
-	  source = 'function(' + variable + ') {\n' +
-	    (hasVariable ? '' : variable + ' || (' + variable + ' = {});\n') +
-	    "var __t, __p = '', __e = _.escape" +
-	    (isEvaluating
-	      ? ', __j = Array.prototype.join;\n' +
-	        "function print() { __p += __j.call(arguments, '') }\n"
-	      : ';\n'
-	    ) +
-	    source +
-	    'return __p\n}';
-
-	  try {
-	    var result = Function(importsKeys, 'return ' + source ).apply(undefined, importsValues);
-	  } catch(e) {
-	    e.source = source;
-	    throw e;
-	  }
-	  if (data) {
-	    return result(data);
-	  }
-	  // provide the compiled function's source by its `toString` method, in
-	  // supported environments, or the `source` property as a convenience for
-	  // inlining compiled templates during the build process
-	  result.source = source;
-	  return result;
-	}
-
-	module.exports = template;
-
-
-/***/ },
-/* 59 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to generate unique IDs */
-	var idCounter = 0;
-
-	/**
-	 * Generates a unique ID. If `prefix` is provided the ID will be appended to it.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @param {string} [prefix] The value to prefix the ID with.
-	 * @returns {string} Returns the unique ID.
-	 * @example
-	 *
-	 * _.uniqueId('contact_');
-	 * // => 'contact_104'
-	 *
-	 * _.uniqueId();
-	 * // => '105'
-	 */
-	function uniqueId(prefix) {
-	  var id = ++idCounter;
-	  return String(prefix == null ? '' : prefix) + id;
-	}
-
-	module.exports = uniqueId;
-
-
-/***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;(function (root, factory) {
-	  if (true) {
-	    // AMD. Register as a module.
-	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
-	      return (root.Eventable = factory());
-	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	  } else if (typeof exports !== 'undefined') {
-	    // Node. Does not work with strict CommonJS, but only CommonJS-like
-	    // enviroments that support module.exports, like Node.
-	    module.exports = factory();
-	  } else {
-	    // Browser globals
-	    root.Eventable = factory();
-	  }
-	}(this, function() {
-
-	  // Copy and pasted straight out of Backbone 1.0.0
-	  // We'll try and keep this updated to the latest
-
-	  var array = [];
-	  var slice = array.slice;
-
-	  function once(func) {
-	    var memo, times = 2;
-
-	    return function() {
-	      if (--times > 0) {
-	        memo = func.apply(this, arguments);
-	      } else {
-	        func = null;
-	      }
-	      return memo;
-	    };
-	  }
-
-	  // Backbone.Events
-	  // ---------------
-
-	  // A module that can be mixed in to *any object* in order to provide it with
-	  // custom events. You may bind with `on` or remove with `off` callback
-	  // functions to an event; `trigger`-ing an event fires all callbacks in
-	  // succession.
-	  //
-	  //     var object = {};
-	  //     extend(object, Backbone.Events);
-	  //     object.on('expand', function(){ alert('expanded'); });
-	  //     object.trigger('expand');
-	  //
-	  var Eventable = {
-
-	    // Bind an event to a `callback` function. Passing `"all"` will bind
-	    // the callback to all events fired.
-	    on: function(name, callback, context) {
-	      if (!eventsApi(this, 'on', name, [callback, context]) || !callback) return this;
-	      this._events || (this._events = {});
-	      var events = this._events[name] || (this._events[name] = []);
-	      events.push({callback: callback, context: context, ctx: context || this});
-	      return this;
-	    },
-
-	    // Bind an event to only be triggered a single time. After the first time
-	    // the callback is invoked, it will be removed.
-	    once: function(name, callback, context) {
-	      if (!eventsApi(this, 'once', name, [callback, context]) || !callback) return this;
-	      var self = this;
-	      var func = once(function() {
-	        self.off(name, func);
-	        callback.apply(this, arguments);
-	      });
-	      func._callback = callback;
-	      return this.on(name, func, context);
-	    },
-
-	    // Remove one or many callbacks. If `context` is null, removes all
-	    // callbacks with that function. If `callback` is null, removes all
-	    // callbacks for the event. If `name` is null, removes all bound
-	    // callbacks for all events.
-	    off: function(name, callback, context) {
-	      var retain, ev, events, names, i, l, j, k;
-	      if (!this._events || !eventsApi(this, 'off', name, [callback, context])) return this;
-	      if (!name && !callback && !context) {
-	        this._events = {};
-	        return this;
-	      }
-
-	      names = name ? [name] : Object.keys(this._events);
-	      for (i = 0, l = names.length; i < l; i++) {
-	        name = names[i];
-	        if (events = this._events[name]) {
-	          this._events[name] = retain = [];
-	          if (callback || context) {
-	            for (j = 0, k = events.length; j < k; j++) {
-	              ev = events[j];
-	              if ((callback && callback !== ev.callback && callback !== ev.callback._callback) ||
-	                  (context && context !== ev.context)) {
-	                retain.push(ev);
-	              }
-	            }
-	          }
-	          if (!retain.length) delete this._events[name];
-	        }
-	      }
-
-	      return this;
-	    },
-
-	    // Trigger one or many events, firing all bound callbacks. Callbacks are
-	    // passed the same arguments as `trigger` is, apart from the event name
-	    // (unless you're listening on `"all"`, which will cause your callback to
-	    // receive the true name of the event as the first argument).
-	    trigger: function(name) {
-	      if (!this._events) return this;
-	      var args = slice.call(arguments, 1);
-	      if (!eventsApi(this, 'trigger', name, args)) return this;
-	      var events = this._events[name];
-	      var allEvents = this._events.all;
-	      if (events) triggerEvents(events, args);
-	      if (allEvents) triggerEvents(allEvents, arguments);
-	      return this;
-	    },
-
-	    // Tell this object to stop listening to either specific events ... or
-	    // to every object it's currently listening to.
-	    stopListening: function(obj, name, callback) {
-	      var listeners = this._listeners;
-	      if (!listeners) return this;
-	      var deleteListener = !name && !callback;
-	      if (typeof name === 'object') callback = this;
-	      if (obj) (listeners = {})[obj._listenerId] = obj;
-	      for (var id in listeners) {
-	        listeners[id].off(name, callback, this);
-	        if (deleteListener) delete this._listeners[id];
-	      }
-	      return this;
-	    }
-
-	  };
-
-	  // Regular expression used to split event strings.
-	  var eventSplitter = /\s+/;
-
-	  // Implement fancy features of the Events API such as multiple event
-	  // names `"change blur"` and jQuery-style event maps `{change: action}`
-	  // in terms of the existing API.
-	  var eventsApi = function(obj, action, name, rest) {
-	    if (!name) return true;
-
-	    // Handle event maps.
-	    if (typeof name === 'object') {
-	      for (var key in name) {
-	        obj[action].apply(obj, [key, name[key]].concat(rest));
-	      }
-	      return false;
-	    }
-
-	    // Handle space separated event names.
-	    if (eventSplitter.test(name)) {
-	      var names = name.split(eventSplitter);
-	      for (var i = 0, l = names.length; i < l; i++) {
-	        obj[action].apply(obj, [names[i]].concat(rest));
-	      }
-	      return false;
-	    }
-
-	    return true;
-	  };
-
-	  // A difficult-to-believe, but optimized internal dispatch function for
-	  // triggering events. Tries to keep the usual cases speedy (most internal
-	  // Backbone events have 3 arguments).
-	  var triggerEvents = function(events, args) {
-	    var ev, i = -1, l = events.length, a1 = args[0], a2 = args[1], a3 = args[2];
-	    switch (args.length) {
-	      case 0: while (++i < l) (ev = events[i]).callback.call(ev.ctx); return;
-	      case 1: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1); return;
-	      case 2: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2); return;
-	      case 3: while (++i < l) (ev = events[i]).callback.call(ev.ctx, a1, a2, a3); return;
-	      default: while (++i < l) (ev = events[i]).callback.apply(ev.ctx, args);
-	    }
-	  };
-
-	  var listenMethods = {listenTo: 'on', listenToOnce: 'once'};
-
-	  // Inversion-of-control versions of `on` and `once`. Tell *this* object to
-	  // listen to an event in another object ... keeping track of what it's
-	  // listening to.
-	  function addListenMethod(method, implementation) {
-	    Eventable[method] = function(obj, name, callback) {
-	      var listeners = this._listeners || (this._listeners = {});
-	      var id = obj._listenerId || (obj._listenerId = (new Date()).getTime());
-	      listeners[id] = obj;
-	      if (typeof name === 'object') callback = this;
-	      obj[implementation](name, callback, this);
-	      return this;
-	    };
-	  }
-
-	  addListenMethod('listenTo', 'on');
-	  addListenMethod('listenToOnce', 'once');
-
-	  // Aliases for backwards compatibility.
-	  Eventable.bind   = Eventable.on;
-	  Eventable.unbind = Eventable.off;
-
-	  return Eventable;
-
-	}));
-
-
-/***/ },
-/* 61 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(73),
-	  __webpack_require__(74),
-	  __webpack_require__(78),
-	  __webpack_require__(79),
-	  __webpack_require__(80),
-	  __webpack_require__(81),
-	  __webpack_require__(75),
-	  __webpack_require__(76),
-	  __webpack_require__(77),
-	  __webpack_require__(66),
-	  __webpack_require__(67),
-	  __webpack_require__(68),
-	  __webpack_require__(69),
-	  __webpack_require__(70),
-	  __webpack_require__(71),
-	  __webpack_require__(97),
-	  __webpack_require__(72)
+	  __webpack_require__(116),
+	  __webpack_require__(151),
+	  __webpack_require__(124),
+	  __webpack_require__(125),
+	  __webpack_require__(135),
+	  __webpack_require__(136),
+	  __webpack_require__(141),
+	  __webpack_require__(142),
+	  __webpack_require__(150),
+	  __webpack_require__(87),
+	  __webpack_require__(160),
+	  __webpack_require__(162),
+	  __webpack_require__(163),
+	  __webpack_require__(92),
+	  __webpack_require__(159),
+	  __webpack_require__(165),
+	  __webpack_require__(166)
 	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
 	  commands,
 	  events,
@@ -14609,537 +15053,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      scribe.registerPlainTextFormatter(function (html) {
-	        return html.replace(/\n([ \t]*\n)+/g, '</p><p>').replace(/\n/g, '<br>');
-	      });
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * This plugin adds a command for creating links, including a basic prompt.
-	   */
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var linkPromptCommand = new scribe.api.Command('createLink');
-
-	      linkPromptCommand.nodeName = 'A';
-
-	      linkPromptCommand.execute = function () {
-	        var selection = new scribe.api.Selection();
-	        var range = selection.range;
-	        var anchorNode = selection.getContaining(function (node) {
-	          return node.nodeName === this.nodeName;
-	        }.bind(this));
-	        var initialLink = anchorNode ? anchorNode.href : '';
-	        var link = window.prompt('Enter a link.', initialLink);
-
-	        if (anchorNode) {
-	          range.selectNode(anchorNode);
-	          selection.selection.removeAllRanges();
-	          selection.selection.addRange(range);
-	        }
-
-	        // FIXME: I don't like how plugins like this do so much. Is there a way
-	        // to compose?
-
-	        if (link) {
-	          // Prepend href protocol if missing
-	          // If a http/s or mailto link is provided, then we will trust that an link is valid
-	          var urlProtocolRegExp = /^https?\:\/\//;
-	          var mailtoProtocolRegExp = /^mailto\:/;
-	          if (! urlProtocolRegExp.test(link) && ! mailtoProtocolRegExp.test(link)) {
-	            // For emails we just look for a `@` symbol as it is easier.
-	            if (/@/.test(link)) {
-	              var shouldPrefixEmail = window.confirm(
-	                'The URL you entered appears to be an email address. ' +
-	                'Do you want to add the required “mailto:” prefix?'
-	              );
-	              if (shouldPrefixEmail) {
-	                link = 'mailto:' + link;
-	              }
-	            } else {
-	              var shouldPrefixLink = window.confirm(
-	                'The URL you entered appears to be a link. ' +
-	                'Do you want to add the required “http://” prefix?'
-	              );
-	              if (shouldPrefixLink) {
-	                link = 'http://' + link;
-	              }
-	            }
-	          }
-
-	          scribe.api.SimpleCommand.prototype.execute.call(this, link);
-	        }
-	      };
-
-	      linkPromptCommand.queryState = function () {
-	        /**
-	         * We override the native `document.queryCommandState` for links because
-	         * the `createLink` and `unlink` commands are not supported.
-	         * As per: http://jsbin.com/OCiJUZO/1/edit?js,console,output
-	         */
-	        var selection = new scribe.api.Selection();
-	        return !! selection.getContaining(function (node) {
-	          return node.nodeName === this.nodeName;
-	        }.bind(this));
-	      };
-
-	      scribe.commands.linkPrompt = linkPromptCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright (c) 2011-2014 Felix Gnass
-	 * Licensed under the MIT license
-	 */
-	(function(root, factory) {
-
-	  /* CommonJS */
-	  if (true)  module.exports = factory()
-
-	  /* AMD module */
-	  else if (typeof define == 'function' && define.amd) define(factory)
-
-	  /* Browser global */
-	  else root.Spinner = factory()
-	}
-	(this, function() {
-	  "use strict";
-
-	  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
-	    , animations = {} /* Animation rules keyed by their name */
-	    , useCssAnimations /* Whether to use CSS animations or setTimeout */
-
-	  /**
-	   * Utility function to create elements. If no tag name is given,
-	   * a DIV is created. Optionally properties can be passed.
-	   */
-	  function createEl(tag, prop) {
-	    var el = document.createElement(tag || 'div')
-	      , n
-
-	    for(n in prop) el[n] = prop[n]
-	    return el
-	  }
-
-	  /**
-	   * Appends children and returns the parent.
-	   */
-	  function ins(parent /* child1, child2, ...*/) {
-	    for (var i=1, n=arguments.length; i<n; i++)
-	      parent.appendChild(arguments[i])
-
-	    return parent
-	  }
-
-	  /**
-	   * Insert a new stylesheet to hold the @keyframe or VML rules.
-	   */
-	  var sheet = (function() {
-	    var el = createEl('style', {type : 'text/css'})
-	    ins(document.getElementsByTagName('head')[0], el)
-	    return el.sheet || el.styleSheet
-	  }())
-
-	  /**
-	   * Creates an opacity keyframe animation rule and returns its name.
-	   * Since most mobile Webkits have timing issues with animation-delay,
-	   * we create separate rules for each line/segment.
-	   */
-	  function addAnimation(alpha, trail, i, lines) {
-	    var name = ['opacity', trail, ~~(alpha*100), i, lines].join('-')
-	      , start = 0.01 + i/lines * 100
-	      , z = Math.max(1 - (1-alpha) / trail * (100-start), alpha)
-	      , prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase()
-	      , pre = prefix && '-' + prefix + '-' || ''
-
-	    if (!animations[name]) {
-	      sheet.insertRule(
-	        '@' + pre + 'keyframes ' + name + '{' +
-	        '0%{opacity:' + z + '}' +
-	        start + '%{opacity:' + alpha + '}' +
-	        (start+0.01) + '%{opacity:1}' +
-	        (start+trail) % 100 + '%{opacity:' + alpha + '}' +
-	        '100%{opacity:' + z + '}' +
-	        '}', sheet.cssRules.length)
-
-	      animations[name] = 1
-	    }
-
-	    return name
-	  }
-
-	  /**
-	   * Tries various vendor prefixes and returns the first supported property.
-	   */
-	  function vendor(el, prop) {
-	    var s = el.style
-	      , pp
-	      , i
-
-	    prop = prop.charAt(0).toUpperCase() + prop.slice(1)
-	    for(i=0; i<prefixes.length; i++) {
-	      pp = prefixes[i]+prop
-	      if(s[pp] !== undefined) return pp
-	    }
-	    if(s[prop] !== undefined) return prop
-	  }
-
-	  /**
-	   * Sets multiple style properties at once.
-	   */
-	  function css(el, prop) {
-	    for (var n in prop)
-	      el.style[vendor(el, n)||n] = prop[n]
-
-	    return el
-	  }
-
-	  /**
-	   * Fills in default values.
-	   */
-	  function merge(obj) {
-	    for (var i=1; i < arguments.length; i++) {
-	      var def = arguments[i]
-	      for (var n in def)
-	        if (obj[n] === undefined) obj[n] = def[n]
-	    }
-	    return obj
-	  }
-
-	  /**
-	   * Returns the line color from the given string or array.
-	   */
-	  function getColor(color, idx) {
-	    return typeof color == 'string' ? color : color[idx % color.length]
-	  }
-
-	  // Built-in defaults
-
-	  var defaults = {
-	    lines: 12,            // The number of lines to draw
-	    length: 7,            // The length of each line
-	    width: 5,             // The line thickness
-	    radius: 10,           // The radius of the inner circle
-	    rotate: 0,            // Rotation offset
-	    corners: 1,           // Roundness (0..1)
-	    color: '#000',        // #rgb or #rrggbb
-	    direction: 1,         // 1: clockwise, -1: counterclockwise
-	    speed: 1,             // Rounds per second
-	    trail: 100,           // Afterglow percentage
-	    opacity: 1/4,         // Opacity of the lines
-	    fps: 20,              // Frames per second when using setTimeout()
-	    zIndex: 2e9,          // Use a high z-index by default
-	    className: 'spinner', // CSS class to assign to the element
-	    top: '50%',           // center vertically
-	    left: '50%',          // center horizontally
-	    position: 'absolute'  // element position
-	  }
-
-	  /** The constructor */
-	  function Spinner(o) {
-	    this.opts = merge(o || {}, Spinner.defaults, defaults)
-	  }
-
-	  // Global defaults that override the built-ins:
-	  Spinner.defaults = {}
-
-	  merge(Spinner.prototype, {
-
-	    /**
-	     * Adds the spinner to the given target element. If this instance is already
-	     * spinning, it is automatically removed from its previous target b calling
-	     * stop() internally.
-	     */
-	    spin: function(target) {
-	      this.stop()
-
-	      var self = this
-	        , o = self.opts
-	        , el = self.el = css(createEl(0, {className: o.className}), {position: o.position, width: 0, zIndex: o.zIndex})
-
-	      css(el, {
-	        left: o.left,
-	        top: o.top
-	      })
-	        
-	      if (target) {
-	        target.insertBefore(el, target.firstChild||null)
-	      }
-
-	      el.setAttribute('role', 'progressbar')
-	      self.lines(el, self.opts)
-
-	      if (!useCssAnimations) {
-	        // No CSS animation support, use setTimeout() instead
-	        var i = 0
-	          , start = (o.lines - 1) * (1 - o.direction) / 2
-	          , alpha
-	          , fps = o.fps
-	          , f = fps/o.speed
-	          , ostep = (1-o.opacity) / (f*o.trail / 100)
-	          , astep = f/o.lines
-
-	        ;(function anim() {
-	          i++;
-	          for (var j = 0; j < o.lines; j++) {
-	            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
-
-	            self.opacity(el, j * o.direction + start, alpha, o)
-	          }
-	          self.timeout = self.el && setTimeout(anim, ~~(1000/fps))
-	        })()
-	      }
-	      return self
-	    },
-
-	    /**
-	     * Stops and removes the Spinner.
-	     */
-	    stop: function() {
-	      var el = this.el
-	      if (el) {
-	        clearTimeout(this.timeout)
-	        if (el.parentNode) el.parentNode.removeChild(el)
-	        this.el = undefined
-	      }
-	      return this
-	    },
-
-	    /**
-	     * Internal method that draws the individual lines. Will be overwritten
-	     * in VML fallback mode below.
-	     */
-	    lines: function(el, o) {
-	      var i = 0
-	        , start = (o.lines - 1) * (1 - o.direction) / 2
-	        , seg
-
-	      function fill(color, shadow) {
-	        return css(createEl(), {
-	          position: 'absolute',
-	          width: (o.length+o.width) + 'px',
-	          height: o.width + 'px',
-	          background: color,
-	          boxShadow: shadow,
-	          transformOrigin: 'left',
-	          transform: 'rotate(' + ~~(360/o.lines*i+o.rotate) + 'deg) translate(' + o.radius+'px' +',0)',
-	          borderRadius: (o.corners * o.width>>1) + 'px'
-	        })
-	      }
-
-	      for (; i < o.lines; i++) {
-	        seg = css(createEl(), {
-	          position: 'absolute',
-	          top: 1+~(o.width/2) + 'px',
-	          transform: o.hwaccel ? 'translate3d(0,0,0)' : '',
-	          opacity: o.opacity,
-	          animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1/o.speed + 's linear infinite'
-	        })
-
-	        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px ' + '#000'), {top: 2+'px'}))
-	        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')))
-	      }
-	      return el
-	    },
-
-	    /**
-	     * Internal method that adjusts the opacity of a single line.
-	     * Will be overwritten in VML fallback mode below.
-	     */
-	    opacity: function(el, i, val) {
-	      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val
-	    }
-
-	  })
-
-
-	  function initVML() {
-
-	    /* Utility function to create a VML tag */
-	    function vml(tag, attr) {
-	      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr)
-	    }
-
-	    // No CSS transforms but VML support, add a CSS rule for VML elements:
-	    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)')
-
-	    Spinner.prototype.lines = function(el, o) {
-	      var r = o.length+o.width
-	        , s = 2*r
-
-	      function grp() {
-	        return css(
-	          vml('group', {
-	            coordsize: s + ' ' + s,
-	            coordorigin: -r + ' ' + -r
-	          }),
-	          { width: s, height: s }
-	        )
-	      }
-
-	      var margin = -(o.width+o.length)*2 + 'px'
-	        , g = css(grp(), {position: 'absolute', top: margin, left: margin})
-	        , i
-
-	      function seg(i, dx, filter) {
-	        ins(g,
-	          ins(css(grp(), {rotation: 360 / o.lines * i + 'deg', left: ~~dx}),
-	            ins(css(vml('roundrect', {arcsize: o.corners}), {
-	                width: r,
-	                height: o.width,
-	                left: o.radius,
-	                top: -o.width>>1,
-	                filter: filter
-	              }),
-	              vml('fill', {color: getColor(o.color, i), opacity: o.opacity}),
-	              vml('stroke', {opacity: 0}) // transparent stroke to fix color bleeding upon opacity change
-	            )
-	          )
-	        )
-	      }
-
-	      if (o.shadow)
-	        for (i = 1; i <= o.lines; i++)
-	          seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)')
-
-	      for (i = 1; i <= o.lines; i++) seg(i)
-	      return ins(el, g)
-	    }
-
-	    Spinner.prototype.opacity = function(el, i, val, o) {
-	      var c = el.firstChild
-	      o = o.shadow && o.lines || 0
-	      if (c && i+o < c.childNodes.length) {
-	        c = c.childNodes[i+o]; c = c && c.firstChild; c = c && c.firstChild
-	        if (c) c.opacity = val
-	      }
-	    }
-	  }
-
-	  var probe = css(createEl('group'), {behavior: 'url(#default#VML)'})
-
-	  if (!vendor(probe, 'transform') && probe.adj) initVML()
-	  else useCssAnimations = vendor(probe, 'animation')
-
-	  return Spinner
-
-	}));
-
-
-/***/ },
-/* 65 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	// modified from https://github.com/es-shims/es5-shim
-	var has = Object.prototype.hasOwnProperty;
-	var toStr = Object.prototype.toString;
-	var isArgs = __webpack_require__(91);
-	var hasDontEnumBug = !({ 'toString': null }).propertyIsEnumerable('toString');
-	var hasProtoEnumBug = function () {}.propertyIsEnumerable('prototype');
-	var dontEnums = [
-		'toString',
-		'toLocaleString',
-		'valueOf',
-		'hasOwnProperty',
-		'isPrototypeOf',
-		'propertyIsEnumerable',
-		'constructor'
-	];
-
-	var keysShim = function keys(object) {
-		var isObject = object !== null && typeof object === 'object';
-		var isFunction = toStr.call(object) === '[object Function]';
-		var isArguments = isArgs(object);
-		var isString = isObject && toStr.call(object) === '[object String]';
-		var theKeys = [];
-
-		if (!isObject && !isFunction && !isArguments) {
-			throw new TypeError('Object.keys called on a non-object');
-		}
-
-		var skipProto = hasProtoEnumBug && isFunction;
-		if (isString && object.length > 0 && !has.call(object, 0)) {
-			for (var i = 0; i < object.length; ++i) {
-				theKeys.push(String(i));
-			}
-		}
-
-		if (isArguments && object.length > 0) {
-			for (var j = 0; j < object.length; ++j) {
-				theKeys.push(String(j));
-			}
-		} else {
-			for (var name in object) {
-				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
-					theKeys.push(String(name));
-				}
-			}
-		}
-
-		if (hasDontEnumBug) {
-			var ctor = object.constructor;
-			var skipConstructor = ctor && ctor.prototype === object;
-
-			for (var k = 0; k < dontEnums.length; ++k) {
-				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
-					theKeys.push(dontEnums[k]);
-				}
-			}
-		}
-		return theKeys;
-	};
-
-	keysShim.shim = function shimObjectKeys() {
-		if (!Object.keys) {
-			Object.keys = keysShim;
-		}
-		return Object.keys || keysShim;
-	};
-
-	module.exports = keysShim;
-
-
-/***/ },
-/* 66 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(92),
-	  __webpack_require__(93),
-	  __webpack_require__(94),
-	  __webpack_require__(95),
-	  __webpack_require__(96)
+	  __webpack_require__(88),
+	  __webpack_require__(89),
+	  __webpack_require__(90),
+	  __webpack_require__(91),
+	  __webpack_require__(115)
 	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
 	  buildCommandPatch,
 	  buildCommand,
@@ -15161,1478 +15083,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(121)], __WEBPACK_AMD_DEFINE_RESULT__ = function (assign) {
-
-	  'use strict';
-
-	  return function (scribe) {
-	    function TransactionManager() {
-	      this.history = [];
-	    }
-
-	    assign(TransactionManager.prototype, {
-	      start: function () {
-	        this.history.push(1);
-	      },
-
-	      end: function () {
-	        this.history.pop();
-
-	        if (this.history.length === 0) {
-	          scribe.pushHistory();
-	          scribe.trigger('content-changed');
-	        }
-	      },
-
-	      run: function (transaction, forceMerge) {
-	        this.start();
-	        // If there is an error, don't prevent the transaction from ending.
-	        try {
-	          if (transaction) {
-	            transaction();
-	          }
-	        } finally {
-	          scribe._forceMerge = forceMerge === true;
-	          this.end();
-	          scribe._forceMerge = false;
-	        }
-	      }
-	    });
-
-	    return TransactionManager;
-	  };
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-	  'use strict';
-
-	  function UndoManager(limit, undoScopeHost) {
-	    this._stack = [];
-	    this._limit = limit;
-	    this._fireEvent = typeof CustomEvent != 'undefined' && undoScopeHost && undoScopeHost.dispatchEvent;
-	    this._ush = undoScopeHost;
-
-	    this.position = 0;
-	    this.length = 0;
-	  }
-
-	  UndoManager.prototype.transact = function (transaction, merge) {
-	    if (arguments.length < 2) {
-	      throw new TypeError('Not enough arguments to UndoManager.transact.');
-	    }
-
-	    transaction.execute();
-
-	    this._stack.splice(0, this.position);
-	    if (merge && this.length) {
-	      this._stack[0].push(transaction);
-	    }
-	    else {
-	      this._stack.unshift([transaction]);
-	    }
-	    this.position = 0;
-
-	    if (this._limit && this._stack.length > this._limit) {
-	      this.length = this._stack.length = this._limit;
-	    }
-	    else {
-	      this.length = this._stack.length;
-	    }
-
-	    if (this._fireEvent) {
-	      this._ush.dispatchEvent(new CustomEvent('DOMTransaction', {detail: {transactions: this._stack[0].slice()}, bubbles: true, cancelable: false}));
-	    }
-	  };
-
-	  UndoManager.prototype.undo = function () {
-	    if (this.position < this.length) {
-	      for (var i = this._stack[this.position].length - 1; i >= 0; i--) {
-	        this._stack[this.position][i].undo();
-	      }
-	      this.position++;
-
-	      if (this._fireEvent) {
-	        this._ush.dispatchEvent(new CustomEvent('undo', {detail: {transactions: this._stack[this.position - 1].slice()}, bubbles: true, cancelable: false}));
-	      }
-	    }
-	  };
-
-	  UndoManager.prototype.redo = function () {
-	    if (this.position > 0) {
-	      for (var i = 0, n = this._stack[this.position - 1].length; i < n; i++) {
-	        this._stack[this.position - 1][i].redo();
-	      }
-	      this.position--;
-
-	      if (this._fireEvent) {
-	        this._ush.dispatchEvent(new CustomEvent('redo', {detail: {transactions: this._stack[this.position].slice()}, bubbles: true, cancelable: false}));
-	      }
-	    }
-	  };
-
-	  UndoManager.prototype.item = function (index) {
-	    if (index >= 0 && index < this.length) {
-	      return this._stack[index].slice();
-	    }
-	    return null;
-	  };
-
-	  UndoManager.prototype.clearUndo = function () {
-	    this._stack.length = this.length = this.position;
-	  };
-
-	  UndoManager.prototype.clearRedo = function () {
-	    this._stack.splice(0, this.position);
-	    this.position = 0;
-	    this.length = this._stack.length;
-	  };
-
-	  return UndoManager;
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-
-/***/ },
-/* 69 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(123),
-	  __webpack_require__(97)], __WEBPACK_AMD_DEFINE_RESULT__ = function (pull, Immutable) {
-
-	  'use strict';
-
-	  // TODO: once
-	  // TODO: unit test
-	  // Good example of a complete(?) implementation: https://github.com/Wolfy87/EventEmitter
-	  function EventEmitter() {
-	    this._listeners = {};
-	  }
-
-	  EventEmitter.prototype.on = function (eventName, fn) {
-	    var listeners = this._listeners[eventName] || Immutable.Set();
-
-	    this._listeners[eventName] = listeners.add(fn);
-	  };
-
-	  EventEmitter.prototype.off = function (eventName, fn) {
-	    var listeners = this._listeners[eventName] || Immutable.Set();
-	    if (fn) {
-	      listeners = listeners.delete(fn);
-	    } else {
-	      listeners = listeners.clear();
-	    }
-	  };
-
-	  EventEmitter.prototype.trigger = function (eventName, args) {
-
-	    //fire events like my:custom:event -> my:custom -> my
-	    var events = eventName.split(':');
-	    while(!!events.length){
-	      var currentEvent = events.join(':');
-	      var listeners = this._listeners[currentEvent] || Immutable.Set();
-	      //trigger handles
-	      listeners.forEach(function (listener) {
-	        listener.apply(null, args);
-	      });
-	      events.splice((events.length - 1), 1);
-	    }
-	  };
-
-	  return EventEmitter;
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(125)], __WEBPACK_AMD_DEFINE_RESULT__ = function (contains) {
-
-	  'use strict';
-
-	  var blockElementNames = ['ADDRESS', 'ARTICLE', 'ASIDE', 'AUDIO', 'BLOCKQUOTE', 'CANVAS', 'DD',
-	                           'DIV', 'FIELDSET', 'FIGCAPTION', 'FIGURE', 'FOOTER', 'FORM', 'H1',
-	                           'H2', 'H3', 'H4', 'H5', 'H6', 'HEADER', 'HGROUP', 'HR', 'LI',
-	                           'NOSCRIPT', 'OL', 'OUTPUT', 'P', 'PRE', 'SECTION', 'TABLE', 'TD',
-	                           'TH', 'TFOOT', 'UL', 'VIDEO'];
-	  function isBlockElement(node) {
-	    return contains(blockElementNames, node.nodeName);
-	  }
-
-	  function isSelectionMarkerNode(node) {
-	    return (node.nodeType === Node.ELEMENT_NODE && node.className === 'scribe-marker');
-	  }
-
-	  function isCaretPositionNode(node) {
-	    return (node.nodeType === Node.ELEMENT_NODE && node.className === 'caret-position');
-	  }
-
-	  function unwrap(node, childNode) {
-	    while (childNode.childNodes.length > 0) {
-	      node.insertBefore(childNode.childNodes[0], childNode);
-	    }
-	    node.removeChild(childNode);
-	  }
-
-	  return {
-	    isBlockElement: isBlockElement,
-	    isSelectionMarkerNode: isSelectionMarkerNode,
-	    isCaretPositionNode: isCaretPositionNode,
-	    unwrap: unwrap
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 71 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  function isEmptyTextNode(node) {
-	    return (node.nodeType === Node.TEXT_NODE && node.textContent === '');
-	  }
-
-	  function insertAfter(newNode, referenceNode) {
-	    return referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-	  }
-
-	  function removeNode(node) {
-	    return node.parentNode.removeChild(node);
-	  }
-
-	  return {
-	    isEmptyTextNode: isEmptyTextNode,
-	    insertAfter: insertAfter,
-	    removeNode: removeNode
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 72 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(122),], __WEBPACK_AMD_DEFINE_RESULT__ = function (defaults) {
-
-	  var defaultOptions = {
-	    allowBlockElements: true,
-	    debug: false,
-	    undo: {
-	      manager: false,
-	      enabled: true,
-	      limit: 100,
-	      interval: 250
-	    },
-	    defaultCommandPatches: [
-	      'bold',
-	      'indent',
-	      'insertHTML',
-	      'insertList',
-	      'outdent',
-	      'createLink'
-	    ]
-	  };
-
-
-	  function checkOptions(userSuppliedOptions) {
-	    var options = userSuppliedOptions || {};
-
-	    return Object.freeze(defaults(options, defaultOptions));
-	  }
-
-	  return {
-	    defaultOptions: defaultOptions,
-	    checkOptions: checkOptions
-	  }
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(98),
-	  __webpack_require__(99),
-	  __webpack_require__(100),
-	  __webpack_require__(101),
-	  __webpack_require__(102),
-	  __webpack_require__(103),
-	  __webpack_require__(104)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  indent,
-	  insertList,
-	  outdent,
-	  redo,
-	  subscript,
-	  superscript,
-	  undo
-	) {
-
-	  'use strict';
-
-	  return {
-	    indent: indent,
-	    insertList: insertList,
-	    outdent: outdent,
-	    redo: redo,
-	    subscript: subscript,
-	    superscript: superscript,
-	    undo: undo
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(125),
-	  __webpack_require__(105)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  contains,
-	  observeDomChanges
-	) {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      /**
-	       * Firefox: Giving focus to a `contenteditable` will place the caret
-	       * outside of any block elements. Chrome behaves correctly by placing the
-	       * caret at the  earliest point possible inside the first block element.
-	       * As per: http://jsbin.com/eLoFOku/1/edit?js,console,output
-	       *
-	       * We detect when this occurs and fix it by placing the caret ourselves.
-	       */
-	      scribe.el.addEventListener('focus', function placeCaretOnFocus() {
-	        var selection = new scribe.api.Selection();
-	        // In Chrome, the range is not created on or before this event loop.
-	        // It doesn’t matter because this is a fix for Firefox.
-	        if (selection.range) {
-
-	          var isFirefoxBug = scribe.allowsBlockElements() &&
-	                  selection.range.startContainer === scribe.el;
-
-	          if (isFirefoxBug) {
-	            var focusElement = getFirstDeepestChild(scribe.el.firstChild);
-
-	            var range = selection.range;
-
-	            range.setStart(focusElement, 0);
-	            range.setEnd(focusElement, 0);
-
-	            selection.selection.removeAllRanges();
-	            selection.selection.addRange(range);
-	          }
-	        }
-
-	        function getFirstDeepestChild(node) {
-	          var treeWalker = document.createTreeWalker(node, NodeFilter.SHOW_ALL, null, false);
-	          var previousNode = treeWalker.currentNode;
-	          if (treeWalker.firstChild()) {
-	            // TODO: build list of non-empty elements (used elsewhere)
-	            // Do not include non-empty elements
-	            if (treeWalker.currentNode.nodeName === 'BR') {
-	              return previousNode;
-	            } else {
-	              return getFirstDeepestChild(treeWalker.currentNode);
-	            }
-	          } else {
-	            return treeWalker.currentNode;
-	          }
-	        }
-	      }.bind(scribe));
-
-	      /**
-	       * Apply the formatters when there is a DOM mutation.
-	       */
-	      var applyFormatters = function() {
-	        if (!scribe._skipFormatters) {
-	          var selection = new scribe.api.Selection();
-	          var isEditorActive = selection.range;
-
-	          var runFormatters = function () {
-	            if (isEditorActive) {
-	              selection.placeMarkers();
-	            }
-	            scribe.setHTML(scribe._htmlFormatterFactory.format(scribe.getHTML()));
-	            selection.selectMarkers();
-	          }.bind(scribe);
-
-	          // We only want to wrap the formatting in a transaction if the editor is
-	          // active. If the DOM is mutated when the editor isn't active (e.g.
-	          // `scribe.setContent`), we do not want to push to the history. (This
-	          // happens on the first `focus` event).
-
-	          // The previous check is no longer needed, and the above comments are no longer valid.
-	          // Now `scribe.setContent` updates the content manually, and `scribe.pushHistory`
-	          // will not detect any changes, and nothing will be push into the history.
-	          // Any mutations made without `scribe.getContent` will be pushed into the history normally.
-
-	          // Pass content through formatters, place caret back
-	          scribe.transactionManager.run(runFormatters);
-	        }
-
-	        delete scribe._skipFormatters;
-	      }.bind(scribe);
-
-	      observeDomChanges(scribe.el, applyFormatters);
-
-	      // TODO: disconnect on tear down:
-	      // observer.disconnect();
-
-	      /**
-	       * If the paragraphs option is set to true, we need to manually handle
-	       * keyboard navigation inside a heading to ensure a P element is created.
-	       */
-	      if (scribe.allowsBlockElements()) {
-	        scribe.el.addEventListener('keydown', function (event) {
-	          if (event.keyCode === 13) { // enter
-
-	            var selection = new scribe.api.Selection();
-	            var range = selection.range;
-
-	            var headingNode = selection.getContaining(function (node) {
-	              return (/^(H[1-6])$/).test(node.nodeName);
-	            });
-
-	            /**
-	             * If we are at the end of the heading, insert a P. Otherwise handle
-	             * natively.
-	             */
-	            if (headingNode && range.collapsed) {
-	              var contentToEndRange = range.cloneRange();
-	              contentToEndRange.setEndAfter(headingNode, 0);
-
-	              // Get the content from the range to the end of the heading
-	              var contentToEndFragment = contentToEndRange.cloneContents();
-
-	              if (contentToEndFragment.firstChild.textContent === '') {
-	                event.preventDefault();
-
-	                scribe.transactionManager.run(function () {
-	                  // Default P
-	                  // TODO: Abstract somewhere
-	                  var pNode = document.createElement('p');
-	                  var brNode = document.createElement('br');
-	                  pNode.appendChild(brNode);
-
-	                  headingNode.parentNode.insertBefore(pNode, headingNode.nextElementSibling);
-
-	                  // Re-apply range
-	                  range.setStart(pNode, 0);
-	                  range.setEnd(pNode, 0);
-
-	                  selection.selection.removeAllRanges();
-	                  selection.selection.addRange(range);
-	                });
-	              }
-	            }
-	          }
-	        });
-	      }
-
-	      /**
-	       * If the paragraphs option is set to true, we need to manually handle
-	       * keyboard navigation inside list item nodes.
-	       */
-	      if (scribe.allowsBlockElements()) {
-	        scribe.el.addEventListener('keydown', function (event) {
-	          if (event.keyCode === 13 || event.keyCode === 8) { // enter || backspace
-
-	            var selection = new scribe.api.Selection();
-	            var range = selection.range;
-
-	            if (range.collapsed) {
-	              var containerLIElement = selection.getContaining(function (node) {
-	                return node.nodeName === 'LI';
-	              });
-	              if (containerLIElement && containerLIElement.textContent.trim() === '') {
-	                /**
-	                 * LIs
-	                 */
-
-	                event.preventDefault();
-
-	                var listNode = selection.getContaining(function (node) {
-	                  return node.nodeName === 'UL' || node.nodeName === 'OL';
-	                });
-
-	                var command = scribe.getCommand(listNode.nodeName === 'OL' ? 'insertOrderedList' : 'insertUnorderedList');
-
-	                command.execute();
-	              }
-	            }
-	          }
-	        });
-	      }
-
-	      /**
-	       * We have to hijack the paste event to ensure it uses
-	       * `scribe.insertHTML`, which executes the Scribe version of the command
-	       * and also runs the formatters.
-	       */
-
-	      /**
-	       * TODO: could we implement this as a polyfill for `event.clipboardData` instead?
-	       * I also don't like how it has the authority to perform `event.preventDefault`.
-	       */
-
-	      scribe.el.addEventListener('paste', function handlePaste(event) {
-	        /**
-	         * Browsers without the Clipboard API (specifically `ClipboardEvent.clipboardData`)
-	         * will execute the second branch here.
-	         */
-	        if (event.clipboardData) {
-	          event.preventDefault();
-
-	          if (contains(event.clipboardData.types, 'text/html')) {
-
-	            scribe.insertHTML(event.clipboardData.getData('text/html'));
-	          } else {
-	            scribe.insertPlainText(event.clipboardData.getData('text/plain'));
-	          }
-	        } else {
-	          /**
-	           * If the browser doesn't have `ClipboardEvent.clipboardData`, we run through a
-	           * sequence of events:
-	           *
-	           *   - Save the text selection
-	           *   - Focus another, hidden textarea so we paste there
-	           *   - Copy the pasted content of said textarea
-	           *   - Give focus back to the scribe
-	           *   - Restore the text selection
-	           *
-	           * This is required because, without access to the Clipboard API, there is literally
-	           * no other way to manipulate content on paste.
-	           * As per: https://github.com/jejacks0n/mercury/issues/23#issuecomment-2308347
-	           *
-	           * Firefox <= 21
-	           * https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent.clipboardData
-	           */
-
-	          var selection = new scribe.api.Selection();
-
-	          // Store the caret position
-	          selection.placeMarkers();
-
-	          var bin = document.createElement('div');
-	          document.body.appendChild(bin);
-	          bin.setAttribute('contenteditable', true);
-	          bin.focus();
-
-	          // Wait for the paste to happen (next loop?)
-	          setTimeout(function () {
-	            var data = bin.innerHTML;
-	            bin.parentNode.removeChild(bin);
-
-	            // Restore the caret position
-	            selection.selectMarkers();
-	            /**
-	             * Firefox 19 (and maybe others): even though the applied range
-	             * exists within the Scribe instance, we need to focus it.
-	             */
-	            scribe.el.focus();
-
-	            scribe.insertHTML(data);
-	          }, 1);
-	        }
-	      });
-
-	    };
-	  };
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  // TODO: abstract
-	  function hasContent(rootNode) {
-	    var treeWalker = document.createTreeWalker(rootNode, NodeFilter.SHOW_ALL, null, false);
-
-	    while (treeWalker.nextNode()) {
-	      if (treeWalker.currentNode) {
-	        // If the node is a non-empty element or has content
-	        if (~['br'].indexOf(treeWalker.currentNode.nodeName.toLowerCase()) || treeWalker.currentNode.length > 0) {
-	          return true;
-	        }
-	      }
-	    }
-
-	    return false;
-	  }
-
-	  return function () {
-	    return function (scribe) {
-	      /**
-	       * Firefox has a `insertBrOnReturn` command, but this is not a part of
-	       * any standard. One day we might have an `insertLineBreak` command,
-	       * proposed by this spec:
-	       * https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html#the-insertlinebreak-command
-	       * As per: http://jsbin.com/IQUraXA/1/edit?html,js,output
-	       */
-	      scribe.el.addEventListener('keydown', function (event) {
-	        if (event.keyCode === 13) { // enter
-	          var selection = new scribe.api.Selection();
-	          var range = selection.range;
-
-	          var blockNode = selection.getContaining(function (node) {
-	            return node.nodeName === 'LI' || (/^(H[1-6])$/).test(node.nodeName);
-	          });
-
-	          if (! blockNode) {
-	            event.preventDefault();
-
-	            scribe.transactionManager.run(function () {
-	              /**
-	               * Firefox: Delete the bogus BR as we insert another one later.
-	               * We have to do this because otherwise the browser will believe
-	               * there is content to the right of the selection.
-	               */
-	              if (scribe.el.lastChild.nodeName === 'BR') {
-	                scribe.el.removeChild(scribe.el.lastChild);
-	              }
-
-	              var brNode = document.createElement('br');
-
-	              range.insertNode(brNode);
-	              // After inserting the BR into the range is no longer collapsed, so
-	              // we have to collapse it again.
-	              // TODO: Older versions of Firefox require this argument even though
-	              // it is supposed to be optional. Proxy/polyfill?
-	              range.collapse(false);
-
-	              /**
-	               * Chrome: If there is no right-hand side content, inserting a BR
-	               * will not appear to create a line break.
-	               * Firefox: If there is no right-hand side content, inserting a BR
-	               * will appear to create a weird "half-line break".
-	               *
-	               * Possible solution: Insert two BRs.
-	               * ✓ Chrome: Inserting two BRs appears to create a line break.
-	               * Typing will then delete the bogus BR element.
-	               * Firefox: Inserting two BRs will create two line breaks.
-	               *
-	               * Solution: Only insert two BRs if there is no right-hand
-	               * side content.
-	               *
-	               * If the user types on a line immediately after a BR element,
-	               * Chrome will replace the BR element with the typed characters,
-	               * whereas Firefox will not. Thus, to satisfy Firefox we have to
-	               * insert a bogus BR element on initialization (see below).
-	               */
-
-	              var contentToEndRange = range.cloneRange();
-	              contentToEndRange.setEndAfter(scribe.el.lastChild, 0);
-
-	              // Get the content from the range to the end of the heading
-	              var contentToEndFragment = contentToEndRange.cloneContents();
-
-	              // If there is not already a right hand side content we need to
-	              // insert a bogus BR element.
-	              if (! hasContent(contentToEndFragment)) {
-	                var bogusBrNode = document.createElement('br');
-	                range.insertNode(bogusBrNode);
-	              }
-
-	              var newRange = range.cloneRange();
-
-	              newRange.setStartAfter(brNode, 0);
-	              newRange.setEndAfter(brNode, 0);
-
-	              selection.selection.removeAllRanges();
-	              selection.selection.addRange(newRange);
-	            });
-	          }
-	        }
-	      }.bind(this));
-
-	      if (scribe.getHTML().trim() === '') {
-	        // Bogus BR element for Firefox — see explanation above.
-	        // TODO: also append when consumer sets the content manually.
-	        // TODO: hide when the user calls `getHTML`?
-	        scribe.setContent('');
-	      }
-	    };
-	  };
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(106),
-	  __webpack_require__(107),
-	  __webpack_require__(108),
-	  __webpack_require__(109),
-	  __webpack_require__(110),
-	  __webpack_require__(111),
-	  __webpack_require__(112)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  boldCommand,
-	  indentCommand,
-	  insertHTMLCommand,
-	  insertListCommands,
-	  outdentCommand,
-	  createLinkCommand,
-	  events
-	) {
-
-	  /**
-	   * Command patches browser inconsistencies. They do not perform core features
-	   * of the editor, such as ensuring P elements are created when
-	   * applying/unapplying commands — that is the job of the core commands.
-	   */
-
-	  'use strict';
-
-	  return {
-	    commands: {
-	      bold: boldCommand,
-	      indent: indentCommand,
-	      insertHTML: insertHTMLCommand,
-	      insertList: insertListCommands,
-	      outdent: outdentCommand,
-	      createLink: createLinkCommand,
-	    },
-	    events: events
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * Sets the default content of the scribe so that each carriage return creates
-	   * a P.
-	   */
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      // The content might have already been set, in which case we don't want
-	      // to apply.
-	      if (scribe.getHTML().trim() === '') {
-	        /**
-	         * We have to begin with the following HTML, because otherwise some
-	         * browsers(?) will position the caret outside of the P when the scribe is
-	         * focused.
-	         */
-	        scribe.setContent('<p><br></p>');
-	      }
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * Chrome:
-	   */
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var nbspCharRegExp = /(\s|&nbsp;)+/g;
-
-	      // TODO: should we be doing this on paste?
-	      scribe.registerHTMLFormatter('export', function (html) {
-	        return html.replace(nbspCharRegExp, ' ');
-	      });
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(124)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  last
-	) {
-
-	  /**
-	   * Chrome and Firefox: Upon pressing backspace inside of a P, the
-	   * browser deletes the paragraph element, leaving the caret (and any
-	   * content) outside of any P.
-	   *
-	   * Firefox: Erasing across multiple paragraphs, or outside of a
-	   * whole paragraph (e.g. by ‘Select All’) will leave content outside
-	   * of any P.
-	   *
-	   * Entering a new line in a pristine state state will insert
-	   * `<div>`s (in Chrome) or `<br>`s (in Firefox) where previously we
-	   * had `<p>`'s. This patches the behaviour of delete/backspace so
-	   * that we do not end up in a pristine state.
-	   */
-
-	  'use strict';
-
-	  /**
-	   * Wrap consecutive inline elements and text nodes in a P element.
-	   */
-	  function wrapChildNodes(scribe, parentNode) {
-	    var groups = Array.prototype.reduce.call(parentNode.childNodes,
-	                                             function (accumulator, binChildNode) {
-	      var group = last(accumulator);
-	      if (! group) {
-	        startNewGroup();
-	      } else {
-	        var isBlockGroup = scribe.element.isBlockElement(group[0]);
-	        if (isBlockGroup === scribe.element.isBlockElement(binChildNode)) {
-	          group.push(binChildNode);
-	        } else {
-	          startNewGroup();
-	        }
-	      }
-
-	      return accumulator;
-
-	      function startNewGroup() {
-	        var newGroup = [binChildNode];
-	        accumulator.push(newGroup);
-	      }
-	    }, []);
-
-	    var consecutiveInlineElementsAndTextNodes = groups.filter(function (group) {
-	      var isBlockGroup = scribe.element.isBlockElement(group[0]);
-	      return ! isBlockGroup;
-	    });
-
-	    consecutiveInlineElementsAndTextNodes.forEach(function (nodes) {
-	      var pElement = document.createElement('p');
-	      nodes[0].parentNode.insertBefore(pElement, nodes[0]);
-	      nodes.forEach(function (node) {
-	        pElement.appendChild(node);
-	      });
-	    });
-
-	    parentNode._isWrapped = true;
-	  }
-
-	  // Traverse the tree, wrapping child nodes as we go.
-	  function traverse(scribe, parentNode) {
-	    var treeWalker = document.createTreeWalker(parentNode, NodeFilter.SHOW_ELEMENT, null, false);
-	    var node = treeWalker.firstChild();
-
-	    // FIXME: does this recurse down?
-
-	    while (node) {
-	      // TODO: At the moment we only support BLOCKQUOTEs. See failing
-	      // tests.
-	      if (node.nodeName === 'BLOCKQUOTE' && ! node._isWrapped) {
-	        wrapChildNodes(scribe, node);
-	        traverse(scribe, parentNode);
-	        break;
-	      }
-	      node = treeWalker.nextSibling();
-	    }
-	  }
-
-	  return function () {
-	    return function (scribe) {
-
-	      scribe.registerHTMLFormatter('normalize', function (html) {
-	        /**
-	         * Ensure P mode.
-	         *
-	         * Wrap any orphan text nodes in a P element.
-	         */
-	        // TODO: This should be configurable and also correct markup such as
-	        // `<ul>1</ul>` to <ul><li>2</li></ul>`. See skipped tests.
-	        // TODO: This should probably be a part of HTML Janitor, or some other
-	        // formatter.
-	        var bin = document.createElement('div');
-	        bin.innerHTML = html;
-
-	        wrapChildNodes(scribe, bin);
-	        traverse(scribe, bin);
-
-	        return bin.innerHTML;
-	      });
-
-	    };
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 80 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	    __webpack_require__(70),
-	    __webpack_require__(125)
-	  ], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	    element,
-	    contains
-	  ) {
-
-	  /**
-	   * Chrome and Firefox: All elements need to contain either text or a `<br>` to
-	   * remain selectable. (Unless they have a width and height explicitly set with
-	   * CSS(?), as per: http://jsbin.com/gulob/2/edit?html,css,js,output)
-	   */
-
-	  'use strict';
-
-	  // http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
-	  var html5VoidElements = ['AREA', 'BASE', 'BR', 'COL', 'COMMAND', 'EMBED', 'HR', 'IMG', 'INPUT', 'KEYGEN', 'LINK', 'META', 'PARAM', 'SOURCE', 'TRACK', 'WBR'];
-
-	  function parentHasNoTextContent(element, node) {
-	    if (element.isCaretPositionNode(node)) {
-	      return true;
-	    } else {
-	      return node.parentNode.textContent.trim() === '';
-	    }
-	  }
-
-
-	  function traverse(element, parentNode) {
-	    // Instead of TreeWalker, which gets confused when the BR is added to the dom,
-	    // we recursively traverse the tree to look for an empty node that can have childNodes
-
-	    var node = parentNode.firstElementChild;
-
-	    function isEmpty(node) {
-
-	      if ((node.children.length === 0 && element.isBlockElement(node))
-	        || (node.children.length === 1 && element.isSelectionMarkerNode(node.children[0]))) {
-	         return true;
-	      }
-
-	      // Do not insert BR in empty non block elements with parent containing text
-	      if (!element.isBlockElement(node) && node.children.length === 0) {
-	        return parentHasNoTextContent(element, node);
-	      }
-
-	      return false;
-	    }
-
-	    while (node) {
-	      if (!element.isSelectionMarkerNode(node)) {
-	        // Find any node that contains no child *elements*, or just contains
-	        // whitespace, and is not self-closing
-	        if (isEmpty(node) &&
-	          node.textContent.trim() === '' &&
-	          !contains(html5VoidElements, node.nodeName)) {
-	          node.appendChild(document.createElement('br'));
-	        } else if (node.children.length > 0) {
-	          traverse(element, node);
-	        }
-	      }
-	      node = node.nextElementSibling;
-	    }
-	  }
-
-	  return function () {
-	    return function (scribe) {
-
-	      scribe.registerHTMLFormatter('normalize', function (html) {
-	        var bin = document.createElement('div');
-	        bin.innerHTML = html;
-
-	        traverse(scribe.element, bin);
-
-	        return bin.innerHTML;
-	      });
-
-	    };
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 81 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(126)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  escape
-	) {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      scribe.registerPlainTextFormatter(escape);
-	    };
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var baseCreateCallback = __webpack_require__(113),
-	    keys = __webpack_require__(114),
-	    objectTypes = __webpack_require__(115);
-
-	/**
-	 * Iterates over own enumerable properties of an object, executing the callback
-	 * for each property. The callback is bound to `thisArg` and invoked with three
-	 * arguments; (value, key, object). Callbacks may exit iteration early by
-	 * explicitly returning `false`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @type Function
-	 * @category Objects
-	 * @param {Object} object The object to iterate over.
-	 * @param {Function} [callback=identity] The function called per iteration.
-	 * @param {*} [thisArg] The `this` binding of `callback`.
-	 * @returns {Object} Returns `object`.
-	 * @example
-	 *
-	 * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(num, key) {
-	 *   console.log(key);
-	 * });
-	 * // => logs '0', '1', and 'length' (property order is not guaranteed across environments)
-	 */
-	var forOwn = function(collection, callback, thisArg) {
-	  var index, iterable = collection, result = iterable;
-	  if (!iterable) return result;
-	  if (!objectTypes[typeof iterable]) return result;
-	  callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
-	    var ownIndex = -1,
-	        ownProps = objectTypes[typeof iterable] && keys(iterable),
-	        length = ownProps ? ownProps.length : 0;
-
-	    while (++ownIndex < length) {
-	      index = ownProps[ownIndex];
-	      if (callback(iterable[index], index, collection) === false) return result;
-	    }
-	  return result
-	};
-
-	module.exports = forOwn;
-
-
-/***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to determine if values are of the language type Object */
-	var objectTypes = {
-	  'boolean': false,
-	  'function': true,
-	  'object': true,
-	  'number': false,
-	  'string': false,
-	  'undefined': false
-	};
-
-	module.exports = objectTypes;
-
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var keys = __webpack_require__(87),
-	    objectTypes = __webpack_require__(116);
-
-	/**
-	 * Assigns own enumerable properties of source object(s) to the destination
-	 * object for all destination properties that resolve to `undefined`. Once a
-	 * property is set, additional defaults of the same property will be ignored.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @type Function
-	 * @category Objects
-	 * @param {Object} object The destination object.
-	 * @param {...Object} [source] The source objects.
-	 * @param- {Object} [guard] Allows working with `_.reduce` without using its
-	 *  `key` and `object` arguments as sources.
-	 * @returns {Object} Returns the destination object.
-	 * @example
-	 *
-	 * var object = { 'name': 'barney' };
-	 * _.defaults(object, { 'name': 'fred', 'employer': 'slate' });
-	 * // => { 'name': 'barney', 'employer': 'slate' }
-	 */
-	var defaults = function(object, source, guard) {
-	  var index, iterable = object, result = iterable;
-	  if (!iterable) return result;
-	  var args = arguments,
-	      argsIndex = 0,
-	      argsLength = typeof guard == 'number' ? 2 : args.length;
-	  while (++argsIndex < argsLength) {
-	    iterable = args[argsIndex];
-	    if (iterable && objectTypes[typeof iterable]) {
-	    var ownIndex = -1,
-	        ownProps = objectTypes[typeof iterable] && keys(iterable),
-	        length = ownProps ? ownProps.length : 0;
-
-	    while (++ownIndex < length) {
-	      index = ownProps[ownIndex];
-	      if (typeof result[index] == 'undefined') result[index] = iterable[index];
-	    }
-	    }
-	  }
-	  return result
-	};
-
-	module.exports = defaults;
-
-
-/***/ },
-/* 85 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var escapeHtmlChar = __webpack_require__(117),
-	    keys = __webpack_require__(87),
-	    reUnescapedHtml = __webpack_require__(118);
-
-	/**
-	 * Converts the characters `&`, `<`, `>`, `"`, and `'` in `string` to their
-	 * corresponding HTML entities.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @param {string} string The string to escape.
-	 * @returns {string} Returns the escaped string.
-	 * @example
-	 *
-	 * _.escape('Fred, Wilma, & Pebbles');
-	 * // => 'Fred, Wilma, &amp; Pebbles'
-	 */
-	function escape(string) {
-	  return string == null ? '' : String(string).replace(reUnescapedHtml, escapeHtmlChar);
-	}
-
-	module.exports = escape;
-
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to escape characters for inclusion in compiled string literals */
-	var stringEscapes = {
-	  '\\': '\\',
-	  "'": "'",
-	  '\n': 'n',
-	  '\r': 'r',
-	  '\t': 't',
-	  '\u2028': 'u2028',
-	  '\u2029': 'u2029'
-	};
-
-	/**
-	 * Used by `template` to escape characters for inclusion in compiled
-	 * string literals.
-	 *
-	 * @private
-	 * @param {string} match The matched character to escape.
-	 * @returns {string} Returns the escaped character.
-	 */
-	function escapeStringChar(match) {
-	  return '\\' + stringEscapes[match];
-	}
-
-	module.exports = escapeStringChar;
-
-
-/***/ },
-/* 87 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(119),
-	    isObject = __webpack_require__(54),
-	    shimKeys = __webpack_require__(120);
-
-	/* Native method shortcuts for methods with the same name as other `lodash` methods */
-	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
-
-	/**
-	 * Creates an array composed of the own enumerable property names of an object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {Object} object The object to inspect.
-	 * @returns {Array} Returns an array of property names.
-	 * @example
-	 *
-	 * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
-	 * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
-	 */
-	var keys = !nativeKeys ? shimKeys : function(object) {
-	  if (!isObject(object)) {
-	    return [];
-	  }
-	  return nativeKeys(object);
-	};
-
-	module.exports = keys;
-
-
-/***/ },
 /* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to match "interpolate" template delimiters */
-	var reInterpolate = /<%=([\s\S]+?)%>/g;
-
-	module.exports = reInterpolate;
-
-
-/***/ },
-/* 89 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var escape = __webpack_require__(85),
-	    reInterpolate = __webpack_require__(88);
-
-	/**
-	 * By default, the template delimiters used by Lo-Dash are similar to those in
-	 * embedded Ruby (ERB). Change the following template settings to use alternative
-	 * delimiters.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @type Object
-	 */
-	var templateSettings = {
-
-	  /**
-	   * Used to detect `data` property values to be HTML-escaped.
-	   *
-	   * @memberOf _.templateSettings
-	   * @type RegExp
-	   */
-	  'escape': /<%-([\s\S]+?)%>/g,
-
-	  /**
-	   * Used to detect code to be evaluated.
-	   *
-	   * @memberOf _.templateSettings
-	   * @type RegExp
-	   */
-	  'evaluate': /<%([\s\S]+?)%>/g,
-
-	  /**
-	   * Used to detect `data` property values to inject.
-	   *
-	   * @memberOf _.templateSettings
-	   * @type RegExp
-	   */
-	  'interpolate': reInterpolate,
-
-	  /**
-	   * Used to reference the data object in the template text.
-	   *
-	   * @memberOf _.templateSettings
-	   * @type string
-	   */
-	  'variable': '',
-
-	  /**
-	   * Used to import variables into the compiled template.
-	   *
-	   * @memberOf _.templateSettings
-	   * @type Object
-	   */
-	  'imports': {
-
-	    /**
-	     * A reference to the `lodash` function.
-	     *
-	     * @memberOf _.templateSettings.imports
-	     * @type Function
-	     */
-	    '_': { 'escape': escape }
-	  }
-	};
-
-	module.exports = templateSettings;
-
-
-/***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var keys = __webpack_require__(87);
-
-	/**
-	 * Creates an array composed of the own enumerable property values of `object`.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {Object} object The object to inspect.
-	 * @returns {Array} Returns an array of property values.
-	 * @example
-	 *
-	 * _.values({ 'one': 1, 'two': 2, 'three': 3 });
-	 * // => [1, 2, 3] (property order is not guaranteed across environments)
-	 */
-	function values(object) {
-	  var index = -1,
-	      props = keys(object),
-	      length = props.length,
-	      result = Array(length);
-
-	  while (++index < length) {
-	    result[index] = object[props[index]];
-	  }
-	  return result;
-	}
-
-	module.exports = values;
-
-
-/***/ },
-/* 91 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var toStr = Object.prototype.toString;
-
-	module.exports = function isArguments(value) {
-		var str = toStr.call(value);
-		var isArgs = str === '[object Arguments]';
-		if (!isArgs) {
-			isArgs = str !== '[object Array]'
-				&& value !== null
-				&& typeof value === 'object'
-				&& typeof value.length === 'number'
-				&& value.length >= 0
-				&& toStr.call(value.callee) === '[object Function]';
-		}
-		return isArgs;
-	};
-
-
-/***/ },
-/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
@@ -16665,7 +15116,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 93 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
@@ -16711,7 +15162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 94 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
@@ -16762,11 +15213,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 95 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(70)
+	  __webpack_require__(92)
 	], __WEBPACK_AMD_DEFINE_RESULT__ = function (elementHelper) {
 
 	  'use strict';
@@ -17046,7 +15497,1194 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(93)], __WEBPACK_AMD_DEFINE_RESULT__ = function (contains) {
+
+	  'use strict';
+
+	  var blockElementNames = ['ADDRESS', 'ARTICLE', 'ASIDE', 'AUDIO', 'BLOCKQUOTE', 'CANVAS', 'DD',
+	                           'DIV', 'FIELDSET', 'FIGCAPTION', 'FIGURE', 'FOOTER', 'FORM', 'H1',
+	                           'H2', 'H3', 'H4', 'H5', 'H6', 'HEADER', 'HGROUP', 'HR', 'LI',
+	                           'NOSCRIPT', 'OL', 'OUTPUT', 'P', 'PRE', 'SECTION', 'TABLE', 'TD',
+	                           'TH', 'TFOOT', 'UL', 'VIDEO'];
+	  function isBlockElement(node) {
+	    return contains(blockElementNames, node.nodeName);
+	  }
+
+	  function isSelectionMarkerNode(node) {
+	    return (node.nodeType === Node.ELEMENT_NODE && node.className === 'scribe-marker');
+	  }
+
+	  function isCaretPositionNode(node) {
+	    return (node.nodeType === Node.ELEMENT_NODE && node.className === 'caret-position');
+	  }
+
+	  function unwrap(node, childNode) {
+	    while (childNode.childNodes.length > 0) {
+	      node.insertBefore(childNode.childNodes[0], childNode);
+	    }
+	    node.removeChild(childNode);
+	  }
+
+	  return {
+	    isBlockElement: isBlockElement,
+	    isSelectionMarkerNode: isSelectionMarkerNode,
+	    isCaretPositionNode: isCaretPositionNode,
+	    unwrap: unwrap
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 93 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(94), __webpack_require__(95), __webpack_require__(113), __webpack_require__(114)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseIndexOf, forOwn, isArray, isString) {
+
+	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
+	  var nativeMax = Math.max;
+
+	  /**
+	   * Checks if a given value is present in a collection using strict equality
+	   * for comparisons, i.e. `===`. If `fromIndex` is negative, it is used as the
+	   * offset from the end of the collection.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @alias include
+	   * @category Collections
+	   * @param {Array|Object|string} collection The collection to iterate over.
+	   * @param {*} target The value to check for.
+	   * @param {number} [fromIndex=0] The index to search from.
+	   * @returns {boolean} Returns `true` if the `target` element is found, else `false`.
+	   * @example
+	   *
+	   * _.contains([1, 2, 3], 1);
+	   * // => true
+	   *
+	   * _.contains([1, 2, 3], 1, 2);
+	   * // => false
+	   *
+	   * _.contains({ 'name': 'fred', 'age': 40 }, 'fred');
+	   * // => true
+	   *
+	   * _.contains('pebbles', 'eb');
+	   * // => true
+	   */
+	  function contains(collection, target, fromIndex) {
+	    var index = -1,
+	        indexOf = baseIndexOf,
+	        length = collection ? collection.length : 0,
+	        result = false;
+
+	    fromIndex = (fromIndex < 0 ? nativeMax(0, length + fromIndex) : fromIndex) || 0;
+	    if (isArray(collection)) {
+	      result = indexOf(collection, target, fromIndex) > -1;
+	    } else if (typeof length == 'number') {
+	      result = (isString(collection) ? collection.indexOf(target, fromIndex) : indexOf(collection, target, fromIndex)) > -1;
+	    } else {
+	      forOwn(collection, function(value) {
+	        if (++index >= fromIndex) {
+	          return !(result = value === target);
+	        }
+	      });
+	    }
+	    return result;
+	  }
+
+	  return contains;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * The base implementation of `_.indexOf` without support for binary searches
+	   * or `fromIndex` constraints.
+	   *
+	   * @private
+	   * @param {Array} array The array to search.
+	   * @param {*} value The value to search for.
+	   * @param {number} [fromIndex=0] The index to search from.
+	   * @returns {number} Returns the index of the matched value or `-1`.
+	   */
+	  function baseIndexOf(array, value, fromIndex) {
+	    var index = (fromIndex || 0) - 1,
+	        length = array ? array.length : 0;
+
+	    while (++index < length) {
+	      if (array[index] === value) {
+	        return index;
+	      }
+	    }
+	    return -1;
+	  }
+
+	  return baseIndexOf;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(96), __webpack_require__(111), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, keys, objectTypes) {
+
+	  /**
+	   * Iterates over own enumerable properties of an object, executing the callback
+	   * for each property. The callback is bound to `thisArg` and invoked with three
+	   * arguments; (value, key, object). Callbacks may exit iteration early by
+	   * explicitly returning `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @type Function
+	   * @category Objects
+	   * @param {Object} object The object to iterate over.
+	   * @param {Function} [callback=identity] The function called per iteration.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {Object} Returns `object`.
+	   * @example
+	   *
+	   * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(num, key) {
+	   *   console.log(key);
+	   * });
+	   * // => logs '0', '1', and 'length' (property order is not guaranteed across environments)
+	   */
+	  var forOwn = function(collection, callback, thisArg) {
+	    var index, iterable = collection, result = iterable;
+	    if (!iterable) return result;
+	    if (!objectTypes[typeof iterable]) return result;
+	    callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
+	      var ownIndex = -1,
+	          ownProps = objectTypes[typeof iterable] && keys(iterable),
+	          length = ownProps ? ownProps.length : 0;
+
+	      while (++ownIndex < length) {
+	        index = ownProps[ownIndex];
+	        if (callback(iterable[index], index, collection) === false) return result;
+	      }
+	    return result
+	  };
+
+	  return forOwn;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
 /* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(97), __webpack_require__(109), __webpack_require__(105), __webpack_require__(110)], __WEBPACK_AMD_DEFINE_RESULT__ = function(bind, identity, setBindData, support) {
+
+	  /** Used to detected named functions */
+	  var reFuncName = /^\s*function[ \n\r\t]+\w/;
+
+	  /** Used to detect functions containing a `this` reference */
+	  var reThis = /\bthis\b/;
+
+	  /** Native method shortcuts */
+	  var fnToString = Function.prototype.toString;
+
+	  /**
+	   * The base implementation of `_.createCallback` without support for creating
+	   * "_.pluck" or "_.where" style callbacks.
+	   *
+	   * @private
+	   * @param {*} [func=identity] The value to convert to a callback.
+	   * @param {*} [thisArg] The `this` binding of the created callback.
+	   * @param {number} [argCount] The number of arguments the callback accepts.
+	   * @returns {Function} Returns a callback function.
+	   */
+	  function baseCreateCallback(func, thisArg, argCount) {
+	    if (typeof func != 'function') {
+	      return identity;
+	    }
+	    // exit early for no `thisArg` or already bound by `Function#bind`
+	    if (typeof thisArg == 'undefined' || !('prototype' in func)) {
+	      return func;
+	    }
+	    var bindData = func.__bindData__;
+	    if (typeof bindData == 'undefined') {
+	      if (support.funcNames) {
+	        bindData = !func.name;
+	      }
+	      bindData = bindData || !support.funcDecomp;
+	      if (!bindData) {
+	        var source = fnToString.call(func);
+	        if (!support.funcNames) {
+	          bindData = !reFuncName.test(source);
+	        }
+	        if (!bindData) {
+	          // checks if `func` references the `this` keyword and stores the result
+	          bindData = reThis.test(source);
+	          setBindData(func, bindData);
+	        }
+	      }
+	    }
+	    // exit early if there are no `this` references or `func` is bound
+	    if (bindData === false || (bindData !== true && bindData[1] & 1)) {
+	      return func;
+	    }
+	    switch (argCount) {
+	      case 1: return function(value) {
+	        return func.call(thisArg, value);
+	      };
+	      case 2: return function(a, b) {
+	        return func.call(thisArg, a, b);
+	      };
+	      case 3: return function(value, index, collection) {
+	        return func.call(thisArg, value, index, collection);
+	      };
+	      case 4: return function(accumulator, value, index, collection) {
+	        return func.call(thisArg, accumulator, value, index, collection);
+	      };
+	    }
+	    return bind(func, thisArg);
+	  }
+
+	  return baseCreateCallback;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 97 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(98), __webpack_require__(106)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createWrapper, slice) {
+
+	  /**
+	   * Creates a function that, when called, invokes `func` with the `this`
+	   * binding of `thisArg` and prepends any additional `bind` arguments to those
+	   * provided to the bound function.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Functions
+	   * @param {Function} func The function to bind.
+	   * @param {*} [thisArg] The `this` binding of `func`.
+	   * @param {...*} [arg] Arguments to be partially applied.
+	   * @returns {Function} Returns the new bound function.
+	   * @example
+	   *
+	   * var func = function(greeting) {
+	   *   return greeting + ' ' + this.name;
+	   * };
+	   *
+	   * func = _.bind(func, { 'name': 'fred' }, 'hi');
+	   * func();
+	   * // => 'hi fred'
+	   */
+	  function bind(func, thisArg) {
+	    return arguments.length > 2
+	      ? createWrapper(func, 17, slice(arguments, 2), null, thisArg)
+	      : createWrapper(func, 1, null, null, thisArg);
+	  }
+
+	  return bind;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 98 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(99), __webpack_require__(107), __webpack_require__(108), __webpack_require__(106)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseBind, baseCreateWrapper, isFunction, slice) {
+
+	  /**
+	   * Used for `Array` method references.
+	   *
+	   * Normally `Array.prototype` would suffice, however, using an array literal
+	   * avoids issues in Narwhal.
+	   */
+	  var arrayRef = [];
+
+	  /** Native method shortcuts */
+	  var push = arrayRef.push,
+	      unshift = arrayRef.unshift;
+
+	  /**
+	   * Creates a function that, when called, either curries or invokes `func`
+	   * with an optional `this` binding and partially applied arguments.
+	   *
+	   * @private
+	   * @param {Function|string} func The function or method name to reference.
+	   * @param {number} bitmask The bitmask of method flags to compose.
+	   *  The bitmask may be composed of the following flags:
+	   *  1 - `_.bind`
+	   *  2 - `_.bindKey`
+	   *  4 - `_.curry`
+	   *  8 - `_.curry` (bound)
+	   *  16 - `_.partial`
+	   *  32 - `_.partialRight`
+	   * @param {Array} [partialArgs] An array of arguments to prepend to those
+	   *  provided to the new function.
+	   * @param {Array} [partialRightArgs] An array of arguments to append to those
+	   *  provided to the new function.
+	   * @param {*} [thisArg] The `this` binding of `func`.
+	   * @param {number} [arity] The arity of `func`.
+	   * @returns {Function} Returns the new function.
+	   */
+	  function createWrapper(func, bitmask, partialArgs, partialRightArgs, thisArg, arity) {
+	    var isBind = bitmask & 1,
+	        isBindKey = bitmask & 2,
+	        isCurry = bitmask & 4,
+	        isCurryBound = bitmask & 8,
+	        isPartial = bitmask & 16,
+	        isPartialRight = bitmask & 32;
+
+	    if (!isBindKey && !isFunction(func)) {
+	      throw new TypeError;
+	    }
+	    if (isPartial && !partialArgs.length) {
+	      bitmask &= ~16;
+	      isPartial = partialArgs = false;
+	    }
+	    if (isPartialRight && !partialRightArgs.length) {
+	      bitmask &= ~32;
+	      isPartialRight = partialRightArgs = false;
+	    }
+	    var bindData = func && func.__bindData__;
+	    if (bindData && bindData !== true) {
+	      // clone `bindData`
+	      bindData = slice(bindData);
+	      if (bindData[2]) {
+	        bindData[2] = slice(bindData[2]);
+	      }
+	      if (bindData[3]) {
+	        bindData[3] = slice(bindData[3]);
+	      }
+	      // set `thisBinding` is not previously bound
+	      if (isBind && !(bindData[1] & 1)) {
+	        bindData[4] = thisArg;
+	      }
+	      // set if previously bound but not currently (subsequent curried functions)
+	      if (!isBind && bindData[1] & 1) {
+	        bitmask |= 8;
+	      }
+	      // set curried arity if not yet set
+	      if (isCurry && !(bindData[1] & 4)) {
+	        bindData[5] = arity;
+	      }
+	      // append partial left arguments
+	      if (isPartial) {
+	        push.apply(bindData[2] || (bindData[2] = []), partialArgs);
+	      }
+	      // append partial right arguments
+	      if (isPartialRight) {
+	        unshift.apply(bindData[3] || (bindData[3] = []), partialRightArgs);
+	      }
+	      // merge flags
+	      bindData[1] |= bitmask;
+	      return createWrapper.apply(null, bindData);
+	    }
+	    // fast path for `_.bind`
+	    var creater = (bitmask == 1 || bitmask === 17) ? baseBind : baseCreateWrapper;
+	    return creater([func, bitmask, partialArgs, partialRightArgs, thisArg, arity]);
+	  }
+
+	  return createWrapper;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 99 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(100), __webpack_require__(102), __webpack_require__(105), __webpack_require__(106)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreate, isObject, setBindData, slice) {
+
+	  /**
+	   * Used for `Array` method references.
+	   *
+	   * Normally `Array.prototype` would suffice, however, using an array literal
+	   * avoids issues in Narwhal.
+	   */
+	  var arrayRef = [];
+
+	  /** Native method shortcuts */
+	  var push = arrayRef.push;
+
+	  /**
+	   * The base implementation of `_.bind` that creates the bound function and
+	   * sets its meta data.
+	   *
+	   * @private
+	   * @param {Array} bindData The bind data array.
+	   * @returns {Function} Returns the new bound function.
+	   */
+	  function baseBind(bindData) {
+	    var func = bindData[0],
+	        partialArgs = bindData[2],
+	        thisArg = bindData[4];
+
+	    function bound() {
+	      // `Function#bind` spec
+	      // http://es5.github.io/#x15.3.4.5
+	      if (partialArgs) {
+	        // avoid `arguments` object deoptimizations by using `slice` instead
+	        // of `Array.prototype.slice.call` and not assigning `arguments` to a
+	        // variable as a ternary expression
+	        var args = slice(partialArgs);
+	        push.apply(args, arguments);
+	      }
+	      // mimic the constructor's `return` behavior
+	      // http://es5.github.io/#x13.2.2
+	      if (this instanceof bound) {
+	        // ensure `new bound` is an instance of `func`
+	        var thisBinding = baseCreate(func.prototype),
+	            result = func.apply(thisBinding, args || arguments);
+	        return isObject(result) ? result : thisBinding;
+	      }
+	      return func.apply(thisArg, args || arguments);
+	    }
+	    setBindData(bound, bindData);
+	    return bound;
+	  }
+
+	  return baseBind;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 100 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101), __webpack_require__(102), __webpack_require__(104)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, isObject, noop) {
+
+	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
+	  var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+
+	  /**
+	   * The base implementation of `_.create` without support for assigning
+	   * properties to the created object.
+	   *
+	   * @private
+	   * @param {Object} prototype The object to inherit from.
+	   * @returns {Object} Returns the new object.
+	   */
+	  function baseCreate(prototype, properties) {
+	    return isObject(prototype) ? nativeCreate(prototype) : {};
+	  }
+	  // fallback for browsers without `Object.create`
+	  if (!nativeCreate) {
+	    baseCreate = (function() {
+	      function Object() {}
+	      return function(prototype) {
+	        if (isObject(prototype)) {
+	          Object.prototype = prototype;
+	          var result = new Object;
+	          Object.prototype = null;
+	        }
+	        return result || window.Object();
+	      };
+	    }());
+	  }
+
+	  return baseCreate;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to resolve the internal [[Class]] of values */
+	  var toString = objectProto.toString;
+
+	  /** Used to detect if a method is native */
+	  var reNative = RegExp('^' +
+	    String(toString)
+	      .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+	      .replace(/toString| for [^\]]+/g, '.*?') + '$'
+	  );
+
+	  /**
+	   * Checks if `value` is a native function.
+	   *
+	   * @private
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
+	   */
+	  function isNative(value) {
+	    return typeof value == 'function' && reNative.test(value);
+	  }
+
+	  return isNative;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(objectTypes) {
+
+	  /**
+	   * Checks if `value` is the language type of Object.
+	   * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is an object, else `false`.
+	   * @example
+	   *
+	   * _.isObject({});
+	   * // => true
+	   *
+	   * _.isObject([1, 2, 3]);
+	   * // => true
+	   *
+	   * _.isObject(1);
+	   * // => false
+	   */
+	  function isObject(value) {
+	    // check if the value is the ECMAScript language type of Object
+	    // http://es5.github.io/#x8
+	    // and avoid a V8 bug
+	    // http://code.google.com/p/v8/issues/detail?id=2291
+	    return !!(value && objectTypes[typeof value]);
+	  }
+
+	  return isObject;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 103 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** Used to determine if values are of the language type Object */
+	  var objectTypes = {
+	    'boolean': false,
+	    'function': true,
+	    'object': true,
+	    'number': false,
+	    'string': false,
+	    'undefined': false
+	  };
+
+	  return objectTypes;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 104 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * A no-operation function.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Utilities
+	   * @example
+	   *
+	   * var object = { 'name': 'fred' };
+	   * _.noop(object) === undefined;
+	   * // => true
+	   */
+	  function noop() {
+	    // no operation performed
+	  }
+
+	  return noop;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 105 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101), __webpack_require__(104)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, noop) {
+
+	  /** Used as the property descriptor for `__bindData__` */
+	  var descriptor = {
+	    'configurable': false,
+	    'enumerable': false,
+	    'value': null,
+	    'writable': false
+	  };
+
+	  /** Used to set meta data on functions */
+	  var defineProperty = (function() {
+	    // IE 8 only accepts DOM elements
+	    try {
+	      var o = {},
+	          func = isNative(func = Object.defineProperty) && func,
+	          result = func(o, o, o) && func;
+	    } catch(e) { }
+	    return result;
+	  }());
+
+	  /**
+	   * Sets `this` binding data on a given function.
+	   *
+	   * @private
+	   * @param {Function} func The function to set data on.
+	   * @param {Array} value The data array to set.
+	   */
+	  var setBindData = !defineProperty ? noop : function(func, value) {
+	    descriptor.value = value;
+	    defineProperty(func, '__bindData__', descriptor);
+	  };
+
+	  return setBindData;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 106 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * Slices the `collection` from the `start` index up to, but not including,
+	   * the `end` index.
+	   *
+	   * Note: This function is used instead of `Array#slice` to support node lists
+	   * in IE < 9 and to ensure dense arrays are returned.
+	   *
+	   * @private
+	   * @param {Array|Object|string} collection The collection to slice.
+	   * @param {number} start The start index.
+	   * @param {number} end The end index.
+	   * @returns {Array} Returns the new array.
+	   */
+	  function slice(array, start, end) {
+	    start || (start = 0);
+	    if (typeof end == 'undefined') {
+	      end = array ? array.length : 0;
+	    }
+	    var index = -1,
+	        length = end - start || 0,
+	        result = Array(length < 0 ? 0 : length);
+
+	    while (++index < length) {
+	      result[index] = array[start + index];
+	    }
+	    return result;
+	  }
+
+	  return slice;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 107 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(100), __webpack_require__(102), __webpack_require__(105), __webpack_require__(106)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreate, isObject, setBindData, slice) {
+
+	  /**
+	   * Used for `Array` method references.
+	   *
+	   * Normally `Array.prototype` would suffice, however, using an array literal
+	   * avoids issues in Narwhal.
+	   */
+	  var arrayRef = [];
+
+	  /** Native method shortcuts */
+	  var push = arrayRef.push;
+
+	  /**
+	   * The base implementation of `createWrapper` that creates the wrapper and
+	   * sets its meta data.
+	   *
+	   * @private
+	   * @param {Array} bindData The bind data array.
+	   * @returns {Function} Returns the new function.
+	   */
+	  function baseCreateWrapper(bindData) {
+	    var func = bindData[0],
+	        bitmask = bindData[1],
+	        partialArgs = bindData[2],
+	        partialRightArgs = bindData[3],
+	        thisArg = bindData[4],
+	        arity = bindData[5];
+
+	    var isBind = bitmask & 1,
+	        isBindKey = bitmask & 2,
+	        isCurry = bitmask & 4,
+	        isCurryBound = bitmask & 8,
+	        key = func;
+
+	    function bound() {
+	      var thisBinding = isBind ? thisArg : this;
+	      if (partialArgs) {
+	        var args = slice(partialArgs);
+	        push.apply(args, arguments);
+	      }
+	      if (partialRightArgs || isCurry) {
+	        args || (args = slice(arguments));
+	        if (partialRightArgs) {
+	          push.apply(args, partialRightArgs);
+	        }
+	        if (isCurry && args.length < arity) {
+	          bitmask |= 16 & ~32;
+	          return baseCreateWrapper([func, (isCurryBound ? bitmask : bitmask & ~3), args, null, thisArg, arity]);
+	        }
+	      }
+	      args || (args = arguments);
+	      if (isBindKey) {
+	        func = thisBinding[key];
+	      }
+	      if (this instanceof bound) {
+	        thisBinding = baseCreate(func.prototype);
+	        var result = func.apply(thisBinding, args);
+	        return isObject(result) ? result : thisBinding;
+	      }
+	      return func.apply(thisBinding, args);
+	    }
+	    setBindData(bound, bindData);
+	    return bound;
+	  }
+
+	  return baseCreateWrapper;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 108 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * Checks if `value` is a function.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is a function, else `false`.
+	   * @example
+	   *
+	   * _.isFunction(_);
+	   * // => true
+	   */
+	  function isFunction(value) {
+	    return typeof value == 'function';
+	  }
+
+	  return isFunction;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 109 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * This method returns the first argument provided to it.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Utilities
+	   * @param {*} value Any value.
+	   * @returns {*} Returns `value`.
+	   * @example
+	   *
+	   * var object = { 'name': 'fred' };
+	   * _.identity(object) === object;
+	   * // => true
+	   */
+	  function identity(value) {
+	    return value;
+	  }
+
+	  return identity;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 110 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative) {
+
+	  /** Used to detect functions containing a `this` reference */
+	  var reThis = /\bthis\b/;
+
+	  /**
+	   * An object used to flag environments features.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @type Object
+	   */
+	  var support = {};
+
+	  /**
+	   * Detect if functions can be decompiled by `Function#toString`
+	   * (all but PS3 and older Opera mobile browsers & avoided in Windows 8 apps).
+	   *
+	   * @memberOf _.support
+	   * @type boolean
+	   */
+	  support.funcDecomp = !isNative(window.WinRTError) && reThis.test(function() { return this; });
+
+	  /**
+	   * Detect if `Function#name` is supported (all but IE).
+	   *
+	   * @memberOf _.support
+	   * @type boolean
+	   */
+	  support.funcNames = typeof Function.name == 'string';
+
+	  return support;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101), __webpack_require__(102), __webpack_require__(112)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, isObject, shimKeys) {
+
+	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
+	  var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
+
+	  /**
+	   * Creates an array composed of the own enumerable property names of an object.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {Object} object The object to inspect.
+	   * @returns {Array} Returns an array of property names.
+	   * @example
+	   *
+	   * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
+	   * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
+	   */
+	  var keys = !nativeKeys ? shimKeys : function(object) {
+	    if (!isObject(object)) {
+	      return [];
+	    }
+	    return nativeKeys(object);
+	  };
+
+	  return keys;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 112 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(objectTypes) {
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Native method shortcuts */
+	  var hasOwnProperty = objectProto.hasOwnProperty;
+
+	  /**
+	   * A fallback implementation of `Object.keys` which produces an array of the
+	   * given object's own enumerable property names.
+	   *
+	   * @private
+	   * @type Function
+	   * @param {Object} object The object to inspect.
+	   * @returns {Array} Returns an array of property names.
+	   */
+	  var shimKeys = function(object) {
+	    var index, iterable = object, result = [];
+	    if (!iterable) return result;
+	    if (!(objectTypes[typeof object])) return result;
+	      for (index in iterable) {
+	        if (hasOwnProperty.call(iterable, index)) {
+	          result.push(index);
+	        }
+	      }
+	    return result
+	  };
+
+	  return shimKeys;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(101)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative) {
+
+	  /** `Object#toString` result shortcuts */
+	  var arrayClass = '[object Array]';
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to resolve the internal [[Class]] of values */
+	  var toString = objectProto.toString;
+
+	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
+	  var nativeIsArray = isNative(nativeIsArray = Array.isArray) && nativeIsArray;
+
+	  /**
+	   * Checks if `value` is an array.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @type Function
+	   * @category Objects
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is an array, else `false`.
+	   * @example
+	   *
+	   * (function() { return _.isArray(arguments); })();
+	   * // => false
+	   *
+	   * _.isArray([1, 2, 3]);
+	   * // => true
+	   */
+	  var isArray = nativeIsArray || function(value) {
+	    return value && typeof value == 'object' && typeof value.length == 'number' &&
+	      toString.call(value) == arrayClass || false;
+	  };
+
+	  return isArray;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 114 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** `Object#toString` result shortcuts */
+	  var stringClass = '[object String]';
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to resolve the internal [[Class]] of values */
+	  var toString = objectProto.toString;
+
+	  /**
+	   * Checks if `value` is a string.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is a string, else `false`.
+	   * @example
+	   *
+	   * _.isString('fred');
+	   * // => true
+	   */
+	  function isString(value) {
+	    return typeof value == 'string' ||
+	      value && typeof value == 'object' && toString.call(value) == stringClass || false;
+	  }
+
+	  return isString;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
@@ -17077,7 +16715,3087 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 97 */
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(117),
+	  __webpack_require__(118),
+	  __webpack_require__(119),
+	  __webpack_require__(120),
+	  __webpack_require__(121),
+	  __webpack_require__(122),
+	  __webpack_require__(123)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  indent,
+	  insertList,
+	  outdent,
+	  redo,
+	  subscript,
+	  superscript,
+	  undo
+	) {
+
+	  'use strict';
+
+	  return {
+	    indent: indent,
+	    insertList: insertList,
+	    outdent: outdent,
+	    redo: redo,
+	    subscript: subscript,
+	    superscript: superscript,
+	    undo: undo
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 117 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var indentCommand = new scribe.api.Command('indent');
+
+	      indentCommand.queryEnabled = function () {
+	        /**
+	         * FIXME: Chrome nests ULs inside of ULs
+	         * Currently we just disable the command when the selection is inside of
+	         * a list.
+	         * As per: http://jsbin.com/ORikUPa/3/edit?html,js,output
+	         */
+	        var selection = new scribe.api.Selection();
+	        var listElement = selection.getContaining(function (element) {
+	          return element.nodeName === 'UL' || element.nodeName === 'OL';
+	        });
+
+	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements() && ! listElement;
+	      };
+
+	      scribe.commands.indent = indentCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 118 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  /**
+	   * If the paragraphs option is set to true, then when the list is
+	   * unapplied, ensure that we enter a P element.
+	   */
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var InsertListCommand = function (commandName) {
+	        scribe.api.Command.call(this, commandName);
+	      };
+
+	      InsertListCommand.prototype = Object.create(scribe.api.Command.prototype);
+	      InsertListCommand.prototype.constructor = InsertListCommand;
+
+	      InsertListCommand.prototype.execute = function (value) {
+	        function splitList(listItemElements) {
+	          if (listItemElements.length > 0) {
+	            var newListNode = document.createElement(listNode.nodeName);
+
+	            listItemElements.forEach(function (listItemElement) {
+	              newListNode.appendChild(listItemElement);
+	            });
+
+	            listNode.parentNode.insertBefore(newListNode, listNode.nextElementSibling);
+	          }
+	        }
+
+	        if (this.queryState()) {
+	          var selection = new scribe.api.Selection();
+	          var range = selection.range;
+
+	          var listNode = selection.getContaining(function (node) {
+	            return node.nodeName === 'OL' || node.nodeName === 'UL';
+	          });
+
+	          var listItemElement = selection.getContaining(function (node) {
+	            return node.nodeName === 'LI';
+	          });
+
+	          scribe.transactionManager.run(function () {
+	            if (listItemElement) {
+	              var nextListItemElements = (new scribe.api.Node(listItemElement)).nextAll();
+
+	              /**
+	               * If we are not at the start or end of a UL/OL, we have to
+	               * split the node and insert the P(s) in the middle.
+	               */
+	              splitList(nextListItemElements);
+
+	              /**
+	               * Insert a paragraph in place of the list item.
+	               */
+
+	              selection.placeMarkers();
+
+	              var pNode = document.createElement('p');
+	              pNode.innerHTML = listItemElement.innerHTML;
+
+	              listNode.parentNode.insertBefore(pNode, listNode.nextElementSibling);
+	              listItemElement.parentNode.removeChild(listItemElement);
+	            } else {
+	              /**
+	               * When multiple list items are selected, we replace each list
+	               * item with a paragraph.
+	               */
+
+	              // We can't query for list items in the selection so we loop
+	              // through them all and find the intersection ourselves.
+	              var selectedListItemElements = Array.prototype.map.call(listNode.querySelectorAll('li'),
+	                function (listItemElement) {
+	                return range.intersectsNode(listItemElement) && listItemElement;
+	              }).filter(function (listItemElement) {
+	                // TODO: identity
+	                return listItemElement;
+	              });
+	              var lastSelectedListItemElement = selectedListItemElements.slice(-1)[0];
+	              var listItemElementsAfterSelection = (new scribe.api.Node(lastSelectedListItemElement)).nextAll();
+
+	              /**
+	               * If we are not at the start or end of a UL/OL, we have to
+	               * split the node and insert the P(s) in the middle.
+	               */
+	              splitList(listItemElementsAfterSelection);
+
+	              // Store the caret/range positioning inside of the list items so
+	              // we can restore it from the newly created P elements soon
+	              // afterwards.
+	              selection.placeMarkers();
+
+	              var documentFragment = document.createDocumentFragment();
+	              selectedListItemElements.forEach(function (listItemElement) {
+	                var pElement = document.createElement('p');
+	                pElement.innerHTML = listItemElement.innerHTML;
+	                documentFragment.appendChild(pElement);
+	              });
+
+	              // Insert the Ps
+	              listNode.parentNode.insertBefore(documentFragment, listNode.nextElementSibling);
+
+	              // Remove the LIs
+	              selectedListItemElements.forEach(function (listItemElement) {
+	                listItemElement.parentNode.removeChild(listItemElement);
+	              });
+	            }
+
+	            // If the list is now empty, clean it up.
+	            if (listNode.childNodes.length === 0) {
+	              listNode.parentNode.removeChild(listNode);
+	            }
+
+	            selection.selectMarkers();
+	          }.bind(this));
+	        } else {
+	          scribe.api.Command.prototype.execute.call(this, value);
+	        }
+	      };
+
+	      InsertListCommand.prototype.queryEnabled = function () {
+	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements();
+	      };
+
+	      scribe.commands.insertOrderedList = new InsertListCommand('insertOrderedList');
+	      scribe.commands.insertUnorderedList = new InsertListCommand('insertUnorderedList');
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 119 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var outdentCommand = new scribe.api.Command('outdent');
+
+	      outdentCommand.queryEnabled = function () {
+	        /**
+	         * FIXME: If the paragraphs option is set to true, then when the
+	         * list is unapplied, ensure that we enter a P element.
+	         * Currently we just disable the command when the selection is inside of
+	         * a list.
+	         */
+	        var selection = new scribe.api.Selection();
+	        var listElement = selection.getContaining(function (element) {
+	          return element.nodeName === 'UL' || element.nodeName === 'OL';
+	        });
+
+	        // FIXME: define block element rule here?
+	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements() && ! listElement;
+	      };
+
+	      scribe.commands.outdent = outdentCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 120 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var redoCommand = new scribe.api.Command('redo');
+
+	      redoCommand.execute = function () {
+	        scribe.undoManager.redo();
+	      };
+
+	      redoCommand.queryEnabled = function () {
+	        return scribe.undoManager.position > 0;
+	      };
+
+	      scribe.commands.redo = redoCommand;
+
+	      //is scribe is configured to undo assign listener
+	      if (scribe.options.undo.enabled) {
+	        scribe.el.addEventListener('keydown', function (event) {
+	          if (event.shiftKey && (event.metaKey || event.ctrlKey) && event.keyCode === 90) {
+	            event.preventDefault();
+	            redoCommand.execute();
+	          }
+	        });
+	      }
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 121 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var subscriptCommand = new scribe.api.Command('subscript');
+
+	      scribe.commands.subscript = subscriptCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var superscriptCommand = new scribe.api.Command('superscript');
+
+	      scribe.commands.superscript = superscriptCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 123 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var undoCommand = new scribe.api.Command('undo');
+
+	      undoCommand.execute = function () {
+	        scribe.undoManager.undo();
+	      };
+
+	      undoCommand.queryEnabled = function () {
+	        return scribe.undoManager.position < scribe.undoManager.length;
+	      };
+
+	      scribe.commands.undo = undoCommand;
+
+	      if (scribe.options.undo.enabled) {
+	        scribe.el.addEventListener('keydown', function (event) {
+	          // TODO: use lib to abstract meta/ctrl keys?
+	          if (! event.shiftKey && (event.metaKey || event.ctrlKey) && event.keyCode === 90) {
+	            event.preventDefault();
+	            undoCommand.execute();
+	          }
+	        });
+	      }
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 124 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  /**
+	   * Chrome:
+	   */
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var nbspCharRegExp = /(\s|&nbsp;)+/g;
+
+	      // TODO: should we be doing this on paste?
+	      scribe.registerHTMLFormatter('export', function (html) {
+	        return html.replace(nbspCharRegExp, ' ');
+	      });
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 125 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(126)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  last
+	) {
+
+	  /**
+	   * Chrome and Firefox: Upon pressing backspace inside of a P, the
+	   * browser deletes the paragraph element, leaving the caret (and any
+	   * content) outside of any P.
+	   *
+	   * Firefox: Erasing across multiple paragraphs, or outside of a
+	   * whole paragraph (e.g. by ‘Select All’) will leave content outside
+	   * of any P.
+	   *
+	   * Entering a new line in a pristine state state will insert
+	   * `<div>`s (in Chrome) or `<br>`s (in Firefox) where previously we
+	   * had `<p>`'s. This patches the behaviour of delete/backspace so
+	   * that we do not end up in a pristine state.
+	   */
+
+	  'use strict';
+
+	  /**
+	   * Wrap consecutive inline elements and text nodes in a P element.
+	   */
+	  function wrapChildNodes(scribe, parentNode) {
+	    var groups = Array.prototype.reduce.call(parentNode.childNodes,
+	                                             function (accumulator, binChildNode) {
+	      var group = last(accumulator);
+	      if (! group) {
+	        startNewGroup();
+	      } else {
+	        var isBlockGroup = scribe.element.isBlockElement(group[0]);
+	        if (isBlockGroup === scribe.element.isBlockElement(binChildNode)) {
+	          group.push(binChildNode);
+	        } else {
+	          startNewGroup();
+	        }
+	      }
+
+	      return accumulator;
+
+	      function startNewGroup() {
+	        var newGroup = [binChildNode];
+	        accumulator.push(newGroup);
+	      }
+	    }, []);
+
+	    var consecutiveInlineElementsAndTextNodes = groups.filter(function (group) {
+	      var isBlockGroup = scribe.element.isBlockElement(group[0]);
+	      return ! isBlockGroup;
+	    });
+
+	    consecutiveInlineElementsAndTextNodes.forEach(function (nodes) {
+	      var pElement = document.createElement('p');
+	      nodes[0].parentNode.insertBefore(pElement, nodes[0]);
+	      nodes.forEach(function (node) {
+	        pElement.appendChild(node);
+	      });
+	    });
+
+	    parentNode._isWrapped = true;
+	  }
+
+	  // Traverse the tree, wrapping child nodes as we go.
+	  function traverse(scribe, parentNode) {
+	    var treeWalker = document.createTreeWalker(parentNode, NodeFilter.SHOW_ELEMENT, null, false);
+	    var node = treeWalker.firstChild();
+
+	    // FIXME: does this recurse down?
+
+	    while (node) {
+	      // TODO: At the moment we only support BLOCKQUOTEs. See failing
+	      // tests.
+	      if (node.nodeName === 'BLOCKQUOTE' && ! node._isWrapped) {
+	        wrapChildNodes(scribe, node);
+	        traverse(scribe, parentNode);
+	        break;
+	      }
+	      node = treeWalker.nextSibling();
+	    }
+	  }
+
+	  return function () {
+	    return function (scribe) {
+
+	      scribe.registerHTMLFormatter('normalize', function (html) {
+	        /**
+	         * Ensure P mode.
+	         *
+	         * Wrap any orphan text nodes in a P element.
+	         */
+	        // TODO: This should be configurable and also correct markup such as
+	        // `<ul>1</ul>` to <ul><li>2</li></ul>`. See skipped tests.
+	        // TODO: This should probably be a part of HTML Janitor, or some other
+	        // formatter.
+	        var bin = document.createElement('div');
+	        bin.innerHTML = html;
+
+	        wrapChildNodes(scribe, bin);
+	        traverse(scribe, bin);
+
+	        return bin.innerHTML;
+	      });
+
+	    };
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(127), __webpack_require__(106)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createCallback, slice) {
+
+	  /** Used as a safe reference for `undefined` in pre ES5 environments */
+	  var undefined;
+
+	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
+	  var nativeMax = Math.max;
+
+	  /**
+	   * Gets the last element or last `n` elements of an array. If a callback is
+	   * provided elements at the end of the array are returned as long as the
+	   * callback returns truey. The callback is bound to `thisArg` and invoked
+	   * with three arguments; (value, index, array).
+	   *
+	   * If a property name is provided for `callback` the created "_.pluck" style
+	   * callback will return the property value of the given element.
+	   *
+	   * If an object is provided for `callback` the created "_.where" style callback
+	   * will return `true` for elements that have the properties of the given object,
+	   * else `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Arrays
+	   * @param {Array} array The array to query.
+	   * @param {Function|Object|number|string} [callback] The function called
+	   *  per element or the number of elements to return. If a property name or
+	   *  object is provided it will be used to create a "_.pluck" or "_.where"
+	   *  style callback, respectively.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {*} Returns the last element(s) of `array`.
+	   * @example
+	   *
+	   * _.last([1, 2, 3]);
+	   * // => 3
+	   *
+	   * _.last([1, 2, 3], 2);
+	   * // => [2, 3]
+	   *
+	   * _.last([1, 2, 3], function(num) {
+	   *   return num > 1;
+	   * });
+	   * // => [2, 3]
+	   *
+	   * var characters = [
+	   *   { 'name': 'barney',  'blocked': false, 'employer': 'slate' },
+	   *   { 'name': 'fred',    'blocked': true,  'employer': 'slate' },
+	   *   { 'name': 'pebbles', 'blocked': true,  'employer': 'na' }
+	   * ];
+	   *
+	   * // using "_.pluck" callback shorthand
+	   * _.pluck(_.last(characters, 'blocked'), 'name');
+	   * // => ['fred', 'pebbles']
+	   *
+	   * // using "_.where" callback shorthand
+	   * _.last(characters, { 'employer': 'na' });
+	   * // => [{ 'name': 'pebbles', 'blocked': true, 'employer': 'na' }]
+	   */
+	  function last(array, callback, thisArg) {
+	    var n = 0,
+	        length = array ? array.length : 0;
+
+	    if (typeof callback != 'number' && callback != null) {
+	      var index = length;
+	      callback = createCallback(callback, thisArg, 3);
+	      while (index-- && callback(array[index], index, array)) {
+	        n++;
+	      }
+	    } else {
+	      n = callback;
+	      if (n == null || thisArg) {
+	        return array ? array[length - 1] : undefined;
+	      }
+	    }
+	    return slice(array, nativeMax(0, length - n));
+	  }
+
+	  return last;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 127 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(96), __webpack_require__(128), __webpack_require__(102), __webpack_require__(111), __webpack_require__(134)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, baseIsEqual, isObject, keys, property) {
+
+	  /**
+	   * Produces a callback bound to an optional `thisArg`. If `func` is a property
+	   * name the created callback will return the property value for a given element.
+	   * If `func` is an object the created callback will return `true` for elements
+	   * that contain the equivalent object properties, otherwise it will return `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Utilities
+	   * @param {*} [func=identity] The value to convert to a callback.
+	   * @param {*} [thisArg] The `this` binding of the created callback.
+	   * @param {number} [argCount] The number of arguments the callback accepts.
+	   * @returns {Function} Returns a callback function.
+	   * @example
+	   *
+	   * var characters = [
+	   *   { 'name': 'barney', 'age': 36 },
+	   *   { 'name': 'fred',   'age': 40 }
+	   * ];
+	   *
+	   * // wrap to create custom callback shorthands
+	   * _.createCallback = _.wrap(_.createCallback, function(func, callback, thisArg) {
+	   *   var match = /^(.+?)__([gl]t)(.+)$/.exec(callback);
+	   *   return !match ? func(callback, thisArg) : function(object) {
+	   *     return match[2] == 'gt' ? object[match[1]] > match[3] : object[match[1]] < match[3];
+	   *   };
+	   * });
+	   *
+	   * _.filter(characters, 'age__gt38');
+	   * // => [{ 'name': 'fred', 'age': 40 }]
+	   */
+	  function createCallback(func, thisArg, argCount) {
+	    var type = typeof func;
+	    if (func == null || type == 'function') {
+	      return baseCreateCallback(func, thisArg, argCount);
+	    }
+	    // handle "_.pluck" style callback shorthands
+	    if (type != 'object') {
+	      return property(func);
+	    }
+	    var props = keys(func),
+	        key = props[0],
+	        a = func[key];
+
+	    // handle "_.where" style callback shorthands
+	    if (props.length == 1 && a === a && !isObject(a)) {
+	      // fast path the common case of providing an object with a single
+	      // property containing a primitive value
+	      return function(object) {
+	        var b = object[key];
+	        return a === b && (a !== 0 || (1 / a == 1 / b));
+	      };
+	    }
+	    return function(object) {
+	      var length = props.length,
+	          result = false;
+
+	      while (length--) {
+	        if (!(result = baseIsEqual(object[props[length]], func[props[length]], null, true))) {
+	          break;
+	        }
+	      }
+	      return result;
+	    };
+	  }
+
+	  return createCallback;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 128 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(129), __webpack_require__(130), __webpack_require__(108), __webpack_require__(103), __webpack_require__(132)], __WEBPACK_AMD_DEFINE_RESULT__ = function(forIn, getArray, isFunction, objectTypes, releaseArray) {
+
+	  /** `Object#toString` result shortcuts */
+	  var argsClass = '[object Arguments]',
+	      arrayClass = '[object Array]',
+	      boolClass = '[object Boolean]',
+	      dateClass = '[object Date]',
+	      numberClass = '[object Number]',
+	      objectClass = '[object Object]',
+	      regexpClass = '[object RegExp]',
+	      stringClass = '[object String]';
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to resolve the internal [[Class]] of values */
+	  var toString = objectProto.toString;
+
+	  /** Native method shortcuts */
+	  var hasOwnProperty = objectProto.hasOwnProperty;
+
+	  /**
+	   * The base implementation of `_.isEqual`, without support for `thisArg` binding,
+	   * that allows partial "_.where" style comparisons.
+	   *
+	   * @private
+	   * @param {*} a The value to compare.
+	   * @param {*} b The other value to compare.
+	   * @param {Function} [callback] The function to customize comparing values.
+	   * @param {Function} [isWhere=false] A flag to indicate performing partial comparisons.
+	   * @param {Array} [stackA=[]] Tracks traversed `a` objects.
+	   * @param {Array} [stackB=[]] Tracks traversed `b` objects.
+	   * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+	   */
+	  function baseIsEqual(a, b, callback, isWhere, stackA, stackB) {
+	    // used to indicate that when comparing objects, `a` has at least the properties of `b`
+	    if (callback) {
+	      var result = callback(a, b);
+	      if (typeof result != 'undefined') {
+	        return !!result;
+	      }
+	    }
+	    // exit early for identical values
+	    if (a === b) {
+	      // treat `+0` vs. `-0` as not equal
+	      return a !== 0 || (1 / a == 1 / b);
+	    }
+	    var type = typeof a,
+	        otherType = typeof b;
+
+	    // exit early for unlike primitive values
+	    if (a === a &&
+	        !(a && objectTypes[type]) &&
+	        !(b && objectTypes[otherType])) {
+	      return false;
+	    }
+	    // exit early for `null` and `undefined` avoiding ES3's Function#call behavior
+	    // http://es5.github.io/#x15.3.4.4
+	    if (a == null || b == null) {
+	      return a === b;
+	    }
+	    // compare [[Class]] names
+	    var className = toString.call(a),
+	        otherClass = toString.call(b);
+
+	    if (className == argsClass) {
+	      className = objectClass;
+	    }
+	    if (otherClass == argsClass) {
+	      otherClass = objectClass;
+	    }
+	    if (className != otherClass) {
+	      return false;
+	    }
+	    switch (className) {
+	      case boolClass:
+	      case dateClass:
+	        // coerce dates and booleans to numbers, dates to milliseconds and booleans
+	        // to `1` or `0` treating invalid dates coerced to `NaN` as not equal
+	        return +a == +b;
+
+	      case numberClass:
+	        // treat `NaN` vs. `NaN` as equal
+	        return (a != +a)
+	          ? b != +b
+	          // but treat `+0` vs. `-0` as not equal
+	          : (a == 0 ? (1 / a == 1 / b) : a == +b);
+
+	      case regexpClass:
+	      case stringClass:
+	        // coerce regexes to strings (http://es5.github.io/#x15.10.6.4)
+	        // treat string primitives and their corresponding object instances as equal
+	        return a == String(b);
+	    }
+	    var isArr = className == arrayClass;
+	    if (!isArr) {
+	      // unwrap any `lodash` wrapped values
+	      var aWrapped = hasOwnProperty.call(a, '__wrapped__'),
+	          bWrapped = hasOwnProperty.call(b, '__wrapped__');
+
+	      if (aWrapped || bWrapped) {
+	        return baseIsEqual(aWrapped ? a.__wrapped__ : a, bWrapped ? b.__wrapped__ : b, callback, isWhere, stackA, stackB);
+	      }
+	      // exit for functions and DOM nodes
+	      if (className != objectClass) {
+	        return false;
+	      }
+	      // in older versions of Opera, `arguments` objects have `Array` constructors
+	      var ctorA = a.constructor,
+	          ctorB = b.constructor;
+
+	      // non `Object` object instances with different constructors are not equal
+	      if (ctorA != ctorB &&
+	            !(isFunction(ctorA) && ctorA instanceof ctorA && isFunction(ctorB) && ctorB instanceof ctorB) &&
+	            ('constructor' in a && 'constructor' in b)
+	          ) {
+	        return false;
+	      }
+	    }
+	    // assume cyclic structures are equal
+	    // the algorithm for detecting cyclic structures is adapted from ES 5.1
+	    // section 15.12.3, abstract operation `JO` (http://es5.github.io/#x15.12.3)
+	    var initedStack = !stackA;
+	    stackA || (stackA = getArray());
+	    stackB || (stackB = getArray());
+
+	    var length = stackA.length;
+	    while (length--) {
+	      if (stackA[length] == a) {
+	        return stackB[length] == b;
+	      }
+	    }
+	    var size = 0;
+	    result = true;
+
+	    // add `a` and `b` to the stack of traversed objects
+	    stackA.push(a);
+	    stackB.push(b);
+
+	    // recursively compare objects and arrays (susceptible to call stack limits)
+	    if (isArr) {
+	      // compare lengths to determine if a deep comparison is necessary
+	      length = a.length;
+	      size = b.length;
+	      result = size == length;
+
+	      if (result || isWhere) {
+	        // deep compare the contents, ignoring non-numeric properties
+	        while (size--) {
+	          var index = length,
+	              value = b[size];
+
+	          if (isWhere) {
+	            while (index--) {
+	              if ((result = baseIsEqual(a[index], value, callback, isWhere, stackA, stackB))) {
+	                break;
+	              }
+	            }
+	          } else if (!(result = baseIsEqual(a[size], value, callback, isWhere, stackA, stackB))) {
+	            break;
+	          }
+	        }
+	      }
+	    }
+	    else {
+	      // deep compare objects using `forIn`, instead of `forOwn`, to avoid `Object.keys`
+	      // which, in this case, is more costly
+	      forIn(b, function(value, key, b) {
+	        if (hasOwnProperty.call(b, key)) {
+	          // count the number of properties.
+	          size++;
+	          // deep compare each property value.
+	          return (result = hasOwnProperty.call(a, key) && baseIsEqual(a[key], value, callback, isWhere, stackA, stackB));
+	        }
+	      });
+
+	      if (result && !isWhere) {
+	        // ensure both objects have the same number of properties
+	        forIn(a, function(value, key, a) {
+	          if (hasOwnProperty.call(a, key)) {
+	            // `size` will be `-1` if `a` has more properties than `b`
+	            return (result = --size > -1);
+	          }
+	        });
+	      }
+	    }
+	    stackA.pop();
+	    stackB.pop();
+
+	    if (initedStack) {
+	      releaseArray(stackA);
+	      releaseArray(stackB);
+	    }
+	    return result;
+	  }
+
+	  return baseIsEqual;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 129 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(96), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, objectTypes) {
+
+	  /**
+	   * Iterates over own and inherited enumerable properties of an object,
+	   * executing the callback for each property. The callback is bound to `thisArg`
+	   * and invoked with three arguments; (value, key, object). Callbacks may exit
+	   * iteration early by explicitly returning `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @type Function
+	   * @category Objects
+	   * @param {Object} object The object to iterate over.
+	   * @param {Function} [callback=identity] The function called per iteration.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {Object} Returns `object`.
+	   * @example
+	   *
+	   * function Shape() {
+	   *   this.x = 0;
+	   *   this.y = 0;
+	   * }
+	   *
+	   * Shape.prototype.move = function(x, y) {
+	   *   this.x += x;
+	   *   this.y += y;
+	   * };
+	   *
+	   * _.forIn(new Shape, function(value, key) {
+	   *   console.log(key);
+	   * });
+	   * // => logs 'x', 'y', and 'move' (property order is not guaranteed across environments)
+	   */
+	  var forIn = function(collection, callback, thisArg) {
+	    var index, iterable = collection, result = iterable;
+	    if (!iterable) return result;
+	    if (!objectTypes[typeof iterable]) return result;
+	    callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
+	      for (index in iterable) {
+	        if (callback(iterable[index], index, collection) === false) return result;
+	      }
+	    return result
+	  };
+
+	  return forIn;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 130 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(arrayPool) {
+
+	  /**
+	   * Gets an array from the array pool or creates a new one if the pool is empty.
+	   *
+	   * @private
+	   * @returns {Array} The array from the pool.
+	   */
+	  function getArray() {
+	    return arrayPool.pop() || [];
+	  }
+
+	  return getArray;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** Used to pool arrays and objects used internally */
+	  var arrayPool = [];
+
+	  return arrayPool;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 132 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(131), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(arrayPool, maxPoolSize) {
+
+	  /**
+	   * Releases the given array back to the array pool.
+	   *
+	   * @private
+	   * @param {Array} [array] The array to release.
+	   */
+	  function releaseArray(array) {
+	    array.length = 0;
+	    if (arrayPool.length < maxPoolSize) {
+	      arrayPool.push(array);
+	    }
+	  }
+
+	  return releaseArray;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 133 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** Used as the max size of the `arrayPool` and `objectPool` */
+	  var maxPoolSize = 40;
+
+	  return maxPoolSize;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * Creates a "_.pluck" style function, which returns the `key` value of a
+	   * given object.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Utilities
+	   * @param {string} key The name of the property to retrieve.
+	   * @returns {Function} Returns the new function.
+	   * @example
+	   *
+	   * var characters = [
+	   *   { 'name': 'fred',   'age': 40 },
+	   *   { 'name': 'barney', 'age': 36 }
+	   * ];
+	   *
+	   * var getName = _.property('name');
+	   *
+	   * _.map(characters, getName);
+	   * // => ['barney', 'fred']
+	   *
+	   * _.sortBy(characters, getName);
+	   * // => [{ 'name': 'barney', 'age': 36 }, { 'name': 'fred',   'age': 40 }]
+	   */
+	  function property(key) {
+	    return function(object) {
+	      return object[key];
+	    };
+	  }
+
+	  return property;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	    __webpack_require__(92),
+	    __webpack_require__(93)
+	  ], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	    element,
+	    contains
+	  ) {
+
+	  /**
+	   * Chrome and Firefox: All elements need to contain either text or a `<br>` to
+	   * remain selectable. (Unless they have a width and height explicitly set with
+	   * CSS(?), as per: http://jsbin.com/gulob/2/edit?html,css,js,output)
+	   */
+
+	  'use strict';
+
+	  // http://www.w3.org/TR/html-markup/syntax.html#syntax-elements
+	  var html5VoidElements = ['AREA', 'BASE', 'BR', 'COL', 'COMMAND', 'EMBED', 'HR', 'IMG', 'INPUT', 'KEYGEN', 'LINK', 'META', 'PARAM', 'SOURCE', 'TRACK', 'WBR'];
+
+	  function parentHasNoTextContent(element, node) {
+	    if (element.isCaretPositionNode(node)) {
+	      return true;
+	    } else {
+	      return node.parentNode.textContent.trim() === '';
+	    }
+	  }
+
+
+	  function traverse(element, parentNode) {
+	    // Instead of TreeWalker, which gets confused when the BR is added to the dom,
+	    // we recursively traverse the tree to look for an empty node that can have childNodes
+
+	    var node = parentNode.firstElementChild;
+
+	    function isEmpty(node) {
+
+	      if ((node.children.length === 0 && element.isBlockElement(node))
+	        || (node.children.length === 1 && element.isSelectionMarkerNode(node.children[0]))) {
+	         return true;
+	      }
+
+	      // Do not insert BR in empty non block elements with parent containing text
+	      if (!element.isBlockElement(node) && node.children.length === 0) {
+	        return parentHasNoTextContent(element, node);
+	      }
+
+	      return false;
+	    }
+
+	    while (node) {
+	      if (!element.isSelectionMarkerNode(node)) {
+	        // Find any node that contains no child *elements*, or just contains
+	        // whitespace, and is not self-closing
+	        if (isEmpty(node) &&
+	          node.textContent.trim() === '' &&
+	          !contains(html5VoidElements, node.nodeName)) {
+	          node.appendChild(document.createElement('br'));
+	        } else if (node.children.length > 0) {
+	          traverse(element, node);
+	        }
+	      }
+	      node = node.nextElementSibling;
+	    }
+	  }
+
+	  return function () {
+	    return function (scribe) {
+
+	      scribe.registerHTMLFormatter('normalize', function (html) {
+	        var bin = document.createElement('div');
+	        bin.innerHTML = html;
+
+	        traverse(scribe.element, bin);
+
+	        return bin.innerHTML;
+	      });
+
+	    };
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(137)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  escape
+	) {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      scribe.registerPlainTextFormatter(escape);
+	    };
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(138), __webpack_require__(111), __webpack_require__(140)], __WEBPACK_AMD_DEFINE_RESULT__ = function(escapeHtmlChar, keys, reUnescapedHtml) {
+
+	  /**
+	   * Converts the characters `&`, `<`, `>`, `"`, and `'` in `string` to their
+	   * corresponding HTML entities.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Utilities
+	   * @param {string} string The string to escape.
+	   * @returns {string} Returns the escaped string.
+	   * @example
+	   *
+	   * _.escape('Fred, Wilma, & Pebbles');
+	   * // => 'Fred, Wilma, &amp; Pebbles'
+	   */
+	  function escape(string) {
+	    return string == null ? '' : String(string).replace(reUnescapedHtml, escapeHtmlChar);
+	  }
+
+	  return escape;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(139)], __WEBPACK_AMD_DEFINE_RESULT__ = function(htmlEscapes) {
+
+	  /**
+	   * Used by `escape` to convert characters to HTML entities.
+	   *
+	   * @private
+	   * @param {string} match The matched character to escape.
+	   * @returns {string} Returns the escaped character.
+	   */
+	  function escapeHtmlChar(match) {
+	    return htmlEscapes[match];
+	  }
+
+	  return escapeHtmlChar;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * Used to convert characters to HTML entities:
+	   *
+	   * Though the `>` character is escaped for symmetry, characters like `>` and `/`
+	   * don't require escaping in HTML and have no special meaning unless they're part
+	   * of a tag or an unquoted attribute value.
+	   * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
+	   */
+	  var htmlEscapes = {
+	    '&': '&amp;',
+	    '<': '&lt;',
+	    '>': '&gt;',
+	    '"': '&quot;',
+	    "'": '&#39;'
+	  };
+
+	  return htmlEscapes;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(139), __webpack_require__(111)], __WEBPACK_AMD_DEFINE_RESULT__ = function(htmlEscapes, keys) {
+
+	  /** Used to match HTML entities and HTML characters */
+	  var reUnescapedHtml = RegExp('[' + keys(htmlEscapes).join('') + ']', 'g');
+
+	  return reUnescapedHtml;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  // TODO: abstract
+	  function hasContent(rootNode) {
+	    var treeWalker = document.createTreeWalker(rootNode, NodeFilter.SHOW_ALL, null, false);
+
+	    while (treeWalker.nextNode()) {
+	      if (treeWalker.currentNode) {
+	        // If the node is a non-empty element or has content
+	        if (~['br'].indexOf(treeWalker.currentNode.nodeName.toLowerCase()) || treeWalker.currentNode.length > 0) {
+	          return true;
+	        }
+	      }
+	    }
+
+	    return false;
+	  }
+
+	  return function () {
+	    return function (scribe) {
+	      /**
+	       * Firefox has a `insertBrOnReturn` command, but this is not a part of
+	       * any standard. One day we might have an `insertLineBreak` command,
+	       * proposed by this spec:
+	       * https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html#the-insertlinebreak-command
+	       * As per: http://jsbin.com/IQUraXA/1/edit?html,js,output
+	       */
+	      scribe.el.addEventListener('keydown', function (event) {
+	        if (event.keyCode === 13) { // enter
+	          var selection = new scribe.api.Selection();
+	          var range = selection.range;
+
+	          var blockNode = selection.getContaining(function (node) {
+	            return node.nodeName === 'LI' || (/^(H[1-6])$/).test(node.nodeName);
+	          });
+
+	          if (! blockNode) {
+	            event.preventDefault();
+
+	            scribe.transactionManager.run(function () {
+	              /**
+	               * Firefox: Delete the bogus BR as we insert another one later.
+	               * We have to do this because otherwise the browser will believe
+	               * there is content to the right of the selection.
+	               */
+	              if (scribe.el.lastChild.nodeName === 'BR') {
+	                scribe.el.removeChild(scribe.el.lastChild);
+	              }
+
+	              var brNode = document.createElement('br');
+
+	              range.insertNode(brNode);
+	              // After inserting the BR into the range is no longer collapsed, so
+	              // we have to collapse it again.
+	              // TODO: Older versions of Firefox require this argument even though
+	              // it is supposed to be optional. Proxy/polyfill?
+	              range.collapse(false);
+
+	              /**
+	               * Chrome: If there is no right-hand side content, inserting a BR
+	               * will not appear to create a line break.
+	               * Firefox: If there is no right-hand side content, inserting a BR
+	               * will appear to create a weird "half-line break".
+	               *
+	               * Possible solution: Insert two BRs.
+	               * ✓ Chrome: Inserting two BRs appears to create a line break.
+	               * Typing will then delete the bogus BR element.
+	               * Firefox: Inserting two BRs will create two line breaks.
+	               *
+	               * Solution: Only insert two BRs if there is no right-hand
+	               * side content.
+	               *
+	               * If the user types on a line immediately after a BR element,
+	               * Chrome will replace the BR element with the typed characters,
+	               * whereas Firefox will not. Thus, to satisfy Firefox we have to
+	               * insert a bogus BR element on initialization (see below).
+	               */
+
+	              var contentToEndRange = range.cloneRange();
+	              contentToEndRange.setEndAfter(scribe.el.lastChild, 0);
+
+	              // Get the content from the range to the end of the heading
+	              var contentToEndFragment = contentToEndRange.cloneContents();
+
+	              // If there is not already a right hand side content we need to
+	              // insert a bogus BR element.
+	              if (! hasContent(contentToEndFragment)) {
+	                var bogusBrNode = document.createElement('br');
+	                range.insertNode(bogusBrNode);
+	              }
+
+	              var newRange = range.cloneRange();
+
+	              newRange.setStartAfter(brNode, 0);
+	              newRange.setEndAfter(brNode, 0);
+
+	              selection.selection.removeAllRanges();
+	              selection.selection.addRange(newRange);
+	            });
+	          }
+	        }
+	      }.bind(this));
+
+	      if (scribe.getHTML().trim() === '') {
+	        // Bogus BR element for Firefox — see explanation above.
+	        // TODO: also append when consumer sets the content manually.
+	        // TODO: hide when the user calls `getHTML`?
+	        scribe.setContent('');
+	      }
+	    };
+	  };
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(143),
+	  __webpack_require__(144),
+	  __webpack_require__(145),
+	  __webpack_require__(146),
+	  __webpack_require__(147),
+	  __webpack_require__(148),
+	  __webpack_require__(149)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  boldCommand,
+	  indentCommand,
+	  insertHTMLCommand,
+	  insertListCommands,
+	  outdentCommand,
+	  createLinkCommand,
+	  events
+	) {
+
+	  /**
+	   * Command patches browser inconsistencies. They do not perform core features
+	   * of the editor, such as ensuring P elements are created when
+	   * applying/unapplying commands — that is the job of the core commands.
+	   */
+
+	  'use strict';
+
+	  return {
+	    commands: {
+	      bold: boldCommand,
+	      indent: indentCommand,
+	      insertHTML: insertHTMLCommand,
+	      insertList: insertListCommands,
+	      outdent: outdentCommand,
+	      createLink: createLinkCommand,
+	    },
+	    events: events
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var boldCommand = new scribe.api.CommandPatch('bold');
+
+	      /**
+	       * Chrome: Executing the bold command inside a heading corrupts the markup.
+	       * Disabling for now.
+	       */
+	      boldCommand.queryEnabled = function () {
+	        var selection = new scribe.api.Selection();
+	        var headingNode = selection.getContaining(function (node) {
+	          return (/^(H[1-6])$/).test(node.nodeName);
+	        });
+
+	        return scribe.api.CommandPatch.prototype.queryEnabled.apply(this, arguments) && ! headingNode;
+	      };
+
+	      // TODO: We can't use STRONGs because this would mean we have to
+	      // re-implement the `queryState` command, which would be difficult.
+
+	      scribe.commandPatches.bold = boldCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  /**
+	   * Prevent Chrome from inserting BLOCKQUOTEs inside of Ps, and also from
+	   * adding a redundant `style` attribute to the created BLOCKQUOTE.
+	   */
+
+	  'use strict';
+
+	  var INVISIBLE_CHAR = '\uFEFF';
+
+	  return function () {
+	    return function (scribe) {
+	      var indentCommand = new scribe.api.CommandPatch('indent');
+
+	      indentCommand.execute = function (value) {
+	        scribe.transactionManager.run(function () {
+	          /**
+	           * Chrome: If we apply the indent command on an empty P, the
+	           * BLOCKQUOTE will be nested inside the P.
+	           * As per: http://jsbin.com/oDOriyU/3/edit?html,js,output
+	           */
+	          var selection = new scribe.api.Selection();
+	          var range = selection.range;
+
+	          var isCaretOnNewLine =
+	              (range.commonAncestorContainer.nodeName === 'P'
+	               && range.commonAncestorContainer.innerHTML === '<br>');
+	          if (isCaretOnNewLine) {
+	            // FIXME: this text node is left behind. Tidy it up somehow,
+	            // or don't use it at all.
+	            var textNode = document.createTextNode(INVISIBLE_CHAR);
+
+	            range.insertNode(textNode);
+
+	            range.setStart(textNode, 0);
+	            range.setEnd(textNode, 0);
+
+	            selection.selection.removeAllRanges();
+	            selection.selection.addRange(range);
+	          }
+
+	          scribe.api.CommandPatch.prototype.execute.call(this, value);
+
+	          /**
+	           * Chrome: The BLOCKQUOTE created contains a redundant style attribute.
+	           * As per: http://jsbin.com/AkasOzu/1/edit?html,js,output
+	           */
+
+	          // Renew the selection
+	          selection = new scribe.api.Selection();
+	          var blockquoteNode = selection.getContaining(function (node) {
+	            return node.nodeName === 'BLOCKQUOTE';
+	          });
+
+	          if (blockquoteNode) {
+	            blockquoteNode.removeAttribute('style');
+	          }
+	        }.bind(this));
+	      };
+
+	      scribe.commandPatches.indent = indentCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var insertHTMLCommandPatch = new scribe.api.CommandPatch('insertHTML');
+	      var element = scribe.element;
+
+	      insertHTMLCommandPatch.execute = function (value) {
+	        scribe.transactionManager.run(function () {
+	          scribe.api.CommandPatch.prototype.execute.call(this, value);
+
+	          /**
+	           * Chrome: If a parent node has a CSS `line-height` when we apply the
+	           * insertHTML command, Chrome appends a SPAN to plain content with
+	           * inline styling replicating that `line-height`, and adjusts the
+	           * `line-height` on inline elements.
+	           * As per: http://jsbin.com/ilEmudi/4/edit?css,js,output
+	           *
+	           * FIXME: what if the user actually wants to use SPANs? This could
+	           * cause conflicts.
+	           */
+
+	          // TODO: share somehow with similar event patch for P nodes
+	          sanitize(scribe.el);
+
+	          function sanitize(parentNode) {
+	            var treeWalker = document.createTreeWalker(parentNode, NodeFilter.SHOW_ELEMENT, null, false);
+	            var node = treeWalker.firstChild();
+	            if (!node) { return; }
+
+	            do {
+	              if (node.nodeName === 'SPAN') {
+	                element.unwrap(parentNode, node);
+	              } else {
+	                /**
+	                 * If the list item contains inline elements such as
+	                 * A, B, or I, Chrome will also append an inline style for
+	                 * `line-height` on those elements, so we remove it here.
+	                 */
+	                node.style.lineHeight = null;
+
+	                // There probably wasn’t a `style` attribute before, so
+	                // remove it if it is now empty.
+	                if (node.getAttribute('style') === '') {
+	                  node.removeAttribute('style');
+	                }
+	              }
+
+	              // Sanitize children
+	              sanitize(node);
+	            } while ((node = treeWalker.nextSibling()));
+	          }
+	        }.bind(this));
+	      };
+
+	      scribe.commandPatches.insertHTML = insertHTMLCommandPatch;
+	    };
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var element = scribe.element;
+	      var nodeHelpers = scribe.node;
+
+	      var InsertListCommandPatch = function (commandName) {
+	        scribe.api.CommandPatch.call(this, commandName);
+	      };
+
+	      InsertListCommandPatch.prototype = Object.create(scribe.api.CommandPatch.prototype);
+	      InsertListCommandPatch.prototype.constructor = InsertListCommandPatch;
+
+	      InsertListCommandPatch.prototype.execute = function (value) {
+	        scribe.transactionManager.run(function () {
+	          scribe.api.CommandPatch.prototype.execute.call(this, value);
+
+	          if (this.queryState()) {
+	            var selection = new scribe.api.Selection();
+
+	            var listElement = selection.getContaining(function (node) {
+	              return node.nodeName === 'OL' || node.nodeName === 'UL';
+	            });
+
+
+	            /**
+	             * Firefox: If we apply the insertOrderedList or the insertUnorderedList
+	             * command on an empty block, a P will be inserted after the OL/UL.
+	             * As per: http://jsbin.com/cubacoli/3/edit?html,js,output
+	             */
+
+	            if (listElement.nextElementSibling &&
+	                listElement.nextElementSibling.childNodes.length === 0) {
+	              nodeHelpers.removeNode(listElement.nextElementSibling);
+	            }
+
+	            /**
+	             * Chrome: If we apply the insertOrderedList or the insertUnorderedList
+	             * command on an empty block, the OL/UL will be nested inside the block.
+	             * As per: http://jsbin.com/eFiRedUc/1/edit?html,js,output
+	             */
+
+	            if (listElement) {
+	              var listParentNode = listElement.parentNode;
+	              // If list is within a text block then split that block
+	              if (listParentNode && /^(H[1-6]|P)$/.test(listParentNode.nodeName)) {
+	                selection.placeMarkers();
+	                // Move listElement out of the block
+	                nodeHelpers.insertAfter(listElement, listParentNode);
+	                selection.selectMarkers();
+
+	                /**
+	                 * Chrome 27-34: An empty text node is inserted.
+	                 */
+	                if (listParentNode.childNodes.length === 2 &&
+	                    nodeHelpers.isEmptyTextNode(listParentNode.firstChild)) {
+	                  nodeHelpers.removeNode(listParentNode);
+	                }
+
+	                // Remove the block if it's empty
+	                if (listParentNode.childNodes.length === 0) {
+	                  nodeHelpers.removeNode(listParentNode);
+	                }
+	              }
+	            }
+
+	            /**
+	             * Chrome: If a parent node has a CSS `line-height` when we apply the
+	             * insertOrderedList or the insertUnorderedList command, Chrome appends
+	             * a SPAN to LIs with inline styling replicating that `line-height`.
+	             * As per: http://jsbin.com/OtemujAY/7/edit?html,css,js,output
+	             *
+	             * FIXME: what if the user actually wants to use SPANs? This could
+	             * cause conflicts.
+	             */
+
+	            // TODO: share somehow with similar event patch for P nodes
+	            var listItemElements = Array.prototype.slice.call(listElement.childNodes);
+	            listItemElements.forEach(function(listItemElement) {
+	              // We clone the childNodes into an Array so that it's
+	              // not affected by any manipulation below when we
+	              // iterate over it
+	              var listItemElementChildNodes = Array.prototype.slice.call(listItemElement.childNodes);
+	              listItemElementChildNodes.forEach(function(listElementChildNode) {
+	                if (listElementChildNode.nodeName === 'SPAN') {
+	                  // Unwrap any SPAN that has been inserted
+	                  var spanElement = listElementChildNode;
+	                  element.unwrap(listItemElement, spanElement);
+	                } else if (listElementChildNode.nodeType === Node.ELEMENT_NODE) {
+	                  /**
+	                   * If the list item contains inline elements such as
+	                   * A, B, or I, Chrome will also append an inline style for
+	                   * `line-height` on those elements, so we remove it here.
+	                   */
+	                  listElementChildNode.style.lineHeight = null;
+
+	                  // There probably wasn’t a `style` attribute before, so
+	                  // remove it if it is now empty.
+	                  if (listElementChildNode.getAttribute('style') === '') {
+	                    listElementChildNode.removeAttribute('style');
+	                  }
+	                }
+	              });
+	            });
+	          }
+	        }.bind(this));
+	      };
+
+	      scribe.commandPatches.insertOrderedList = new InsertListCommandPatch('insertOrderedList');
+	      scribe.commandPatches.insertUnorderedList = new InsertListCommandPatch('insertUnorderedList');
+	    };
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  /**
+	   * Prevent Chrome from removing formatting of BLOCKQUOTE contents.
+	   */
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var outdentCommand = new scribe.api.CommandPatch('outdent');
+
+	      outdentCommand.execute = function () {
+	        scribe.transactionManager.run(function () {
+	          var selection = new scribe.api.Selection();
+	          var range = selection.range;
+
+	          var blockquoteNode = selection.getContaining(function (node) {
+	            return node.nodeName === 'BLOCKQUOTE';
+	          });
+
+	          if (range.commonAncestorContainer.nodeName === 'BLOCKQUOTE') {
+	            /**
+	             * Chrome: Applying the outdent command when a whole BLOCKQUOTE is
+	             * selected removes the formatting of its contents.
+	             * As per: http://jsbin.com/okAYaHa/1/edit?html,js,output
+	             */
+
+	            // Insert a copy of the selection before the BLOCKQUOTE, and then
+	            // restore the selection on the copy.
+	            selection.placeMarkers();
+	            // We want to copy the selected nodes *with* the markers
+	            selection.selectMarkers(true);
+	            var selectedNodes = range.cloneContents();
+	            blockquoteNode.parentNode.insertBefore(selectedNodes, blockquoteNode);
+	            range.deleteContents();
+	            selection.selectMarkers();
+
+	            // Delete the BLOCKQUOTE if it's empty
+	            if (blockquoteNode.textContent === '') {
+	              blockquoteNode.parentNode.removeChild(blockquoteNode);
+	            }
+	          } else {
+	            /**
+	             * Chrome: If we apply the outdent command on a P, the contents of the
+	             * P will be outdented instead of the whole P element.
+	             * As per: http://jsbin.com/IfaRaFO/1/edit?html,js,output
+	             */
+
+	            var pNode = selection.getContaining(function (node) {
+	              return node.nodeName === 'P';
+	            });
+
+	            if (pNode) {
+	              /**
+	               * If we are not at the start of end of a BLOCKQUOTE, we have to
+	               * split the node and insert the P in the middle.
+	               */
+
+	              var nextSiblingNodes = (new scribe.api.Node(pNode)).nextAll();
+
+	              if (nextSiblingNodes.length) {
+	                var newContainerNode = document.createElement(blockquoteNode.nodeName);
+
+	                nextSiblingNodes.forEach(function (siblingNode) {
+	                  newContainerNode.appendChild(siblingNode);
+	                });
+
+	                blockquoteNode.parentNode.insertBefore(newContainerNode, blockquoteNode.nextElementSibling);
+	              }
+
+	              selection.placeMarkers();
+	              blockquoteNode.parentNode.insertBefore(pNode, blockquoteNode.nextElementSibling);
+	              selection.selectMarkers();
+
+	              // If the BLOCKQUOTE is now empty, clean it up.
+	              if (blockquoteNode.innerHTML === '') {
+	                blockquoteNode.parentNode.removeChild(blockquoteNode);
+	              }
+	            } else {
+	              scribe.api.CommandPatch.prototype.execute.call(this);
+	            }
+	          }
+	        }.bind(this));
+	      };
+
+	      scribe.commandPatches.outdent = outdentCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      var createLinkCommand = new scribe.api.CommandPatch('createLink');
+	      scribe.commandPatches.createLink = createLinkCommand;
+
+	      createLinkCommand.execute = function (value) {
+	        var selection = new scribe.api.Selection();
+
+	        /**
+	         * Firefox does not create a link when selection is collapsed
+	         * so we create it manually. http://jsbin.com/tutufi/2/edit?js,output
+	         */
+	        // using range.collapsed vs selection.isCollapsed - https://code.google.com/p/chromium/issues/detail?id=447523
+	        if (selection.range.collapsed) {
+	          var aElement = document.createElement('a');
+	          aElement.setAttribute('href', value);
+	          aElement.textContent = value;
+
+	          selection.range.insertNode(aElement);
+
+	          // Select the created link
+	          var newRange = document.createRange();
+	          newRange.setStartBefore(aElement);
+	          newRange.setEndAfter(aElement);
+
+	          selection.selection.removeAllRanges();
+	          selection.selection.addRange(newRange);
+	        } else {
+	          scribe.api.CommandPatch.prototype.execute.call(this, value);
+	        }
+	      };
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      /**
+	       * Chrome: If a parent node has a CSS `line-height` when we apply the
+	       * insert(Un)OrderedList command, altering the paragraph structure by pressing
+	       * <backspace> or <delete> (merging/deleting paragraphs) sometimes
+	       * results in the application of a line-height attribute to the
+	       * contents of the paragraph, either onto existing elements or
+	       * by wrapping text in a span.
+	       * As per: http://jsbin.com/isIdoKA/4/edit?html,css,js,output
+	       *
+	       * FIXME: what if the user actually wants to use SPANs? This could
+	       * cause conflicts.
+	       */
+	      // TODO: do we need to run this on every key press, or could we
+	      //       detect when the issue may have occurred?
+	      // TODO: run in a transaction so as to record the change? how do
+	      //       we know in advance whether there will be a change though?
+	      // TODO: share somehow with `InsertList` command
+
+	      var element = scribe.element;
+
+	      if (scribe.allowsBlockElements()) {
+	        scribe.el.addEventListener('keyup', function (event) {
+	          if (event.keyCode === 8 || event.keyCode === 46) { // backspace or delete
+
+	            var selection = new scribe.api.Selection();
+
+	            // Note: the range is always collapsed on keyup here
+	            var containerPElement = selection.getContaining(function (node) {
+	              return node.nodeName === 'P';
+	            });
+	            if (containerPElement) {
+	              /**
+	               * The 'input' event listener has already triggered
+	               * and recorded the faulty content as an item in the
+	               * UndoManager. We interfere with the undoManager
+	               * by force merging that transaction with the next
+	               * transaction which produce a clean one instead.
+	               *
+	               * FIXME: ideally we would not trigger a
+	               * 'content-changed' event with faulty HTML at all, but
+	               * it's too late to cancel it at this stage (and it's
+	               * not happened yet at keydown time).
+	               */
+
+	              scribe.transactionManager.run(function () {
+	                // Store the caret position
+	                selection.placeMarkers();
+
+	                // We clone the childNodes into an Array so that it's
+	                // not affected by any manipulation below when we
+	                // iterate over it
+	                var pElementChildNodes = Array.prototype.slice.call(containerPElement.childNodes);
+	                pElementChildNodes.forEach(function(pElementChildNode) {
+	                  if (pElementChildNode.nodeName === 'SPAN') {
+	                    // Unwrap any SPAN that has been inserted
+	                    var spanElement = pElementChildNode;
+	                    element.unwrap(containerPElement, spanElement);
+	                  } else if (pElementChildNode.nodeType === Node.ELEMENT_NODE) {
+	                    /**
+	                     * If the paragraph contains inline elements such as
+	                     * A, B, or I, Chrome will also append an inline style for
+	                     * `line-height` on those elements, so we remove it here.
+	                     */
+	                    pElementChildNode.style.lineHeight = null;
+
+	                    // There probably wasn’t a `style` attribute before, so
+	                    // remove it if it is now empty.
+	                    if (pElementChildNode.getAttribute('style') === '') {
+	                      pElementChildNode.removeAttribute('style');
+	                    }
+	                  }
+	                });
+
+	                selection.selectMarkers();
+	              }, true);
+	            }
+	          }
+	        });
+	      }
+	    };
+	  };
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  /**
+	   * Sets the default content of the scribe so that each carriage return creates
+	   * a P.
+	   */
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      // The content might have already been set, in which case we don't want
+	      // to apply.
+	      if (scribe.getHTML().trim() === '') {
+	        /**
+	         * We have to begin with the following HTML, because otherwise some
+	         * browsers(?) will position the caret outside of the P when the scribe is
+	         * focused.
+	         */
+	        scribe.setContent('<p><br></p>');
+	      }
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(93),
+	  __webpack_require__(152)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  contains,
+	  observeDomChanges
+	) {
+
+	  'use strict';
+
+	  return function () {
+	    return function (scribe) {
+	      /**
+	       * Firefox: Giving focus to a `contenteditable` will place the caret
+	       * outside of any block elements. Chrome behaves correctly by placing the
+	       * caret at the  earliest point possible inside the first block element.
+	       * As per: http://jsbin.com/eLoFOku/1/edit?js,console,output
+	       *
+	       * We detect when this occurs and fix it by placing the caret ourselves.
+	       */
+	      scribe.el.addEventListener('focus', function placeCaretOnFocus() {
+	        var selection = new scribe.api.Selection();
+	        // In Chrome, the range is not created on or before this event loop.
+	        // It doesn’t matter because this is a fix for Firefox.
+	        if (selection.range) {
+
+	          var isFirefoxBug = scribe.allowsBlockElements() &&
+	                  selection.range.startContainer === scribe.el;
+
+	          if (isFirefoxBug) {
+	            var focusElement = getFirstDeepestChild(scribe.el.firstChild);
+
+	            var range = selection.range;
+
+	            range.setStart(focusElement, 0);
+	            range.setEnd(focusElement, 0);
+
+	            selection.selection.removeAllRanges();
+	            selection.selection.addRange(range);
+	          }
+	        }
+
+	        function getFirstDeepestChild(node) {
+	          var treeWalker = document.createTreeWalker(node, NodeFilter.SHOW_ALL, null, false);
+	          var previousNode = treeWalker.currentNode;
+	          if (treeWalker.firstChild()) {
+	            // TODO: build list of non-empty elements (used elsewhere)
+	            // Do not include non-empty elements
+	            if (treeWalker.currentNode.nodeName === 'BR') {
+	              return previousNode;
+	            } else {
+	              return getFirstDeepestChild(treeWalker.currentNode);
+	            }
+	          } else {
+	            return treeWalker.currentNode;
+	          }
+	        }
+	      }.bind(scribe));
+
+	      /**
+	       * Apply the formatters when there is a DOM mutation.
+	       */
+	      var applyFormatters = function() {
+	        if (!scribe._skipFormatters) {
+	          var selection = new scribe.api.Selection();
+	          var isEditorActive = selection.range;
+
+	          var runFormatters = function () {
+	            if (isEditorActive) {
+	              selection.placeMarkers();
+	            }
+	            scribe.setHTML(scribe._htmlFormatterFactory.format(scribe.getHTML()));
+	            selection.selectMarkers();
+	          }.bind(scribe);
+
+	          // We only want to wrap the formatting in a transaction if the editor is
+	          // active. If the DOM is mutated when the editor isn't active (e.g.
+	          // `scribe.setContent`), we do not want to push to the history. (This
+	          // happens on the first `focus` event).
+
+	          // The previous check is no longer needed, and the above comments are no longer valid.
+	          // Now `scribe.setContent` updates the content manually, and `scribe.pushHistory`
+	          // will not detect any changes, and nothing will be push into the history.
+	          // Any mutations made without `scribe.getContent` will be pushed into the history normally.
+
+	          // Pass content through formatters, place caret back
+	          scribe.transactionManager.run(runFormatters);
+	        }
+
+	        delete scribe._skipFormatters;
+	      }.bind(scribe);
+
+	      observeDomChanges(scribe.el, applyFormatters);
+
+	      // TODO: disconnect on tear down:
+	      // observer.disconnect();
+
+	      /**
+	       * If the paragraphs option is set to true, we need to manually handle
+	       * keyboard navigation inside a heading to ensure a P element is created.
+	       */
+	      if (scribe.allowsBlockElements()) {
+	        scribe.el.addEventListener('keydown', function (event) {
+	          if (event.keyCode === 13) { // enter
+
+	            var selection = new scribe.api.Selection();
+	            var range = selection.range;
+
+	            var headingNode = selection.getContaining(function (node) {
+	              return (/^(H[1-6])$/).test(node.nodeName);
+	            });
+
+	            /**
+	             * If we are at the end of the heading, insert a P. Otherwise handle
+	             * natively.
+	             */
+	            if (headingNode && range.collapsed) {
+	              var contentToEndRange = range.cloneRange();
+	              contentToEndRange.setEndAfter(headingNode, 0);
+
+	              // Get the content from the range to the end of the heading
+	              var contentToEndFragment = contentToEndRange.cloneContents();
+
+	              if (contentToEndFragment.firstChild.textContent === '') {
+	                event.preventDefault();
+
+	                scribe.transactionManager.run(function () {
+	                  // Default P
+	                  // TODO: Abstract somewhere
+	                  var pNode = document.createElement('p');
+	                  var brNode = document.createElement('br');
+	                  pNode.appendChild(brNode);
+
+	                  headingNode.parentNode.insertBefore(pNode, headingNode.nextElementSibling);
+
+	                  // Re-apply range
+	                  range.setStart(pNode, 0);
+	                  range.setEnd(pNode, 0);
+
+	                  selection.selection.removeAllRanges();
+	                  selection.selection.addRange(range);
+	                });
+	              }
+	            }
+	          }
+	        });
+	      }
+
+	      /**
+	       * If the paragraphs option is set to true, we need to manually handle
+	       * keyboard navigation inside list item nodes.
+	       */
+	      if (scribe.allowsBlockElements()) {
+	        scribe.el.addEventListener('keydown', function (event) {
+	          if (event.keyCode === 13 || event.keyCode === 8) { // enter || backspace
+
+	            var selection = new scribe.api.Selection();
+	            var range = selection.range;
+
+	            if (range.collapsed) {
+	              var containerLIElement = selection.getContaining(function (node) {
+	                return node.nodeName === 'LI';
+	              });
+	              if (containerLIElement && containerLIElement.textContent.trim() === '') {
+	                /**
+	                 * LIs
+	                 */
+
+	                event.preventDefault();
+
+	                var listNode = selection.getContaining(function (node) {
+	                  return node.nodeName === 'UL' || node.nodeName === 'OL';
+	                });
+
+	                var command = scribe.getCommand(listNode.nodeName === 'OL' ? 'insertOrderedList' : 'insertUnorderedList');
+
+	                command.execute();
+	              }
+	            }
+	          }
+	        });
+	      }
+
+	      /**
+	       * We have to hijack the paste event to ensure it uses
+	       * `scribe.insertHTML`, which executes the Scribe version of the command
+	       * and also runs the formatters.
+	       */
+
+	      /**
+	       * TODO: could we implement this as a polyfill for `event.clipboardData` instead?
+	       * I also don't like how it has the authority to perform `event.preventDefault`.
+	       */
+
+	      scribe.el.addEventListener('paste', function handlePaste(event) {
+	        /**
+	         * Browsers without the Clipboard API (specifically `ClipboardEvent.clipboardData`)
+	         * will execute the second branch here.
+	         */
+	        if (event.clipboardData) {
+	          event.preventDefault();
+
+	          if (contains(event.clipboardData.types, 'text/html')) {
+
+	            scribe.insertHTML(event.clipboardData.getData('text/html'));
+	          } else {
+	            scribe.insertPlainText(event.clipboardData.getData('text/plain'));
+	          }
+	        } else {
+	          /**
+	           * If the browser doesn't have `ClipboardEvent.clipboardData`, we run through a
+	           * sequence of events:
+	           *
+	           *   - Save the text selection
+	           *   - Focus another, hidden textarea so we paste there
+	           *   - Copy the pasted content of said textarea
+	           *   - Give focus back to the scribe
+	           *   - Restore the text selection
+	           *
+	           * This is required because, without access to the Clipboard API, there is literally
+	           * no other way to manipulate content on paste.
+	           * As per: https://github.com/jejacks0n/mercury/issues/23#issuecomment-2308347
+	           *
+	           * Firefox <= 21
+	           * https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent.clipboardData
+	           */
+
+	          var selection = new scribe.api.Selection();
+
+	          // Store the caret position
+	          selection.placeMarkers();
+
+	          var bin = document.createElement('div');
+	          document.body.appendChild(bin);
+	          bin.setAttribute('contenteditable', true);
+	          bin.focus();
+
+	          // Wait for the paste to happen (next loop?)
+	          setTimeout(function () {
+	            var data = bin.innerHTML;
+	            bin.parentNode.removeChild(bin);
+
+	            // Restore the caret position
+	            selection.selectMarkers();
+	            /**
+	             * Firefox 19 (and maybe others): even though the applied range
+	             * exists within the Scribe instance, we need to focus it.
+	             */
+	            scribe.el.focus();
+
+	            scribe.insertHTML(data);
+	          }, 1);
+	        }
+	      });
+
+	    };
+	  };
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	  __webpack_require__(153),
+	  __webpack_require__(157),
+	  __webpack_require__(92),
+	  __webpack_require__(159)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
+	  flatten,
+	  toArray,
+	  elementHelpers,
+	  nodeHelpers
+	) {
+
+	  function observeDomChanges(el, callback) {
+	    function includeRealMutations(mutations) {
+	      var allChangedNodes = flatten(mutations.map(function(mutation) {
+	        var added   = toArray(mutation.addedNodes);
+	        var removed = toArray(mutation.removedNodes);
+	        return added.concat(removed);
+	      }));
+
+	      var realChangedNodes = allChangedNodes.
+	        filter(function(n) { return ! nodeHelpers.isEmptyTextNode(n); }).
+	        filter(function(n) { return ! elementHelpers.isSelectionMarkerNode(n); });
+
+	      return realChangedNodes.length > 0;
+	    }
+
+	    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+	    
+	    // Flag to avoid running recursively
+	    var runningPostMutation = false;
+
+	    var observer = new MutationObserver(function(mutations) {
+	      if (! runningPostMutation && includeRealMutations(mutations)) {
+	        runningPostMutation = true;
+
+	        try {
+	          callback();
+	        } catch(e) {
+	          // The catch block is required but we don't want to swallow the error
+	          throw e;
+	        } finally {
+	          // We must yield to let any mutation we caused be triggered
+	          // in the next cycle
+	          setTimeout(function() {
+	            runningPostMutation = false;
+	          }, 0);
+	        }
+	      }
+	    });
+
+	    observer.observe(el, {
+	      attributes: true,
+	      childList: true,
+	      subtree: true
+	    });
+
+	    return observer;
+	  }
+
+	  return observeDomChanges;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(154), __webpack_require__(156)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseFlatten, map) {
+
+	  /**
+	   * Flattens a nested array (the nesting can be to any depth). If `isShallow`
+	   * is truey, the array will only be flattened a single level. If a callback
+	   * is provided each element of the array is passed through the callback before
+	   * flattening. The callback is bound to `thisArg` and invoked with three
+	   * arguments; (value, index, array).
+	   *
+	   * If a property name is provided for `callback` the created "_.pluck" style
+	   * callback will return the property value of the given element.
+	   *
+	   * If an object is provided for `callback` the created "_.where" style callback
+	   * will return `true` for elements that have the properties of the given object,
+	   * else `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Arrays
+	   * @param {Array} array The array to flatten.
+	   * @param {boolean} [isShallow=false] A flag to restrict flattening to a single level.
+	   * @param {Function|Object|string} [callback=identity] The function called
+	   *  per iteration. If a property name or object is provided it will be used
+	   *  to create a "_.pluck" or "_.where" style callback, respectively.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {Array} Returns a new flattened array.
+	   * @example
+	   *
+	   * _.flatten([1, [2], [3, [[4]]]]);
+	   * // => [1, 2, 3, 4];
+	   *
+	   * _.flatten([1, [2], [3, [[4]]]], true);
+	   * // => [1, 2, 3, [[4]]];
+	   *
+	   * var characters = [
+	   *   { 'name': 'barney', 'age': 30, 'pets': ['hoppy'] },
+	   *   { 'name': 'fred',   'age': 40, 'pets': ['baby puss', 'dino'] }
+	   * ];
+	   *
+	   * // using "_.pluck" callback shorthand
+	   * _.flatten(characters, 'pets');
+	   * // => ['hoppy', 'baby puss', 'dino']
+	   */
+	  function flatten(array, isShallow, callback, thisArg) {
+	    // juggle arguments
+	    if (typeof isShallow != 'boolean' && isShallow != null) {
+	      thisArg = callback;
+	      callback = (typeof isShallow != 'function' && thisArg && thisArg[isShallow] === array) ? null : isShallow;
+	      isShallow = false;
+	    }
+	    if (callback != null) {
+	      array = map(array, callback, thisArg);
+	    }
+	    return baseFlatten(array, isShallow);
+	  }
+
+	  return flatten;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(155), __webpack_require__(113)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isArguments, isArray) {
+
+	  /**
+	   * The base implementation of `_.flatten` without support for callback
+	   * shorthands or `thisArg` binding.
+	   *
+	   * @private
+	   * @param {Array} array The array to flatten.
+	   * @param {boolean} [isShallow=false] A flag to restrict flattening to a single level.
+	   * @param {boolean} [isStrict=false] A flag to restrict flattening to arrays and `arguments` objects.
+	   * @param {number} [fromIndex=0] The index to start from.
+	   * @returns {Array} Returns a new flattened array.
+	   */
+	  function baseFlatten(array, isShallow, isStrict, fromIndex) {
+	    var index = (fromIndex || 0) - 1,
+	        length = array ? array.length : 0,
+	        result = [];
+
+	    while (++index < length) {
+	      var value = array[index];
+
+	      if (value && typeof value == 'object' && typeof value.length == 'number'
+	          && (isArray(value) || isArguments(value))) {
+	        // recursively flatten arrays (susceptible to call stack limits)
+	        if (!isShallow) {
+	          value = baseFlatten(value, isShallow, isStrict);
+	        }
+	        var valIndex = -1,
+	            valLength = value.length,
+	            resIndex = result.length;
+
+	        result.length += valLength;
+	        while (++valIndex < valLength) {
+	          result[resIndex++] = value[valIndex];
+	        }
+	      } else if (!isStrict) {
+	        result.push(value);
+	      }
+	    }
+	    return result;
+	  }
+
+	  return baseFlatten;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /** `Object#toString` result shortcuts */
+	  var argsClass = '[object Arguments]';
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to resolve the internal [[Class]] of values */
+	  var toString = objectProto.toString;
+
+	  /**
+	   * Checks if `value` is an `arguments` object.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {*} value The value to check.
+	   * @returns {boolean} Returns `true` if the `value` is an `arguments` object, else `false`.
+	   * @example
+	   *
+	   * (function() { return _.isArguments(arguments); })(1, 2, 3);
+	   * // => true
+	   *
+	   * _.isArguments([1, 2, 3]);
+	   * // => false
+	   */
+	  function isArguments(value) {
+	    return value && typeof value == 'object' && typeof value.length == 'number' &&
+	      toString.call(value) == argsClass || false;
+	  }
+
+	  return isArguments;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(127), __webpack_require__(95)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createCallback, forOwn) {
+
+	  /**
+	   * Creates an array of values by running each element in the collection
+	   * through the callback. The callback is bound to `thisArg` and invoked with
+	   * three arguments; (value, index|key, collection).
+	   *
+	   * If a property name is provided for `callback` the created "_.pluck" style
+	   * callback will return the property value of the given element.
+	   *
+	   * If an object is provided for `callback` the created "_.where" style callback
+	   * will return `true` for elements that have the properties of the given object,
+	   * else `false`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @alias collect
+	   * @category Collections
+	   * @param {Array|Object|string} collection The collection to iterate over.
+	   * @param {Function|Object|string} [callback=identity] The function called
+	   *  per iteration. If a property name or object is provided it will be used
+	   *  to create a "_.pluck" or "_.where" style callback, respectively.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {Array} Returns a new array of the results of each `callback` execution.
+	   * @example
+	   *
+	   * _.map([1, 2, 3], function(num) { return num * 3; });
+	   * // => [3, 6, 9]
+	   *
+	   * _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(num) { return num * 3; });
+	   * // => [3, 6, 9] (property order is not guaranteed across environments)
+	   *
+	   * var characters = [
+	   *   { 'name': 'barney', 'age': 36 },
+	   *   { 'name': 'fred',   'age': 40 }
+	   * ];
+	   *
+	   * // using "_.pluck" callback shorthand
+	   * _.map(characters, 'name');
+	   * // => ['barney', 'fred']
+	   */
+	  function map(collection, callback, thisArg) {
+	    var index = -1,
+	        length = collection ? collection.length : 0;
+
+	    callback = createCallback(callback, thisArg, 3);
+	    if (typeof length == 'number') {
+	      var result = Array(length);
+	      while (++index < length) {
+	        result[index] = callback(collection[index], index, collection);
+	      }
+	    } else {
+	      result = [];
+	      forOwn(collection, function(value, key, collection) {
+	        result[++index] = callback(value, key, collection);
+	      });
+	    }
+	    return result;
+	  }
+
+	  return map;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(114), __webpack_require__(106), __webpack_require__(158)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isString, slice, values) {
+
+	  /**
+	   * Converts the `collection` to an array.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Collections
+	   * @param {Array|Object|string} collection The collection to convert.
+	   * @returns {Array} Returns the new converted array.
+	   * @example
+	   *
+	   * (function() { return _.toArray(arguments).slice(1); })(1, 2, 3, 4);
+	   * // => [2, 3, 4]
+	   */
+	  function toArray(collection) {
+	    if (collection && typeof collection.length == 'number') {
+	      return slice(collection);
+	    }
+	    return values(collection);
+	  }
+
+	  return toArray;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(111)], __WEBPACK_AMD_DEFINE_RESULT__ = function(keys) {
+
+	  /**
+	   * Creates an array composed of the own enumerable property values of `object`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Objects
+	   * @param {Object} object The object to inspect.
+	   * @returns {Array} Returns an array of property values.
+	   * @example
+	   *
+	   * _.values({ 'one': 1, 'two': 2, 'three': 3 });
+	   * // => [1, 2, 3] (property order is not guaranteed across environments)
+	   */
+	  function values(object) {
+	    var index = -1,
+	        props = keys(object),
+	        length = props.length,
+	        result = Array(length);
+
+	    while (++index < length) {
+	      result[index] = object[props[index]];
+	    }
+	    return result;
+	  }
+
+	  return values;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+
+	  'use strict';
+
+	  function isEmptyTextNode(node) {
+	    return (node.nodeType === Node.TEXT_NODE && node.textContent === '');
+	  }
+
+	  function insertAfter(newNode, referenceNode) {
+	    return referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+	  }
+
+	  function removeNode(node) {
+	    return node.parentNode.removeChild(node);
+	  }
+
+	  return {
+	    isEmptyTextNode: isEmptyTextNode,
+	    insertAfter: insertAfter,
+	    removeNode: removeNode
+	  };
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(161)], __WEBPACK_AMD_DEFINE_RESULT__ = function (assign) {
+
+	  'use strict';
+
+	  return function (scribe) {
+	    function TransactionManager() {
+	      this.history = [];
+	    }
+
+	    assign(TransactionManager.prototype, {
+	      start: function () {
+	        this.history.push(1);
+	      },
+
+	      end: function () {
+	        this.history.pop();
+
+	        if (this.history.length === 0) {
+	          scribe.pushHistory();
+	          scribe.trigger('content-changed');
+	        }
+	      },
+
+	      run: function (transaction, forceMerge) {
+	        this.start();
+	        // If there is an error, don't prevent the transaction from ending.
+	        try {
+	          if (transaction) {
+	            transaction();
+	          }
+	        } finally {
+	          scribe._forceMerge = forceMerge === true;
+	          this.end();
+	          scribe._forceMerge = false;
+	        }
+	      }
+	    });
+
+	    return TransactionManager;
+	  };
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(96), __webpack_require__(111), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, keys, objectTypes) {
+
+	  /**
+	   * Assigns own enumerable properties of source object(s) to the destination
+	   * object. Subsequent sources will overwrite property assignments of previous
+	   * sources. If a callback is provided it will be executed to produce the
+	   * assigned values. The callback is bound to `thisArg` and invoked with two
+	   * arguments; (objectValue, sourceValue).
+	   *
+	   * @static
+	   * @memberOf _
+	   * @type Function
+	   * @alias extend
+	   * @category Objects
+	   * @param {Object} object The destination object.
+	   * @param {...Object} [source] The source objects.
+	   * @param {Function} [callback] The function to customize assigning values.
+	   * @param {*} [thisArg] The `this` binding of `callback`.
+	   * @returns {Object} Returns the destination object.
+	   * @example
+	   *
+	   * _.assign({ 'name': 'fred' }, { 'employer': 'slate' });
+	   * // => { 'name': 'fred', 'employer': 'slate' }
+	   *
+	   * var defaults = _.partialRight(_.assign, function(a, b) {
+	   *   return typeof a == 'undefined' ? b : a;
+	   * });
+	   *
+	   * var object = { 'name': 'barney' };
+	   * defaults(object, { 'name': 'fred', 'employer': 'slate' });
+	   * // => { 'name': 'barney', 'employer': 'slate' }
+	   */
+	  var assign = function(object, source, guard) {
+	    var index, iterable = object, result = iterable;
+	    if (!iterable) return result;
+	    var args = arguments,
+	        argsIndex = 0,
+	        argsLength = typeof guard == 'number' ? 2 : args.length;
+	    if (argsLength > 3 && typeof args[argsLength - 2] == 'function') {
+	      var callback = baseCreateCallback(args[--argsLength - 1], args[argsLength--], 2);
+	    } else if (argsLength > 2 && typeof args[argsLength - 1] == 'function') {
+	      callback = args[--argsLength];
+	    }
+	    while (++argsIndex < argsLength) {
+	      iterable = args[argsIndex];
+	      if (iterable && objectTypes[typeof iterable]) {
+	      var ownIndex = -1,
+	          ownProps = objectTypes[typeof iterable] && keys(iterable),
+	          length = ownProps ? ownProps.length : 0;
+
+	      while (++ownIndex < length) {
+	        index = ownProps[ownIndex];
+	        result[index] = callback ? callback(result[index], iterable[index]) : iterable[index];
+	      }
+	      }
+	    }
+	    return result
+	  };
+
+	  return assign;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	  'use strict';
+
+	  function UndoManager(limit, undoScopeHost) {
+	    this._stack = [];
+	    this._limit = limit;
+	    this._fireEvent = typeof CustomEvent != 'undefined' && undoScopeHost && undoScopeHost.dispatchEvent;
+	    this._ush = undoScopeHost;
+
+	    this.position = 0;
+	    this.length = 0;
+	  }
+
+	  UndoManager.prototype.transact = function (transaction, merge) {
+	    if (arguments.length < 2) {
+	      throw new TypeError('Not enough arguments to UndoManager.transact.');
+	    }
+
+	    transaction.execute();
+
+	    this._stack.splice(0, this.position);
+	    if (merge && this.length) {
+	      this._stack[0].push(transaction);
+	    }
+	    else {
+	      this._stack.unshift([transaction]);
+	    }
+	    this.position = 0;
+
+	    if (this._limit && this._stack.length > this._limit) {
+	      this.length = this._stack.length = this._limit;
+	    }
+	    else {
+	      this.length = this._stack.length;
+	    }
+
+	    if (this._fireEvent) {
+	      this._ush.dispatchEvent(new CustomEvent('DOMTransaction', {detail: {transactions: this._stack[0].slice()}, bubbles: true, cancelable: false}));
+	    }
+	  };
+
+	  UndoManager.prototype.undo = function () {
+	    if (this.position < this.length) {
+	      for (var i = this._stack[this.position].length - 1; i >= 0; i--) {
+	        this._stack[this.position][i].undo();
+	      }
+	      this.position++;
+
+	      if (this._fireEvent) {
+	        this._ush.dispatchEvent(new CustomEvent('undo', {detail: {transactions: this._stack[this.position - 1].slice()}, bubbles: true, cancelable: false}));
+	      }
+	    }
+	  };
+
+	  UndoManager.prototype.redo = function () {
+	    if (this.position > 0) {
+	      for (var i = 0, n = this._stack[this.position - 1].length; i < n; i++) {
+	        this._stack[this.position - 1][i].redo();
+	      }
+	      this.position--;
+
+	      if (this._fireEvent) {
+	        this._ush.dispatchEvent(new CustomEvent('redo', {detail: {transactions: this._stack[this.position].slice()}, bubbles: true, cancelable: false}));
+	      }
+	    }
+	  };
+
+	  UndoManager.prototype.item = function (index) {
+	    if (index >= 0 && index < this.length) {
+	      return this._stack[index].slice();
+	    }
+	    return null;
+	  };
+
+	  UndoManager.prototype.clearUndo = function () {
+	    this._stack.length = this.length = this.position;
+	  };
+
+	  UndoManager.prototype.clearRedo = function () {
+	    this._stack.splice(0, this.position);
+	    this.position = 0;
+	    this.length = this._stack.length;
+	  };
+
+	  return UndoManager;
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(164),
+	  __webpack_require__(165)], __WEBPACK_AMD_DEFINE_RESULT__ = function (pull, Immutable) {
+
+	  'use strict';
+
+	  // TODO: once
+	  // TODO: unit test
+	  // Good example of a complete(?) implementation: https://github.com/Wolfy87/EventEmitter
+	  function EventEmitter() {
+	    this._listeners = {};
+	  }
+
+	  EventEmitter.prototype.on = function (eventName, fn) {
+	    var listeners = this._listeners[eventName] || Immutable.Set();
+
+	    this._listeners[eventName] = listeners.add(fn);
+	  };
+
+	  EventEmitter.prototype.off = function (eventName, fn) {
+	    var listeners = this._listeners[eventName] || Immutable.Set();
+	    if (fn) {
+	      listeners = listeners.delete(fn);
+	    } else {
+	      listeners = listeners.clear();
+	    }
+	  };
+
+	  EventEmitter.prototype.trigger = function (eventName, args) {
+
+	    //fire events like my:custom:event -> my:custom -> my
+	    var events = eventName.split(':');
+	    while(!!events.length){
+	      var currentEvent = events.join(':');
+	      var listeners = this._listeners[currentEvent] || Immutable.Set();
+	      //trigger handles
+	      listeners.forEach(function (listener) {
+	        listener.apply(null, args);
+	      });
+	      events.splice((events.length - 1), 1);
+	    }
+	  };
+
+	  return EventEmitter;
+
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
+	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
+	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <http://lodash.com/license>
+	 */
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+
+	  /**
+	   * Used for `Array` method references.
+	   *
+	   * Normally `Array.prototype` would suffice, however, using an array literal
+	   * avoids issues in Narwhal.
+	   */
+	  var arrayRef = [];
+
+	  /** Native method shortcuts */
+	  var splice = arrayRef.splice;
+
+	  /**
+	   * Removes all provided values from the given array using strict equality for
+	   * comparisons, i.e. `===`.
+	   *
+	   * @static
+	   * @memberOf _
+	   * @category Arrays
+	   * @param {Array} array The array to modify.
+	   * @param {...*} [value] The values to remove.
+	   * @returns {Array} Returns `array`.
+	   * @example
+	   *
+	   * var array = [1, 2, 3, 1, 2, 3];
+	   * _.pull(array, 2, 3);
+	   * console.log(array);
+	   * // => [1, 1]
+	   */
+	  function pull(array) {
+	    var args = arguments,
+	        argsIndex = 0,
+	        argsLength = args.length,
+	        length = array ? array.length : 0;
+
+	    while (++argsIndex < argsLength) {
+	      var index = -1,
+	          value = args[argsIndex];
+	      while (++index < length) {
+	        if (array[index] === value) {
+	          splice.call(array, index--, 1);
+	          length--;
+	        }
+	      }
+	    }
+	    return array;
+	  }
+
+	  return pull;
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+/***/ },
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21939,1240 +24657,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	}));
 
 /***/ },
-/* 98 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(167),], __WEBPACK_AMD_DEFINE_RESULT__ = function (defaults) {
 
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var indentCommand = new scribe.api.Command('indent');
-
-	      indentCommand.queryEnabled = function () {
-	        /**
-	         * FIXME: Chrome nests ULs inside of ULs
-	         * Currently we just disable the command when the selection is inside of
-	         * a list.
-	         * As per: http://jsbin.com/ORikUPa/3/edit?html,js,output
-	         */
-	        var selection = new scribe.api.Selection();
-	        var listElement = selection.getContaining(function (element) {
-	          return element.nodeName === 'UL' || element.nodeName === 'OL';
-	        });
-
-	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements() && ! listElement;
-	      };
-
-	      scribe.commands.indent = indentCommand;
-	    };
+	  var defaultOptions = {
+	    allowBlockElements: true,
+	    debug: false,
+	    undo: {
+	      manager: false,
+	      enabled: true,
+	      limit: 100,
+	      interval: 250
+	    },
+	    defaultCommandPatches: [
+	      'bold',
+	      'indent',
+	      'insertHTML',
+	      'insertList',
+	      'outdent',
+	      'createLink'
+	    ]
 	  };
 
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
+	  function checkOptions(userSuppliedOptions) {
+	    var options = userSuppliedOptions || {};
 
-/***/ },
-/* 99 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * If the paragraphs option is set to true, then when the list is
-	   * unapplied, ensure that we enter a P element.
-	   */
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var InsertListCommand = function (commandName) {
-	        scribe.api.Command.call(this, commandName);
-	      };
-
-	      InsertListCommand.prototype = Object.create(scribe.api.Command.prototype);
-	      InsertListCommand.prototype.constructor = InsertListCommand;
-
-	      InsertListCommand.prototype.execute = function (value) {
-	        function splitList(listItemElements) {
-	          if (listItemElements.length > 0) {
-	            var newListNode = document.createElement(listNode.nodeName);
-
-	            listItemElements.forEach(function (listItemElement) {
-	              newListNode.appendChild(listItemElement);
-	            });
-
-	            listNode.parentNode.insertBefore(newListNode, listNode.nextElementSibling);
-	          }
-	        }
-
-	        if (this.queryState()) {
-	          var selection = new scribe.api.Selection();
-	          var range = selection.range;
-
-	          var listNode = selection.getContaining(function (node) {
-	            return node.nodeName === 'OL' || node.nodeName === 'UL';
-	          });
-
-	          var listItemElement = selection.getContaining(function (node) {
-	            return node.nodeName === 'LI';
-	          });
-
-	          scribe.transactionManager.run(function () {
-	            if (listItemElement) {
-	              var nextListItemElements = (new scribe.api.Node(listItemElement)).nextAll();
-
-	              /**
-	               * If we are not at the start or end of a UL/OL, we have to
-	               * split the node and insert the P(s) in the middle.
-	               */
-	              splitList(nextListItemElements);
-
-	              /**
-	               * Insert a paragraph in place of the list item.
-	               */
-
-	              selection.placeMarkers();
-
-	              var pNode = document.createElement('p');
-	              pNode.innerHTML = listItemElement.innerHTML;
-
-	              listNode.parentNode.insertBefore(pNode, listNode.nextElementSibling);
-	              listItemElement.parentNode.removeChild(listItemElement);
-	            } else {
-	              /**
-	               * When multiple list items are selected, we replace each list
-	               * item with a paragraph.
-	               */
-
-	              // We can't query for list items in the selection so we loop
-	              // through them all and find the intersection ourselves.
-	              var selectedListItemElements = Array.prototype.map.call(listNode.querySelectorAll('li'),
-	                function (listItemElement) {
-	                return range.intersectsNode(listItemElement) && listItemElement;
-	              }).filter(function (listItemElement) {
-	                // TODO: identity
-	                return listItemElement;
-	              });
-	              var lastSelectedListItemElement = selectedListItemElements.slice(-1)[0];
-	              var listItemElementsAfterSelection = (new scribe.api.Node(lastSelectedListItemElement)).nextAll();
-
-	              /**
-	               * If we are not at the start or end of a UL/OL, we have to
-	               * split the node and insert the P(s) in the middle.
-	               */
-	              splitList(listItemElementsAfterSelection);
-
-	              // Store the caret/range positioning inside of the list items so
-	              // we can restore it from the newly created P elements soon
-	              // afterwards.
-	              selection.placeMarkers();
-
-	              var documentFragment = document.createDocumentFragment();
-	              selectedListItemElements.forEach(function (listItemElement) {
-	                var pElement = document.createElement('p');
-	                pElement.innerHTML = listItemElement.innerHTML;
-	                documentFragment.appendChild(pElement);
-	              });
-
-	              // Insert the Ps
-	              listNode.parentNode.insertBefore(documentFragment, listNode.nextElementSibling);
-
-	              // Remove the LIs
-	              selectedListItemElements.forEach(function (listItemElement) {
-	                listItemElement.parentNode.removeChild(listItemElement);
-	              });
-	            }
-
-	            // If the list is now empty, clean it up.
-	            if (listNode.childNodes.length === 0) {
-	              listNode.parentNode.removeChild(listNode);
-	            }
-
-	            selection.selectMarkers();
-	          }.bind(this));
-	        } else {
-	          scribe.api.Command.prototype.execute.call(this, value);
-	        }
-	      };
-
-	      InsertListCommand.prototype.queryEnabled = function () {
-	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements();
-	      };
-
-	      scribe.commands.insertOrderedList = new InsertListCommand('insertOrderedList');
-	      scribe.commands.insertUnorderedList = new InsertListCommand('insertUnorderedList');
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 100 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var outdentCommand = new scribe.api.Command('outdent');
-
-	      outdentCommand.queryEnabled = function () {
-	        /**
-	         * FIXME: If the paragraphs option is set to true, then when the
-	         * list is unapplied, ensure that we enter a P element.
-	         * Currently we just disable the command when the selection is inside of
-	         * a list.
-	         */
-	        var selection = new scribe.api.Selection();
-	        var listElement = selection.getContaining(function (element) {
-	          return element.nodeName === 'UL' || element.nodeName === 'OL';
-	        });
-
-	        // FIXME: define block element rule here?
-	        return scribe.api.Command.prototype.queryEnabled.call(this) && scribe.allowsBlockElements() && ! listElement;
-	      };
-
-	      scribe.commands.outdent = outdentCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 101 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var redoCommand = new scribe.api.Command('redo');
-
-	      redoCommand.execute = function () {
-	        scribe.undoManager.redo();
-	      };
-
-	      redoCommand.queryEnabled = function () {
-	        return scribe.undoManager.position > 0;
-	      };
-
-	      scribe.commands.redo = redoCommand;
-
-	      //is scribe is configured to undo assign listener
-	      if (scribe.options.undo.enabled) {
-	        scribe.el.addEventListener('keydown', function (event) {
-	          if (event.shiftKey && (event.metaKey || event.ctrlKey) && event.keyCode === 90) {
-	            event.preventDefault();
-	            redoCommand.execute();
-	          }
-	        });
-	      }
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 102 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var subscriptCommand = new scribe.api.Command('subscript');
-
-	      scribe.commands.subscript = subscriptCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 103 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var superscriptCommand = new scribe.api.Command('superscript');
-
-	      scribe.commands.superscript = superscriptCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 104 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var undoCommand = new scribe.api.Command('undo');
-
-	      undoCommand.execute = function () {
-	        scribe.undoManager.undo();
-	      };
-
-	      undoCommand.queryEnabled = function () {
-	        return scribe.undoManager.position < scribe.undoManager.length;
-	      };
-
-	      scribe.commands.undo = undoCommand;
-
-	      if (scribe.options.undo.enabled) {
-	        scribe.el.addEventListener('keydown', function (event) {
-	          // TODO: use lib to abstract meta/ctrl keys?
-	          if (! event.shiftKey && (event.metaKey || event.ctrlKey) && event.keyCode === 90) {
-	            event.preventDefault();
-	            undoCommand.execute();
-	          }
-	        });
-	      }
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 105 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-	  __webpack_require__(127),
-	  __webpack_require__(128),
-	  __webpack_require__(70),
-	  __webpack_require__(71)
-	], __WEBPACK_AMD_DEFINE_RESULT__ = function (
-	  flatten,
-	  toArray,
-	  elementHelpers,
-	  nodeHelpers
-	) {
-
-	  function observeDomChanges(el, callback) {
-	    function includeRealMutations(mutations) {
-	      var allChangedNodes = flatten(mutations.map(function(mutation) {
-	        var added   = toArray(mutation.addedNodes);
-	        var removed = toArray(mutation.removedNodes);
-	        return added.concat(removed);
-	      }));
-
-	      var realChangedNodes = allChangedNodes.
-	        filter(function(n) { return ! nodeHelpers.isEmptyTextNode(n); }).
-	        filter(function(n) { return ! elementHelpers.isSelectionMarkerNode(n); });
-
-	      return realChangedNodes.length > 0;
-	    }
-
-	    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-	    
-	    // Flag to avoid running recursively
-	    var runningPostMutation = false;
-
-	    var observer = new MutationObserver(function(mutations) {
-	      if (! runningPostMutation && includeRealMutations(mutations)) {
-	        runningPostMutation = true;
-
-	        try {
-	          callback();
-	        } catch(e) {
-	          // The catch block is required but we don't want to swallow the error
-	          throw e;
-	        } finally {
-	          // We must yield to let any mutation we caused be triggered
-	          // in the next cycle
-	          setTimeout(function() {
-	            runningPostMutation = false;
-	          }, 0);
-	        }
-	      }
-	    });
-
-	    observer.observe(el, {
-	      attributes: true,
-	      childList: true,
-	      subtree: true
-	    });
-
-	    return observer;
+	    return Object.freeze(defaults(options, defaultOptions));
 	  }
 
-	  return observeDomChanges;
+	  return {
+	    defaultOptions: defaultOptions,
+	    checkOptions: checkOptions
+	  }
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
 /***/ },
-/* 106 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var boldCommand = new scribe.api.CommandPatch('bold');
-
-	      /**
-	       * Chrome: Executing the bold command inside a heading corrupts the markup.
-	       * Disabling for now.
-	       */
-	      boldCommand.queryEnabled = function () {
-	        var selection = new scribe.api.Selection();
-	        var headingNode = selection.getContaining(function (node) {
-	          return (/^(H[1-6])$/).test(node.nodeName);
-	        });
-
-	        return scribe.api.CommandPatch.prototype.queryEnabled.apply(this, arguments) && ! headingNode;
-	      };
-
-	      // TODO: We can't use STRONGs because this would mean we have to
-	      // re-implement the `queryState` command, which would be difficult.
-
-	      scribe.commandPatches.bold = boldCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 107 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * Prevent Chrome from inserting BLOCKQUOTEs inside of Ps, and also from
-	   * adding a redundant `style` attribute to the created BLOCKQUOTE.
-	   */
-
-	  'use strict';
-
-	  var INVISIBLE_CHAR = '\uFEFF';
-
-	  return function () {
-	    return function (scribe) {
-	      var indentCommand = new scribe.api.CommandPatch('indent');
-
-	      indentCommand.execute = function (value) {
-	        scribe.transactionManager.run(function () {
-	          /**
-	           * Chrome: If we apply the indent command on an empty P, the
-	           * BLOCKQUOTE will be nested inside the P.
-	           * As per: http://jsbin.com/oDOriyU/3/edit?html,js,output
-	           */
-	          var selection = new scribe.api.Selection();
-	          var range = selection.range;
-
-	          var isCaretOnNewLine =
-	              (range.commonAncestorContainer.nodeName === 'P'
-	               && range.commonAncestorContainer.innerHTML === '<br>');
-	          if (isCaretOnNewLine) {
-	            // FIXME: this text node is left behind. Tidy it up somehow,
-	            // or don't use it at all.
-	            var textNode = document.createTextNode(INVISIBLE_CHAR);
-
-	            range.insertNode(textNode);
-
-	            range.setStart(textNode, 0);
-	            range.setEnd(textNode, 0);
-
-	            selection.selection.removeAllRanges();
-	            selection.selection.addRange(range);
-	          }
-
-	          scribe.api.CommandPatch.prototype.execute.call(this, value);
-
-	          /**
-	           * Chrome: The BLOCKQUOTE created contains a redundant style attribute.
-	           * As per: http://jsbin.com/AkasOzu/1/edit?html,js,output
-	           */
-
-	          // Renew the selection
-	          selection = new scribe.api.Selection();
-	          var blockquoteNode = selection.getContaining(function (node) {
-	            return node.nodeName === 'BLOCKQUOTE';
-	          });
-
-	          if (blockquoteNode) {
-	            blockquoteNode.removeAttribute('style');
-	          }
-	        }.bind(this));
-	      };
-
-	      scribe.commandPatches.indent = indentCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 108 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var insertHTMLCommandPatch = new scribe.api.CommandPatch('insertHTML');
-	      var element = scribe.element;
-
-	      insertHTMLCommandPatch.execute = function (value) {
-	        scribe.transactionManager.run(function () {
-	          scribe.api.CommandPatch.prototype.execute.call(this, value);
-
-	          /**
-	           * Chrome: If a parent node has a CSS `line-height` when we apply the
-	           * insertHTML command, Chrome appends a SPAN to plain content with
-	           * inline styling replicating that `line-height`, and adjusts the
-	           * `line-height` on inline elements.
-	           * As per: http://jsbin.com/ilEmudi/4/edit?css,js,output
-	           *
-	           * FIXME: what if the user actually wants to use SPANs? This could
-	           * cause conflicts.
-	           */
-
-	          // TODO: share somehow with similar event patch for P nodes
-	          sanitize(scribe.el);
-
-	          function sanitize(parentNode) {
-	            var treeWalker = document.createTreeWalker(parentNode, NodeFilter.SHOW_ELEMENT, null, false);
-	            var node = treeWalker.firstChild();
-	            if (!node) { return; }
-
-	            do {
-	              if (node.nodeName === 'SPAN') {
-	                element.unwrap(parentNode, node);
-	              } else {
-	                /**
-	                 * If the list item contains inline elements such as
-	                 * A, B, or I, Chrome will also append an inline style for
-	                 * `line-height` on those elements, so we remove it here.
-	                 */
-	                node.style.lineHeight = null;
-
-	                // There probably wasn’t a `style` attribute before, so
-	                // remove it if it is now empty.
-	                if (node.getAttribute('style') === '') {
-	                  node.removeAttribute('style');
-	                }
-	              }
-
-	              // Sanitize children
-	              sanitize(node);
-	            } while ((node = treeWalker.nextSibling()));
-	          }
-	        }.bind(this));
-	      };
-
-	      scribe.commandPatches.insertHTML = insertHTMLCommandPatch;
-	    };
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 109 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var element = scribe.element;
-	      var nodeHelpers = scribe.node;
-
-	      var InsertListCommandPatch = function (commandName) {
-	        scribe.api.CommandPatch.call(this, commandName);
-	      };
-
-	      InsertListCommandPatch.prototype = Object.create(scribe.api.CommandPatch.prototype);
-	      InsertListCommandPatch.prototype.constructor = InsertListCommandPatch;
-
-	      InsertListCommandPatch.prototype.execute = function (value) {
-	        scribe.transactionManager.run(function () {
-	          scribe.api.CommandPatch.prototype.execute.call(this, value);
-
-	          if (this.queryState()) {
-	            var selection = new scribe.api.Selection();
-
-	            var listElement = selection.getContaining(function (node) {
-	              return node.nodeName === 'OL' || node.nodeName === 'UL';
-	            });
-
-
-	            /**
-	             * Firefox: If we apply the insertOrderedList or the insertUnorderedList
-	             * command on an empty block, a P will be inserted after the OL/UL.
-	             * As per: http://jsbin.com/cubacoli/3/edit?html,js,output
-	             */
-
-	            if (listElement.nextElementSibling &&
-	                listElement.nextElementSibling.childNodes.length === 0) {
-	              nodeHelpers.removeNode(listElement.nextElementSibling);
-	            }
-
-	            /**
-	             * Chrome: If we apply the insertOrderedList or the insertUnorderedList
-	             * command on an empty block, the OL/UL will be nested inside the block.
-	             * As per: http://jsbin.com/eFiRedUc/1/edit?html,js,output
-	             */
-
-	            if (listElement) {
-	              var listParentNode = listElement.parentNode;
-	              // If list is within a text block then split that block
-	              if (listParentNode && /^(H[1-6]|P)$/.test(listParentNode.nodeName)) {
-	                selection.placeMarkers();
-	                // Move listElement out of the block
-	                nodeHelpers.insertAfter(listElement, listParentNode);
-	                selection.selectMarkers();
-
-	                /**
-	                 * Chrome 27-34: An empty text node is inserted.
-	                 */
-	                if (listParentNode.childNodes.length === 2 &&
-	                    nodeHelpers.isEmptyTextNode(listParentNode.firstChild)) {
-	                  nodeHelpers.removeNode(listParentNode);
-	                }
-
-	                // Remove the block if it's empty
-	                if (listParentNode.childNodes.length === 0) {
-	                  nodeHelpers.removeNode(listParentNode);
-	                }
-	              }
-	            }
-
-	            /**
-	             * Chrome: If a parent node has a CSS `line-height` when we apply the
-	             * insertOrderedList or the insertUnorderedList command, Chrome appends
-	             * a SPAN to LIs with inline styling replicating that `line-height`.
-	             * As per: http://jsbin.com/OtemujAY/7/edit?html,css,js,output
-	             *
-	             * FIXME: what if the user actually wants to use SPANs? This could
-	             * cause conflicts.
-	             */
-
-	            // TODO: share somehow with similar event patch for P nodes
-	            var listItemElements = Array.prototype.slice.call(listElement.childNodes);
-	            listItemElements.forEach(function(listItemElement) {
-	              // We clone the childNodes into an Array so that it's
-	              // not affected by any manipulation below when we
-	              // iterate over it
-	              var listItemElementChildNodes = Array.prototype.slice.call(listItemElement.childNodes);
-	              listItemElementChildNodes.forEach(function(listElementChildNode) {
-	                if (listElementChildNode.nodeName === 'SPAN') {
-	                  // Unwrap any SPAN that has been inserted
-	                  var spanElement = listElementChildNode;
-	                  element.unwrap(listItemElement, spanElement);
-	                } else if (listElementChildNode.nodeType === Node.ELEMENT_NODE) {
-	                  /**
-	                   * If the list item contains inline elements such as
-	                   * A, B, or I, Chrome will also append an inline style for
-	                   * `line-height` on those elements, so we remove it here.
-	                   */
-	                  listElementChildNode.style.lineHeight = null;
-
-	                  // There probably wasn’t a `style` attribute before, so
-	                  // remove it if it is now empty.
-	                  if (listElementChildNode.getAttribute('style') === '') {
-	                    listElementChildNode.removeAttribute('style');
-	                  }
-	                }
-	              });
-	            });
-	          }
-	        }.bind(this));
-	      };
-
-	      scribe.commandPatches.insertOrderedList = new InsertListCommandPatch('insertOrderedList');
-	      scribe.commandPatches.insertUnorderedList = new InsertListCommandPatch('insertUnorderedList');
-	    };
-	  };
-
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 110 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  /**
-	   * Prevent Chrome from removing formatting of BLOCKQUOTE contents.
-	   */
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var outdentCommand = new scribe.api.CommandPatch('outdent');
-
-	      outdentCommand.execute = function () {
-	        scribe.transactionManager.run(function () {
-	          var selection = new scribe.api.Selection();
-	          var range = selection.range;
-
-	          var blockquoteNode = selection.getContaining(function (node) {
-	            return node.nodeName === 'BLOCKQUOTE';
-	          });
-
-	          if (range.commonAncestorContainer.nodeName === 'BLOCKQUOTE') {
-	            /**
-	             * Chrome: Applying the outdent command when a whole BLOCKQUOTE is
-	             * selected removes the formatting of its contents.
-	             * As per: http://jsbin.com/okAYaHa/1/edit?html,js,output
-	             */
-
-	            // Insert a copy of the selection before the BLOCKQUOTE, and then
-	            // restore the selection on the copy.
-	            selection.placeMarkers();
-	            // We want to copy the selected nodes *with* the markers
-	            selection.selectMarkers(true);
-	            var selectedNodes = range.cloneContents();
-	            blockquoteNode.parentNode.insertBefore(selectedNodes, blockquoteNode);
-	            range.deleteContents();
-	            selection.selectMarkers();
-
-	            // Delete the BLOCKQUOTE if it's empty
-	            if (blockquoteNode.textContent === '') {
-	              blockquoteNode.parentNode.removeChild(blockquoteNode);
-	            }
-	          } else {
-	            /**
-	             * Chrome: If we apply the outdent command on a P, the contents of the
-	             * P will be outdented instead of the whole P element.
-	             * As per: http://jsbin.com/IfaRaFO/1/edit?html,js,output
-	             */
-
-	            var pNode = selection.getContaining(function (node) {
-	              return node.nodeName === 'P';
-	            });
-
-	            if (pNode) {
-	              /**
-	               * If we are not at the start of end of a BLOCKQUOTE, we have to
-	               * split the node and insert the P in the middle.
-	               */
-
-	              var nextSiblingNodes = (new scribe.api.Node(pNode)).nextAll();
-
-	              if (nextSiblingNodes.length) {
-	                var newContainerNode = document.createElement(blockquoteNode.nodeName);
-
-	                nextSiblingNodes.forEach(function (siblingNode) {
-	                  newContainerNode.appendChild(siblingNode);
-	                });
-
-	                blockquoteNode.parentNode.insertBefore(newContainerNode, blockquoteNode.nextElementSibling);
-	              }
-
-	              selection.placeMarkers();
-	              blockquoteNode.parentNode.insertBefore(pNode, blockquoteNode.nextElementSibling);
-	              selection.selectMarkers();
-
-	              // If the BLOCKQUOTE is now empty, clean it up.
-	              if (blockquoteNode.innerHTML === '') {
-	                blockquoteNode.parentNode.removeChild(blockquoteNode);
-	              }
-	            } else {
-	              scribe.api.CommandPatch.prototype.execute.call(this);
-	            }
-	          }
-	        }.bind(this));
-	      };
-
-	      scribe.commandPatches.outdent = outdentCommand;
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 111 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      var createLinkCommand = new scribe.api.CommandPatch('createLink');
-	      scribe.commandPatches.createLink = createLinkCommand;
-
-	      createLinkCommand.execute = function (value) {
-	        var selection = new scribe.api.Selection();
-
-	        /**
-	         * Firefox does not create a link when selection is collapsed
-	         * so we create it manually. http://jsbin.com/tutufi/2/edit?js,output
-	         */
-	        // using range.collapsed vs selection.isCollapsed - https://code.google.com/p/chromium/issues/detail?id=447523
-	        if (selection.range.collapsed) {
-	          var aElement = document.createElement('a');
-	          aElement.setAttribute('href', value);
-	          aElement.textContent = value;
-
-	          selection.range.insertNode(aElement);
-
-	          // Select the created link
-	          var newRange = document.createRange();
-	          newRange.setStartBefore(aElement);
-	          newRange.setEndAfter(aElement);
-
-	          selection.selection.removeAllRanges();
-	          selection.selection.addRange(newRange);
-	        } else {
-	          scribe.api.CommandPatch.prototype.execute.call(this, value);
-	        }
-	      };
-	    };
-	  };
-
-	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 112 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-
-	  'use strict';
-
-	  return function () {
-	    return function (scribe) {
-	      /**
-	       * Chrome: If a parent node has a CSS `line-height` when we apply the
-	       * insert(Un)OrderedList command, altering the paragraph structure by pressing
-	       * <backspace> or <delete> (merging/deleting paragraphs) sometimes
-	       * results in the application of a line-height attribute to the
-	       * contents of the paragraph, either onto existing elements or
-	       * by wrapping text in a span.
-	       * As per: http://jsbin.com/isIdoKA/4/edit?html,css,js,output
-	       *
-	       * FIXME: what if the user actually wants to use SPANs? This could
-	       * cause conflicts.
-	       */
-	      // TODO: do we need to run this on every key press, or could we
-	      //       detect when the issue may have occurred?
-	      // TODO: run in a transaction so as to record the change? how do
-	      //       we know in advance whether there will be a change though?
-	      // TODO: share somehow with `InsertList` command
-
-	      var element = scribe.element;
-
-	      if (scribe.allowsBlockElements()) {
-	        scribe.el.addEventListener('keyup', function (event) {
-	          if (event.keyCode === 8 || event.keyCode === 46) { // backspace or delete
-
-	            var selection = new scribe.api.Selection();
-
-	            // Note: the range is always collapsed on keyup here
-	            var containerPElement = selection.getContaining(function (node) {
-	              return node.nodeName === 'P';
-	            });
-	            if (containerPElement) {
-	              /**
-	               * The 'input' event listener has already triggered
-	               * and recorded the faulty content as an item in the
-	               * UndoManager. We interfere with the undoManager
-	               * by force merging that transaction with the next
-	               * transaction which produce a clean one instead.
-	               *
-	               * FIXME: ideally we would not trigger a
-	               * 'content-changed' event with faulty HTML at all, but
-	               * it's too late to cancel it at this stage (and it's
-	               * not happened yet at keydown time).
-	               */
-
-	              scribe.transactionManager.run(function () {
-	                // Store the caret position
-	                selection.placeMarkers();
-
-	                // We clone the childNodes into an Array so that it's
-	                // not affected by any manipulation below when we
-	                // iterate over it
-	                var pElementChildNodes = Array.prototype.slice.call(containerPElement.childNodes);
-	                pElementChildNodes.forEach(function(pElementChildNode) {
-	                  if (pElementChildNode.nodeName === 'SPAN') {
-	                    // Unwrap any SPAN that has been inserted
-	                    var spanElement = pElementChildNode;
-	                    element.unwrap(containerPElement, spanElement);
-	                  } else if (pElementChildNode.nodeType === Node.ELEMENT_NODE) {
-	                    /**
-	                     * If the paragraph contains inline elements such as
-	                     * A, B, or I, Chrome will also append an inline style for
-	                     * `line-height` on those elements, so we remove it here.
-	                     */
-	                    pElementChildNode.style.lineHeight = null;
-
-	                    // There probably wasn’t a `style` attribute before, so
-	                    // remove it if it is now empty.
-	                    if (pElementChildNode.getAttribute('style') === '') {
-	                      pElementChildNode.removeAttribute('style');
-	                    }
-	                  }
-	                });
-
-	                selection.selectMarkers();
-	              }, true);
-	            }
-	          }
-	        });
-	      }
-	    };
-	  };
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 113 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var bind = __webpack_require__(143),
-	    identity = __webpack_require__(144),
-	    setBindData = __webpack_require__(145),
-	    support = __webpack_require__(146);
-
-	/** Used to detected named functions */
-	var reFuncName = /^\s*function[ \n\r\t]+\w/;
-
-	/** Used to detect functions containing a `this` reference */
-	var reThis = /\bthis\b/;
-
-	/** Native method shortcuts */
-	var fnToString = Function.prototype.toString;
-
-	/**
-	 * The base implementation of `_.createCallback` without support for creating
-	 * "_.pluck" or "_.where" style callbacks.
-	 *
-	 * @private
-	 * @param {*} [func=identity] The value to convert to a callback.
-	 * @param {*} [thisArg] The `this` binding of the created callback.
-	 * @param {number} [argCount] The number of arguments the callback accepts.
-	 * @returns {Function} Returns a callback function.
-	 */
-	function baseCreateCallback(func, thisArg, argCount) {
-	  if (typeof func != 'function') {
-	    return identity;
-	  }
-	  // exit early for no `thisArg` or already bound by `Function#bind`
-	  if (typeof thisArg == 'undefined' || !('prototype' in func)) {
-	    return func;
-	  }
-	  var bindData = func.__bindData__;
-	  if (typeof bindData == 'undefined') {
-	    if (support.funcNames) {
-	      bindData = !func.name;
-	    }
-	    bindData = bindData || !support.funcDecomp;
-	    if (!bindData) {
-	      var source = fnToString.call(func);
-	      if (!support.funcNames) {
-	        bindData = !reFuncName.test(source);
-	      }
-	      if (!bindData) {
-	        // checks if `func` references the `this` keyword and stores the result
-	        bindData = reThis.test(source);
-	        setBindData(func, bindData);
-	      }
-	    }
-	  }
-	  // exit early if there are no `this` references or `func` is bound
-	  if (bindData === false || (bindData !== true && bindData[1] & 1)) {
-	    return func;
-	  }
-	  switch (argCount) {
-	    case 1: return function(value) {
-	      return func.call(thisArg, value);
-	    };
-	    case 2: return function(a, b) {
-	      return func.call(thisArg, a, b);
-	    };
-	    case 3: return function(value, index, collection) {
-	      return func.call(thisArg, value, index, collection);
-	    };
-	    case 4: return function(accumulator, value, index, collection) {
-	      return func.call(thisArg, accumulator, value, index, collection);
-	    };
-	  }
-	  return bind(func, thisArg);
-	}
-
-	module.exports = baseCreateCallback;
-
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(147),
-	    isObject = __webpack_require__(54),
-	    shimKeys = __webpack_require__(148);
-
-	/* Native method shortcuts for methods with the same name as other `lodash` methods */
-	var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
-
-	/**
-	 * Creates an array composed of the own enumerable property names of an object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Objects
-	 * @param {Object} object The object to inspect.
-	 * @returns {Array} Returns an array of property names.
-	 * @example
-	 *
-	 * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
-	 * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
-	 */
-	var keys = !nativeKeys ? shimKeys : function(object) {
-	  if (!isObject(object)) {
-	    return [];
-	  }
-	  return nativeKeys(object);
-	};
-
-	module.exports = keys;
-
-
-/***/ },
-/* 115 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to determine if values are of the language type Object */
-	var objectTypes = {
-	  'boolean': false,
-	  'function': true,
-	  'object': true,
-	  'number': false,
-	  'string': false,
-	  'undefined': false
-	};
-
-	module.exports = objectTypes;
-
-
-/***/ },
-/* 116 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to determine if values are of the language type Object */
-	var objectTypes = {
-	  'boolean': false,
-	  'function': true,
-	  'object': true,
-	  'number': false,
-	  'string': false,
-	  'undefined': false
-	};
-
-	module.exports = objectTypes;
-
-
-/***/ },
-/* 117 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var htmlEscapes = __webpack_require__(150);
-
-	/**
-	 * Used by `escape` to convert characters to HTML entities.
-	 *
-	 * @private
-	 * @param {string} match The matched character to escape.
-	 * @returns {string} Returns the escaped character.
-	 */
-	function escapeHtmlChar(match) {
-	  return htmlEscapes[match];
-	}
-
-	module.exports = escapeHtmlChar;
-
-
-/***/ },
-/* 118 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var htmlEscapes = __webpack_require__(149),
-	    keys = __webpack_require__(87);
-
-	/** Used to match HTML entities and HTML characters */
-	var reUnescapedHtml = RegExp('[' + keys(htmlEscapes).join('') + ']', 'g');
-
-	module.exports = reUnescapedHtml;
-
-
-/***/ },
-/* 119 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
-
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
-
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
-
-	module.exports = isNative;
-
-
-/***/ },
-/* 120 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var objectTypes = __webpack_require__(151);
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Native method shortcuts */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * A fallback implementation of `Object.keys` which produces an array of the
-	 * given object's own enumerable property names.
-	 *
-	 * @private
-	 * @type Function
-	 * @param {Object} object The object to inspect.
-	 * @returns {Array} Returns an array of property names.
-	 */
-	var shimKeys = function(object) {
-	  var index, iterable = object, result = [];
-	  if (!iterable) return result;
-	  if (!(objectTypes[typeof object])) return result;
-	    for (index in iterable) {
-	      if (hasOwnProperty.call(iterable, index)) {
-	        result.push(index);
-	      }
-	    }
-	  return result
-	};
-
-	module.exports = shimKeys;
-
-
-/***/ },
-/* 121 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -23183,82 +24707,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <http://lodash.com/license>
 	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(129), __webpack_require__(130), __webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, keys, objectTypes) {
-
-	  /**
-	   * Assigns own enumerable properties of source object(s) to the destination
-	   * object. Subsequent sources will overwrite property assignments of previous
-	   * sources. If a callback is provided it will be executed to produce the
-	   * assigned values. The callback is bound to `thisArg` and invoked with two
-	   * arguments; (objectValue, sourceValue).
-	   *
-	   * @static
-	   * @memberOf _
-	   * @type Function
-	   * @alias extend
-	   * @category Objects
-	   * @param {Object} object The destination object.
-	   * @param {...Object} [source] The source objects.
-	   * @param {Function} [callback] The function to customize assigning values.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {Object} Returns the destination object.
-	   * @example
-	   *
-	   * _.assign({ 'name': 'fred' }, { 'employer': 'slate' });
-	   * // => { 'name': 'fred', 'employer': 'slate' }
-	   *
-	   * var defaults = _.partialRight(_.assign, function(a, b) {
-	   *   return typeof a == 'undefined' ? b : a;
-	   * });
-	   *
-	   * var object = { 'name': 'barney' };
-	   * defaults(object, { 'name': 'fred', 'employer': 'slate' });
-	   * // => { 'name': 'barney', 'employer': 'slate' }
-	   */
-	  var assign = function(object, source, guard) {
-	    var index, iterable = object, result = iterable;
-	    if (!iterable) return result;
-	    var args = arguments,
-	        argsIndex = 0,
-	        argsLength = typeof guard == 'number' ? 2 : args.length;
-	    if (argsLength > 3 && typeof args[argsLength - 2] == 'function') {
-	      var callback = baseCreateCallback(args[--argsLength - 1], args[argsLength--], 2);
-	    } else if (argsLength > 2 && typeof args[argsLength - 1] == 'function') {
-	      callback = args[--argsLength];
-	    }
-	    while (++argsIndex < argsLength) {
-	      iterable = args[argsIndex];
-	      if (iterable && objectTypes[typeof iterable]) {
-	      var ownIndex = -1,
-	          ownProps = objectTypes[typeof iterable] && keys(iterable),
-	          length = ownProps ? ownProps.length : 0;
-
-	      while (++ownIndex < length) {
-	        index = ownProps[ownIndex];
-	        result[index] = callback ? callback(result[index], iterable[index]) : iterable[index];
-	      }
-	      }
-	    }
-	    return result
-	  };
-
-	  return assign;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 122 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(130), __webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(keys, objectTypes) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(111), __webpack_require__(103)], __WEBPACK_AMD_DEFINE_RESULT__ = function(keys, objectTypes) {
 
 	  /**
 	   * Assigns own enumerable properties of source object(s) to the destination
@@ -23307,2491 +24756,107 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 123 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * Used for `Array` method references.
-	   *
-	   * Normally `Array.prototype` would suffice, however, using an array literal
-	   * avoids issues in Narwhal.
-	   */
-	  var arrayRef = [];
-
-	  /** Native method shortcuts */
-	  var splice = arrayRef.splice;
-
-	  /**
-	   * Removes all provided values from the given array using strict equality for
-	   * comparisons, i.e. `===`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Arrays
-	   * @param {Array} array The array to modify.
-	   * @param {...*} [value] The values to remove.
-	   * @returns {Array} Returns `array`.
-	   * @example
-	   *
-	   * var array = [1, 2, 3, 1, 2, 3];
-	   * _.pull(array, 2, 3);
-	   * console.log(array);
-	   * // => [1, 1]
-	   */
-	  function pull(array) {
-	    var args = arguments,
-	        argsIndex = 0,
-	        argsLength = args.length,
-	        length = array ? array.length : 0;
-
-	    while (++argsIndex < argsLength) {
-	      var index = -1,
-	          value = args[argsIndex];
-	      while (++index < length) {
-	        if (array[index] === value) {
-	          splice.call(array, index--, 1);
-	          length--;
-	        }
-	      }
-	    }
-	    return array;
-	  }
-
-	  return pull;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 124 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(132), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createCallback, slice) {
-
-	  /** Used as a safe reference for `undefined` in pre ES5 environments */
-	  var undefined;
-
-	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
-	  var nativeMax = Math.max;
-
-	  /**
-	   * Gets the last element or last `n` elements of an array. If a callback is
-	   * provided elements at the end of the array are returned as long as the
-	   * callback returns truey. The callback is bound to `thisArg` and invoked
-	   * with three arguments; (value, index, array).
-	   *
-	   * If a property name is provided for `callback` the created "_.pluck" style
-	   * callback will return the property value of the given element.
-	   *
-	   * If an object is provided for `callback` the created "_.where" style callback
-	   * will return `true` for elements that have the properties of the given object,
-	   * else `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Arrays
-	   * @param {Array} array The array to query.
-	   * @param {Function|Object|number|string} [callback] The function called
-	   *  per element or the number of elements to return. If a property name or
-	   *  object is provided it will be used to create a "_.pluck" or "_.where"
-	   *  style callback, respectively.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {*} Returns the last element(s) of `array`.
-	   * @example
-	   *
-	   * _.last([1, 2, 3]);
-	   * // => 3
-	   *
-	   * _.last([1, 2, 3], 2);
-	   * // => [2, 3]
-	   *
-	   * _.last([1, 2, 3], function(num) {
-	   *   return num > 1;
-	   * });
-	   * // => [2, 3]
-	   *
-	   * var characters = [
-	   *   { 'name': 'barney',  'blocked': false, 'employer': 'slate' },
-	   *   { 'name': 'fred',    'blocked': true,  'employer': 'slate' },
-	   *   { 'name': 'pebbles', 'blocked': true,  'employer': 'na' }
-	   * ];
-	   *
-	   * // using "_.pluck" callback shorthand
-	   * _.pluck(_.last(characters, 'blocked'), 'name');
-	   * // => ['fred', 'pebbles']
-	   *
-	   * // using "_.where" callback shorthand
-	   * _.last(characters, { 'employer': 'na' });
-	   * // => [{ 'name': 'pebbles', 'blocked': true, 'employer': 'na' }]
-	   */
-	  function last(array, callback, thisArg) {
-	    var n = 0,
-	        length = array ? array.length : 0;
-
-	    if (typeof callback != 'number' && callback != null) {
-	      var index = length;
-	      callback = createCallback(callback, thisArg, 3);
-	      while (index-- && callback(array[index], index, array)) {
-	        n++;
-	      }
-	    } else {
-	      n = callback;
-	      if (n == null || thisArg) {
-	        return array ? array[length - 1] : undefined;
-	      }
-	    }
-	    return slice(array, nativeMax(0, length - n));
-	  }
-
-	  return last;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 125 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(134), __webpack_require__(135), __webpack_require__(136), __webpack_require__(137)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseIndexOf, forOwn, isArray, isString) {
-
-	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
-	  var nativeMax = Math.max;
-
-	  /**
-	   * Checks if a given value is present in a collection using strict equality
-	   * for comparisons, i.e. `===`. If `fromIndex` is negative, it is used as the
-	   * offset from the end of the collection.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @alias include
-	   * @category Collections
-	   * @param {Array|Object|string} collection The collection to iterate over.
-	   * @param {*} target The value to check for.
-	   * @param {number} [fromIndex=0] The index to search from.
-	   * @returns {boolean} Returns `true` if the `target` element is found, else `false`.
-	   * @example
-	   *
-	   * _.contains([1, 2, 3], 1);
-	   * // => true
-	   *
-	   * _.contains([1, 2, 3], 1, 2);
-	   * // => false
-	   *
-	   * _.contains({ 'name': 'fred', 'age': 40 }, 'fred');
-	   * // => true
-	   *
-	   * _.contains('pebbles', 'eb');
-	   * // => true
-	   */
-	  function contains(collection, target, fromIndex) {
-	    var index = -1,
-	        indexOf = baseIndexOf,
-	        length = collection ? collection.length : 0,
-	        result = false;
-
-	    fromIndex = (fromIndex < 0 ? nativeMax(0, length + fromIndex) : fromIndex) || 0;
-	    if (isArray(collection)) {
-	      result = indexOf(collection, target, fromIndex) > -1;
-	    } else if (typeof length == 'number') {
-	      result = (isString(collection) ? collection.indexOf(target, fromIndex) : indexOf(collection, target, fromIndex)) > -1;
-	    } else {
-	      forOwn(collection, function(value) {
-	        if (++index >= fromIndex) {
-	          return !(result = value === target);
-	        }
-	      });
-	    }
-	    return result;
-	  }
-
-	  return contains;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 126 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(138), __webpack_require__(130), __webpack_require__(139)], __WEBPACK_AMD_DEFINE_RESULT__ = function(escapeHtmlChar, keys, reUnescapedHtml) {
-
-	  /**
-	   * Converts the characters `&`, `<`, `>`, `"`, and `'` in `string` to their
-	   * corresponding HTML entities.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Utilities
-	   * @param {string} string The string to escape.
-	   * @returns {string} Returns the escaped string.
-	   * @example
-	   *
-	   * _.escape('Fred, Wilma, & Pebbles');
-	   * // => 'Fred, Wilma, &amp; Pebbles'
-	   */
-	  function escape(string) {
-	    return string == null ? '' : String(string).replace(reUnescapedHtml, escapeHtmlChar);
-	  }
-
-	  return escape;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 127 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(140), __webpack_require__(141)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseFlatten, map) {
-
-	  /**
-	   * Flattens a nested array (the nesting can be to any depth). If `isShallow`
-	   * is truey, the array will only be flattened a single level. If a callback
-	   * is provided each element of the array is passed through the callback before
-	   * flattening. The callback is bound to `thisArg` and invoked with three
-	   * arguments; (value, index, array).
-	   *
-	   * If a property name is provided for `callback` the created "_.pluck" style
-	   * callback will return the property value of the given element.
-	   *
-	   * If an object is provided for `callback` the created "_.where" style callback
-	   * will return `true` for elements that have the properties of the given object,
-	   * else `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Arrays
-	   * @param {Array} array The array to flatten.
-	   * @param {boolean} [isShallow=false] A flag to restrict flattening to a single level.
-	   * @param {Function|Object|string} [callback=identity] The function called
-	   *  per iteration. If a property name or object is provided it will be used
-	   *  to create a "_.pluck" or "_.where" style callback, respectively.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {Array} Returns a new flattened array.
-	   * @example
-	   *
-	   * _.flatten([1, [2], [3, [[4]]]]);
-	   * // => [1, 2, 3, 4];
-	   *
-	   * _.flatten([1, [2], [3, [[4]]]], true);
-	   * // => [1, 2, 3, [[4]]];
-	   *
-	   * var characters = [
-	   *   { 'name': 'barney', 'age': 30, 'pets': ['hoppy'] },
-	   *   { 'name': 'fred',   'age': 40, 'pets': ['baby puss', 'dino'] }
-	   * ];
-	   *
-	   * // using "_.pluck" callback shorthand
-	   * _.flatten(characters, 'pets');
-	   * // => ['hoppy', 'baby puss', 'dino']
-	   */
-	  function flatten(array, isShallow, callback, thisArg) {
-	    // juggle arguments
-	    if (typeof isShallow != 'boolean' && isShallow != null) {
-	      thisArg = callback;
-	      callback = (typeof isShallow != 'function' && thisArg && thisArg[isShallow] === array) ? null : isShallow;
-	      isShallow = false;
-	    }
-	    if (callback != null) {
-	      array = map(array, callback, thisArg);
-	    }
-	    return baseFlatten(array, isShallow);
-	  }
-
-	  return flatten;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 128 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(137), __webpack_require__(133), __webpack_require__(142)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isString, slice, values) {
-
-	  /**
-	   * Converts the `collection` to an array.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Collections
-	   * @param {Array|Object|string} collection The collection to convert.
-	   * @returns {Array} Returns the new converted array.
-	   * @example
-	   *
-	   * (function() { return _.toArray(arguments).slice(1); })(1, 2, 3, 4);
-	   * // => [2, 3, 4]
-	   */
-	  function toArray(collection) {
-	    if (collection && typeof collection.length == 'number') {
-	      return slice(collection);
-	    }
-	    return values(collection);
-	  }
-
-	  return toArray;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(152), __webpack_require__(153), __webpack_require__(154), __webpack_require__(155)], __WEBPACK_AMD_DEFINE_RESULT__ = function(bind, identity, setBindData, support) {
-
-	  /** Used to detected named functions */
-	  var reFuncName = /^\s*function[ \n\r\t]+\w/;
-
-	  /** Used to detect functions containing a `this` reference */
-	  var reThis = /\bthis\b/;
-
-	  /** Native method shortcuts */
-	  var fnToString = Function.prototype.toString;
-
-	  /**
-	   * The base implementation of `_.createCallback` without support for creating
-	   * "_.pluck" or "_.where" style callbacks.
-	   *
-	   * @private
-	   * @param {*} [func=identity] The value to convert to a callback.
-	   * @param {*} [thisArg] The `this` binding of the created callback.
-	   * @param {number} [argCount] The number of arguments the callback accepts.
-	   * @returns {Function} Returns a callback function.
-	   */
-	  function baseCreateCallback(func, thisArg, argCount) {
-	    if (typeof func != 'function') {
-	      return identity;
-	    }
-	    // exit early for no `thisArg` or already bound by `Function#bind`
-	    if (typeof thisArg == 'undefined' || !('prototype' in func)) {
-	      return func;
-	    }
-	    var bindData = func.__bindData__;
-	    if (typeof bindData == 'undefined') {
-	      if (support.funcNames) {
-	        bindData = !func.name;
-	      }
-	      bindData = bindData || !support.funcDecomp;
-	      if (!bindData) {
-	        var source = fnToString.call(func);
-	        if (!support.funcNames) {
-	          bindData = !reFuncName.test(source);
-	        }
-	        if (!bindData) {
-	          // checks if `func` references the `this` keyword and stores the result
-	          bindData = reThis.test(source);
-	          setBindData(func, bindData);
-	        }
-	      }
-	    }
-	    // exit early if there are no `this` references or `func` is bound
-	    if (bindData === false || (bindData !== true && bindData[1] & 1)) {
-	      return func;
-	    }
-	    switch (argCount) {
-	      case 1: return function(value) {
-	        return func.call(thisArg, value);
-	      };
-	      case 2: return function(a, b) {
-	        return func.call(thisArg, a, b);
-	      };
-	      case 3: return function(value, index, collection) {
-	        return func.call(thisArg, value, index, collection);
-	      };
-	      case 4: return function(accumulator, value, index, collection) {
-	        return func.call(thisArg, accumulator, value, index, collection);
-	      };
-	    }
-	    return bind(func, thisArg);
-	  }
-
-	  return baseCreateCallback;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 130 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(156), __webpack_require__(157), __webpack_require__(158)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, isObject, shimKeys) {
-
-	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
-	  var nativeKeys = isNative(nativeKeys = Object.keys) && nativeKeys;
-
-	  /**
-	   * Creates an array composed of the own enumerable property names of an object.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {Object} object The object to inspect.
-	   * @returns {Array} Returns an array of property names.
-	   * @example
-	   *
-	   * _.keys({ 'one': 1, 'two': 2, 'three': 3 });
-	   * // => ['one', 'two', 'three'] (property order is not guaranteed across environments)
-	   */
-	  var keys = !nativeKeys ? shimKeys : function(object) {
-	    if (!isObject(object)) {
-	      return [];
-	    }
-	    return nativeKeys(object);
-	  };
-
-	  return keys;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 131 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /** Used to determine if values are of the language type Object */
-	  var objectTypes = {
-	    'boolean': false,
-	    'function': true,
-	    'object': true,
-	    'number': false,
-	    'string': false,
-	    'undefined': false
-	  };
-
-	  return objectTypes;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 132 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(129), __webpack_require__(159), __webpack_require__(157), __webpack_require__(130), __webpack_require__(160)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, baseIsEqual, isObject, keys, property) {
-
-	  /**
-	   * Produces a callback bound to an optional `thisArg`. If `func` is a property
-	   * name the created callback will return the property value for a given element.
-	   * If `func` is an object the created callback will return `true` for elements
-	   * that contain the equivalent object properties, otherwise it will return `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Utilities
-	   * @param {*} [func=identity] The value to convert to a callback.
-	   * @param {*} [thisArg] The `this` binding of the created callback.
-	   * @param {number} [argCount] The number of arguments the callback accepts.
-	   * @returns {Function} Returns a callback function.
-	   * @example
-	   *
-	   * var characters = [
-	   *   { 'name': 'barney', 'age': 36 },
-	   *   { 'name': 'fred',   'age': 40 }
-	   * ];
-	   *
-	   * // wrap to create custom callback shorthands
-	   * _.createCallback = _.wrap(_.createCallback, function(func, callback, thisArg) {
-	   *   var match = /^(.+?)__([gl]t)(.+)$/.exec(callback);
-	   *   return !match ? func(callback, thisArg) : function(object) {
-	   *     return match[2] == 'gt' ? object[match[1]] > match[3] : object[match[1]] < match[3];
-	   *   };
-	   * });
-	   *
-	   * _.filter(characters, 'age__gt38');
-	   * // => [{ 'name': 'fred', 'age': 40 }]
-	   */
-	  function createCallback(func, thisArg, argCount) {
-	    var type = typeof func;
-	    if (func == null || type == 'function') {
-	      return baseCreateCallback(func, thisArg, argCount);
-	    }
-	    // handle "_.pluck" style callback shorthands
-	    if (type != 'object') {
-	      return property(func);
-	    }
-	    var props = keys(func),
-	        key = props[0],
-	        a = func[key];
-
-	    // handle "_.where" style callback shorthands
-	    if (props.length == 1 && a === a && !isObject(a)) {
-	      // fast path the common case of providing an object with a single
-	      // property containing a primitive value
-	      return function(object) {
-	        var b = object[key];
-	        return a === b && (a !== 0 || (1 / a == 1 / b));
-	      };
-	    }
-	    return function(object) {
-	      var length = props.length,
-	          result = false;
-
-	      while (length--) {
-	        if (!(result = baseIsEqual(object[props[length]], func[props[length]], null, true))) {
-	          break;
-	        }
-	      }
-	      return result;
-	    };
-	  }
-
-	  return createCallback;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 133 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * Slices the `collection` from the `start` index up to, but not including,
-	   * the `end` index.
-	   *
-	   * Note: This function is used instead of `Array#slice` to support node lists
-	   * in IE < 9 and to ensure dense arrays are returned.
-	   *
-	   * @private
-	   * @param {Array|Object|string} collection The collection to slice.
-	   * @param {number} start The start index.
-	   * @param {number} end The end index.
-	   * @returns {Array} Returns the new array.
-	   */
-	  function slice(array, start, end) {
-	    start || (start = 0);
-	    if (typeof end == 'undefined') {
-	      end = array ? array.length : 0;
-	    }
-	    var index = -1,
-	        length = end - start || 0,
-	        result = Array(length < 0 ? 0 : length);
-
-	    while (++index < length) {
-	      result[index] = array[start + index];
-	    }
-	    return result;
-	  }
-
-	  return slice;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 134 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * The base implementation of `_.indexOf` without support for binary searches
-	   * or `fromIndex` constraints.
-	   *
-	   * @private
-	   * @param {Array} array The array to search.
-	   * @param {*} value The value to search for.
-	   * @param {number} [fromIndex=0] The index to search from.
-	   * @returns {number} Returns the index of the matched value or `-1`.
-	   */
-	  function baseIndexOf(array, value, fromIndex) {
-	    var index = (fromIndex || 0) - 1,
-	        length = array ? array.length : 0;
-
-	    while (++index < length) {
-	      if (array[index] === value) {
-	        return index;
-	      }
-	    }
-	    return -1;
-	  }
-
-	  return baseIndexOf;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(129), __webpack_require__(130), __webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, keys, objectTypes) {
-
-	  /**
-	   * Iterates over own enumerable properties of an object, executing the callback
-	   * for each property. The callback is bound to `thisArg` and invoked with three
-	   * arguments; (value, key, object). Callbacks may exit iteration early by
-	   * explicitly returning `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @type Function
-	   * @category Objects
-	   * @param {Object} object The object to iterate over.
-	   * @param {Function} [callback=identity] The function called per iteration.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {Object} Returns `object`.
-	   * @example
-	   *
-	   * _.forOwn({ '0': 'zero', '1': 'one', 'length': 2 }, function(num, key) {
-	   *   console.log(key);
-	   * });
-	   * // => logs '0', '1', and 'length' (property order is not guaranteed across environments)
-	   */
-	  var forOwn = function(collection, callback, thisArg) {
-	    var index, iterable = collection, result = iterable;
-	    if (!iterable) return result;
-	    if (!objectTypes[typeof iterable]) return result;
-	    callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
-	      var ownIndex = -1,
-	          ownProps = objectTypes[typeof iterable] && keys(iterable),
-	          length = ownProps ? ownProps.length : 0;
-
-	      while (++ownIndex < length) {
-	        index = ownProps[ownIndex];
-	        if (callback(iterable[index], index, collection) === false) return result;
-	      }
-	    return result
-	  };
-
-	  return forOwn;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 136 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(156)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative) {
-
-	  /** `Object#toString` result shortcuts */
-	  var arrayClass = '[object Array]';
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Used to resolve the internal [[Class]] of values */
-	  var toString = objectProto.toString;
-
-	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
-	  var nativeIsArray = isNative(nativeIsArray = Array.isArray) && nativeIsArray;
-
-	  /**
-	   * Checks if `value` is an array.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @type Function
-	   * @category Objects
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is an array, else `false`.
-	   * @example
-	   *
-	   * (function() { return _.isArray(arguments); })();
-	   * // => false
-	   *
-	   * _.isArray([1, 2, 3]);
-	   * // => true
-	   */
-	  var isArray = nativeIsArray || function(value) {
-	    return value && typeof value == 'object' && typeof value.length == 'number' &&
-	      toString.call(value) == arrayClass || false;
-	  };
-
-	  return isArray;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 137 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /** `Object#toString` result shortcuts */
-	  var stringClass = '[object String]';
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Used to resolve the internal [[Class]] of values */
-	  var toString = objectProto.toString;
-
-	  /**
-	   * Checks if `value` is a string.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is a string, else `false`.
-	   * @example
-	   *
-	   * _.isString('fred');
-	   * // => true
-	   */
-	  function isString(value) {
-	    return typeof value == 'string' ||
-	      value && typeof value == 'object' && toString.call(value) == stringClass || false;
-	  }
-
-	  return isString;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 138 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(161)], __WEBPACK_AMD_DEFINE_RESULT__ = function(htmlEscapes) {
-
-	  /**
-	   * Used by `escape` to convert characters to HTML entities.
-	   *
-	   * @private
-	   * @param {string} match The matched character to escape.
-	   * @returns {string} Returns the escaped character.
-	   */
-	  function escapeHtmlChar(match) {
-	    return htmlEscapes[match];
-	  }
-
-	  return escapeHtmlChar;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 139 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(161), __webpack_require__(130)], __WEBPACK_AMD_DEFINE_RESULT__ = function(htmlEscapes, keys) {
-
-	  /** Used to match HTML entities and HTML characters */
-	  var reUnescapedHtml = RegExp('[' + keys(htmlEscapes).join('') + ']', 'g');
-
-	  return reUnescapedHtml;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 140 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(162), __webpack_require__(136)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isArguments, isArray) {
-
-	  /**
-	   * The base implementation of `_.flatten` without support for callback
-	   * shorthands or `thisArg` binding.
-	   *
-	   * @private
-	   * @param {Array} array The array to flatten.
-	   * @param {boolean} [isShallow=false] A flag to restrict flattening to a single level.
-	   * @param {boolean} [isStrict=false] A flag to restrict flattening to arrays and `arguments` objects.
-	   * @param {number} [fromIndex=0] The index to start from.
-	   * @returns {Array} Returns a new flattened array.
-	   */
-	  function baseFlatten(array, isShallow, isStrict, fromIndex) {
-	    var index = (fromIndex || 0) - 1,
-	        length = array ? array.length : 0,
-	        result = [];
-
-	    while (++index < length) {
-	      var value = array[index];
-
-	      if (value && typeof value == 'object' && typeof value.length == 'number'
-	          && (isArray(value) || isArguments(value))) {
-	        // recursively flatten arrays (susceptible to call stack limits)
-	        if (!isShallow) {
-	          value = baseFlatten(value, isShallow, isStrict);
-	        }
-	        var valIndex = -1,
-	            valLength = value.length,
-	            resIndex = result.length;
-
-	        result.length += valLength;
-	        while (++valIndex < valLength) {
-	          result[resIndex++] = value[valIndex];
-	        }
-	      } else if (!isStrict) {
-	        result.push(value);
-	      }
-	    }
-	    return result;
-	  }
-
-	  return baseFlatten;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 141 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(132), __webpack_require__(135)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createCallback, forOwn) {
-
-	  /**
-	   * Creates an array of values by running each element in the collection
-	   * through the callback. The callback is bound to `thisArg` and invoked with
-	   * three arguments; (value, index|key, collection).
-	   *
-	   * If a property name is provided for `callback` the created "_.pluck" style
-	   * callback will return the property value of the given element.
-	   *
-	   * If an object is provided for `callback` the created "_.where" style callback
-	   * will return `true` for elements that have the properties of the given object,
-	   * else `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @alias collect
-	   * @category Collections
-	   * @param {Array|Object|string} collection The collection to iterate over.
-	   * @param {Function|Object|string} [callback=identity] The function called
-	   *  per iteration. If a property name or object is provided it will be used
-	   *  to create a "_.pluck" or "_.where" style callback, respectively.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {Array} Returns a new array of the results of each `callback` execution.
-	   * @example
-	   *
-	   * _.map([1, 2, 3], function(num) { return num * 3; });
-	   * // => [3, 6, 9]
-	   *
-	   * _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(num) { return num * 3; });
-	   * // => [3, 6, 9] (property order is not guaranteed across environments)
-	   *
-	   * var characters = [
-	   *   { 'name': 'barney', 'age': 36 },
-	   *   { 'name': 'fred',   'age': 40 }
-	   * ];
-	   *
-	   * // using "_.pluck" callback shorthand
-	   * _.map(characters, 'name');
-	   * // => ['barney', 'fred']
-	   */
-	  function map(collection, callback, thisArg) {
-	    var index = -1,
-	        length = collection ? collection.length : 0;
-
-	    callback = createCallback(callback, thisArg, 3);
-	    if (typeof length == 'number') {
-	      var result = Array(length);
-	      while (++index < length) {
-	        result[index] = callback(collection[index], index, collection);
-	      }
-	    } else {
-	      result = [];
-	      forOwn(collection, function(value, key, collection) {
-	        result[++index] = callback(value, key, collection);
-	      });
-	    }
-	    return result;
-	  }
-
-	  return map;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 142 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(130)], __WEBPACK_AMD_DEFINE_RESULT__ = function(keys) {
-
-	  /**
-	   * Creates an array composed of the own enumerable property values of `object`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {Object} object The object to inspect.
-	   * @returns {Array} Returns an array of property values.
-	   * @example
-	   *
-	   * _.values({ 'one': 1, 'two': 2, 'three': 3 });
-	   * // => [1, 2, 3] (property order is not guaranteed across environments)
-	   */
-	  function values(object) {
-	    var index = -1,
-	        props = keys(object),
-	        length = props.length,
-	        result = Array(length);
-
-	    while (++index < length) {
-	      result[index] = object[props[index]];
-	    }
-	    return result;
-	  }
-
-	  return values;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var createWrapper = __webpack_require__(169),
-	    slice = __webpack_require__(170);
-
-	/**
-	 * Creates a function that, when called, invokes `func` with the `this`
-	 * binding of `thisArg` and prepends any additional `bind` arguments to those
-	 * provided to the bound function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Functions
-	 * @param {Function} func The function to bind.
-	 * @param {*} [thisArg] The `this` binding of `func`.
-	 * @param {...*} [arg] Arguments to be partially applied.
-	 * @returns {Function} Returns the new bound function.
-	 * @example
-	 *
-	 * var func = function(greeting) {
-	 *   return greeting + ' ' + this.name;
-	 * };
-	 *
-	 * func = _.bind(func, { 'name': 'fred' }, 'hi');
-	 * func();
-	 * // => 'hi fred'
-	 */
-	function bind(func, thisArg) {
-	  return arguments.length > 2
-	    ? createWrapper(func, 17, slice(arguments, 2), null, thisArg)
-	    : createWrapper(func, 1, null, null, thisArg);
-	}
-
-	module.exports = bind;
-
-
-/***/ },
-/* 144 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * This method returns the first argument provided to it.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @param {*} value Any value.
-	 * @returns {*} Returns `value`.
-	 * @example
-	 *
-	 * var object = { 'name': 'fred' };
-	 * _.identity(object) === object;
-	 * // => true
-	 */
-	function identity(value) {
-	  return value;
-	}
-
-	module.exports = identity;
-
-
-/***/ },
-/* 145 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(171),
-	    noop = __webpack_require__(172);
-
-	/** Used as the property descriptor for `__bindData__` */
-	var descriptor = {
-	  'configurable': false,
-	  'enumerable': false,
-	  'value': null,
-	  'writable': false
-	};
-
-	/** Used to set meta data on functions */
-	var defineProperty = (function() {
-	  // IE 8 only accepts DOM elements
-	  try {
-	    var o = {},
-	        func = isNative(func = Object.defineProperty) && func,
-	        result = func(o, o, o) && func;
-	  } catch(e) { }
-	  return result;
-	}());
-
-	/**
-	 * Sets `this` binding data on a given function.
-	 *
-	 * @private
-	 * @param {Function} func The function to set data on.
-	 * @param {Array} value The data array to set.
-	 */
-	var setBindData = !defineProperty ? noop : function(func, value) {
-	  descriptor.value = value;
-	  defineProperty(func, '__bindData__', descriptor);
-	};
-
-	module.exports = setBindData;
-
-
-/***/ },
-/* 146 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(173);
-
-	/** Used to detect functions containing a `this` reference */
-	var reThis = /\bthis\b/;
-
-	/**
-	 * An object used to flag environments features.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @type Object
-	 */
-	var support = {};
-
-	/**
-	 * Detect if functions can be decompiled by `Function#toString`
-	 * (all but PS3 and older Opera mobile browsers & avoided in Windows 8 apps).
-	 *
-	 * @memberOf _.support
-	 * @type boolean
-	 */
-	support.funcDecomp = !isNative(global.WinRTError) && reThis.test(function() { return this; });
-
-	/**
-	 * Detect if `Function#name` is supported (all but IE).
-	 *
-	 * @memberOf _.support
-	 * @type boolean
-	 */
-	support.funcNames = typeof Function.name == 'string';
-
-	module.exports = support;
-
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 147 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
-
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
-
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
-
-	module.exports = isNative;
-
-
-/***/ },
-/* 148 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var objectTypes = __webpack_require__(115);
-
-	/** Used for native method references */
-	var objectProto = Object.prototype;
-
-	/** Native method shortcuts */
-	var hasOwnProperty = objectProto.hasOwnProperty;
-
-	/**
-	 * A fallback implementation of `Object.keys` which produces an array of the
-	 * given object's own enumerable property names.
-	 *
-	 * @private
-	 * @type Function
-	 * @param {Object} object The object to inspect.
-	 * @returns {Array} Returns an array of property names.
-	 */
-	var shimKeys = function(object) {
-	  var index, iterable = object, result = [];
-	  if (!iterable) return result;
-	  if (!(objectTypes[typeof object])) return result;
-	    for (index in iterable) {
-	      if (hasOwnProperty.call(iterable, index)) {
-	        result.push(index);
-	      }
-	    }
-	  return result
-	};
-
-	module.exports = shimKeys;
-
-
-/***/ },
-/* 149 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * Used to convert characters to HTML entities:
-	 *
-	 * Though the `>` character is escaped for symmetry, characters like `>` and `/`
-	 * don't require escaping in HTML and have no special meaning unless they're part
-	 * of a tag or an unquoted attribute value.
-	 * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
-	 */
-	var htmlEscapes = {
-	  '&': '&amp;',
-	  '<': '&lt;',
-	  '>': '&gt;',
-	  '"': '&quot;',
-	  "'": '&#39;'
-	};
-
-	module.exports = htmlEscapes;
-
-
-/***/ },
-/* 150 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * Used to convert characters to HTML entities:
-	 *
-	 * Though the `>` character is escaped for symmetry, characters like `>` and `/`
-	 * don't require escaping in HTML and have no special meaning unless they're part
-	 * of a tag or an unquoted attribute value.
-	 * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
-	 */
-	var htmlEscapes = {
-	  '&': '&amp;',
-	  '<': '&lt;',
-	  '>': '&gt;',
-	  '"': '&quot;',
-	  "'": '&#39;'
-	};
-
-	module.exports = htmlEscapes;
-
-
-/***/ },
-/* 151 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/** Used to determine if values are of the language type Object */
-	var objectTypes = {
-	  'boolean': false,
-	  'function': true,
-	  'object': true,
-	  'number': false,
-	  'string': false,
-	  'undefined': false
-	};
-
-	module.exports = objectTypes;
-
-
-/***/ },
-/* 152 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(163), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(createWrapper, slice) {
-
-	  /**
-	   * Creates a function that, when called, invokes `func` with the `this`
-	   * binding of `thisArg` and prepends any additional `bind` arguments to those
-	   * provided to the bound function.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Functions
-	   * @param {Function} func The function to bind.
-	   * @param {*} [thisArg] The `this` binding of `func`.
-	   * @param {...*} [arg] Arguments to be partially applied.
-	   * @returns {Function} Returns the new bound function.
-	   * @example
-	   *
-	   * var func = function(greeting) {
-	   *   return greeting + ' ' + this.name;
-	   * };
-	   *
-	   * func = _.bind(func, { 'name': 'fred' }, 'hi');
-	   * func();
-	   * // => 'hi fred'
-	   */
-	  function bind(func, thisArg) {
-	    return arguments.length > 2
-	      ? createWrapper(func, 17, slice(arguments, 2), null, thisArg)
-	      : createWrapper(func, 1, null, null, thisArg);
-	  }
-
-	  return bind;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 153 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * This method returns the first argument provided to it.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Utilities
-	   * @param {*} value Any value.
-	   * @returns {*} Returns `value`.
-	   * @example
-	   *
-	   * var object = { 'name': 'fred' };
-	   * _.identity(object) === object;
-	   * // => true
-	   */
-	  function identity(value) {
-	    return value;
-	  }
-
-	  return identity;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 154 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(156), __webpack_require__(164)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, noop) {
-
-	  /** Used as the property descriptor for `__bindData__` */
-	  var descriptor = {
-	    'configurable': false,
-	    'enumerable': false,
-	    'value': null,
-	    'writable': false
-	  };
-
-	  /** Used to set meta data on functions */
-	  var defineProperty = (function() {
-	    // IE 8 only accepts DOM elements
-	    try {
-	      var o = {},
-	          func = isNative(func = Object.defineProperty) && func,
-	          result = func(o, o, o) && func;
-	    } catch(e) { }
-	    return result;
-	  }());
-
-	  /**
-	   * Sets `this` binding data on a given function.
-	   *
-	   * @private
-	   * @param {Function} func The function to set data on.
-	   * @param {Array} value The data array to set.
-	   */
-	  var setBindData = !defineProperty ? noop : function(func, value) {
-	    descriptor.value = value;
-	    defineProperty(func, '__bindData__', descriptor);
-	  };
-
-	  return setBindData;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 155 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(156)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative) {
-
-	  /** Used to detect functions containing a `this` reference */
-	  var reThis = /\bthis\b/;
-
-	  /**
-	   * An object used to flag environments features.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @type Object
-	   */
-	  var support = {};
-
-	  /**
-	   * Detect if functions can be decompiled by `Function#toString`
-	   * (all but PS3 and older Opera mobile browsers & avoided in Windows 8 apps).
-	   *
-	   * @memberOf _.support
-	   * @type boolean
-	   */
-	  support.funcDecomp = !isNative(window.WinRTError) && reThis.test(function() { return this; });
-
-	  /**
-	   * Detect if `Function#name` is supported (all but IE).
-	   *
-	   * @memberOf _.support
-	   * @type boolean
-	   */
-	  support.funcNames = typeof Function.name == 'string';
-
-	  return support;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Used to resolve the internal [[Class]] of values */
-	  var toString = objectProto.toString;
-
-	  /** Used to detect if a method is native */
-	  var reNative = RegExp('^' +
-	    String(toString)
-	      .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	      .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	  );
-
-	  /**
-	   * Checks if `value` is a native function.
-	   *
-	   * @private
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	   */
-	  function isNative(value) {
-	    return typeof value == 'function' && reNative.test(value);
-	  }
-
-	  return isNative;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 157 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(objectTypes) {
-
-	  /**
-	   * Checks if `value` is the language type of Object.
-	   * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is an object, else `false`.
-	   * @example
-	   *
-	   * _.isObject({});
-	   * // => true
-	   *
-	   * _.isObject([1, 2, 3]);
-	   * // => true
-	   *
-	   * _.isObject(1);
-	   * // => false
-	   */
-	  function isObject(value) {
-	    // check if the value is the ECMAScript language type of Object
-	    // http://es5.github.io/#x8
-	    // and avoid a V8 bug
-	    // http://code.google.com/p/v8/issues/detail?id=2291
-	    return !!(value && objectTypes[typeof value]);
-	  }
-
-	  return isObject;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(objectTypes) {
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Native method shortcuts */
-	  var hasOwnProperty = objectProto.hasOwnProperty;
-
-	  /**
-	   * A fallback implementation of `Object.keys` which produces an array of the
-	   * given object's own enumerable property names.
-	   *
-	   * @private
-	   * @type Function
-	   * @param {Object} object The object to inspect.
-	   * @returns {Array} Returns an array of property names.
-	   */
-	  var shimKeys = function(object) {
-	    var index, iterable = object, result = [];
-	    if (!iterable) return result;
-	    if (!(objectTypes[typeof object])) return result;
-	      for (index in iterable) {
-	        if (hasOwnProperty.call(iterable, index)) {
-	          result.push(index);
-	        }
-	      }
-	    return result
-	  };
-
-	  return shimKeys;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 159 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(165), __webpack_require__(166), __webpack_require__(167), __webpack_require__(131), __webpack_require__(168)], __WEBPACK_AMD_DEFINE_RESULT__ = function(forIn, getArray, isFunction, objectTypes, releaseArray) {
-
-	  /** `Object#toString` result shortcuts */
-	  var argsClass = '[object Arguments]',
-	      arrayClass = '[object Array]',
-	      boolClass = '[object Boolean]',
-	      dateClass = '[object Date]',
-	      numberClass = '[object Number]',
-	      objectClass = '[object Object]',
-	      regexpClass = '[object RegExp]',
-	      stringClass = '[object String]';
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Used to resolve the internal [[Class]] of values */
-	  var toString = objectProto.toString;
-
-	  /** Native method shortcuts */
-	  var hasOwnProperty = objectProto.hasOwnProperty;
-
-	  /**
-	   * The base implementation of `_.isEqual`, without support for `thisArg` binding,
-	   * that allows partial "_.where" style comparisons.
-	   *
-	   * @private
-	   * @param {*} a The value to compare.
-	   * @param {*} b The other value to compare.
-	   * @param {Function} [callback] The function to customize comparing values.
-	   * @param {Function} [isWhere=false] A flag to indicate performing partial comparisons.
-	   * @param {Array} [stackA=[]] Tracks traversed `a` objects.
-	   * @param {Array} [stackB=[]] Tracks traversed `b` objects.
-	   * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
-	   */
-	  function baseIsEqual(a, b, callback, isWhere, stackA, stackB) {
-	    // used to indicate that when comparing objects, `a` has at least the properties of `b`
-	    if (callback) {
-	      var result = callback(a, b);
-	      if (typeof result != 'undefined') {
-	        return !!result;
-	      }
-	    }
-	    // exit early for identical values
-	    if (a === b) {
-	      // treat `+0` vs. `-0` as not equal
-	      return a !== 0 || (1 / a == 1 / b);
-	    }
-	    var type = typeof a,
-	        otherType = typeof b;
-
-	    // exit early for unlike primitive values
-	    if (a === a &&
-	        !(a && objectTypes[type]) &&
-	        !(b && objectTypes[otherType])) {
-	      return false;
-	    }
-	    // exit early for `null` and `undefined` avoiding ES3's Function#call behavior
-	    // http://es5.github.io/#x15.3.4.4
-	    if (a == null || b == null) {
-	      return a === b;
-	    }
-	    // compare [[Class]] names
-	    var className = toString.call(a),
-	        otherClass = toString.call(b);
-
-	    if (className == argsClass) {
-	      className = objectClass;
-	    }
-	    if (otherClass == argsClass) {
-	      otherClass = objectClass;
-	    }
-	    if (className != otherClass) {
-	      return false;
-	    }
-	    switch (className) {
-	      case boolClass:
-	      case dateClass:
-	        // coerce dates and booleans to numbers, dates to milliseconds and booleans
-	        // to `1` or `0` treating invalid dates coerced to `NaN` as not equal
-	        return +a == +b;
-
-	      case numberClass:
-	        // treat `NaN` vs. `NaN` as equal
-	        return (a != +a)
-	          ? b != +b
-	          // but treat `+0` vs. `-0` as not equal
-	          : (a == 0 ? (1 / a == 1 / b) : a == +b);
-
-	      case regexpClass:
-	      case stringClass:
-	        // coerce regexes to strings (http://es5.github.io/#x15.10.6.4)
-	        // treat string primitives and their corresponding object instances as equal
-	        return a == String(b);
-	    }
-	    var isArr = className == arrayClass;
-	    if (!isArr) {
-	      // unwrap any `lodash` wrapped values
-	      var aWrapped = hasOwnProperty.call(a, '__wrapped__'),
-	          bWrapped = hasOwnProperty.call(b, '__wrapped__');
-
-	      if (aWrapped || bWrapped) {
-	        return baseIsEqual(aWrapped ? a.__wrapped__ : a, bWrapped ? b.__wrapped__ : b, callback, isWhere, stackA, stackB);
-	      }
-	      // exit for functions and DOM nodes
-	      if (className != objectClass) {
-	        return false;
-	      }
-	      // in older versions of Opera, `arguments` objects have `Array` constructors
-	      var ctorA = a.constructor,
-	          ctorB = b.constructor;
-
-	      // non `Object` object instances with different constructors are not equal
-	      if (ctorA != ctorB &&
-	            !(isFunction(ctorA) && ctorA instanceof ctorA && isFunction(ctorB) && ctorB instanceof ctorB) &&
-	            ('constructor' in a && 'constructor' in b)
-	          ) {
-	        return false;
-	      }
-	    }
-	    // assume cyclic structures are equal
-	    // the algorithm for detecting cyclic structures is adapted from ES 5.1
-	    // section 15.12.3, abstract operation `JO` (http://es5.github.io/#x15.12.3)
-	    var initedStack = !stackA;
-	    stackA || (stackA = getArray());
-	    stackB || (stackB = getArray());
-
-	    var length = stackA.length;
-	    while (length--) {
-	      if (stackA[length] == a) {
-	        return stackB[length] == b;
-	      }
-	    }
-	    var size = 0;
-	    result = true;
-
-	    // add `a` and `b` to the stack of traversed objects
-	    stackA.push(a);
-	    stackB.push(b);
-
-	    // recursively compare objects and arrays (susceptible to call stack limits)
-	    if (isArr) {
-	      // compare lengths to determine if a deep comparison is necessary
-	      length = a.length;
-	      size = b.length;
-	      result = size == length;
-
-	      if (result || isWhere) {
-	        // deep compare the contents, ignoring non-numeric properties
-	        while (size--) {
-	          var index = length,
-	              value = b[size];
-
-	          if (isWhere) {
-	            while (index--) {
-	              if ((result = baseIsEqual(a[index], value, callback, isWhere, stackA, stackB))) {
-	                break;
-	              }
-	            }
-	          } else if (!(result = baseIsEqual(a[size], value, callback, isWhere, stackA, stackB))) {
-	            break;
-	          }
-	        }
-	      }
-	    }
-	    else {
-	      // deep compare objects using `forIn`, instead of `forOwn`, to avoid `Object.keys`
-	      // which, in this case, is more costly
-	      forIn(b, function(value, key, b) {
-	        if (hasOwnProperty.call(b, key)) {
-	          // count the number of properties.
-	          size++;
-	          // deep compare each property value.
-	          return (result = hasOwnProperty.call(a, key) && baseIsEqual(a[key], value, callback, isWhere, stackA, stackB));
-	        }
-	      });
-
-	      if (result && !isWhere) {
-	        // ensure both objects have the same number of properties
-	        forIn(a, function(value, key, a) {
-	          if (hasOwnProperty.call(a, key)) {
-	            // `size` will be `-1` if `a` has more properties than `b`
-	            return (result = --size > -1);
-	          }
-	        });
-	      }
-	    }
-	    stackA.pop();
-	    stackB.pop();
-
-	    if (initedStack) {
-	      releaseArray(stackA);
-	      releaseArray(stackB);
-	    }
-	    return result;
-	  }
-
-	  return baseIsEqual;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * Creates a "_.pluck" style function, which returns the `key` value of a
-	   * given object.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Utilities
-	   * @param {string} key The name of the property to retrieve.
-	   * @returns {Function} Returns the new function.
-	   * @example
-	   *
-	   * var characters = [
-	   *   { 'name': 'fred',   'age': 40 },
-	   *   { 'name': 'barney', 'age': 36 }
-	   * ];
-	   *
-	   * var getName = _.property('name');
-	   *
-	   * _.map(characters, getName);
-	   * // => ['barney', 'fred']
-	   *
-	   * _.sortBy(characters, getName);
-	   * // => [{ 'name': 'barney', 'age': 36 }, { 'name': 'fred',   'age': 40 }]
-	   */
-	  function property(key) {
-	    return function(object) {
-	      return object[key];
-	    };
-	  }
-
-	  return property;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 161 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * Used to convert characters to HTML entities:
-	   *
-	   * Though the `>` character is escaped for symmetry, characters like `>` and `/`
-	   * don't require escaping in HTML and have no special meaning unless they're part
-	   * of a tag or an unquoted attribute value.
-	   * http://mathiasbynens.be/notes/ambiguous-ampersands (under "semi-related fun fact")
-	   */
-	  var htmlEscapes = {
-	    '&': '&amp;',
-	    '<': '&lt;',
-	    '>': '&gt;',
-	    '"': '&quot;',
-	    "'": '&#39;'
-	  };
-
-	  return htmlEscapes;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 162 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /** `Object#toString` result shortcuts */
-	  var argsClass = '[object Arguments]';
-
-	  /** Used for native method references */
-	  var objectProto = Object.prototype;
-
-	  /** Used to resolve the internal [[Class]] of values */
-	  var toString = objectProto.toString;
-
-	  /**
-	   * Checks if `value` is an `arguments` object.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is an `arguments` object, else `false`.
-	   * @example
-	   *
-	   * (function() { return _.isArguments(arguments); })(1, 2, 3);
-	   * // => true
-	   *
-	   * _.isArguments([1, 2, 3]);
-	   * // => false
-	   */
-	  function isArguments(value) {
-	    return value && typeof value == 'object' && typeof value.length == 'number' &&
-	      toString.call(value) == argsClass || false;
-	  }
-
-	  return isArguments;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 163 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(174), __webpack_require__(175), __webpack_require__(167), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseBind, baseCreateWrapper, isFunction, slice) {
-
-	  /**
-	   * Used for `Array` method references.
-	   *
-	   * Normally `Array.prototype` would suffice, however, using an array literal
-	   * avoids issues in Narwhal.
-	   */
-	  var arrayRef = [];
-
-	  /** Native method shortcuts */
-	  var push = arrayRef.push,
-	      unshift = arrayRef.unshift;
-
-	  /**
-	   * Creates a function that, when called, either curries or invokes `func`
-	   * with an optional `this` binding and partially applied arguments.
-	   *
-	   * @private
-	   * @param {Function|string} func The function or method name to reference.
-	   * @param {number} bitmask The bitmask of method flags to compose.
-	   *  The bitmask may be composed of the following flags:
-	   *  1 - `_.bind`
-	   *  2 - `_.bindKey`
-	   *  4 - `_.curry`
-	   *  8 - `_.curry` (bound)
-	   *  16 - `_.partial`
-	   *  32 - `_.partialRight`
-	   * @param {Array} [partialArgs] An array of arguments to prepend to those
-	   *  provided to the new function.
-	   * @param {Array} [partialRightArgs] An array of arguments to append to those
-	   *  provided to the new function.
-	   * @param {*} [thisArg] The `this` binding of `func`.
-	   * @param {number} [arity] The arity of `func`.
-	   * @returns {Function} Returns the new function.
-	   */
-	  function createWrapper(func, bitmask, partialArgs, partialRightArgs, thisArg, arity) {
-	    var isBind = bitmask & 1,
-	        isBindKey = bitmask & 2,
-	        isCurry = bitmask & 4,
-	        isCurryBound = bitmask & 8,
-	        isPartial = bitmask & 16,
-	        isPartialRight = bitmask & 32;
-
-	    if (!isBindKey && !isFunction(func)) {
-	      throw new TypeError;
-	    }
-	    if (isPartial && !partialArgs.length) {
-	      bitmask &= ~16;
-	      isPartial = partialArgs = false;
-	    }
-	    if (isPartialRight && !partialRightArgs.length) {
-	      bitmask &= ~32;
-	      isPartialRight = partialRightArgs = false;
-	    }
-	    var bindData = func && func.__bindData__;
-	    if (bindData && bindData !== true) {
-	      // clone `bindData`
-	      bindData = slice(bindData);
-	      if (bindData[2]) {
-	        bindData[2] = slice(bindData[2]);
-	      }
-	      if (bindData[3]) {
-	        bindData[3] = slice(bindData[3]);
-	      }
-	      // set `thisBinding` is not previously bound
-	      if (isBind && !(bindData[1] & 1)) {
-	        bindData[4] = thisArg;
-	      }
-	      // set if previously bound but not currently (subsequent curried functions)
-	      if (!isBind && bindData[1] & 1) {
-	        bitmask |= 8;
-	      }
-	      // set curried arity if not yet set
-	      if (isCurry && !(bindData[1] & 4)) {
-	        bindData[5] = arity;
-	      }
-	      // append partial left arguments
-	      if (isPartial) {
-	        push.apply(bindData[2] || (bindData[2] = []), partialArgs);
-	      }
-	      // append partial right arguments
-	      if (isPartialRight) {
-	        unshift.apply(bindData[3] || (bindData[3] = []), partialRightArgs);
-	      }
-	      // merge flags
-	      bindData[1] |= bitmask;
-	      return createWrapper.apply(null, bindData);
-	    }
-	    // fast path for `_.bind`
-	    var creater = (bitmask == 1 || bitmask === 17) ? baseBind : baseCreateWrapper;
-	    return creater([func, bitmask, partialArgs, partialRightArgs, thisArg, arity]);
-	  }
-
-	  return createWrapper;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 164 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * A no-operation function.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Utilities
-	   * @example
-	   *
-	   * var object = { 'name': 'fred' };
-	   * _.noop(object) === undefined;
-	   * // => true
-	   */
-	  function noop() {
-	    // no operation performed
-	  }
-
-	  return noop;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 165 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(129), __webpack_require__(131)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreateCallback, objectTypes) {
-
-	  /**
-	   * Iterates over own and inherited enumerable properties of an object,
-	   * executing the callback for each property. The callback is bound to `thisArg`
-	   * and invoked with three arguments; (value, key, object). Callbacks may exit
-	   * iteration early by explicitly returning `false`.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @type Function
-	   * @category Objects
-	   * @param {Object} object The object to iterate over.
-	   * @param {Function} [callback=identity] The function called per iteration.
-	   * @param {*} [thisArg] The `this` binding of `callback`.
-	   * @returns {Object} Returns `object`.
-	   * @example
-	   *
-	   * function Shape() {
-	   *   this.x = 0;
-	   *   this.y = 0;
-	   * }
-	   *
-	   * Shape.prototype.move = function(x, y) {
-	   *   this.x += x;
-	   *   this.y += y;
-	   * };
-	   *
-	   * _.forIn(new Shape, function(value, key) {
-	   *   console.log(key);
-	   * });
-	   * // => logs 'x', 'y', and 'move' (property order is not guaranteed across environments)
-	   */
-	  var forIn = function(collection, callback, thisArg) {
-	    var index, iterable = collection, result = iterable;
-	    if (!iterable) return result;
-	    if (!objectTypes[typeof iterable]) return result;
-	    callback = callback && typeof thisArg == 'undefined' ? callback : baseCreateCallback(callback, thisArg, 3);
-	      for (index in iterable) {
-	        if (callback(iterable[index], index, collection) === false) return result;
-	      }
-	    return result
-	  };
-
-	  return forIn;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(176)], __WEBPACK_AMD_DEFINE_RESULT__ = function(arrayPool) {
-
-	  /**
-	   * Gets an array from the array pool or creates a new one if the pool is empty.
-	   *
-	   * @private
-	   * @returns {Array} The array from the pool.
-	   */
-	  function getArray() {
-	    return arrayPool.pop() || [];
-	  }
-
-	  return getArray;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
-/* 167 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
-
-	  /**
-	   * Checks if `value` is a function.
-	   *
-	   * @static
-	   * @memberOf _
-	   * @category Objects
-	   * @param {*} value The value to check.
-	   * @returns {boolean} Returns `true` if the `value` is a function, else `false`.
-	   * @example
-	   *
-	   * _.isFunction(_);
-	   * // => true
-	   */
-	  function isFunction(value) {
-	    return typeof value == 'function';
-	  }
-
-	  return isFunction;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-
-/***/ },
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(176), __webpack_require__(177)], __WEBPACK_AMD_DEFINE_RESULT__ = function(arrayPool, maxPoolSize) {
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 
-	  /**
-	   * Releases the given array back to the array pool.
-	   *
-	   * @private
-	   * @param {Array} [array] The array to release.
-	   */
-	  function releaseArray(array) {
-	    array.length = 0;
-	    if (arrayPool.length < maxPoolSize) {
-	      arrayPool.push(array);
-	    }
-	  }
+	  'use strict';
 
-	  return releaseArray;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  return function () {
+	    return function (scribe) {
+	      scribe.registerPlainTextFormatter(function (html) {
+	        return html.replace(/\n([ \t]*\n)+/g, '</p><p>').replace(/\n/g, '<br>');
+	      });
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
 /***/ },
 /* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var baseBind = __webpack_require__(178),
-	    baseCreateWrapper = __webpack_require__(179),
-	    isFunction = __webpack_require__(53),
-	    slice = __webpack_require__(170);
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 
-	/**
-	 * Used for `Array` method references.
-	 *
-	 * Normally `Array.prototype` would suffice, however, using an array literal
-	 * avoids issues in Narwhal.
-	 */
-	var arrayRef = [];
+	  /**
+	   * This plugin adds a command for creating links, including a basic prompt.
+	   */
 
-	/** Native method shortcuts */
-	var push = arrayRef.push,
-	    unshift = arrayRef.unshift;
+	  'use strict';
 
-	/**
-	 * Creates a function that, when called, either curries or invokes `func`
-	 * with an optional `this` binding and partially applied arguments.
-	 *
-	 * @private
-	 * @param {Function|string} func The function or method name to reference.
-	 * @param {number} bitmask The bitmask of method flags to compose.
-	 *  The bitmask may be composed of the following flags:
-	 *  1 - `_.bind`
-	 *  2 - `_.bindKey`
-	 *  4 - `_.curry`
-	 *  8 - `_.curry` (bound)
-	 *  16 - `_.partial`
-	 *  32 - `_.partialRight`
-	 * @param {Array} [partialArgs] An array of arguments to prepend to those
-	 *  provided to the new function.
-	 * @param {Array} [partialRightArgs] An array of arguments to append to those
-	 *  provided to the new function.
-	 * @param {*} [thisArg] The `this` binding of `func`.
-	 * @param {number} [arity] The arity of `func`.
-	 * @returns {Function} Returns the new function.
-	 */
-	function createWrapper(func, bitmask, partialArgs, partialRightArgs, thisArg, arity) {
-	  var isBind = bitmask & 1,
-	      isBindKey = bitmask & 2,
-	      isCurry = bitmask & 4,
-	      isCurryBound = bitmask & 8,
-	      isPartial = bitmask & 16,
-	      isPartialRight = bitmask & 32;
+	  return function () {
+	    return function (scribe) {
+	      var linkPromptCommand = new scribe.api.Command('createLink');
 
-	  if (!isBindKey && !isFunction(func)) {
-	    throw new TypeError;
-	  }
-	  if (isPartial && !partialArgs.length) {
-	    bitmask &= ~16;
-	    isPartial = partialArgs = false;
-	  }
-	  if (isPartialRight && !partialRightArgs.length) {
-	    bitmask &= ~32;
-	    isPartialRight = partialRightArgs = false;
-	  }
-	  var bindData = func && func.__bindData__;
-	  if (bindData && bindData !== true) {
-	    // clone `bindData`
-	    bindData = slice(bindData);
-	    if (bindData[2]) {
-	      bindData[2] = slice(bindData[2]);
-	    }
-	    if (bindData[3]) {
-	      bindData[3] = slice(bindData[3]);
-	    }
-	    // set `thisBinding` is not previously bound
-	    if (isBind && !(bindData[1] & 1)) {
-	      bindData[4] = thisArg;
-	    }
-	    // set if previously bound but not currently (subsequent curried functions)
-	    if (!isBind && bindData[1] & 1) {
-	      bitmask |= 8;
-	    }
-	    // set curried arity if not yet set
-	    if (isCurry && !(bindData[1] & 4)) {
-	      bindData[5] = arity;
-	    }
-	    // append partial left arguments
-	    if (isPartial) {
-	      push.apply(bindData[2] || (bindData[2] = []), partialArgs);
-	    }
-	    // append partial right arguments
-	    if (isPartialRight) {
-	      unshift.apply(bindData[3] || (bindData[3] = []), partialRightArgs);
-	    }
-	    // merge flags
-	    bindData[1] |= bitmask;
-	    return createWrapper.apply(null, bindData);
-	  }
-	  // fast path for `_.bind`
-	  var creater = (bitmask == 1 || bitmask === 17) ? baseBind : baseCreateWrapper;
-	  return creater([func, bitmask, partialArgs, partialRightArgs, thisArg, arity]);
-	}
+	      linkPromptCommand.nodeName = 'A';
 
-	module.exports = createWrapper;
+	      linkPromptCommand.execute = function () {
+	        var selection = new scribe.api.Selection();
+	        var range = selection.range;
+	        var anchorNode = selection.getContaining(function (node) {
+	          return node.nodeName === this.nodeName;
+	        }.bind(this));
+	        var initialLink = anchorNode ? anchorNode.href : '';
+	        var link = window.prompt('Enter a link.', initialLink);
+
+	        if (anchorNode) {
+	          range.selectNode(anchorNode);
+	          selection.selection.removeAllRanges();
+	          selection.selection.addRange(range);
+	        }
+
+	        // FIXME: I don't like how plugins like this do so much. Is there a way
+	        // to compose?
+
+	        if (link) {
+	          // Prepend href protocol if missing
+	          // If a http/s or mailto link is provided, then we will trust that an link is valid
+	          var urlProtocolRegExp = /^https?\:\/\//;
+	          var mailtoProtocolRegExp = /^mailto\:/;
+	          if (! urlProtocolRegExp.test(link) && ! mailtoProtocolRegExp.test(link)) {
+	            // For emails we just look for a `@` symbol as it is easier.
+	            if (/@/.test(link)) {
+	              var shouldPrefixEmail = window.confirm(
+	                'The URL you entered appears to be an email address. ' +
+	                'Do you want to add the required “mailto:” prefix?'
+	              );
+	              if (shouldPrefixEmail) {
+	                link = 'mailto:' + link;
+	              }
+	            } else {
+	              var shouldPrefixLink = window.confirm(
+	                'The URL you entered appears to be a link. ' +
+	                'Do you want to add the required “http://” prefix?'
+	              );
+	              if (shouldPrefixLink) {
+	                link = 'http://' + link;
+	              }
+	            }
+	          }
+
+	          scribe.api.SimpleCommand.prototype.execute.call(this, link);
+	        }
+	      };
+
+	      linkPromptCommand.queryState = function () {
+	        /**
+	         * We override the native `document.queryCommandState` for links because
+	         * the `createLink` and `unlink` commands are not supported.
+	         * As per: http://jsbin.com/OCiJUZO/1/edit?js,console,output
+	         */
+	        var selection = new scribe.api.Selection();
+	        return !! selection.getContaining(function (node) {
+	          return node.nodeName === this.nodeName;
+	        }.bind(this));
+	      };
+
+	      scribe.commands.linkPrompt = linkPromptCommand;
+	    };
+	  };
+
+	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
 /***/ },
@@ -25799,786 +24864,1777 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-
-	/**
-	 * Slices the `collection` from the `start` index up to, but not including,
-	 * the `end` index.
+	 * Copyright (c) 2011-2014 Felix Gnass
+	 * Licensed under the MIT license
+	 * http://spin.js.org/
 	 *
-	 * Note: This function is used instead of `Array#slice` to support node lists
-	 * in IE < 9 and to ensure dense arrays are returned.
-	 *
-	 * @private
-	 * @param {Array|Object|string} collection The collection to slice.
-	 * @param {number} start The start index.
-	 * @param {number} end The end index.
-	 * @returns {Array} Returns the new array.
+	 * Example:
+	    var opts = {
+	      lines: 12             // The number of lines to draw
+	    , length: 7             // The length of each line
+	    , width: 5              // The line thickness
+	    , radius: 10            // The radius of the inner circle
+	    , scale: 1.0            // Scales overall size of the spinner
+	    , corners: 1            // Roundness (0..1)
+	    , color: '#000'         // #rgb or #rrggbb
+	    , opacity: 1/4          // Opacity of the lines
+	    , rotate: 0             // Rotation offset
+	    , direction: 1          // 1: clockwise, -1: counterclockwise
+	    , speed: 1              // Rounds per second
+	    , trail: 100            // Afterglow percentage
+	    , fps: 20               // Frames per second when using setTimeout()
+	    , zIndex: 2e9           // Use a high z-index by default
+	    , className: 'spinner'  // CSS class to assign to the element
+	    , top: '50%'            // center vertically
+	    , left: '50%'           // center horizontally
+	    , shadow: false         // Whether to render a shadow
+	    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
+	    , position: 'absolute'  // Element positioning
+	    }
+	    var target = document.getElementById('foo')
+	    var spinner = new Spinner(opts).spin(target)
 	 */
-	function slice(array, start, end) {
-	  start || (start = 0);
-	  if (typeof end == 'undefined') {
-	    end = array ? array.length : 0;
-	  }
-	  var index = -1,
-	      length = end - start || 0,
-	      result = Array(length < 0 ? 0 : length);
+	;(function (root, factory) {
 
-	  while (++index < length) {
-	    result[index] = array[start + index];
-	  }
-	  return result;
-	}
+	  /* CommonJS */
+	  if (true) module.exports = factory()
 
-	module.exports = slice;
+	  /* AMD module */
+	  else if (typeof define == 'function' && define.amd) define(factory)
+
+	  /* Browser global */
+	  else root.Spinner = factory()
+	}(this, function () {
+	  "use strict"
+
+	  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
+	    , animations = {} /* Animation rules keyed by their name */
+	    , useCssAnimations /* Whether to use CSS animations or setTimeout */
+	    , sheet /* A stylesheet to hold the @keyframe or VML rules. */
+
+	  /**
+	   * Utility function to create elements. If no tag name is given,
+	   * a DIV is created. Optionally properties can be passed.
+	   */
+	  function createEl (tag, prop) {
+	    var el = document.createElement(tag || 'div')
+	      , n
+
+	    for (n in prop) el[n] = prop[n]
+	    return el
+	  }
+
+	  /**
+	   * Appends children and returns the parent.
+	   */
+	  function ins (parent /* child1, child2, ...*/) {
+	    for (var i = 1, n = arguments.length; i < n; i++) {
+	      parent.appendChild(arguments[i])
+	    }
+
+	    return parent
+	  }
+
+	  /**
+	   * Creates an opacity keyframe animation rule and returns its name.
+	   * Since most mobile Webkits have timing issues with animation-delay,
+	   * we create separate rules for each line/segment.
+	   */
+	  function addAnimation (alpha, trail, i, lines) {
+	    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-')
+	      , start = 0.01 + i/lines * 100
+	      , z = Math.max(1 - (1-alpha) / trail * (100-start), alpha)
+	      , prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase()
+	      , pre = prefix && '-' + prefix + '-' || ''
+
+	    if (!animations[name]) {
+	      sheet.insertRule(
+	        '@' + pre + 'keyframes ' + name + '{' +
+	        '0%{opacity:' + z + '}' +
+	        start + '%{opacity:' + alpha + '}' +
+	        (start+0.01) + '%{opacity:1}' +
+	        (start+trail) % 100 + '%{opacity:' + alpha + '}' +
+	        '100%{opacity:' + z + '}' +
+	        '}', sheet.cssRules.length)
+
+	      animations[name] = 1
+	    }
+
+	    return name
+	  }
+
+	  /**
+	   * Tries various vendor prefixes and returns the first supported property.
+	   */
+	  function vendor (el, prop) {
+	    var s = el.style
+	      , pp
+	      , i
+
+	    prop = prop.charAt(0).toUpperCase() + prop.slice(1)
+	    if (s[prop] !== undefined) return prop
+	    for (i = 0; i < prefixes.length; i++) {
+	      pp = prefixes[i]+prop
+	      if (s[pp] !== undefined) return pp
+	    }
+	  }
+
+	  /**
+	   * Sets multiple style properties at once.
+	   */
+	  function css (el, prop) {
+	    for (var n in prop) {
+	      el.style[vendor(el, n) || n] = prop[n]
+	    }
+
+	    return el
+	  }
+
+	  /**
+	   * Fills in default values.
+	   */
+	  function merge (obj) {
+	    for (var i = 1; i < arguments.length; i++) {
+	      var def = arguments[i]
+	      for (var n in def) {
+	        if (obj[n] === undefined) obj[n] = def[n]
+	      }
+	    }
+	    return obj
+	  }
+
+	  /**
+	   * Returns the line color from the given string or array.
+	   */
+	  function getColor (color, idx) {
+	    return typeof color == 'string' ? color : color[idx % color.length]
+	  }
+
+	  // Built-in defaults
+
+	  var defaults = {
+	    lines: 12             // The number of lines to draw
+	  , length: 7             // The length of each line
+	  , width: 5              // The line thickness
+	  , radius: 10            // The radius of the inner circle
+	  , scale: 1.0            // Scales overall size of the spinner
+	  , corners: 1            // Roundness (0..1)
+	  , color: '#000'         // #rgb or #rrggbb
+	  , opacity: 1/4          // Opacity of the lines
+	  , rotate: 0             // Rotation offset
+	  , direction: 1          // 1: clockwise, -1: counterclockwise
+	  , speed: 1              // Rounds per second
+	  , trail: 100            // Afterglow percentage
+	  , fps: 20               // Frames per second when using setTimeout()
+	  , zIndex: 2e9           // Use a high z-index by default
+	  , className: 'spinner'  // CSS class to assign to the element
+	  , top: '50%'            // center vertically
+	  , left: '50%'           // center horizontally
+	  , shadow: false         // Whether to render a shadow
+	  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
+	  , position: 'absolute'  // Element positioning
+	  }
+
+	  /** The constructor */
+	  function Spinner (o) {
+	    this.opts = merge(o || {}, Spinner.defaults, defaults)
+	  }
+
+	  // Global defaults that override the built-ins:
+	  Spinner.defaults = {}
+
+	  merge(Spinner.prototype, {
+	    /**
+	     * Adds the spinner to the given target element. If this instance is already
+	     * spinning, it is automatically removed from its previous target b calling
+	     * stop() internally.
+	     */
+	    spin: function (target) {
+	      this.stop()
+
+	      var self = this
+	        , o = self.opts
+	        , el = self.el = createEl(null, {className: o.className})
+
+	      css(el, {
+	        position: o.position
+	      , width: 0
+	      , zIndex: o.zIndex
+	      , left: o.left
+	      , top: o.top
+	      })
+
+	      if (target) {
+	        target.insertBefore(el, target.firstChild || null)
+	      }
+
+	      el.setAttribute('role', 'progressbar')
+	      self.lines(el, self.opts)
+
+	      if (!useCssAnimations) {
+	        // No CSS animation support, use setTimeout() instead
+	        var i = 0
+	          , start = (o.lines - 1) * (1 - o.direction) / 2
+	          , alpha
+	          , fps = o.fps
+	          , f = fps / o.speed
+	          , ostep = (1 - o.opacity) / (f * o.trail / 100)
+	          , astep = f / o.lines
+
+	        ;(function anim () {
+	          i++
+	          for (var j = 0; j < o.lines; j++) {
+	            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity)
+
+	            self.opacity(el, j * o.direction + start, alpha, o)
+	          }
+	          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps))
+	        })()
+	      }
+	      return self
+	    }
+
+	    /**
+	     * Stops and removes the Spinner.
+	     */
+	  , stop: function () {
+	      var el = this.el
+	      if (el) {
+	        clearTimeout(this.timeout)
+	        if (el.parentNode) el.parentNode.removeChild(el)
+	        this.el = undefined
+	      }
+	      return this
+	    }
+
+	    /**
+	     * Internal method that draws the individual lines. Will be overwritten
+	     * in VML fallback mode below.
+	     */
+	  , lines: function (el, o) {
+	      var i = 0
+	        , start = (o.lines - 1) * (1 - o.direction) / 2
+	        , seg
+
+	      function fill (color, shadow) {
+	        return css(createEl(), {
+	          position: 'absolute'
+	        , width: o.scale * (o.length + o.width) + 'px'
+	        , height: o.scale * o.width + 'px'
+	        , background: color
+	        , boxShadow: shadow
+	        , transformOrigin: 'left'
+	        , transform: 'rotate(' + ~~(360/o.lines*i + o.rotate) + 'deg) translate(' + o.scale*o.radius + 'px' + ',0)'
+	        , borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
+	        })
+	      }
+
+	      for (; i < o.lines; i++) {
+	        seg = css(createEl(), {
+	          position: 'absolute'
+	        , top: 1 + ~(o.scale * o.width / 2) + 'px'
+	        , transform: o.hwaccel ? 'translate3d(0,0,0)' : ''
+	        , opacity: o.opacity
+	        , animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
+	        })
+
+	        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), {top: '2px'}))
+	        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')))
+	      }
+	      return el
+	    }
+
+	    /**
+	     * Internal method that adjusts the opacity of a single line.
+	     * Will be overwritten in VML fallback mode below.
+	     */
+	  , opacity: function (el, i, val) {
+	      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val
+	    }
+
+	  })
+
+
+	  function initVML () {
+
+	    /* Utility function to create a VML tag */
+	    function vml (tag, attr) {
+	      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr)
+	    }
+
+	    // No CSS transforms but VML support, add a CSS rule for VML elements:
+	    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)')
+
+	    Spinner.prototype.lines = function (el, o) {
+	      var r = o.scale * (o.length + o.width)
+	        , s = o.scale * 2 * r
+
+	      function grp () {
+	        return css(
+	          vml('group', {
+	            coordsize: s + ' ' + s
+	          , coordorigin: -r + ' ' + -r
+	          })
+	        , { width: s, height: s }
+	        )
+	      }
+
+	      var margin = -(o.width + o.length) * o.scale * 2 + 'px'
+	        , g = css(grp(), {position: 'absolute', top: margin, left: margin})
+	        , i
+
+	      function seg (i, dx, filter) {
+	        ins(
+	          g
+	        , ins(
+	            css(grp(), {rotation: 360 / o.lines * i + 'deg', left: ~~dx})
+	          , ins(
+	              css(
+	                vml('roundrect', {arcsize: o.corners})
+	              , { width: r
+	                , height: o.scale * o.width
+	                , left: o.scale * o.radius
+	                , top: -o.scale * o.width >> 1
+	                , filter: filter
+	                }
+	              )
+	            , vml('fill', {color: getColor(o.color, i), opacity: o.opacity})
+	            , vml('stroke', {opacity: 0}) // transparent stroke to fix color bleeding upon opacity change
+	            )
+	          )
+	        )
+	      }
+
+	      if (o.shadow)
+	        for (i = 1; i <= o.lines; i++) {
+	          seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)')
+	        }
+
+	      for (i = 1; i <= o.lines; i++) seg(i)
+	      return ins(el, g)
+	    }
+
+	    Spinner.prototype.opacity = function (el, i, val, o) {
+	      var c = el.firstChild
+	      o = o.shadow && o.lines || 0
+	      if (c && i + o < c.childNodes.length) {
+	        c = c.childNodes[i + o]; c = c && c.firstChild; c = c && c.firstChild
+	        if (c) c.opacity = val
+	      }
+	    }
+	  }
+
+	  if (typeof document !== 'undefined') {
+	    sheet = (function () {
+	      var el = createEl('style', {type : 'text/css'})
+	      ins(document.getElementsByTagName('head')[0], el)
+	      return el.sheet || el.styleSheet
+	    }())
+
+	    var probe = css(createEl('group'), {behavior: 'url(#default#VML)'})
+
+	    if (!vendor(probe, 'transform') && probe.adj) initVML()
+	    else useCssAnimations = vendor(probe, 'animation')
+	  }
+
+	  return Spinner
+
+	}));
 
 
 /***/ },
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/** Used for native method references */
-	var objectProto = Object.prototype;
+	var _ = __webpack_require__(2);
+	var utils = __webpack_require__(57);
 
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
+	module.exports = function(markdown, type) {
 
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
+	  // Deferring requiring these to sidestep a circular dependency:
+	  // Block -> this -> Blocks -> Block
+	  var Blocks = __webpack_require__(81);
 
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
+	  // MD -> HTML
+	  type = utils.classify(type);
 
-	module.exports = isNative;
+	  var html = markdown,
+	      shouldWrap = type === "Text";
+
+	  if(_.isUndefined(shouldWrap)) { shouldWrap = false; }
+
+	  if (shouldWrap) {
+	    html = "<p>" + html;
+	  }
+
+	  html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gm,function(match, p1, p2){
+	    return "<a href='"+p2+"'>"+p1.replace(/\n/g, '')+"</a>";
+	  });
+
+	  // This may seem crazy, but because JS doesn't have a look behind,
+	  // we reverse the string to regex out the italic items (and bold)
+	  // and look for something that doesn't start (or end in the reversed strings case)
+	  // with a slash.
+	  html = utils.reverse(
+	           utils.reverse(html)
+	           .replace(/_(?!\\)((_\\|[^_])*)_(?=$|[^\\])/gm, function(match, p1) {
+	              return ">i/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">i<";
+	           })
+	           .replace(/\*\*(?!\\)((\*\*\\|[^\*\*])*)\*\*(?=$|[^\\])/gm, function(match, p1){
+	              return ">b/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">b<";
+	           })
+	          );
+
+	  html =  html.replace(/^\> (.+)$/mg,"$1");
+
+	  // Use custom block toHTML functions (if any exist)
+	  var block;
+	  if (Blocks.hasOwnProperty(type)) {
+	    block = Blocks[type];
+	    // Do we have a toHTML function?
+	    if (!_.isUndefined(block.prototype.toHTML) && _.isFunction(block.prototype.toHTML)) {
+	      html = block.prototype.toHTML(html);
+	    }
+	  }
+
+	  if (shouldWrap) {
+	    html = html.replace(/\n\s*\n/gm, "</p><p>");
+	    html = html.replace(/\n/gm, "<br>");
+	  }
+
+	  html = html.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")
+	             .replace(/\n/g, "<br>")
+	             .replace(/\*\*/, "")
+	             .replace(/__/, "");  // Cleanup any markdown characters left
+
+	  // Replace escaped
+	  html = html.replace(/\\\*/g, "*")
+	             .replace(/\\\[/g, "[")
+	             .replace(/\\\]/g, "]")
+	             .replace(/\\\_/g, "_")
+	             .replace(/\\\(/g, "(")
+	             .replace(/\\\)/g, ")")
+	             .replace(/\\\-/g, "-");
+
+	  if (shouldWrap) {
+	    html += "</p>";
+	  }
+
+	  return html;
+	};
 
 
 /***/ },
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/**
-	 * A no-operation function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @example
-	 *
-	 * var object = { 'name': 'fred' };
-	 * _.noop(object) === undefined;
-	 * // => true
-	 */
-	function noop() {
-	  // no operation performed
-	}
+	/*
+	  Block Quote
+	*/
 
-	module.exports = noop;
+	var _ = __webpack_require__(2);
+
+	var Block = __webpack_require__(83);
+	var stToHTML = __webpack_require__(171);
+
+	var template = _.template([
+	  '<blockquote class="st-required st-text-block" contenteditable="true"></blockquote>',
+	  '<label class="st-input-label"> <%= i18n.t("blocks:quote:credit_field") %></label>',
+	  '<input maxlength="140" name="cite" placeholder="<%= i18n.t("blocks:quote:credit_field") %>"',
+	  ' class="st-input-string st-required js-cite-input" type="text" />'
+	].join("\n"));
+
+	module.exports = Block.extend({
+
+	  type: "quote",
+
+	  title: function() { return i18n.t('blocks:quote:title'); },
+
+	  icon_name: 'quote',
+
+	  editorHTML: function() {
+	    return template(this);
+	  },
+
+	  loadData: function(data){
+	    if (this.options.convertFromMarkdown && !data.isHtml) {
+	      this.setTextBlockHTML(stToHTML(data.text, this.type));
+	    } else {
+	      this.setTextBlockHTML(data.text);
+	    }
+
+	    this.$('.js-cite-input').val(data.cite);
+	  }
+	});
 
 
 /***/ },
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/** Used for native method references */
-	var objectProto = Object.prototype;
+	var $ = __webpack_require__(56);
+	var Block = __webpack_require__(83);
 
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
+	module.exports = Block.extend({
 
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
+	  type: "image",
+	  title: function() { return i18n.t('blocks:image:title'); },
 
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
+	  droppable: true,
+	  uploadable: true,
 
-	module.exports = isNative;
+	  icon_name: 'image',
+
+	  loadData: function(data){
+	    // Create our image tag
+	    this.$editor.html($('<img>', { src: data.file.url }));
+	  },
+
+	  onBlockRender: function(){
+	    /* Setup the upload button */
+	    this.$inputs.find('button').bind('click', function(ev){ ev.preventDefault(); });
+	    this.$inputs.find('input').on('change', (function(ev) {
+	      this.onDrop(ev.currentTarget);
+	    }).bind(this));
+	  },
+
+	  onDrop: function(transferData){
+	    var file = transferData.files[0],
+	        urlAPI = (typeof URL !== "undefined") ? URL : (typeof webkitURL !== "undefined") ? webkitURL : null;
+
+	    // Handle one upload at a time
+	    if (/image/.test(file.type)) {
+	      this.loading();
+	      // Show this image on here
+	      this.$inputs.hide();
+	      this.$editor.html($('<img>', { src: urlAPI.createObjectURL(file) })).show();
+
+	      this.uploader(
+	        file,
+	        function(data) {
+	          this.setData(data);
+	          this.ready();
+	        },
+	        function(error) {
+	          this.addMessage(i18n.t('blocks:image:upload_error'));
+	          this.ready();
+	        }
+	      );
+	    }
+	  }
+	});
 
 
 /***/ },
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(180), __webpack_require__(157), __webpack_require__(154), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreate, isObject, setBindData, slice) {
+	"use strict";
 
-	  /**
-	   * Used for `Array` method references.
-	   *
-	   * Normally `Array.prototype` would suffice, however, using an array literal
-	   * avoids issues in Narwhal.
-	   */
-	  var arrayRef = [];
+	/*
+	  Heading Block
+	*/
 
-	  /** Native method shortcuts */
-	  var push = arrayRef.push;
+	var Block = __webpack_require__(83);
+	var stToHTML = __webpack_require__(171);
 
-	  /**
-	   * The base implementation of `_.bind` that creates the bound function and
-	   * sets its meta data.
-	   *
-	   * @private
-	   * @param {Array} bindData The bind data array.
-	   * @returns {Function} Returns the new bound function.
-	   */
-	  function baseBind(bindData) {
-	    var func = bindData[0],
-	        partialArgs = bindData[2],
-	        thisArg = bindData[4];
+	module.exports = Block.extend({
 
-	    function bound() {
-	      // `Function#bind` spec
-	      // http://es5.github.io/#x15.3.4.5
-	      if (partialArgs) {
-	        // avoid `arguments` object deoptimizations by using `slice` instead
-	        // of `Array.prototype.slice.call` and not assigning `arguments` to a
-	        // variable as a ternary expression
-	        var args = slice(partialArgs);
-	        push.apply(args, arguments);
-	      }
-	      // mimic the constructor's `return` behavior
-	      // http://es5.github.io/#x13.2.2
-	      if (this instanceof bound) {
-	        // ensure `new bound` is an instance of `func`
-	        var thisBinding = baseCreate(func.prototype),
-	            result = func.apply(thisBinding, args || arguments);
-	        return isObject(result) ? result : thisBinding;
-	      }
-	      return func.apply(thisArg, args || arguments);
+	  type: 'Heading',
+
+	  title: function(){ return i18n.t('blocks:heading:title'); },
+
+	  editorHTML: '<div class="st-required st-text-block st-text-block--heading" contenteditable="true"></div>',
+
+	  scribeOptions: { allowBlockElements: true },
+
+	  icon_name: 'heading',
+
+	  loadData: function(data){
+	    if (this.options.convertFromMarkdown && !data.isHtml) {
+	      this.setTextBlockHTML(stToHTML(data.text, this.type));
+	    } else {
+	      this.setTextBlockHTML(data.text);
 	    }
-	    setBindData(bound, bindData);
-	    return bound;
 	  }
-
-	  return baseBind;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	});
 
 
 /***/ },
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(180), __webpack_require__(157), __webpack_require__(154), __webpack_require__(133)], __WEBPACK_AMD_DEFINE_RESULT__ = function(baseCreate, isObject, setBindData, slice) {
+	"use strict";
 
-	  /**
-	   * Used for `Array` method references.
-	   *
-	   * Normally `Array.prototype` would suffice, however, using an array literal
-	   * avoids issues in Narwhal.
-	   */
-	  var arrayRef = [];
+	var _ = __webpack_require__(2);
 
-	  /** Native method shortcuts */
-	  var push = arrayRef.push;
+	var Block = __webpack_require__(83);
+	var stToHTML = __webpack_require__(171);
 
-	  /**
-	   * The base implementation of `createWrapper` that creates the wrapper and
-	   * sets its meta data.
-	   *
-	   * @private
-	   * @param {Array} bindData The bind data array.
-	   * @returns {Function} Returns the new function.
-	   */
-	  function baseCreateWrapper(bindData) {
-	    var func = bindData[0],
-	        bitmask = bindData[1],
-	        partialArgs = bindData[2],
-	        partialRightArgs = bindData[3],
-	        thisArg = bindData[4],
-	        arity = bindData[5];
+	var template = '<div class="st-text-block st-required" contenteditable="true"><ul><li></li></ul></div>';
 
-	    var isBind = bitmask & 1,
-	        isBindKey = bitmask & 2,
-	        isCurry = bitmask & 4,
-	        isCurryBound = bitmask & 8,
-	        key = func;
+	module.exports = Block.extend({
 
-	    function bound() {
-	      var thisBinding = isBind ? thisArg : this;
-	      if (partialArgs) {
-	        var args = slice(partialArgs);
-	        push.apply(args, arguments);
-	      }
-	      if (partialRightArgs || isCurry) {
-	        args || (args = slice(arguments));
-	        if (partialRightArgs) {
-	          push.apply(args, partialRightArgs);
-	        }
-	        if (isCurry && args.length < arity) {
-	          bitmask |= 16 & ~32;
-	          return baseCreateWrapper([func, (isCurryBound ? bitmask : bitmask & ~3), args, null, thisArg, arity]);
-	        }
-	      }
-	      args || (args = arguments);
-	      if (isBindKey) {
-	        func = thisBinding[key];
-	      }
-	      if (this instanceof bound) {
-	        thisBinding = baseCreate(func.prototype);
-	        var result = func.apply(thisBinding, args);
-	        return isObject(result) ? result : thisBinding;
-	      }
-	      return func.apply(thisBinding, args);
+	  type: 'list',
+
+	  title: function() { return i18n.t('blocks:list:title'); },
+
+	  icon_name: 'list',
+
+	  editorHTML: function() {
+	    return _.template(template, this);
+	  },
+
+	  loadData: function(data){
+	    if (this.options.convertFromMarkdown && !data.isHtml) {
+	      this.setTextBlockHTML("<ul>" + stToHTML(data.text, this.type) + "</ul>");
+	    } else {
+	      this.setTextBlockHTML(data.text);
 	    }
-	    setBindData(bound, bindData);
-	    return bound;
+	  },
+
+	  onBlockRender: function() {
+	    this.checkForList = this.checkForList.bind(this);
+	    this.getTextBlock().on('click keyup', this.checkForList);
+	    this.focus();
+	  },
+
+	  checkForList: function() {
+	    if (this.$('ul').length === 0) {
+	      document.execCommand("insertUnorderedList", false, false);
+	    }
+	  },
+
+	  toHTML: function(html) {
+	    html = html.replace(/^ - (.+)$/mg,"<li>$1</li>")
+	               .replace(/\n/mg, "");
+
+	    return html;
+	  },
+
+	  onContentPasted: function(event, target) {
+	    this.$('ul').html(
+	      this.pastedMarkdownToHTML(target[0].innerHTML));
+	    this.getTextBlock().caretToEnd();
+	  },
+
+	  isEmpty: function() {
+	    return _.isEmpty(this.getBlockData().text);
 	  }
 
-	  return baseCreateWrapper;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	});
 
 
 /***/ },
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	"use strict";
 
-	  /** Used to pool arrays and objects used internally */
-	  var arrayPool = [];
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+	var utils = __webpack_require__(57);
 
-	  return arrayPool;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	var Block = __webpack_require__(83);
+
+	var tweet_template = _.template([
+	  "<blockquote class='twitter-tweet' align='center'>",
+	  "<p><%= text %></p>",
+	  "&mdash; <%= user.name %> (@<%= user.screen_name %>)",
+	  "<a href='<%= status_url %>' data-datetime='<%= created_at %>'><%= created_at %></a>",
+	  "</blockquote>",
+	  '<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
+	].join("\n"));
+
+	module.exports = Block.extend({
+
+	  type: "tweet",
+	  droppable: true,
+	  pastable: true,
+	  fetchable: true,
+
+	  drop_options: {
+	    re_render_on_reorder: true
+	  },
+
+	  title: function(){ return i18n.t('blocks:tweet:title'); },
+
+	  fetchUrl: function(tweetID) {
+	    return "/tweets/?tweet_id=" + tweetID;
+	  },
+
+	  icon_name: 'twitter',
+
+	  loadData: function(data) {
+	    if (_.isUndefined(data.status_url)) { data.status_url = ''; }
+	    this.$inner.find('iframe').remove();
+	    this.$inner.prepend(tweet_template(data));
+	  },
+
+	  onContentPasted: function(event){
+	    // Content pasted. Delegate to the drop parse method
+	    var input = $(event.target),
+	    val = input.val();
+
+	    // Pass this to the same handler as onDrop
+	    this.handleTwitterDropPaste(val);
+	  },
+
+	  handleTwitterDropPaste: function(url){
+	    if (!this.validTweetUrl(url)) {
+	      utils.log("Invalid Tweet URL");
+	      return;
+	    }
+
+	    // Twitter status
+	    var tweetID = url.match(/[^\/]+$/);
+	    if (!_.isEmpty(tweetID)) {
+	      this.loading();
+	      tweetID = tweetID[0];
+
+	      var ajaxOptions = {
+	        url: this.fetchUrl(tweetID),
+	        dataType: "json"
+	      };
+
+	      this.fetch(ajaxOptions, this.onTweetSuccess, this.onTweetFail);
+	    }
+	  },
+
+	  validTweetUrl: function(url) {
+	    return (utils.isURI(url) &&
+	            url.indexOf("twitter") !== -1 &&
+	            url.indexOf("status") !== -1);
+	  },
+
+	  onTweetSuccess: function(data) {
+	    // Parse the twitter object into something a bit slimmer..
+	    var obj = {
+	      user: {
+	        profile_image_url: data.user.profile_image_url,
+	        profile_image_url_https: data.user.profile_image_url_https,
+	        screen_name: data.user.screen_name,
+	        name: data.user.name
+	      },
+	      id: data.id_str,
+	      text: data.text,
+	      created_at: data.created_at,
+	      entities: data.entities,
+	      status_url: "https://twitter.com/" + data.user.screen_name + "/status/" + data.id_str
+	    };
+
+	    this.setAndLoadData(obj);
+	    this.ready();
+	  },
+
+	  onTweetFail: function() {
+	    this.addMessage(i18n.t("blocks:tweet:fetch_error"));
+	    this.ready();
+	  },
+
+	  onDrop: function(transferData){
+	    var url = transferData.getData('text/plain');
+	    this.handleTwitterDropPaste(url);
+	  }
+	});
 
 
 /***/ },
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	"use strict";
 
-	  /** Used as the max size of the `arrayPool` and `objectPool` */
-	  var maxPoolSize = 40;
+	var _ = __webpack_require__(2);
+	var utils = __webpack_require__(57);
+	var Block = __webpack_require__(83);
 
-	  return maxPoolSize;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	module.exports = Block.extend({
+
+	  // more providers at https://gist.github.com/jeffling/a9629ae28e076785a14f
+	  providers: {
+	    vimeo: {
+	      regex: /(?:http[s]?:\/\/)?(?:www.)?vimeo.com\/(.+)/,
+	      html: "<iframe src=\"<%= protocol %>//player.vimeo.com/video/<%= remote_id %>?title=0&byline=0\" width=\"580\" height=\"320\" frameborder=\"0\"></iframe>"
+	    },
+	    youtube: {
+	      regex: /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
+	      html: "<iframe src=\"<%= protocol %>//www.youtube.com/embed/<%= remote_id %>\" width=\"580\" height=\"320\" frameborder=\"0\" allowfullscreen></iframe>"
+	    }
+	  },
+
+	  type: 'video',
+	  title: function() { return i18n.t('blocks:video:title'); },
+
+	  droppable: true,
+	  pastable: true,
+
+	  icon_name: 'video',
+
+	  loadData: function(data){
+	    if (!this.providers.hasOwnProperty(data.source)) { return; }
+
+	    var source = this.providers[data.source];
+
+	    var protocol = window.location.protocol === "file:" ? 
+	      "http:" : window.location.protocol;
+
+	    var aspectRatioClass = source.square ?
+	      'with-square-media' : 'with-sixteen-by-nine-media';
+
+	    this.$editor
+	      .addClass('st-block__editor--' + aspectRatioClass)
+	      .html(_.template(source.html, {
+	        protocol: protocol,
+	        remote_id: data.remote_id,
+	        width: this.$editor.width() // for videos like vine
+	      }));
+	  },
+
+	  onContentPasted: function(event){
+	    this.handleDropPaste(event.target.value);
+	  },
+
+	  matchVideoProvider: function(provider, index, url) {
+	    var match = provider.regex.exec(url);
+	    if(match == null || _.isUndefined(match[1])) { return {}; }
+
+	    return {
+	      source: index,
+	      remote_id: match[1]
+	    };
+	  },
+
+	  handleDropPaste: function(url){
+	    if (!utils.isURI(url)) { return; }
+
+	    for(var key in this.providers) { 
+	      if (!this.providers.hasOwnProperty(key)) { continue; }
+	      this.setAndLoadData(
+	        this.matchVideoProvider(this.providers[key], key, url)
+	      );
+	    }
+	  },
+
+	  onDrop: function(transferData){
+	    var url = transferData.getData('text/plain');
+	    this.handleDropPaste(url);
+	  }
+	});
+
 
 
 /***/ },
 /* 178 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var baseCreate = __webpack_require__(181),
-	    isObject = __webpack_require__(54),
-	    setBindData = __webpack_require__(145),
-	    slice = __webpack_require__(170);
+	"use strict";
 
-	/**
-	 * Used for `Array` method references.
-	 *
-	 * Normally `Array.prototype` would suffice, however, using an array literal
-	 * avoids issues in Narwhal.
-	 */
-	var arrayRef = [];
-
-	/** Native method shortcuts */
-	var push = arrayRef.push;
-
-	/**
-	 * The base implementation of `_.bind` that creates the bound function and
-	 * sets its meta data.
-	 *
-	 * @private
-	 * @param {Array} bindData The bind data array.
-	 * @returns {Function} Returns the new bound function.
-	 */
-	function baseBind(bindData) {
-	  var func = bindData[0],
-	      partialArgs = bindData[2],
-	      thisArg = bindData[4];
-
-	  function bound() {
-	    // `Function#bind` spec
-	    // http://es5.github.io/#x15.3.4.5
-	    if (partialArgs) {
-	      // avoid `arguments` object deoptimizations by using `slice` instead
-	      // of `Array.prototype.slice.call` and not assigning `arguments` to a
-	      // variable as a ternary expression
-	      var args = slice(partialArgs);
-	      push.apply(args, arguments);
-	    }
-	    // mimic the constructor's `return` behavior
-	    // http://es5.github.io/#x13.2.2
-	    if (this instanceof bound) {
-	      // ensure `new bound` is an instance of `func`
-	      var thisBinding = baseCreate(func.prototype),
-	          result = func.apply(thisBinding, args || arguments);
-	      return isObject(result) ? result : thisBinding;
-	    }
-	    return func.apply(thisArg, args || arguments);
+	module.exports = {
+	  mediatedEvents: {},
+	  eventNamespace: null,
+	  _bindMediatedEvents: function() {
+	    Object.keys(this.mediatedEvents).forEach(function(eventName){
+	      var cb = this.mediatedEvents[eventName];
+	      eventName = this.eventNamespace ?
+	        this.eventNamespace + ':' + eventName :
+	        eventName;
+	      this.mediator.on(eventName, this[cb].bind(this));
+	    }, this);
 	  }
-	  setBindData(bound, bindData);
-	  return bound;
-	}
-
-	module.exports = baseBind;
+	};
 
 
 /***/ },
 /* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var baseCreate = __webpack_require__(182),
-	    isObject = __webpack_require__(54),
-	    setBindData = __webpack_require__(145),
-	    slice = __webpack_require__(170);
+	"use strict";
 
-	/**
-	 * Used for `Array` method references.
-	 *
-	 * Normally `Array.prototype` would suffice, however, using an array literal
-	 * avoids issues in Narwhal.
-	 */
-	var arrayRef = [];
+	var _ = __webpack_require__(2);
+	var Blocks = __webpack_require__(81);
 
-	/** Native method shortcuts */
-	var push = arrayRef.push;
+	var BlockControl = function(type) {
+	  this.type = type;
+	  this.block_type = Blocks[this.type].prototype;
+	  this.can_be_rendered = this.block_type.toolbarEnabled;
 
-	/**
-	 * The base implementation of `createWrapper` that creates the wrapper and
-	 * sets its meta data.
-	 *
-	 * @private
-	 * @param {Array} bindData The bind data array.
-	 * @returns {Function} Returns the new function.
-	 */
-	function baseCreateWrapper(bindData) {
-	  var func = bindData[0],
-	      bitmask = bindData[1],
-	      partialArgs = bindData[2],
-	      partialRightArgs = bindData[3],
-	      thisArg = bindData[4],
-	      arity = bindData[5];
+	  this._ensureElement();
+	};
 
-	  var isBind = bitmask & 1,
-	      isBindKey = bitmask & 2,
-	      isCurry = bitmask & 4,
-	      isCurryBound = bitmask & 8,
-	      key = func;
+	Object.assign(BlockControl.prototype, __webpack_require__(74), __webpack_require__(75), __webpack_require__(60), {
 
-	  function bound() {
-	    var thisBinding = isBind ? thisArg : this;
-	    if (partialArgs) {
-	      var args = slice(partialArgs);
-	      push.apply(args, arguments);
-	    }
-	    if (partialRightArgs || isCurry) {
-	      args || (args = slice(arguments));
-	      if (partialRightArgs) {
-	        push.apply(args, partialRightArgs);
-	      }
-	      if (isCurry && args.length < arity) {
-	        bitmask |= 16 & ~32;
-	        return baseCreateWrapper([func, (isCurryBound ? bitmask : bitmask & ~3), args, null, thisArg, arity]);
-	      }
-	    }
-	    args || (args = arguments);
-	    if (isBindKey) {
-	      func = thisBinding[key];
-	    }
-	    if (this instanceof bound) {
-	      thisBinding = baseCreate(func.prototype);
-	      var result = func.apply(thisBinding, args);
-	      return isObject(result) ? result : thisBinding;
-	    }
-	    return func.apply(thisBinding, args);
+	  tagName: 'a',
+	  className: "st-block-control",
+
+	  attributes: function() {
+	    return {
+	      'data-type': this.block_type.type
+	    };
+	  },
+
+	  render: function() {
+	    this.$el.html('<span class="st-icon">'+ _.result(this.block_type, 'icon_name') +'</span>' + _.result(this.block_type, 'title'));
+	    return this;
 	  }
-	  setBindData(bound, bindData);
-	  return bound;
-	}
+	});
 
-	module.exports = baseCreateWrapper;
+	module.exports = BlockControl;
 
 
 /***/ },
 /* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="amd" -o ./modern/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
+	"use strict";
+
+	/*
+	 * SirTrevor Block Controls
+	 * --
+	 * Gives an interface for adding new Sir Trevor blocks.
 	 */
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(156), __webpack_require__(157), __webpack_require__(164)], __WEBPACK_AMD_DEFINE_RESULT__ = function(isNative, isObject, noop) {
 
-	  /* Native method shortcuts for methods with the same name as other `lodash` methods */
-	  var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
 
-	  /**
-	   * The base implementation of `_.create` without support for assigning
-	   * properties to the created object.
-	   *
-	   * @private
-	   * @param {Object} prototype The object to inherit from.
-	   * @returns {Object} Returns the new object.
-	   */
-	  function baseCreate(prototype, properties) {
-	    return isObject(prototype) ? nativeCreate(prototype) : {};
-	  }
-	  // fallback for browsers without `Object.create`
-	  if (!nativeCreate) {
-	    baseCreate = (function() {
-	      function Object() {}
-	      return function(prototype) {
-	        if (isObject(prototype)) {
-	          Object.prototype = prototype;
-	          var result = new Object;
-	          Object.prototype = null;
+	var Blocks = __webpack_require__(81);
+	var BlockControl = __webpack_require__(179);
+	var EventBus = __webpack_require__(62);
+
+	var BlockControls = function(available_types, mediator) {
+	  this.available_types = available_types || [];
+	  this.mediator = mediator;
+
+	  this._ensureElement();
+	  this._bindFunctions();
+	  this._bindMediatedEvents();
+
+	  this.initialize();
+	};
+
+	Object.assign(BlockControls.prototype, __webpack_require__(74), __webpack_require__(178), __webpack_require__(75), __webpack_require__(60), {
+
+	  bound: ['handleControlButtonClick'],
+	  block_controls: null,
+
+	  className: "st-block-controls",
+	  eventNamespace: 'block-controls',
+
+	  mediatedEvents: {
+	    'render': 'renderInContainer',
+	    'show': 'show',
+	    'hide': 'hide'
+	  },
+
+	  initialize: function() {
+	    for(var block_type in this.available_types) {
+	      if (Blocks.hasOwnProperty(block_type)) {
+	        var block_control = new BlockControl(block_type);
+	        if (block_control.can_be_rendered) {
+	          this.$el.append(block_control.render().$el);
 	        }
-	        return result || window.Object();
-	      };
-	    }());
-	  }
+	      }
+	    }
 
-	  return baseCreate;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    this.$el.delegate('.st-block-control', 'click', this.handleControlButtonClick);
+	    this.mediator.on('block-controls:show', this.renderInContainer);
+	  },
+
+	  show: function() {
+	    this.$el.addClass('st-block-controls--active');
+
+	    EventBus.trigger('block:controls:shown');
+	  },
+
+	  hide: function() {
+	    this.removeCurrentContainer();
+	    this.$el.removeClass('st-block-controls--active');
+
+	    EventBus.trigger('block:controls:hidden');
+	  },
+
+	  handleControlButtonClick: function(e) {
+	    e.stopPropagation();
+
+	    this.mediator.trigger('block:create', $(e.currentTarget).attr('data-type'));
+	  },
+
+	  renderInContainer: function(container) {
+	    this.removeCurrentContainer();
+
+	    container.append(this.$el.detach());
+	    container.addClass('with-st-controls');
+
+	    this.currentContainer = container;
+	    this.show();
+	  },
+
+	  removeCurrentContainer: function() {
+	    if (!_.isUndefined(this.currentContainer)) {
+	      this.currentContainer.removeClass("with-st-controls");
+	      this.currentContainer = undefined;
+	    }
+	  }
+	});
+
+	module.exports = BlockControls;
 
 
 /***/ },
 /* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(183),
-	    isObject = __webpack_require__(54),
-	    noop = __webpack_require__(184);
+	"use strict";
 
-	/* Native method shortcuts for methods with the same name as other `lodash` methods */
-	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+	/*
+	   SirTrevor Floating Block Controls
+	   --
+	   Draws the 'plus' between blocks
+	   */
 
-	/**
-	 * The base implementation of `_.create` without support for assigning
-	 * properties to the created object.
-	 *
-	 * @private
-	 * @param {Object} prototype The object to inherit from.
-	 * @returns {Object} Returns the new object.
-	 */
-	function baseCreate(prototype, properties) {
-	  return isObject(prototype) ? nativeCreate(prototype) : {};
-	}
-	// fallback for browsers without `Object.create`
-	if (!nativeCreate) {
-	  baseCreate = (function() {
-	    function Object() {}
-	    return function(prototype) {
-	      if (isObject(prototype)) {
-	        Object.prototype = prototype;
-	        var result = new Object;
-	        Object.prototype = null;
-	      }
-	      return result || global.Object();
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+
+	var EventBus = __webpack_require__(62);
+
+	var FloatingBlockControls = function(wrapper, instance_id, mediator) {
+	  this.$wrapper = wrapper;
+	  this.instance_id = instance_id;
+	  this.mediator = mediator;
+
+	  this._ensureElement();
+	  this._bindFunctions();
+
+	  this.initialize();
+	};
+
+	Object.assign(FloatingBlockControls.prototype, __webpack_require__(74), __webpack_require__(75), __webpack_require__(60), {
+
+	  className: "st-block-controls__top",
+
+	  attributes: function() {
+	    return {
+	      'data-icon': 'add'
 	    };
-	  }());
-	}
+	  },
 
-	module.exports = baseCreate;
+	  bound: ['handleBlockMouseOut', 'handleBlockMouseOver', 'handleBlockClick', 'onDrop'],
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	  initialize: function() {
+	    this.$el.on('click', this.handleBlockClick)
+	    .dropArea()
+	    .bind('drop', this.onDrop);
+
+	    this.$wrapper.on('mouseover', '.st-block', this.handleBlockMouseOver)
+	    .on('mouseout', '.st-block', this.handleBlockMouseOut)
+	    .on('click', '.st-block--with-plus', this.handleBlockClick);
+	  },
+
+	  onDrop: function(ev) {
+	    ev.preventDefault();
+
+	    var dropped_on = this.$el,
+	    item_id = ev.originalEvent.dataTransfer.getData("text/plain"),
+	    block = $('#' + item_id);
+
+	    if (!_.isUndefined(item_id) &&
+	        !_.isEmpty(block) &&
+	          dropped_on.attr('id') !== item_id &&
+	            this.instance_id === block.attr('data-instance')
+	       ) {
+	         dropped_on.after(block);
+	       }
+
+	       EventBus.trigger("block:reorder:dropped", item_id);
+	  },
+
+	  handleBlockMouseOver: function(e) {
+	    var block = $(e.currentTarget);
+
+	    if (!block.hasClass('st-block--with-plus')) {
+	      block.addClass('st-block--with-plus');
+	    }
+	  },
+
+	  handleBlockMouseOut: function(e) {
+	    var block = $(e.currentTarget);
+
+	    if (block.hasClass('st-block--with-plus')) {
+	      block.removeClass('st-block--with-plus');
+	    }
+	  },
+
+	  handleBlockClick: function(e) {
+	    e.stopPropagation();
+	    this.mediator.trigger('block-controls:render', $(e.currentTarget));
+	  }
+
+	});
+
+	module.exports = FloatingBlockControls;
+
 
 /***/ },
 /* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
-	var isNative = __webpack_require__(185),
-	    isObject = __webpack_require__(54),
-	    noop = __webpack_require__(186);
-
-	/* Native method shortcuts for methods with the same name as other `lodash` methods */
-	var nativeCreate = isNative(nativeCreate = Object.create) && nativeCreate;
+	"use strict";
 
 	/**
-	 * The base implementation of `_.create` without support for assigning
-	 * properties to the created object.
-	 *
-	 * @private
-	 * @param {Object} prototype The object to inherit from.
-	 * @returns {Object} Returns the new object.
+	 * Format Bar
+	 * --
+	 * Displayed on focus on a text area.
+	 * Renders with all available options for the editor instance
 	 */
-	function baseCreate(prototype, properties) {
-	  return isObject(prototype) ? nativeCreate(prototype) : {};
-	}
-	// fallback for browsers without `Object.create`
-	if (!nativeCreate) {
-	  baseCreate = (function() {
-	    function Object() {}
-	    return function(prototype) {
-	      if (isObject(prototype)) {
-	        Object.prototype = prototype;
-	        var result = new Object;
-	        Object.prototype = null;
-	      }
-	      return result || global.Object();
-	    };
-	  }());
-	}
 
-	module.exports = baseCreate;
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
+
+	var FormatBar = function(options, mediator, editor) {
+	  this.editor = editor;
+	  this.options = Object.assign({}, config.defaults.formatBar, options || {});
+	  this.commands = this.options.commands;
+	  this.mediator = mediator;
+
+	  this._ensureElement();
+	  this._bindFunctions();
+	  this._bindMediatedEvents();
+
+	  this.initialize.apply(this, arguments);
+	};
+
+	Object.assign(FormatBar.prototype, __webpack_require__(74), __webpack_require__(178), __webpack_require__(60), __webpack_require__(75), {
+
+	  className: 'st-format-bar',
+
+	  bound: ["onFormatButtonClick", "renderBySelection", "hide"],
+
+	  eventNamespace: 'formatter',
+
+	  mediatedEvents: {
+	    'position': 'renderBySelection',
+	    'show': 'show',
+	    'hide': 'hide'
+	  },
+
+	  initialize: function() {
+	    this.$btns = [];
+
+	    this.commands.forEach(function(format) {
+	      var btn = $("<button>", {
+	        'class': 'st-format-btn st-format-btn--' + format.name + ' ' +
+	          (format.iconName ? 'st-icon' : ''),
+	        'text': format.text,
+	        'data-cmd': format.cmd
+	      });
+
+	      this.$btns.push(btn);
+	      btn.appendTo(this.$el);
+	    }, this);
+
+	    this.$b = $(document);
+	  },
+
+	  hide: function() {
+	    this.$el.removeClass('st-format-bar--is-ready');
+	    this.$el.remove();
+	  },
+
+	  show: function() {
+	    this.editor.$outer.append(this.$el);
+	    this.$el.addClass('st-format-bar--is-ready');
+	    this.$el.bind('click', '.st-format-btn', this.onFormatButtonClick);
+	  },
+
+	  remove: function(){ this.$el.remove(); },
+
+	  renderBySelection: function() {
+	    this.highlightSelectedButtons();
+	    this.show();
+	    this.calculatePosition();
+	  },
+
+	  calculatePosition: function() {
+	    var selection = window.getSelection(),
+	        range = selection.getRangeAt(0),
+	        boundary = range.getBoundingClientRect(),
+	        coords = {},
+	        outer = this.editor.$outer.get(0),
+	        outerBoundary = outer.getBoundingClientRect();
+
+	    coords.top = (boundary.top - outerBoundary.top) + 'px';
+	    coords.left = (((boundary.left + boundary.right) / 2) -
+	      (this.el.offsetWidth / 2) - outerBoundary.left) + 'px';
+
+	    this.$el.css(coords);
+	  },
+
+	  highlightSelectedButtons: function() {
+	    var block = utils.getBlockBySelection();
+	    this.$btns.forEach(function(btn) {
+	      var cmd = $(btn).data('cmd');
+	      btn.toggleClass("st-format-btn--is-active",
+	                      block.queryTextBlockCommandState(cmd));
+	    }, this);
+	  },
+
+	  onFormatButtonClick: function(ev){
+	    ev.stopPropagation();
+
+	    var block = utils.getBlockBySelection();
+	    if (_.isUndefined(block)) {
+	      throw "Associated block not found";
+	    }
+
+	    var btn = $(ev.target),
+	        cmd = btn.data('cmd');
+
+	    if (_.isUndefined(cmd)) {
+	      return false;
+	    }
+
+	    block.execTextBlockCommand(cmd);
+
+	    this.highlightSelectedButtons();
+
+	    return false;
+	  }
+
+	});
+
+	module.exports = FormatBar;
+
 
 /***/ },
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
+	"use strict";
+
+	/*
+	 * Sir Trevor Editor
+	 * --
+	 * Represents one Sir Trevor editor instance (with multiple blocks)
+	 * Each block references this instance.
+	 * BlockTypes are global however.
 	 */
 
-	/** Used for native method references */
-	var objectProto = Object.prototype;
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
 
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
+	var Events = __webpack_require__(60);
+	var EventBus = __webpack_require__(62);
+	var FormEvents = __webpack_require__(184);
+	var BlockControls = __webpack_require__(180);
+	var BlockManager = __webpack_require__(80);
+	var FloatingBlockControls = __webpack_require__(181);
+	var FormatBar = __webpack_require__(182);
+	var EditorStore = __webpack_require__(63);
+	var ErrorHandler = __webpack_require__(185);
 
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
+	var Editor = function(options) {
+	  this.initialize(options);
+	};
 
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
+	Object.assign(Editor.prototype, __webpack_require__(74), __webpack_require__(60), {
 
-	module.exports = isNative;
+	  bound: ['onFormSubmit', 'hideAllTheThings', 'changeBlockPosition',
+	    'removeBlockDragOver', 'renderBlock', 'resetBlockControls',
+	    'blockLimitReached'],
+
+	  events: {
+	    'block:reorder:dragend': 'removeBlockDragOver',
+	    'block:reorder:dropped': 'removeBlockDragOver',
+	    'block:content:dropped': 'removeBlockDragOver'
+	  },
+
+	  initialize: function(options) {
+	    utils.log("Init SirTrevor.Editor");
+
+	    this.options = Object.assign({}, config.defaults, options || {});
+	    this.ID = _.uniqueId('st-editor-');
+
+	    if (!this._ensureAndSetElements()) { return false; }
+
+	    if(!_.isUndefined(this.options.onEditorRender) &&
+	       _.isFunction(this.options.onEditorRender)) {
+	      this.onEditorRender = this.options.onEditorRender;
+	    }
+
+	    // Mediated events for *this* Editor instance
+	    this.mediator = Object.assign({}, Events);
+
+	    this._bindFunctions();
+
+	    config.instances.push(this);
+
+	    this.build();
+
+	    FormEvents.bindFormSubmit(this.$form);
+	  },
+
+	  /*
+	   * Build the Editor instance.
+	   * Check to see if we've been passed JSON already, and if not try and
+	   * create a default block.
+	   * If we have JSON then we need to build all of our blocks from this.
+	   */
+	  build: function() {
+	    this.$el.hide();
+
+	    this.errorHandler = new ErrorHandler(this.$outer, this.mediator, this.options.errorsContainer);
+	    this.store = new EditorStore(this.$el.val(), this.mediator);
+	    this.block_manager = new BlockManager(this.options, this.ID, this.mediator);
+	    this.block_controls = new BlockControls(this.block_manager.blockTypes, this.mediator);
+	    this.fl_block_controls = new FloatingBlockControls(this.$wrapper, this.ID, this.mediator);
+	    this.formatBar = new FormatBar(this.options.formatBar, this.mediator, this);
+
+	    this.mediator.on('block:changePosition', this.changeBlockPosition);
+	    this.mediator.on('block-controls:reset', this.resetBlockControls);
+	    this.mediator.on('block:limitReached', this.blockLimitReached);
+	    this.mediator.on('block:render', this.renderBlock);
+
+	    this.dataStore = "Please use store.retrieve();";
+
+	    this._setEvents();
+
+	    this.$wrapper.prepend(this.fl_block_controls.render().$el);
+	    this.$outer.append(this.block_controls.render().$el);
+
+	    $(window).bind('click', this.hideAllTheThings);
+
+	    this.createBlocks();
+	    this.$wrapper.addClass('st-ready');
+
+	    if(!_.isUndefined(this.onEditorRender)) {
+	      this.onEditorRender();
+	    }
+	  },
+
+	  createBlocks: function() {
+	    var store = this.store.retrieve();
+
+	    if (store.data.length > 0) {
+	      store.data.forEach(function(block) {
+	        this.mediator.trigger('block:create', block.type, block.data);
+	      }, this);
+	    } else if (this.options.defaultType !== false) {
+	      this.mediator.trigger('block:create', this.options.defaultType, {});
+	    }
+	  },
+
+	  destroy: function() {
+	    // Destroy the rendered sub views
+	    this.formatBar.destroy();
+	    this.fl_block_controls.destroy();
+	    this.block_controls.destroy();
+
+	    // Destroy all blocks
+	    this.block_manager.blocks.forEach(function(block) {
+	      this.mediator.trigger('block:remove', block.blockID);
+	    }, this);
+
+	    // Stop listening to events
+	    this.mediator.stopListening();
+	    this.stopListening();
+
+	    // Remove instance
+	    config.instances = config.instances.filter(function(instance) {
+	      return instance.ID !== this.ID;
+	    }, this);
+
+	    // Clear the store
+	    this.store.reset();
+	    this.$outer.replaceWith(this.$el.detach());
+	  },
+
+	  reinitialize: function(options) {
+	    this.destroy();
+	    this.initialize(options || this.options);
+	  },
+
+	  resetBlockControls: function() {
+	    this.block_controls.renderInContainer(this.$wrapper);
+	    this.block_controls.hide();
+	  },
+
+	  blockLimitReached: function(toggle) {
+	    this.$wrapper.toggleClass('st--block-limit-reached', toggle);
+	  },
+
+	  _setEvents: function() {
+	    Object.keys(this.events).forEach(function(type) {
+	      EventBus.on(type, this[this.events[type]], this);
+	    }, this);
+	  },
+
+	  hideAllTheThings: function(e) {
+	    this.block_controls.hide();
+	    this.formatBar.hide();
+	  },
+
+	  store: function(method, options){
+	    utils.log("The store method has been removed, please call store[methodName]");
+	    return this.store[method].call(this, options || {});
+	  },
+
+	  renderBlock: function(block) {
+	    this._renderInPosition(block.render().$el);
+	    this.hideAllTheThings();
+
+	    block.trigger("onRender");
+	  },
+
+	  removeBlockDragOver: function() {
+	    this.$outer.find('.st-drag-over').removeClass('st-drag-over');
+	  },
+
+	  changeBlockPosition: function($block, selectedPosition) {
+	    selectedPosition = selectedPosition - 1;
+
+	    var blockPosition = this.getBlockPosition($block),
+	    $blockBy = this.$wrapper.find('.st-block').eq(selectedPosition);
+
+	    var where = (blockPosition > selectedPosition) ? "Before" : "After";
+
+	    if($blockBy && $blockBy.attr('id') !== $block.attr('id')) {
+	      this.hideAllTheThings();
+	      $block["insert" + where]($blockBy);
+	    }
+	  },
+
+	  _renderInPosition: function(block) {
+	    if (this.block_controls.currentContainer) {
+	      this.block_controls.currentContainer.after(block);
+	    } else {
+	      this.$wrapper.append(block);
+	    }
+	  },
+
+	  validateAndSaveBlock: function(block, shouldValidate) {
+	    if ((!config.skipValidation || shouldValidate) && !block.valid()) {
+	      this.mediator.trigger('errors:add', { text: _.result(block, 'validationFailMsg') });
+	      utils.log("Block " + block.blockID + " failed validation");
+	      return;
+	    }
+
+	    var blockData = block.getData();
+	    utils.log("Adding data for block " + block.blockID + " to block store:",
+	              blockData);
+	    this.store.addData(blockData);
+	  },
+
+	  /*
+	   * Handle a form submission of this Editor instance.
+	   * Validate all of our blocks, and serialise all data onto the JSON objects
+	   */
+	  onFormSubmit: function(shouldValidate) {
+	    // if undefined or null or anything other than false - treat as true
+	    shouldValidate = (shouldValidate === false) ? false : true;
+
+	    utils.log("Handling form submission for Editor " + this.ID);
+
+	    this.mediator.trigger('errors:reset');
+	    this.store.reset();
+
+	    this.validateBlocks(shouldValidate);
+	    this.block_manager.validateBlockTypesExist(shouldValidate);
+
+	    this.mediator.trigger('errors:render');
+	    this.$el.val(this.store.toString());
+
+	    return this.errorHandler.errors.length;
+	  },
+
+	  validateBlocks: function(shouldValidate) {
+	    var self = this;
+	    this.$wrapper.find('.st-block').each(function(idx, block) {
+	      var _block = self.block_manager.findBlockById($(block).attr('id'));
+	      if (!_.isUndefined(_block)) {
+	        self.validateAndSaveBlock(_block, shouldValidate);
+	      }
+	    });
+	  },
+
+	  findBlockById: function(block_id) {
+	    return this.block_manager.findBlockById(block_id);
+	  },
+
+	  getBlocksByType: function(block_type) {
+	    return this.block_manager.getBlocksByType(block_type);
+	  },
+
+	  getBlocksByIDs: function(block_ids) {
+	    return this.block_manager.getBlocksByIDs(block_ids);
+	  },
+
+	  getBlockPosition: function($block) {
+	    return this.$wrapper.find('.st-block').index($block);
+	  },
+
+	  _ensureAndSetElements: function() {
+	    if(_.isUndefined(this.options.el) || _.isEmpty(this.options.el)) {
+	      utils.log("You must provide an el");
+	      return false;
+	    }
+
+	    this.$el = this.options.el;
+	    this.el = this.options.el[0];
+	    this.$form = this.$el.parents('form');
+
+	    var $outer = $("<div>").attr({ 'id': this.ID, 'class': 'st-outer', 'dropzone': 'copy link move' });
+	    var $wrapper = $("<div>").attr({ 'class': 'st-blocks' });
+
+	    // Wrap our element in lots of containers *eww*
+	    this.$el.wrap($outer).wrap($wrapper);
+
+	    this.$outer = this.$form.find('#' + this.ID);
+	    this.$wrapper = this.$outer.find('.st-blocks');
+
+	    return true;
+	  }
+
+	});
+
+	module.exports = Editor;
+
+
 
 
 /***/ },
 /* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/**
-	 * A no-operation function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @example
-	 *
-	 * var object = { 'name': 'fred' };
-	 * _.noop(object) === undefined;
-	 * // => true
-	 */
-	function noop() {
-	  // no operation performed
-	}
+	var config = __webpack_require__(58);
+	var utils = __webpack_require__(57);
 
-	module.exports = noop;
+	var EventBus = __webpack_require__(62);
+	var Submittable = __webpack_require__(64);
+
+	var formBound = false; // Flag to tell us once we've bound our submit event
+
+	var FormEvents = {
+	  bindFormSubmit: function(form) {
+	    if (!formBound) {
+	      // XXX: should we have a formBound and submittable per-editor?
+	      // telling JSHint to ignore as it'll complain we shouldn't be creating
+	      // a new object, but otherwise `this` won't be set in the Submittable
+	      // initialiser. Bit weird.
+	      new Submittable(form); // jshint ignore:line
+	      form.bind('submit', this.onFormSubmit);
+	      formBound = true;
+	    }
+	  },
+
+	  onBeforeSubmit: function(shouldValidate) {
+	    // Loop through all of our instances and do our form submits on them
+	    var errors = 0;
+	    config.instances.forEach(function(inst, i) {
+	      errors += inst.onFormSubmit(shouldValidate);
+	    });
+	    utils.log("Total errors: " + errors);
+
+	    return errors;
+	  },
+
+	  onFormSubmit: function(ev) {
+	    var errors = FormEvents.onBeforeSubmit();
+
+	    if(errors > 0) {
+	      EventBus.trigger("onError");
+	      ev.preventDefault();
+	    }
+	  },
+	};
+
+	module.exports = FormEvents;
 
 
 /***/ },
 /* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/** Used for native method references */
-	var objectProto = Object.prototype;
+	var _ = __webpack_require__(2);
+	var $ = __webpack_require__(56);
 
-	/** Used to resolve the internal [[Class]] of values */
-	var toString = objectProto.toString;
+	var ErrorHandler = function($wrapper, mediator, container) {
+	  this.$wrapper = $wrapper;
+	  this.mediator = mediator;
+	  this.$el = container;
 
-	/** Used to detect if a method is native */
-	var reNative = RegExp('^' +
-	  String(toString)
-	    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-	    .replace(/toString| for [^\]]+/g, '.*?') + '$'
-	);
+	  if (_.isUndefined(this.$el)) {
+	    this._ensureElement();
+	    this.$wrapper.prepend(this.$el);
+	  }
 
-	/**
-	 * Checks if `value` is a native function.
-	 *
-	 * @private
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if the `value` is a native function, else `false`.
-	 */
-	function isNative(value) {
-	  return typeof value == 'function' && reNative.test(value);
-	}
+	  this.$el.hide();
+	  this._bindFunctions();
+	  this._bindMediatedEvents();
 
-	module.exports = isNative;
+	  this.initialize();
+	};
+
+	Object.assign(ErrorHandler.prototype, __webpack_require__(74), __webpack_require__(178), __webpack_require__(75), {
+
+	  errors: [],
+	  className: "st-errors",
+	  eventNamespace: 'errors',
+
+	  mediatedEvents: {
+	    'reset': 'reset',
+	    'add': 'addMessage',
+	    'render': 'render'
+	  },
+
+	  initialize: function() {
+	    var $list = $("<ul>");
+	    this.$el.append("<p>" + i18n.t("errors:title") + "</p>")
+	    .append($list);
+	    this.$list = $list;
+	  },
+
+	  render: function() {
+	    if (this.errors.length === 0) { return false; }
+	    this.errors.forEach(this.createErrorItem, this);
+	    this.$el.show();
+	  },
+
+	  createErrorItem: function(error) {
+	    var $error = $("<li>", { class: "st-errors__msg", html: error.text });
+	    this.$list.append($error);
+	  },
+
+	  addMessage: function(error) {
+	    this.errors.push(error);
+	  },
+
+	  reset: function() {
+	    if (this.errors.length === 0) { return false; }
+	    this.errors = [];
+	    this.$list.html('');
+	    this.$el.hide();
+	  }
+
+	});
+
+	module.exports = ErrorHandler;
+
 
 
 /***/ },
 /* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Lo-Dash 2.4.1 (Custom Build) <http://lodash.com/>
-	 * Build: `lodash modularize modern exports="npm" -o ./npm/`
-	 * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <http://lodash.com/license>
-	 */
+	"use strict";
 
-	/**
-	 * A no-operation function.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @category Utilities
-	 * @example
-	 *
-	 * var object = { 'name': 'fred' };
-	 * _.noop(object) === undefined;
-	 * // => true
-	 */
-	function noop() {
-	  // no operation performed
-	}
+	var _ = __webpack_require__(2);
+	var utils = __webpack_require__(57);
 
-	module.exports = noop;
+	module.exports = function(content, type) {
+
+	  // Deferring requiring these to sidestep a circular dependency:
+	  // Block -> this -> Blocks -> Block
+	  var Blocks = __webpack_require__(81);
+
+	  type = utils.classify(type);
+
+	  var markdown = content;
+
+	  //Normalise whitespace
+	  markdown = markdown.replace(/&nbsp;/g," ");
+
+	  // First of all, strip any additional formatting
+	  // MSWord, I'm looking at you, punk.
+	  markdown = markdown.replace(/( class=(")?Mso[a-zA-Z]+(")?)/g, '')
+	                     .replace(/<!--(.*?)-->/g, '')
+	                     .replace(/\/\*(.*?)\*\//g, '')
+	                     .replace(/<(\/)*(meta|link|span|\\?xml:|st1:|o:|font)(.*?)>/gi, '');
+
+	  var badTags = ['style', 'script', 'applet', 'embed', 'noframes', 'noscript'],
+	      tagStripper, i;
+
+	  for (i = 0; i< badTags.length; i++) {
+	    tagStripper = new RegExp('<'+badTags[i]+'.*?'+badTags[i]+'(.*?)>', 'gi');
+	    markdown = markdown.replace(tagStripper, '');
+	  }
+
+	  // Escape anything in here that *could* be considered as MD
+	  // Markdown chars we care about: * [] _ () -
+	  markdown = markdown.replace(/\*/g, "\\*")
+	                    .replace(/\[/g, "\\[")
+	                    .replace(/\]/g, "\\]")
+	                    .replace(/\_/g, "\\_")
+	                    .replace(/\(/g, "\\(")
+	                    .replace(/\)/g, "\\)")
+	                    .replace(/\-/g, "\\-");
+
+	  var inlineTags = ["em", "i", "strong", "b"];
+
+	  for (i = 0; i< inlineTags.length; i++) {
+	    tagStripper = new RegExp('<'+inlineTags[i]+'><br></'+inlineTags[i]+'>', 'gi');
+	    markdown = markdown.replace(tagStripper, '<br>');
+	  }
+
+	  function replaceBolds(match, p1, p2){
+	    if(_.isUndefined(p2)) { p2 = ''; }
+	    return "**" + p1.replace(/<(.)?br(.)?>/g, '') + "**" + p2;
+	  }
+
+	  function replaceItalics(match, p1, p2){
+	    if(_.isUndefined(p2)) { p2 = ''; }
+	    return "_" + p1.replace(/<(.)?br(.)?>/g, '') + "_" + p2;
+	  }
+
+	  markdown = markdown.replace(/<(\w+)(?:\s+\w+="[^"]+(?:"\$[^"]+"[^"]+)?")*>\s*<\/\1>/gim, '') //Empty elements
+	                      .replace(/\n/mg,"")
+	                      .replace(/<a.*?href=[""'](.*?)[""'].*?>(.*?)<\/a>/gim, function(match, p1, p2){
+	                        return "[" + p2.trim().replace(/<(.)?br(.)?>/g, '') + "]("+ p1 +")";
+	                      }) // Hyperlinks
+	                      .replace(/<strong>(?:\s*)(.*?)(\s)*?<\/strong>/gim, replaceBolds)
+	                      .replace(/<b>(?:\s*)(.*?)(\s*)?<\/b>/gim, replaceBolds)
+	                      .replace(/<em>(?:\s*)(.*?)(\s*)?<\/em>/gim, replaceItalics)
+	                      .replace(/<i>(?:\s*)(.*?)(\s*)?<\/i>/gim, replaceItalics);
+
+
+	  // Do our generic stripping out
+	  markdown = markdown.replace(/([^<>]+)(<div>)/g,"$1\n$2")                                 // Divitis style line breaks (handle the first line)
+	                 .replace(/<div><div>/g,'\n<div>')                                         // ^ (double opening divs with one close from Chrome)
+	                 .replace(/(?:<div>)([^<>]+)(?:<div>)/g,"$1\n")                            // ^ (handle nested divs that start with content)
+	                 .replace(/(?:<div>)(?:<br>)?([^<>]+)(?:<br>)?(?:<\/div>)/g,"$1\n")        // ^ (handle content inside divs)
+	                 .replace(/<\/p>/g,"\n\n")                                               // P tags as line breaks
+	                 .replace(/<(.)?br(.)?>/g,"\n")                                            // Convert normal line breaks
+	                 .replace(/&lt;/g,"<").replace(/&gt;/g,">");                                 // Encoding
+
+	  // Use custom block toMarkdown functions (if any exist)
+	  var block;
+	  if (Blocks.hasOwnProperty(type)) {
+	    block = Blocks[type];
+	    // Do we have a toMarkdown function?
+	    if (!_.isUndefined(block.prototype.toMarkdown) && _.isFunction(block.prototype.toMarkdown)) {
+	      markdown = block.prototype.toMarkdown(markdown);
+	    }
+	  }
+
+	  // Strip remaining HTML
+	  markdown = markdown.replace(/<\/?[^>]+(>|$)/g, "");
+
+	  return markdown;
+	};
 
 
 /***/ }
@@ -26588,7 +26644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 });
 
 require.register("sir-trevor-js-example", function (exports, module) {
-var SirTrevor = require("sir-trevor-js")
+var SirTrevor = require("conglin~sir-trevor-js@masterlin")
   , $ = require("components~jquery@2.1.4");
 
 SirTrevor.DEBUG = true;
@@ -26605,6 +26661,7 @@ SirTrevor.setBlockOptions("Text", {
 
 window.editor = new SirTrevor.Editor({
   el: $('.sir-trevor'),
+  convertFromMarkdown: true,
   blockTypes: [
     "Heading",
     "Text",

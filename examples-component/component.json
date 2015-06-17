@@ -8,7 +8,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "conglin/sir-trevor-js": "*",
+    "conglin/sir-trevor-js": "masterlin",
     "components/jquery": "*"
   }
 }
